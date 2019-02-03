@@ -1,0 +1,21 @@
+.m-menu {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  &__item {
+    padding: 0 16px;
+    height: 42px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+  }
+}

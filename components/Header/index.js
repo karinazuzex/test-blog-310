@@ -2,21 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Row } from "components/grid";
+import MainMenu from "components/Menu/Main";
+import Button from "components/ui/Button";
 import Logo from "svg/Logo";
 
 const Header = () => (
     <header className="header" role="header">
         <Container>
-            <Row noCol className="justify-between-xs">
-                <Logo />
-                <ul>
-                    <li>Why menurai</li>
-                    <li>Documentation</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
+            <Row theme="no-col" className="justify-between-xs align-center-xs">
+                <div className="header__logo">
+                    <Logo className="header__logo--img" />
+                </div>
+                <MainMenu/>
+                <Button type="hollow" theme="red-white" className="header__button header__button--action">
+                    Get Menurai
+                </Button>
             </Row>
-            <button>Get Menurai</button>
         </Container>
     </header>
 );

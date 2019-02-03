@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Row = ({ className, children, noCol = false }) => (
-    <div className={`row ${className} ${noCol && "row--no-col"}`}>
-        {children}
-    </div>
-);
+const Row = ({ className, children, theme = "" }) => {
+    const themeExpanded = theme.split(" ").map(item => `row--${item} `).join(" ");
+    return (
+        <div className={`row ${className} ${themeExpanded}`}>
+            {children}
+        </div>
+    );
+};
 
 Row.propTypes = {
     className: PropTypes.string,
@@ -14,7 +17,7 @@ Row.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.string,
     ]),
-    noCol: PropTypes.bool,
+    theme: PropTypes.string,
 };
 
 export default Row;

@@ -1,0 +1,35 @@
+.button {
+  display: inline-block;
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: background-color $default_transition, color $default_transition;
+
+  &__hollow {
+    height: 48px;
+    line-height: 44px;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0 30px;
+    font-weight: bold;
+    letter-spacing: 1.7px;
+
+    &--red-white {
+      border: 2px solid $red;
+      border-radius: 3px;
+      color: $white;
+
+      &:hover {
+        background-color: $red;
+      }
+    }
+  }
+}
