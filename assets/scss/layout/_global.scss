@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "BioSans", sans-serif;
+  color: $black;
+  line-height: 42px;
+  font-size: 24px;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+a,
+button {
+  outline: none;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:required {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &[disabled] {
+    cursor: default;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  display: inline-block;
+  margin: 0;
+}
+
+h1, h2 {
+  font-size: 72px;
+  line-height: 84px;
+}
+
+h3 {
+  font-size: 42px;
+  line-height: 56px;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h5 {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: $white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
