@@ -77,9 +77,17 @@
       letter-spacing: normal;
       line-height: 1.5;
       opacity: 0.6;
+      color: $white;
       left: 50%;
       transform: translateX(-50%);
       text-transform: none;
+    }
+
+    &:hover {
+
+      &:after {
+        color: $white;
+      }
     }
   }
 }

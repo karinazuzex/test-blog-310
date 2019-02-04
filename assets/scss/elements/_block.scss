@@ -15,6 +15,13 @@
     }
   }
 
+  &__pretitle {
+    font-size: 14px;
+    color: $blue;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+  }
+
   &__postfix {
     font-size: 14px;
     margin-top: 50px;

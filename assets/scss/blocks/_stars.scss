@@ -1,0 +1,16 @@
+.stars {
+  margin-left: -4px;
+  margin-right: -4px;
+
+  &__item {
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 15px;
+
+    img,
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

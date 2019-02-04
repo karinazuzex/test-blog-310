@@ -1,5 +1,6 @@
 .bg {
   &-black { background-color: $black; }
+  &-white-grey { background-color: $whiteGrey; }
 }
 
 .text {
@@ -8,4 +9,8 @@
   &-right { text-align: right; }
 
   &-white { color: $white; }
+}
+
+.separator {
+  &-bt { border-bottom: 1px solid $grey; }
 }
