@@ -1,11 +1,19 @@
 .section {
   padding-top: 140px;
   padding-bottom: 140px;
-  &__promo {
 
+  &__promo {
     &--home {
       padding-top: 150px;
       padding-bottom: 40px;
     }
+
+    &--why {
+      padding-top: 170px;
+    }
+  }
+
+  &__get-memurai {
+    padding-bottom: 40px;
   }
 }

@@ -6,13 +6,12 @@ import { Star } from "svg";
 
 const Stars = ({ className = "", amount = 1 }) => {
     let content = [];
-    const star = (
-        <div className="stars__item">
-            <Star />
-        </div>
-    );
     for (let count = 0; count < amount; count += 1) {
-        content.push(star);
+        content.push(
+            <div key={count} className="stars__item">
+                <Star />
+            </div>
+        );
     }
     return (
         <Row className={`stars justify-center-xs ${className}`}>

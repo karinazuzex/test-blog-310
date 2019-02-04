@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Container, Row, Col } from "components/grid";
-import Button from "components/ui/Button";
+import { Container, Row, Col } from "components/grid/index";
+import Button from "components/ui/Button/index";
 
 const FAQSection = () => (
-    <section className="section section__faq section__faq--home bg-white-grey separator-bt">
+    <section className="section section__faq bg-white-grey separator-bt">
         <Container>
             <Row>
                 <Col attributes="xs-6">

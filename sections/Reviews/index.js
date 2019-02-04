@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Container } from "components/grid";
-import Stars from "components/ui/Stars";
+import { Container } from "components/grid/index";
+import Stars from "components/ui/Stars/index";
 
 const ReviewsSection = () => (
-    <section className="section section__reviews section__reviews--home bg-white-grey separator-bt">
+    <section className="section section__reviews bg-white-grey separator-bt">
         <Container>
             <div className="block text-center">
                 <Stars amount={5} className="block__elem" />

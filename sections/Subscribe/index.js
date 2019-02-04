@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Container } from "components/grid";
-import SubscribeForm from "components/Form/Subscribe";
+import { Container } from "components/grid/index";
+import SubscribeForm from "components/Form/Subscribe/index";
 
 const SubscribeSection = () => (
-    <section className="section section__subscribe section__subscribe--home bg-white-grey">
+    <section className="section section__subscribe bg-white-grey">
         <Container>
             <div className="block text-center">
                 <div className="block__pretitle block__elem">LATEST NEWS</div>

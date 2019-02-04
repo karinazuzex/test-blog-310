@@ -99,5 +99,20 @@
         color: $white;
       }
     }
+
+    &-black {
+
+      &:after {
+        opacity: 1;
+        color: $black;
+      }
+
+      &:hover {
+
+        &:after {
+          color: $black;
+        }
+      }
+    }
   }
 }

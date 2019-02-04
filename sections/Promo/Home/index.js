@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, Row } from "components/grid";
-import Button from "components/ui/Button";
+import { Container, Row } from "components/grid/index";
+import Button from "components/ui/Button/index";
 
 const PromoSection = () => (
     <section className="section section__promo section__promo--home bg-black">

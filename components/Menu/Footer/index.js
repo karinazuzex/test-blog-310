@@ -1,39 +1,52 @@
 import React from "react";
 
-// import Link as NextLink from "next/link";
+import NextLink from "next/link";
 import Link from "components/ui/Link";
+import { routes } from "config";
 
 const FooterMenu = () => (
     <ul className="f-menu">
         <li className="f-menu__item">
-            <Link href="" theme="grey-light" className="f-menu__link">
-                Home
-            </Link>
+            <NextLink href={routes.HOME_PAGE.path}>
+                <Link href="" theme="grey-light" className="f-menu__link">
+                    {routes.HOME_PAGE.name}
+                </Link>
+            </NextLink>
         </li>
         <li className="f-menu__item">
-            <Link href="" theme="grey-light" className="f-menu__link">
-                Why memurai
-            </Link>
+            <NextLink href={routes.WHY_MEMURAI_PAGE.path}>
+                <Link href="" theme="grey-light" className="f-menu__link">
+                    {routes.WHY_MEMURAI_PAGE.name}
+                </Link>
+            </NextLink>
         </li>
         <li className="f-menu__item">
-            <Link href="" theme="grey-light" className="f-menu__link">
-                Documentation
-            </Link>
+            <NextLink href={routes.DOCUMENTATION_PAGE.path}>
+                <Link href="" theme="grey-light" className="f-menu__link">
+                    {routes.DOCUMENTATION_PAGE.name}
+                </Link>
+            </NextLink>
         </li>
         <li className="f-menu__item">
-            <Link href="" theme="grey-light" className="f-menu__link">
-                Frequently asked questions
-            </Link>
+            <NextLink href={routes.FAQ_PAGE.path}>
+                <Link href="" theme="grey-light" className="f-menu__link">
+                    {routes.FAQ_PAGE.name}
+                </Link>
+            </NextLink>
         </li>
         <li className="f-menu__item">
-            <Link href="" theme="grey-light" className="f-menu__link">
-                About
-            </Link>
+            <NextLink href={routes.ABOUT_PAGE.path}>
+                <Link href="" theme="grey-light" className="f-menu__link">
+                    {routes.ABOUT_PAGE.name}
+                </Link>
+            </NextLink>
         </li>
         <li className="f-menu__item">
-            <Link href="" theme="grey-light" className="f-menu__link">
-                Contact
-            </Link>
+            <NextLink href={routes.CONTACT_PAGE.path}>
+                <Link href="" theme="grey-light" className="f-menu__link">
+                    {routes.CONTACT_PAGE.name}
+                </Link>
+            </NextLink>
         </li>
     </ul>
 );
