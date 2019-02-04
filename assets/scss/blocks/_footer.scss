@@ -1,0 +1,42 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-size: 14px;
+  color: $greyLight;
+  line-height: 1.71;
+
+  &__header {
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__terms {
+    .link {
+      display: inline-block;
+      text-transform: uppercase;
+      position: relative;
+
+      &:not(:last-child) {
+        padding-right: 8px;
+
+        &:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          display: block;
+          background-color: $greyLight;
+          height: 14px;
+          width: 1px;
+        }
+      }
+
+      &:not(:first-child) {
+        padding-left: 8px;
+      }
+    }
+  }
+}

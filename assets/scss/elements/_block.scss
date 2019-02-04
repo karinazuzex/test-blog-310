@@ -1,0 +1,26 @@
+.block {
+  &__elem {
+    margin-bottom: 30px;
+
+    &.block__header {
+      margin-bottom: 36px;
+    }
+
+    &--lg {
+      margin-bottom: 50px;
+
+      &.block__header {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__postfix {
+    font-size: 14px;
+    margin-top: 50px;
+
+    &--promo-home {
+      margin-top: 120px;
+    }
+  }
+}

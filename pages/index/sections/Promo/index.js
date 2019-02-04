@@ -4,7 +4,7 @@ import { Container, Row } from "components/grid";
 import Button from "components/ui/Button";
 
 const PromoSection = () => (
-    <section className="section section--home-promo bg-black">
+    <section className="section section__promo section__promo--home bg-black">
         <Container>
             <div className="block text-center text-white">
                 <h1 className="block__title block__elem--lg">
@@ -15,14 +15,14 @@ const PromoSection = () => (
                     Technical preview now available for download.
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
-                    <Button type="solid" theme="red-white">
+                    <Button type="solid" theme="red-white chevron versioned">
                         Download for free
                     </Button>
-                    <Button type="hollow" theme="red-white">
+                    <Button type="hollow" theme="red-white chevron promo-home">
                         Learn more
                     </Button>
                 </Row>
-                <p className="block__postfix">
+                <p className="block__postfix block__postfix--promo-home">
                     Current version: 0.1.2-beta. Compatible with Redis 4.2
                 </p>
             </div>

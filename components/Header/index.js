@@ -14,7 +14,7 @@ const Header = () => (
                     <Logo className="header__logo--img" />
                 </div>
                 <MainMenu/>
-                <Button type="hollow" theme="red-white" className="header__button header__button--action">
+                <Button type="hollow" theme="red-white versioned" className="header__button header__button--action">
                     Get Menurai
                 </Button>
             </Row>

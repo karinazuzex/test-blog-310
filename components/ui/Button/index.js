@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Button = ({ className, theme, type, children }) => {
+    const themeExpanded = theme.split(" ").map(item => `button${type && `__${type}`}--${item} ${type ? `button--${item}` : ""}`).join(" ");
     return (
-        <button className={`button ${type && `button__${type}`} ${theme && `button${type && `__${type}`}--${theme}`}`}>
+        <button className={`button ${className || ""} ${type && `button__${type}`} ${themeExpanded}`}>
             {children}
         </button>
     );

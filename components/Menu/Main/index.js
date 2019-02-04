@@ -12,17 +12,17 @@ const MainMenu = () => (
         </li>
         <li className="m-menu__item">
             <Link href="" theme="white" className="m-menu__link">
-                Why memurai
+                Documentation
             </Link>
         </li>
         <li className="m-menu__item">
             <Link href="" theme="white" className="m-menu__link">
-                Why memurai
+                About
             </Link>
         </li>
         <li className="m-menu__item">
             <Link href="" theme="white" className="m-menu__link">
-                Why memurai
+                Contact
             </Link>
         </li>
     </ul>

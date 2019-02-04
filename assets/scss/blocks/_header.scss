@@ -16,4 +16,19 @@
       height: auto;
     }
   }
+
+  &__button {
+
+    &.button__hollow {
+      height: 48px;
+      line-height: 44px;
+    }
+
+    .button--versioned {
+
+      &:after {
+        bottom: 28px;
+      }
+    }
+  }
 }
