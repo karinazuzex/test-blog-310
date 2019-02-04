@@ -27,6 +27,16 @@
     letter-spacing: 1.7px;
     border-radius: 3px;
 
+    &--red {
+      border: 2px solid $red;
+      color: $red;
+
+      &:hover {
+        background-color: $red;
+        color: $white;
+      }
+    }
+
     &--red-white {
       border: 2px solid $red;
       color: $white;
