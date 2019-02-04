@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Container, Row } from "components/grid";
 import MainMenu from "components/Menu/Main";
 import Button from "components/ui/Button";
-import Logo from "svg/Logo";
+import { Logo } from "svg";
 
 const Header = () => (
     <header className="header" role="header">
