@@ -8,7 +8,7 @@ import { Logo } from "svg";
 
 const Header = () => (
     <header className="header" role="header">
-        <Container>
+        <Container theme="big">
             <Row theme="no-col" className="justify-between-xs align-center-xs">
                 <div className="header__logo">
                     <Logo className="header__logo--img" />

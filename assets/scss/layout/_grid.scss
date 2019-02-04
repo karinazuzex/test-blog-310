@@ -6,11 +6,15 @@
 
 .container {
   width: 100%;
-  max-width: $desktop-width;
+  max-width: $desktopWidth;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+
+  &--big {
+    max-width: $bigDesktopWidth;
+  }
 }
 
 .content-center {
@@ -232,7 +236,7 @@
   order: 1;
 }
 
-@media only screen and (min-width: $mobile-width) {
+@media only screen and (min-width: $mobileWidth) {
   .col-sm,
   .col-sm-1,
   .col-sm-2,
@@ -410,7 +414,7 @@
   }
 }
 
-@media only screen and (min-width: $phablet-width) {
+@media only screen and (min-width: $phabletWidth) {
   .container {
     padding-left: 40px;
     padding-right: 40px;
@@ -593,7 +597,7 @@
   }
 }
 
-@media only screen and (min-width: $tablet-width) {
+@media only screen and (min-width: $tabletWidth) {
   .col-lg,
   .col-lg-1,
   .col-lg-2,
@@ -771,7 +775,7 @@
   }
 }
 
-@media only screen and (min-width: $desktop-width) {
+@media only screen and (min-width: $desktopWidth) {
   .col-xl,
   .col-xl-1,
   .col-xl-2,
