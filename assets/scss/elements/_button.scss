@@ -71,8 +71,21 @@
       color: $white;
       background-color: $red;
 
+      svg {
+        path {
+          fill: $white;
+          transition: fill $defaultTransition;
+        }
+      }
+
       &:hover {
         color: $black;
+
+        svg {
+          path {
+            fill: $black;
+          }
+        }
       }
     }
   }
