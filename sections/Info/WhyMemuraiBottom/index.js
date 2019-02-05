@@ -7,9 +7,9 @@ const PromoSection = () => (
         <Container>
             <Row theme="no-col" className="info">
                 <div className="info__text info__block">
-                    <h4 className="info__text-title">
+                    <h5 className="info__text-title">
                         Uncompromised performance
-                    </h4>
+                    </h5>
                     <div className="info__text-description">
                         Memurai for Windows provides the functionality of Redis on Windows without the need for
                         emulation or virtualization. Because it’s designed and optimized to use the native Windows APIs,
@@ -22,9 +22,9 @@ const PromoSection = () => (
             <Row theme="no-col" className="info">
                 <div className="info__image info__block"></div>
                 <div className="info__text info__block">
-                    <h4 className="info__text-title">
+                    <h5 className="info__text-title">
                         Enterprise-grade support
-                    </h4>
+                    </h5>
                     <div className="info__text-description">
                         Whether it&apos;s for use on development machines or production servers, Memurai for Windows
                         seamlessly integrates with Windows best practices, tools and workflows. Engineering teams with

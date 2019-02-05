@@ -9,7 +9,7 @@ const FAQSection = () => (
             <Row>
                 <Col attributes="xs-6">
                     <div className="block">
-                        <div className="block__pretitle block__elem">FAQs</div>
+                        <div className="block__pretitle block__elem text-no-transform">FAQs</div>
                         <h3 className="block__title block__elem">
                             Common questions about Memurai
                         </h3>

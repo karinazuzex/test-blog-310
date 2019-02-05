@@ -1,0 +1,41 @@
+.table {
+  padding-left: 1px;
+  border: 1px solid $grey;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 36px;
+  background-color: $white;
+
+  &__row {
+    &--header {
+      font-size: 24px;
+      font-weight: 500;
+
+      .table {
+        &__col {
+          height: 68px;
+        }
+      }
+    }
+
+    &:nth-child(2n) {
+      background-color: $whiteGrey;
+    }
+  }
+
+  &__col {
+    height: 60px;
+    padding: 0 35px;
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child) {
+      justify-content: center;
+    }
+
+    &:nth-child(2n) {
+      background-color: transparentize($cyan, 0.7);
+    }
+  }
+}

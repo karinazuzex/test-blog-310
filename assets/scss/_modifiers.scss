@@ -11,6 +11,8 @@
   &-white { color: $white; }
 
   &-bold { font-weight: bold; }
+
+  &-no-transform { text-transform: none; }
 }
 
 .separator {

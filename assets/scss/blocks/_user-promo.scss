@@ -1,0 +1,33 @@
+.user-promo {
+  height: 60px;
+
+  &__icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 16px;
+    background-color: $black;
+  }
+
+  &__info {
+    margin-right: 56px;
+
+    &-name {
+      font-size: 20px;
+      line-height: 36px;
+      font-weight: 500;
+    }
+    &-position {
+      font-size: 14px;
+      line-height: 14px;
+      color: $greyDark;
+    }
+  }
+
+  &__company {
+    height: 60px;
+    padding: 10px 20px;
+    background-color: $whiteGrey;
+    border-radius: 3px;
+  }
+}

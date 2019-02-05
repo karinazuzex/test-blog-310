@@ -7,9 +7,9 @@ const PromoSection = () => (
         <Container>
             <Row theme="no-col" className="info">
                 <div className="info__text info__block">
-                    <h4 className="info__text-title">
+                    <h5 className="info__text-title">
                         Fully compatible with Redis
-                    </h4>
+                    </h5>
                     <div className="info__text-description">
                         The core of Memurai is based on the Redis source code, ported to run natively on Windows.
                         That&apos;s how Memurai for Windows reliably supports all the features that make Redis the most
@@ -24,9 +24,9 @@ const PromoSection = () => (
             <Row theme="no-col" className="info">
                 <div className="info__image info__block"></div>
                 <div className="info__text info__block">
-                    <h4 className="info__text-title">
+                    <h5 className="info__text-title">
                         Fully compatible with Redis
-                    </h4>
+                    </h5>
                     <div className="info__text-description">
                         The core of Memurai is based on the Redis source code, ported to run natively on Windows.
                         That&apos;s how Memurai for Windows reliably supports all the features that make Redis the most
