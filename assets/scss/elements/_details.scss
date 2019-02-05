@@ -1,0 +1,61 @@
+.details {
+  border-radius: 3px;
+  border: 1px solid $grey;
+  height: 68px;
+  font-size: 20px;
+
+  & + & {
+    margin-top: 20px;
+  }
+
+  &__summary {
+    color: $greyDisabled;
+    height: 68px;
+    line-height: 68px;
+    padding: 0 30px;
+    position: relative;
+    cursor: pointer;
+    transition: color $defaultTransition;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 30px;
+      top: 28px;
+      width: 0;
+      height: 0;
+      border-width: 8px 6px;
+      border-color: transparent;
+      border-style: solid;
+      border-top-color: $black;
+      transition: transform $defaultTransition, top $defaultTransition;
+    }
+  }
+
+  &__info {
+    display: none;
+    padding: 24px 30px;
+    line-height: 30px;
+  }
+
+  &.active {
+    height: initial;
+
+    .details {
+      &__summary {
+        color: $black;
+        border-bottom: 1px solid $grey;
+
+        &:after {
+          top: 20px;
+          transform: rotate(180deg);
+        }
+      }
+
+      &__info {
+        display: block;
+      }
+    }
+  }
+}
