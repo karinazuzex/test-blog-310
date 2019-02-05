@@ -77,8 +77,30 @@
     }
   }
 
+  &__chevron {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+
+    img,
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   &--chevron {
     padding-right: 75px;
+
+    &-down {
+      .button {
+        &__chevron {
+          transform: translateY(-50%) rotate(90deg);
+        }
+      }
+    }
   }
 
   &--promo-home {

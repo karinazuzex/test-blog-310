@@ -15,7 +15,7 @@ const PromoSection = () => (
                     Technical preview now available for download.
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
-                    <Button type="solid" theme="red-white chevron versioned">
+                    <Button type="solid" theme="red-white chevron chevron-down versioned">
                         Download for free
                     </Button>
                     <Button type="hollow" theme="red-white chevron promo-home">
