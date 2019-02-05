@@ -1,0 +1,15 @@
+.image {
+
+  &__logo {
+    .text {
+      transition: fill $defaultTransition;
+      fill: $white;
+    }
+
+    &.black {
+      .text {
+        fill: $black;
+      }
+    }
+  }
+}

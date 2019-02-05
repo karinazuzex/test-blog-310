@@ -45,6 +45,16 @@
         background-color: $red;
       }
     }
+
+    &--red-black {
+      border: 2px solid $red;
+      color: $black;
+
+      &:hover {
+        background-color: $red;
+        color: $white;
+      }
+    }
   }
 
   &__solid {
@@ -91,12 +101,19 @@
       left: 50%;
       transform: translateX(-50%);
       text-transform: none;
+      transition: opacity $defaultTransition;
     }
 
     &:hover {
 
       &:after {
         color: $white;
+      }
+    }
+
+    &-hidden {
+      &:after {
+        opacity: 0;
       }
     }
 

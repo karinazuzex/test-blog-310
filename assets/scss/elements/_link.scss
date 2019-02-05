@@ -15,6 +15,14 @@
     }
   }
 
+  &--black {
+    color: $black;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
   &--grey-light {
     color: $greyLight;
 
