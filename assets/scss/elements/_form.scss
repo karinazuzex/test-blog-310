@@ -1,8 +1,15 @@
 .form {
 
+  &__row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
   &__group {
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: left;
-    flex: 1 1 auto;
+    flex: 1 1 0;
 
     &-label {
       letter-spacing: 1.2px;
@@ -11,10 +18,6 @@
       font-size: 14px;
       text-transform: uppercase;
       margin-bottom: 8px;
-    }
-
-    & + & {
-      margin-left: 18px;
     }
 
     &--no-grow {

@@ -20,4 +20,56 @@
       background-color: $white;
     }
   }
+
+  &--transparent {
+    margin-left: -25px;
+    margin-right: -25px;
+
+    .social {
+      &__item {
+        margin-left: 25px;
+        margin-right: 25px;
+        width: 35px;
+        height: 30px;
+        line-height: 40px;
+        border-radius: 0;
+        background-color: transparent;
+
+        &--twitter,
+        &--linkedin {
+
+          svg {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        &--facebook,
+        &--github {
+
+          svg {
+            height: 100%;
+            width: auto;
+          }
+        }
+
+        svg {
+          path {
+            transition: fill $defaultTransition;
+            fill: $red;
+          }
+        }
+
+        &:hover {
+          background-color: transparent;
+
+          svg {
+            path {
+              fill: black;
+            }
+          }
+        }
+      }
+    }
+  }
 }
