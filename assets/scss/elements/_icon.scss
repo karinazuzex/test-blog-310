@@ -1,7 +1,16 @@
 .icon {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
+
+
+  svg,
+  img {
+    width: 100%;
+    height: auto;
+  }
 
   &--checked {
     height: 20px;
@@ -15,5 +24,34 @@
     width: 20px;
     border-radius: 50%;
     background-color: $greyLight;
+  }
+
+  &__big-circled {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0 32px 44px 0 rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+
+    &--compatibility {
+      padding-left: 77px;
+      padding-right: 77px;
+    }
+
+    &--windows {
+      padding-left: 63px;
+      padding-right: 91px;
+    }
+
+    &--performance {
+      padding-left: 53px;
+      padding-right: 59px;
+    }
+
+    &--support {
+      padding-left: 67px;
+      padding-right: 67px;
+    }
   }
 }

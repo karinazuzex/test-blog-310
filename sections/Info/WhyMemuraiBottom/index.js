@@ -1,6 +1,10 @@
 import React from "react";
 
 import { Container, Row } from "components/grid/index";
+import Icon from "components/ui/Icon";
+
+import PerformanceImage from "assets/images/performance.png";
+import SupportImage from "assets/images/support.png";
 
 const PromoSection = () => (
     <section className="section section__info bg-white-grey separator-bt">
@@ -17,10 +21,14 @@ const PromoSection = () => (
                         huge datasets and mission-critical production workloads.
                     </div>
                 </div>
-                <div className="info__image info__block"></div>
+                <Icon type="big-circled" theme="performance" className="info__image info__block">
+                    <img src={PerformanceImage} alt="Compatibility" />
+                </Icon>
             </Row>
             <Row theme="no-col" className="info">
-                <div className="info__image info__block"></div>
+                <Icon type="big-circled" theme="support" className="info__image info__block">
+                    <img src={SupportImage} alt="Compatibility" />
+                </Icon>
                 <div className="info__text info__block">
                     <h5 className="info__text-title">
                         Enterprise-grade support

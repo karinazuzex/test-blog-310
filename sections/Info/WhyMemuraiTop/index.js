@@ -1,6 +1,10 @@
 import React from "react";
 
 import { Container, Row } from "components/grid/index";
+import Icon from "components/ui/Icon";
+
+import CompatibilityImage from "assets/images/compatibility.png";
+import WindowsImage from "assets/images/windows.png";
 
 const PromoSection = () => (
     <section className="section section__info bg-white-grey">
@@ -19,10 +23,14 @@ const PromoSection = () => (
                         replicate data between Memurai and Redis, or use a mix of both within the same cluster!
                     </div>
                 </div>
-                <div className="info__image info__block"></div>
+                <Icon type="big-circled" theme="compatibility" className="info__image info__block">
+                    <img src={CompatibilityImage} alt="Compatibility" />
+                </Icon>
             </Row>
             <Row theme="no-col" className="info">
-                <div className="info__image info__block"></div>
+                <Icon type="big-circled" theme="compatibility" className="info__image info__block">
+                    <img src={WindowsImage} alt="Compatibility" />
+                </Icon>
                 <div className="info__text info__block">
                     <h5 className="info__text-title">
                         Seamless integration with Windows infrastructure and workflows
