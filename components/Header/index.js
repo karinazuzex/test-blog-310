@@ -58,10 +58,10 @@ class Header extends Component {
             </header>
         );
     }
-};
+}
 
 Header.propTypes = {
-    theme: PropTypes.theme,
+    theme: PropTypes.string,
 };
 
 export default Header;
