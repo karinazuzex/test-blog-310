@@ -2,6 +2,7 @@ import React from "react";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
+import Checkbox from "components/ui/Checkbox";
 
 const SubscribeForm = () => (
     <form className="form form--contact">
@@ -29,10 +30,7 @@ const SubscribeForm = () => (
         </Row>
         <Row className="form__row align-center-xs justify-between-xs">
             <div className="form__group">
-                <label className="checkbox">
-                    <input type="checkbox" />
-                    <span>Subscribe to our weekly newsletter</span>
-                </label>
+                <Checkbox />
             </div>
             <div className="form__group form__group--no-grow">
                 <Button role="submit" className="form__group-button" type="solid" theme="red-white">Submit</Button>

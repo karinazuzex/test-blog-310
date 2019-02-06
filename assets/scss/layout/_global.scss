@@ -31,7 +31,8 @@ ul {
 
 input,
 a,
-button {
+button,
+textarea {
   outline: none;
   text-decoration: none;
 
@@ -96,5 +97,9 @@ img {
   justify-content: space-between;
   flex-wrap: nowrap;
   min-height: 100vh;
+}
+
+[hidden] {
+  display: none;
 }
 
