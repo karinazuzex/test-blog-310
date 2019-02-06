@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Link = ({ className, theme, children }) => (
-    <a className={`link ${className ? className : ""} ${theme ? `link--${theme}` : ""}`}>
+import TagProvoder from "components/ui/TagProvider";
+
+const Link = ({ className, theme, children, as }) => (
+    <TagProvoder defaultTag="a" as={as} className={
+        `link ${className ? className : ""} ${theme ? `link--${theme}` : ""}`
+    }>
         {children}
-    </a>
+    </TagProvoder>
 );
 
 Link.propTypes = {
@@ -15,6 +19,7 @@ Link.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.string,
     ]),
+    as: PropTypes.string,
 };
 
 export default Link;

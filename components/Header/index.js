@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import NextLink from "next/link";
+
+import { routes } from "config";
 
 import { Container, Row } from "components/grid";
 import MainMenu from "components/Menu/Main";
 import Button from "components/ui/Button";
+import Link from "components/ui/Link";
 import { Logo } from "svg";
 
 class Header extends Component {
@@ -42,9 +46,11 @@ class Header extends Component {
             } ${this.state.isScrolled ? "header--scrolled" : ""}`} role="header">
                 <Container theme="big">
                     <Row theme="no-col" className="justify-between-xs align-center-xs">
-                        <div className="header__logo">
-                            <Logo className={`header__logo--img ${this.state.isWhite ? "black" : ""}`} />
-                        </div>
+                        <NextLink href={routes.HOME_PAGE.path}>
+                            <Link className="header__logo">
+                                <Logo className={`header__logo--img ${this.state.isWhite ? "black" : ""}`} />
+                            </Link>
+                        </NextLink>
                         <MainMenu theme={this.state.isWhite ? "white" : ""} />
                         <Button type="hollow" theme={`${
                             this.state.isWhite ? "red-black" : "red-white"

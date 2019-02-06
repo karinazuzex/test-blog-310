@@ -3,9 +3,8 @@ import React from "react";
 import { Container, Row } from "components/grid/index";
 import Icon from "components/ui/Icon";
 
-
-
 import WindowsImage from "assets/images/windows.png";
+import CompatibilityImage from "assets/images/compatibility.png";
 
 const PromoSection = () => (
     <section className="section section__info bg-white-grey">
