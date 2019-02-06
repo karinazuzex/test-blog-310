@@ -18,3 +18,10 @@
 .separator {
   &-bt { border-bottom: 1px solid $grey; }
 }
+
+.self {
+  &-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

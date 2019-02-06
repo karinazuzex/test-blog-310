@@ -3,7 +3,8 @@ import React from "react";
 import { Container, Row } from "components/grid/index";
 import Icon from "components/ui/Icon";
 
-import CompatibilityImage from "assets/images/compatibility.png";
+
+
 import WindowsImage from "assets/images/windows.png";
 
 const PromoSection = () => (

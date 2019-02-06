@@ -53,5 +53,15 @@
       padding-left: 67px;
       padding-right: 67px;
     }
+
+    &--city {
+      align-items: flex-end;
+
+      img,
+      svg {
+        position: relative;
+        top: 4px;
+      }
+    }
   }
 }

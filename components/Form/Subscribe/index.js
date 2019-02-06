@@ -4,8 +4,8 @@ import { Row } from "components/grid";
 import Button from "components/ui/Button";
 
 const SubscribeForm = () => (
-    <form className="form">
-        <Row className="form__row form--subscribe align-end-xs" theme="no-col">
+    <form className="form form--subscribe">
+        <Row className="form__row align-end-xs">
             <div className="form__group">
                 <label className="form__group-label" htmlFor="name-subscribe">Full name</label>
                 <input type="text" className="input" id="name-subscribe" />
