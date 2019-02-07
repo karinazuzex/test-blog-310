@@ -52,13 +52,15 @@ class Header extends Component {
                             </Link>
                         </NextLink>
                         <MainMenu theme={this.state.isWhite ? "white" : ""} />
-                        <Button type="hollow" theme={`${
-                            this.state.isWhite ? "red-black" : "red-white"
-                        } versioned ${
-                            this.state.isScrolled ? "versioned-hidden" : ""
-                        }`} className="header__button header__button--action">
-                            Get Menurai
-                        </Button>
+                        <NextLink href={routes.HOME_PAGE.path}>
+                            <Button as="a" type="hollow" theme={`${
+                                this.state.isWhite ? "red-black" : "red-white"
+                            } versioned ${
+                                this.state.isScrolled ? "versioned-hidden" : ""
+                            }`} className="header__button header__button--action">
+                                Get Menurai
+                            </Button>
+                        </NextLink>
                     </Row>
                 </Container>
             </header>
