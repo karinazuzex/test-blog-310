@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "components/grid/index";
 import Icon from "components/ui/Icon";
 
-import CityImage from "assets/images/city.png";
+import CityImage from "static/images/city.png";
 
 const PromoSection = () => (
     <section className="section section__location bg-white-grey">

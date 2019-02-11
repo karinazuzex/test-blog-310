@@ -3,8 +3,8 @@ import React from "react";
 import { Container, Row } from "components/grid/index";
 import Icon from "components/ui/Icon";
 
-import PerformanceImage from "assets/images/performance.png";
-import SupportImage from "assets/images/support.png";
+import PerformanceImage from "static/images/performance.png";
+import SupportImage from "static/images/support.png";
 
 const PromoSection = () => (
     <section className="section section__info bg-white-grey separator-bt">
