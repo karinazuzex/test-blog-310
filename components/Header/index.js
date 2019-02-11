@@ -58,7 +58,7 @@ class Header extends Component {
                             } versioned ${
                                 this.state.isScrolled ? "versioned-hidden" : ""
                             }`} className="header__button header__button--action">
-                                Get Menurai
+                                Get Memurai
                             </Button>
                         </NextLink>
                     </Row>

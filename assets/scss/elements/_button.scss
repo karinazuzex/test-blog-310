@@ -17,6 +17,12 @@
     margin-left: 30px;
   }
 
+  svg {
+    path {
+      transition: fill $defaultTransition;
+    }
+  }
+
   &__hollow {
     height: 68px;
     line-height: 64px;
@@ -31,9 +37,21 @@
       border: 2px solid $red;
       color: $red;
 
+      svg {
+        path {
+          fill: $red;
+        }
+      }
+
       &:hover {
         background-color: $red;
         color: $white;
+
+        svg {
+          path {
+            fill: $white;
+          }
+        }
       }
     }
 
@@ -126,7 +144,7 @@
     &:after {
       content: "Technical preview";
       position: absolute;
-      bottom: -32px;
+      bottom: -24px;
       font-size: 12px;
       font-weight: normal;
       letter-spacing: normal;
