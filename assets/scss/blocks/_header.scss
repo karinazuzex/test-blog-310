@@ -4,14 +4,14 @@
   left: 0;
   top: 0;
   background-color: $black;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 19px;
+  padding-bottom: 19px;
   z-index: 10;
   box-shadow: none;
-  transition: background-color $defaultTransition, box-shadow $defaultTransition;
+  transition: background-color $defaultTransition, box-shadow $defaultTransition, left $defaultTransition;
 
   &__logo {
-    height: 50px;
+    height: 42px;
 
     img,
     svg {
@@ -32,16 +32,23 @@
     box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.03);
   }
 
+  &--show-menu {
+    left: -$mobileMenuWidth;
+  }
+
   &__burger {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 20px;
+    right: 12px;
   }
 }
 
 @media screen and (min-width: $tabletWidth) {
   .header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
     &__button {
       display: inline-block;
 
@@ -55,6 +62,16 @@
         &:after {
           bottom: 24px;
         }
+      }
+    }
+
+    &__logo {
+      height: 50px;
+
+      img,
+      svg {
+        height: 100%;
+        width: auto;
       }
     }
 

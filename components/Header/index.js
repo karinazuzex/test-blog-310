@@ -19,6 +19,7 @@ class Header extends Component {
         this.state = {
             isScrolled: false,
             isWhite: props.theme === "white",
+            showMenu: false,
         };
     }
 
@@ -31,8 +32,17 @@ class Header extends Component {
     }
 
     openMenu = () => {
-        console.log(1);
-        this.mainMenu.openMenu();
+        this.setState({
+            showMenu: true,
+        });
+        this.props.onMenuChange(true);
+    };
+
+    handleMenuClose = () => {
+        this.setState({
+            showMenu: false,
+        });
+        this.props.onMenuChange(false);
     };
 
     handleWindowScroll = () => {
@@ -50,7 +60,9 @@ class Header extends Component {
         return (
             <header className={`header ${
                 this.state.isWhite ? "header--white" : ""
-            } ${this.state.isScrolled ? "header--scrolled" : ""}`} role="header">
+            } ${this.state.isScrolled ? "header--scrolled" : ""} ${
+                this.state.showMenu ? "header--show-menu" : ""
+            }`} role="header">
                 <Container theme="big">
                     <Row theme="no-col" className="justify-center-xs justify-between-lg align-center-xs">
                         <NextLink href={routes.HOME_PAGE.path}>
@@ -60,7 +72,7 @@ class Header extends Component {
                         </NextLink>
                         <MainMenu
                             theme={this.state.isWhite ? "white" : ""}
-                            ref={(ref) => { this.mainMenu = ref }}
+                            onClose={this.handleMenuClose}
                         />
                         <NextLink href={routes.GET_MEMURAI_PAGE.path}>
                             <Button as="a" type="hollow" theme={`${
@@ -84,6 +96,7 @@ class Header extends Component {
 
 Header.propTypes = {
     theme: PropTypes.string,
+    onMenuChange: PropTypes.func,
 };
 
 export default Header;

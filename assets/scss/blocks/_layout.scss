@@ -1,0 +1,14 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  position: relative;
+  left: 0;
+  transition: left $defaultTransition;
+
+  &--show-menu {
+    left: -$mobileMenuWidth;
+  }
+}
