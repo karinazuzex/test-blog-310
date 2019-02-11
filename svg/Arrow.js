@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Arrow = ({ className = "" }) => (
-    <svg className={`image image__arrow ${className}`} width="15px" height="13px" viewBox="0 0 15 13" version="1.1">
+    <svg className={`image image__arrow ${className}`} width="15px" height="13px" viewBox="0 0 15 13">
         <defs />
         <g id="Mobile" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g id="red" transform="translate(-954.000000, -545.000000)" fill="#FFFFFF">

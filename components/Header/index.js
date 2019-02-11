@@ -8,6 +8,8 @@ import { Container, Row } from "components/grid";
 import MainMenu from "components/Menu/Main";
 import Button from "components/ui/Button";
 import Link from "components/ui/Link";
+import Burger from "components/ui/Burger";
+
 import { Logo } from "svg";
 
 class Header extends Component {
@@ -28,6 +30,11 @@ class Header extends Component {
         window.removeEventListener("scroll", this.handleWindowScroll);
     }
 
+    openMenu = () => {
+        console.log(1);
+        this.mainMenu.openMenu();
+    };
+
     handleWindowScroll = () => {
         const { theme } = this.props;
         const { scrollY } = window;
@@ -45,24 +52,31 @@ class Header extends Component {
                 this.state.isWhite ? "header--white" : ""
             } ${this.state.isScrolled ? "header--scrolled" : ""}`} role="header">
                 <Container theme="big">
-                    <Row theme="no-col" className="justify-between-xs align-center-xs">
+                    <Row theme="no-col" className="justify-center-xs justify-between-lg align-center-xs">
                         <NextLink href={routes.HOME_PAGE.path}>
                             <Link className="header__logo">
                                 <Logo className={`header__logo--img ${this.state.isWhite ? "black" : ""}`} />
                             </Link>
                         </NextLink>
-                        <MainMenu theme={this.state.isWhite ? "white" : ""} />
-                        <NextLink href={routes.HOME_PAGE.path}>
+                        <MainMenu
+                            theme={this.state.isWhite ? "white" : ""}
+                            ref={(ref) => { this.mainMenu = ref }}
+                        />
+                        <NextLink href={routes.GET_MEMURAI_PAGE.path}>
                             <Button as="a" type="hollow" theme={`${
                                 this.state.isWhite ? "red-black" : "red-white"
                             } versioned ${
                                 this.state.isScrolled ? "versioned-hidden" : ""
                             }`} className="header__button header__button--action">
-                                Get Memurai
+                                {routes.GET_MEMURAI_PAGE.name}
                             </Button>
                         </NextLink>
                     </Row>
                 </Container>
+                <Burger
+                    className="header__burger"
+                    onClick={this.openMenu}
+                />
             </header>
         );
     }

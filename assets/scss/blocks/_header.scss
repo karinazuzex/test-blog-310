@@ -21,18 +21,7 @@
   }
 
   &__button {
-
-    &.button__hollow {
-      height: 48px;
-      line-height: 44px;
-    }
-
-    .button--versioned {
-
-      &:after {
-        bottom: 28px;
-      }
-    }
+    display: none;
   }
 
   &--white {
@@ -41,5 +30,36 @@
 
   &--scrolled {
     box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.03);
+  }
+
+  &__burger {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .header {
+    &__button {
+      display: inline-block;
+
+      &.button__hollow {
+        height: 48px;
+        line-height: 44px;
+      }
+
+      .button--versioned {
+
+        &:after {
+          bottom: 24px;
+        }
+      }
+    }
+
+    &__burger {
+      display: none;
+    }
   }
 }

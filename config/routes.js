@@ -27,3 +27,8 @@ export const CONTACT_PAGE = {
     name: "Contact",
     path: "/contact",
 };
+
+export const GET_MEMURAI_PAGE = {
+    name: "Get Memurai",
+    path: "/get-memurai",
+};
