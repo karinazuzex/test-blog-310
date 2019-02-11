@@ -1,17 +1,17 @@
 .block {
   &__elem {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     &.block__header {
-      margin-bottom: 36px;
+      margin-bottom: 30px;
     }
 
     &--sm {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     &--lg {
-      margin-bottom: 50px;
+      margin-bottom: 24px;
     }
 
     &--xl {
@@ -20,7 +20,7 @@
   }
 
   &__pretitle {
-    font-size: 14px;
+    font-size: 12px;
     color: $blue;
     letter-spacing: 1.2px;
     font-weight: bold;
@@ -28,7 +28,40 @@
   }
 
   &__postfix {
-    font-size: 14px;
-    margin-top: 120px;
+    font-size: 12px;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .block {
+    &__elem {
+      margin-bottom: 30px;
+
+      &.block__header {
+        margin-bottom: 36px;
+      }
+
+      &--sm {
+        margin-bottom: 24px;
+      }
+
+      &--lg {
+        margin-bottom: 50px;
+      }
+
+      &--xl {
+        margin-bottom: 80px;
+      }
+    }
+
+    &__pretitle {
+      font-size: 14px;
+    }
+
+    &__postfix {
+      font-size: 14px;
+      margin-top: 120px;
+    }
   }
 }

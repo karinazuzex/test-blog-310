@@ -78,5 +78,9 @@
     &__burger {
       display: none;
     }
+
+    &--show-menu {
+      left: 0;
+    }
   }
 }

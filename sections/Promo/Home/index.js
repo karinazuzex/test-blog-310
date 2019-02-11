@@ -17,12 +17,14 @@ const PromoSection = () => (
                     Technical preview now available for download.
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
-                    <Button type="solid" theme="red-white chevron chevron-down">
-                        Download for free
-                    </Button>
-                    <Button type="hollow" theme="red-white chevron promo-home">
-                        Learn more
-                    </Button>
+                    <div className="button__wrapper">
+                        <Button type="solid" theme="red-white chevron chevron-down">
+                            Download for free
+                        </Button>
+                        <Button type="hollow" theme="red-white chevron promo-home">
+                            Learn more
+                        </Button>
+                    </div>
                 </Row>
                 <p className="block__postfix block__postfix--promo-home">
                     Current version: 0.1.2-beta. Compatible with Redis 4.2

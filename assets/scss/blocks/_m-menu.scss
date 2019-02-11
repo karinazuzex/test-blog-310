@@ -58,12 +58,12 @@
 
 @media screen and (min-width: $tabletWidth) {
   .m-menu {
+    right: 0;
     position: relative;
     padding: 0;
     background-color: transparent;
     width: initial;
     height: initial;
-    transform: translateX(0);
 
     &__content {
       margin-left: -16px;

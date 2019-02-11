@@ -12,3 +12,11 @@
     left: -$mobileMenuWidth;
   }
 }
+
+@media screen and (min-width: $tabletWidth) {
+  .layout {
+    &--show-menu {
+      left: 0;
+    }
+  }
+}

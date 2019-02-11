@@ -1,18 +1,18 @@
 .details {
   border-radius: 3px;
   border: 1px solid $grey;
-  height: 68px;
-  font-size: 20px;
+  height: 58px;
+  font-size: 16px;
 
   & + & {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   &__summary {
     color: $greyDisabled;
-    height: 68px;
-    line-height: 68px;
-    padding: 0 30px;
+    height: 58px;
+    line-height: 56px;
+    padding: 0 20px;
     position: relative;
     cursor: pointer;
     transition: color $defaultTransition;
@@ -21,11 +21,11 @@
       content: "";
       display: block;
       position: absolute;
-      right: 30px;
-      top: 28px;
+      right: 20px;
+      top: 26px;
       width: 0;
       height: 0;
-      border-width: 8px 6px;
+      border-width: 6px 4px;
       border-color: transparent;
       border-style: solid;
       border-top-color: $black;
@@ -35,8 +35,8 @@
 
   &__info {
     display: none;
-    padding: 24px 30px;
-    line-height: 30px;
+    padding: 20px 24px;
+    line-height: 24px;
   }
 
   &.active {
@@ -55,6 +55,45 @@
 
       &__info {
         display: block;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .details {
+    height: 68px;
+    font-size: 20px;
+
+    & + & {
+      margin-top: 20px;
+    }
+
+    &__summary {
+      height: 68px;
+      line-height: 68px;
+      padding: 0 30px;
+
+      &:after {
+        right: 30px;
+        top: 28px;
+        border-width: 8px 6px;
+      }
+    }
+
+    &__info {
+      padding: 24px 30px;
+      line-height: 30px;
+    }
+
+    &.active {
+
+      .details {
+        &__summary {
+          &:after {
+            top: 20px;
+          }
+        }
       }
     }
   }

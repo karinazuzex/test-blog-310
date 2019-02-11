@@ -1,5 +1,5 @@
 .button {
-  display: inline-block;
+  display: block;
   position: relative;
   border: 0;
   background-color: transparent;
@@ -13,8 +13,20 @@
   overflow: hidden;
   transition: background-color $defaultTransition, color $defaultTransition;
 
-  & + .button {
-    margin-left: 30px;
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -20px;
+
+    .button {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+    }
   }
 
   svg {
@@ -24,14 +36,15 @@
   }
 
   &__hollow {
-    height: 68px;
-    line-height: 64px;
+    height: 58px;
+    line-height: 54px;
     font-size: 14px;
     text-transform: uppercase;
-    padding: 0 30px;
+    padding: 0 20px;
     font-weight: bold;
     letter-spacing: 1.7px;
     border-radius: 3px;
+    width: 280px;
 
     &--red {
       border: 2px solid $red;
@@ -76,14 +89,15 @@
   }
 
   &__solid {
-    height: 68px;
-    line-height: 68px;
+    height: 58px;
+    line-height: 58px;
     font-size: 14px;
     text-transform: uppercase;
-    padding: 0 30px;
+    padding: 0 20px;
     font-weight: bold;
     letter-spacing: 1.7px;
     border-radius: 3px;
+    width: 280px;
 
     &--red-white {
       color: $white;
@@ -123,7 +137,8 @@
   }
 
   &--chevron {
-    padding-right: 75px;
+    text-align: left;
+    padding-right: 20px;
 
     &-down {
       .button {
@@ -137,50 +152,88 @@
   &--promo-home {
     min-width: 240px;
   }
+}
 
-  &--versioned {
-    overflow: visible;
+@media screen and (min-width: $tabletWidth) {
+  .button {
 
-    &:after {
-      content: "Technical preview";
-      position: absolute;
-      bottom: -24px;
-      font-size: 12px;
-      font-weight: normal;
-      letter-spacing: normal;
-      line-height: 1.5;
-      opacity: 0.6;
-      color: $white;
-      left: 50%;
-      transform: translateX(-50%);
-      text-transform: none;
-      transition: opacity $defaultTransition;
+    &__wrapper {
+      margin-left: -15px;
+      margin-right: -15px;
+
+      .button {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
     }
 
-    &:hover {
+    &__hollow {
+      height: 68px;
+      line-height: 64px;
+      padding: 0 30px;
+      width: initial;
+    }
+
+    &__solid {
+      height: 68px;
+      line-height: 68px;
+      padding: 0 30px;
+      width: initial;
+    }
+
+    &__chevron {
+      right: 20px;
+    }
+
+    &--chevron {
+      text-align: left;
+      padding-right: 75px;
+    }
+
+    &--versioned {
+      overflow: visible;
 
       &:after {
+        content: "Technical preview";
+        position: absolute;
+        bottom: -24px;
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: normal;
+        line-height: 1.5;
+        opacity: 0.6;
         color: $white;
-      }
-    }
-
-    &-hidden {
-      &:after {
-        opacity: 0;
-      }
-    }
-
-    &-black {
-
-      &:after {
-        opacity: 1;
-        color: $black;
+        left: 50%;
+        transform: translateX(-50%);
+        text-transform: none;
+        transition: opacity $defaultTransition;
       }
 
       &:hover {
 
         &:after {
+          color: $white;
+        }
+      }
+
+      &-hidden {
+        &:after {
+          opacity: 0;
+        }
+      }
+
+      &-black {
+
+        &:after {
+          opacity: 1;
           color: $black;
+        }
+
+        &:hover {
+
+          &:after {
+            color: $black;
+          }
         }
       }
     }
