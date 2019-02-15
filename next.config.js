@@ -14,5 +14,13 @@ module.exports = withCSS(withSass({
         });
 
         return config;
+    },
+    
+    exportPathMap: function () {
+      return {
+        '/': { page: '/' },
+        '/why-memurai': { page: '/why-memurai' },
+        '/contact': { page: '/contact' }
+      }
     }
 }));
