@@ -9,7 +9,7 @@ import SupportImage from "static/images/support.png";
 const PromoSection = () => (
     <section className="section section__info bg-white-grey separator-bt">
         <Container>
-            <Row theme="no-col" className="info">
+            <Row theme="no-col" className="info info--reversed">
                 <div className="info__text info__block">
                     <h5 className="info__text-title">
                         Uncompromised performance

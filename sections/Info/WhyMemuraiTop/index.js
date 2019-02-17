@@ -9,7 +9,7 @@ import CompatibilityImage from "static/images/compatibility.png";
 const PromoSection = () => (
     <section className="section section__info bg-white-grey">
         <Container>
-            <Row theme="no-col" className="info">
+            <Row theme="no-col" className="info info--reversed">
                 <div className="info__text info__block">
                     <h5 className="info__text-title">
                         Fully compatible with Redis

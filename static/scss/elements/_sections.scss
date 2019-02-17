@@ -9,11 +9,11 @@
     }
 
     &--why {
-      padding-top: 170px;
+      padding-top: 130px;
     }
 
     &--contact {
-      padding-top: 170px;
+      padding-top: 130px;
     }
   }
 
@@ -28,6 +28,27 @@
 }
 
 @media screen and (min-width: $tabletWidth) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    &__promo {
+      &--home {
+        padding-top: 140px;
+      }
+
+      &--why {
+        padding-top: 150px;
+      }
+
+      &--contact {
+        padding-top: 150px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktopWidth) {
   .section {
     padding-top: 140px;
     padding-bottom: 140px;
@@ -45,15 +66,6 @@
       &--contact {
         padding-top: 170px;
       }
-    }
-
-    &__get-memurai {
-      padding-bottom: 40px;
-    }
-
-    &__review-short {
-      padding-top: 60px;
-      padding-bottom: 80px;
     }
   }
 }
