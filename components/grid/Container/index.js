@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Container = ({ className = "", children, theme = "" }) => {
-    const themeExpanded = theme.split(" ").map(item => `container--${item} `).join(" ");
+const Container = ({ className = "", children, theme }) => {
+    const themeExpanded = theme ? theme.split(" ").map(item => `container--${item} `).join(" ") : "";
     return (
         <div className={`container ${className} ${themeExpanded}`}>
             {children}

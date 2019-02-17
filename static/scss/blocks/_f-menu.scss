@@ -5,5 +5,14 @@
 
   &__item {
     height: 24px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .f-menu {
+    &__item {
+      text-align: left;
+    }
   }
 }

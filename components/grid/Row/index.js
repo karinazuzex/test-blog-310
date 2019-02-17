@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Row = ({ className = "", children, theme = "" }) => {
-    const themeExpanded = theme.split(" ").map(item => `row--${item} `).join(" ");
+const Row = ({ className = "", children, theme }) => {
+    const themeExpanded = theme ? theme.split(" ").map(item => `row--${item} `).join(" ") : "";
     return (
         <div className={`row ${className} ${themeExpanded}`}>
             {children}

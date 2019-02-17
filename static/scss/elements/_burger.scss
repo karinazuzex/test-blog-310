@@ -40,4 +40,17 @@
       top: 6px;
     }
   }
+
+  &--black {
+    .burger {
+      &__body {
+        background-color: $black;
+
+        &:before,
+        &:after {
+          background-color: $black;
+        }
+      }
+    }
+  }
 }

@@ -43,6 +43,11 @@
       flex-basis: 0;
       width: initial;
 
+      &--fixed {
+        flex-grow: 0;
+        flex-shrink: 0;
+      };
+
       &-label {
         font-size: 14px;
         margin-bottom: 8px;

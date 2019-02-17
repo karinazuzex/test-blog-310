@@ -32,7 +32,7 @@ const SubscribeForm = () => (
             <div className="form__group">
                 <Checkbox />
             </div>
-            <div className="form__group form__group--no-grow">
+            <div className="form__group form__group--fixed">
                 <Button role="submit" className="form__group-button" type="solid" theme="red-white">Submit</Button>
             </div>
         </Row>

@@ -14,7 +14,7 @@ const SubscribeForm = () => (
                 <label className="form__group-label" htmlFor="email-subscribe">Email address</label>
                 <input type="email" className="input" id="email-subscribe" />
             </div>
-            <div className="form__group form__group--no-grow form__group--lg">
+            <div className="form__group form__group--fixed form__group--lg">
                 <Button role="submit" className="form__group-button" type="solid" theme="red-white">Susbcribe</Button>
             </div>
         </Row>

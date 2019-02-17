@@ -86,7 +86,7 @@ class Header extends Component {
                     </Row>
                 </Container>
                 <Burger
-                    className="header__burger"
+                    className={`header__burger ${this.state.isWhite ? "burger--black" : ""}`}
                     onClick={this.openMenu}
                 />
             </header>

@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Col = ({ className, children, attributes }) => {
-    const attributesExpanded = attributes.split(" ").map(item => `col-${item} `).join(" ");
+const Col = ({ className = "", children, attributes }) => {
+    const attributesExpanded = attributes ? attributes.split(" ").map(item => `col-${item} `).join(" ") : "";
     return (
         <div className={`${className} ${attributesExpanded}`}>
             {children}

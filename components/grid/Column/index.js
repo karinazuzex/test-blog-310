@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Column = ({ className, children }) => (
+const Column = ({ className = "", children }) => (
     <div className={`column ${className}`}>
         {children}
     </div>

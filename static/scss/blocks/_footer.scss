@@ -5,11 +5,23 @@
   color: $greyLight;
   line-height: 24px;
 
+  &__row {
+    margin-bottom: -50px;
+  }
+
+  &__col {
+    margin-bottom: 50px;
+  }
+
   &__header {
     text-transform: uppercase;
     color: $white;
     font-weight: 500;
     margin-bottom: 10px;
+  }
+
+  &__contacts {
+    text-align: center;
   }
 
   &__terms {
@@ -37,6 +49,14 @@
       &:not(:first-child) {
         padding-left: 8px;
       }
+    }
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .footer {
+    &__contacts {
+      text-align: right;
     }
   }
 }
