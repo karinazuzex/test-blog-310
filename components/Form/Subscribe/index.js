@@ -37,8 +37,8 @@ class SubscribeForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const nameError = validators.validateName(this.name.value);
-        const emailError = validators.validateEmail(this.email.value);
+        const nameError = validators.validateName(this.name.value.trim());
+        const emailError = validators.validateEmail(this.email.value.trim());
         this.setState({
             nameError,
             emailError,
@@ -79,7 +79,7 @@ class SubscribeForm extends Component {
                     <div className="form__group">
                         <label className="form__group-label" htmlFor="email-subscribe">Email address</label>
                         <input
-                            type="email"
+                            type="text"
                             className={`input ${this.state.emailError ? "input--error" : ""}`}
                             id="email-subscribe"
                             disabled={disabled}
