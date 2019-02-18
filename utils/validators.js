@@ -15,3 +15,11 @@ export const validateEmail = (email) => {
     }
     return null;
 };
+
+export const validateSubject = (subject) => {
+    return null;
+};
+
+export const validateMessage = (message) => {
+    return null;
+};
