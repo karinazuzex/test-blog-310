@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import jsonp from "jsonp";
 import toQueryString from "to-querystring";
 
-import { validators } from "utils";
+import { validators, helpers } from "utils";
 import { consts } from "config";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
 import Checkbox from "components/ui/Checkbox";
-import {helpers} from "../../../utils";
 
 class SubscribeForm extends Component {
     constructor(props) {
