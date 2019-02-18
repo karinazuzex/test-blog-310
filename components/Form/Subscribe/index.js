@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import jsonp from "jsonp";
+import toQueryString from "to-querystring";
 
-import { validators } from "utils";
+import { validators, helpers } from "utils";
+import { consts } from "config";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
@@ -43,6 +46,18 @@ class SubscribeForm extends Component {
         if (nameError || emailError) {
             return;
         }
+        const params = toQueryString({
+            NAME: this.name.value.trim(),
+            EMAIL: this.email.value.trim(),
+            [consts.MAILCHIMP_HIDDEN_INPUT_NAME]: "",
+        });
+        const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_ACTION_URL)}&${params}`;
+        jsonp(
+            url,
+            { param: "c" },
+            (err, data) => {
+            },
+        );
     };
 
     render() {
