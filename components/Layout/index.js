@@ -1,7 +1,9 @@
 import "static/scss/index.scss";
 
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+import Notifications from "react-notification-system-redux";
+import { connect } from "react-redux";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
@@ -22,16 +24,22 @@ class Layout extends Component {
     };
 
     render() {
-        const { theme, children } = this.props;
+        const { theme, children, notifications } = this.props;
         return (
-            <div className={`layout ${this.state.showMenu ? "layout--show-menu" : ""}`}>
-                <Header
-                    theme={theme}
-                    onMenuChange={this.handleMenuChange}
+            <Fragment>
+                <div className={`layout ${this.state.showMenu ? "layout--show-menu" : ""}`}>
+                    <Header
+                        theme={theme}
+                        onMenuChange={this.handleMenuChange}
+                    />
+                    {children}
+                    <Footer />
+                </div>
+                <Notifications
+                    style={false}
+                    notifications={notifications}
                 />
-                {children}
-                <Footer />
-            </div>
+            </Fragment>
         );
     }
 }
@@ -43,6 +51,17 @@ Layout.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.string,
     ]),
+    notifications: PropTypes.arrayOf(PropTypes.shape({
+        autoDismiss: PropTypes.number,
+        level: PropTypes.string.isRequired,
+        message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+        position: PropTypes.string.isRequired,
+        uid: PropTypes.any.isRequired,
+    })),
 };
 
-export default Layout;
+const mapStateToProps = state => ({
+    notifications: state.notifications,
+});
+
+export default connect(mapStateToProps)(Layout);
