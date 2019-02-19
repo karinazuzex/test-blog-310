@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import jsonp from "jsonp";
 import toQueryString from "to-querystring";
+import { info, error } from "react-notification-system-redux";
 
 import { validators, helpers } from "utils";
 import { consts } from "config";
@@ -37,6 +40,7 @@ class SubscribeForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        const { dispatch } = this.props;
         const nameError = validators.validateName(this.name.value.trim());
         const emailError = validators.validateEmail(this.email.value.trim());
         this.setState({
@@ -44,6 +48,11 @@ class SubscribeForm extends Component {
             emailError,
         });
         if (nameError || emailError) {
+            dispatch(error({
+                position: "bc",
+                autoDismiss: 0,
+                message: nameError || emailError,
+            }));
             return;
         }
         const params = toQueryString({
@@ -56,6 +65,19 @@ class SubscribeForm extends Component {
             url,
             { param: "c" },
             (err, data) => {
+                if (err) {
+                    dispatch(error({
+                        position: "bc",
+                        autoDismiss: 0,
+                        message: err,
+                    }));
+                } else {
+                    dispatch(info({
+                        position: "bc",
+                        autoDismiss: 0,
+                        message: data,
+                    }));
+                }
             },
         );
     };
@@ -103,4 +125,8 @@ class SubscribeForm extends Component {
     }
 }
 
-export default SubscribeForm;
+SubscribeForm.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+};
+
+export default connect()(SubscribeForm);
