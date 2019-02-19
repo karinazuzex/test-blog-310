@@ -15,11 +15,13 @@ module.exports = withCSS(withSass({
 
         return config;
     },
-    
+
     exportPathMap: function () {
       return {
         '/': { page: '/' },
+        '/about': { page: '/about' },
         '/why-memurai': { page: '/why-memurai' },
+        '/get-memurai': { page: '/get-memurai' },
         '/contact': { page: '/contact' }
       }
     }

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import jsonp from "jsonp";
-import toQueryString from "to-querystring";
 
 import { validators, helpers } from "utils";
 import { consts } from "config";
@@ -82,25 +80,27 @@ class SubscribeForm extends Component {
     render() {
         const disabled = this.state.status === "pending" || this.state.status === "success";
         return (
-            <form className="form form--contact" onSubmit={this.handleSubmit}>
+            <form className="form form--download" onSubmit={this.handleSubmit}>
                 <Row className="form__row">
                     <div className="form__group">
-                        <label className="form__group-label" htmlFor="name-contact">Full name</label>
+                        <label className="form__group-label" htmlFor="name-download">Full name</label>
                         <input
                             type="text"
                             className={`input ${this.state.nameError ? "input--error" : ""}`}
-                            id="name-contact"
+                            id="name-download"
                             disabled={disabled}
                             onChange={this.handleNameChange}
                             ref={(ref) => { this.name = ref }}
                         />
                     </div>
+                </Row>
+                <Row className="form__row">
                     <div className="form__group">
-                        <label className="form__group-label" htmlFor="email-contact">Email address</label>
+                        <label className="form__group-label" htmlFor="email-download">Email address</label>
                         <input
                             type="text"
                             className={`input ${this.state.emailError ? "input--error" : ""}`}
-                            id="email-contact"
+                            id="email-download"
                             disabled={disabled}
                             onChange={this.handleEmailChange}
                             ref={(ref) => { this.email = ref }}
@@ -109,39 +109,22 @@ class SubscribeForm extends Component {
                 </Row>
                 <Row className="form__row">
                     <div className="form__group">
-                        <label className="form__group-label" htmlFor="subject-contact">Subject</label>
-                        <input
-                            type="text"
-                            className={`input ${this.state.subjectError ? "input--error" : ""}`}
-                            id="subject-contact"
-                            disabled={disabled}
-                            onChange={this.handleSubjectChange}
-                            ref={(ref) => { this.subject = ref }}
-                        />
+                        <Checkbox />
                     </div>
                 </Row>
-                <Row className="form__row align-end-xs">
-                    <div className="form__group">
-                        <label className="form__group-label" htmlFor="message-contact">Message</label>
-                        <textarea
-                            className={`textarea ${this.state.subjectError ? "textarea--error" : ""}`}
-                            id="message-contact"
-                            disabled={disabled}
-                            onChange={this.handleMessageChange}
-                            ref={(ref) => { this.message = ref }}
-                        />
-                    </div>
-                </Row>
-                <Row className="form__row align-center-xs justify-between-xs">
+                <Row className="form__row">
                     <div className="form__group">
                         <Checkbox />
                     </div>
+                </Row>
+                <Row className="form__row justify-center-xs">
                     <div className="form__group form__group--fixed">
                         <Button
                             disabled={disabled}
                             role="submit"
                             type="solid"
-                            theme="red-white">
+                            theme="red-white"
+                        >
                             Submit
                         </Button>
                     </div>
