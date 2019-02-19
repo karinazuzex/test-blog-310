@@ -32,3 +32,13 @@ export const GET_MEMURAI_PAGE = {
     name: "Get Memurai",
     path: "/get-memurai",
 };
+
+export const TERMS_PAGE = {
+    name: "Terms",
+    path: "/terms",
+};
+
+export const PRIVACY_PAGE = {
+    name: "Privacy",
+    path: "/privacy",
+};

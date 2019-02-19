@@ -1,4 +1,7 @@
 import React from "react";
+import NextLink from "next/link";
+
+import { routes } from "config";
 
 import { Container, Col, Row, Column } from "components/grid";
 import FooterMenu from "components/Menu/Footer";
@@ -30,9 +33,17 @@ const Footer = () => (
                             © 2019<br />
                             All rights reserved by Menurai Inc.<br />
                             <span className="footer__terms">
-                            <Link href="" theme="grey-light">Terms</Link>
-                            <Link href="" theme="grey-light">Privacy</Link>
-                        </span>
+                                <NextLink href={routes.TERMS_PAGE.path}>
+                                    <Link href="" theme="grey-light">
+                                        {routes.TERMS_PAGE.name}
+                                    </Link>
+                                </NextLink>
+                                <NextLink href={routes.PRIVACY_PAGE.path}>
+                                    <Link href="" theme="grey-light">
+                                        {routes.PRIVACY_PAGE.name}
+                                    </Link>
+                                </NextLink>
+                            </span>
                         </div>
                     </Column>
                 </Col>

@@ -1,8 +1,9 @@
 import React from "react";
-
 import NextLink from "next/link";
-import Link from "components/ui/Link";
+
 import { routes } from "config";
+
+import Link from "components/ui/Link";
 
 const FooterMenu = () => (
     <ul className="f-menu">

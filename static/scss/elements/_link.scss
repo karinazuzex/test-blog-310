@@ -30,4 +30,12 @@
       color: $white;
     }
   }
+
+  &--red {
+    color: $red;
+
+    &:hover {
+      color: $black;
+    }
+  }
 }

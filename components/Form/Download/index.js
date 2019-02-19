@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import NextLink from "next/link";
 
 import { validators, helpers } from "utils";
-import { consts } from "config";
+import { consts, routes } from "config";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
+import Link from "components/ui/Link";
 import Checkbox from "components/ui/Checkbox";
 
 class SubscribeForm extends Component {
@@ -109,12 +111,25 @@ class SubscribeForm extends Component {
                 </Row>
                 <Row className="form__row">
                     <div className="form__group">
-                        <Checkbox />
+                        <Checkbox
+                            ref={(ref) => {this.subscribe = ref}}
+                        >
+                            Subscribe to our weekly newsletter
+                        </Checkbox>
                     </div>
                 </Row>
                 <Row className="form__row">
                     <div className="form__group">
-                        <Checkbox />
+                        <Checkbox
+                            ref={(ref) => {this.policy = ref}}
+                        >
+                            I agree to the&nbsp;
+                            <NextLink href={routes.TERMS_PAGE.path}>
+                                <Link theme="red">
+                                    terms of service
+                                </Link>
+                            </NextLink>
+                        </Checkbox>
                     </div>
                 </Row>
                 <Row className="form__row justify-center-xs">

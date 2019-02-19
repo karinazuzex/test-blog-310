@@ -10,6 +10,8 @@ class Checkbox extends Component {
         };
     }
 
+    getValue = () => this.state.checked;
+
     handleCheck = () => {
         this.setState({
             checked: !this.state.checked,
@@ -17,7 +19,7 @@ class Checkbox extends Component {
     };
 
     render() {
-        const { theme } = this.props;
+        const { theme, children } = this.props;
         return (
             <label className={`checkbox ${this.state.checked ? "active" : ""} ${theme ? `checkbox--${theme}` : ""}`}>
                 <input
@@ -26,13 +28,18 @@ class Checkbox extends Component {
                     hidden
                     onClick={this.handleCheck}
                 />
-                <span>Subscribe to our weekly newsletter</span>
+                {children}
             </label>
         );
     }
 }
 
 Checkbox.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.string,
+    ]),
     theme: PropTypes.string,
 };
 

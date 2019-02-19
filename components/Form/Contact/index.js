@@ -134,7 +134,11 @@ class SubscribeForm extends Component {
                 </Row>
                 <Row className="form__row align-center-xs justify-between-xs">
                     <div className="form__group">
-                        <Checkbox />
+                        <Checkbox
+                            ref={(ref => {this.subscribe = ref})}
+                        >
+                            Subscribe to our weekly newsletter
+                        </Checkbox>
                     </div>
                     <div className="form__group form__group--fixed">
                         <Button
