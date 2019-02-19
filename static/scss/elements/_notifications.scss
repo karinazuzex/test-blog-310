@@ -2,48 +2,47 @@
   &-bc {
     position: fixed;
     width: 480px;
-    max-width: calc(100% - 40px);
+    max-width: calc(100vw - 40px);
     padding: 0;
-    z-index: 9998;
+    z-index: 99;
     box-sizing: border-box;
     height: auto;
     top: auto;
     bottom: 25px;
-    margin: 0 auto 0px -240px;
     left: 50%;
+    transform: translateX(-50%);
   }
 }
 
 .notification {
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 100%;
-  border-radius: 34px;
-  padding: 5px 40px;
-  display: block;
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 16px 40px;
   box-sizing: border-box;
-  transition: 0.3s ease-in-out;
+  transition: transform $defaultTransition, opacity $defaultTransition;
   transform: translate3d(0px, 0px, 0px);
-  will-change: transform, opacity;
-  color: #000;
+  color: $black;
   bottom: 0;
   opacity: 0;
-  margin-top: 10px;
+  margin-top: 20px;
 
   &-success {
-    box-shadow: rgba(94, 164, 0, 0.9) 0 0 1px;
-    border-top: 2px solid rgb(94, 164, 0);
-    background-color: rgb(240, 245, 234);
+    background-color: $grey;
   }
 
   &-error {
-    background: transparentize($red, 0.3);
+    background: $red;
     text-align: center;
     color: $white;
   }
 
   &-info {
-    background-color: transparentize($black, 0.3);
+    background-color: $grey;
     text-align: center;
   }
 
@@ -51,13 +50,15 @@
     opacity: 1;
   }
 
+  &-dismiss {
+    display: none;
+  }
+
   &-message {
     position: relative;
-    top: 4px;
     margin: 0;
     padding: 0;
     display: inline-block;
-    font-size: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
@@ -67,58 +68,15 @@
       text-transform: uppercase;
     }
   }
-
-  &-dismiss {
-    display: none;
-    font-family: Arial, serif;
-    font-size: 17px;
-    position: absolute;
-    top: 4px;
-    right: 5px;
-    line-height: 15px;
-    background-color: rgb(176, 202, 146);
-    color: rgb(240, 245, 234);
-    border-radius: 50%;
-    width: 14px;
-    height: 14px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  &-action-wrapper {
-    margin: 0;
-    padding: 0 0 0 15px;
-  }
-
-  &-action-button {
-    margin: 0;
-    border: 0;
-    background: none;
-    padding: 0;
-    font-size: 14px;
-    line-height: 2.15;
-    color: $black;
-    font-weight: 400;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
 }
 
-@media screen and (max-width: 581px) {
-  .notifications {
-    &-bc {
-      margin: 0 auto;
-      transform: translateX(-50%);
-    }
-  }
-
+@media screen and (min-width: $tabletWidth) {
   .notification{
+    font-size: 16px;
+    padding: 16px 40px;
+
     &-message {
       max-height: 130px;
-    }
-
-    &-action-wrapper {
-      padding-left: 5px;
     }
   }
 }
