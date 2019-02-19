@@ -22,7 +22,9 @@ module.exports = withCSS(withSass({
         '/about': { page: '/about' },
         '/why-memurai': { page: '/why-memurai' },
         '/get-memurai': { page: '/get-memurai' },
-        '/contact': { page: '/contact' }
+        '/contact': { page: '/contact' },
+        '/terms': { page: '/terms' },
+        '/privacy': { page: '/privacy' }
       }
     }
 }));

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Row } from "components/grid/index";
+import { Container, Row } from "components/grid";
 import Icon from "components/ui/Icon";
 
 import PerformanceImage from "static/images/performance.png";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container } from "components/grid";
 import DownloadForm from "components/Form/Download";
 
 const DownloadSection = () => (

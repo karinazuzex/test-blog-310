@@ -63,7 +63,7 @@ class Header extends Component {
             } ${this.state.isScrolled ? "header--scrolled" : ""} ${
                 this.state.showMenu ? "header--show-menu" : ""
             }`} role="header">
-                <Container theme="big">
+                <Container>
                     <Row theme="no-col" className="justify-center-xs justify-between-lg align-center-xs">
                         <NextLink href={routes.HOME_PAGE.path}>
                             <Link className="header__logo">
