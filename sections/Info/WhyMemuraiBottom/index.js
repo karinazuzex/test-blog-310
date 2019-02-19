@@ -22,12 +22,12 @@ const PromoSection = () => (
                     </div>
                 </div>
                 <Icon type="big-circled" theme="performance" className="info__image info__block">
-                    <img src={PerformanceImage} alt="Compatibility" />
+                    <img src={PerformanceImage} alt="Performance" />
                 </Icon>
             </Row>
             <Row theme="no-col" className="info">
                 <Icon type="big-circled" theme="support" className="info__image info__block">
-                    <img src={SupportImage} alt="Compatibility" />
+                    <img src={SupportImage} alt="Support" />
                 </Icon>
                 <div className="info__text info__block">
                     <h5 className="info__text-title">

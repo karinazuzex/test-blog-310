@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row } from "components/grid/index";
 import Icon from "components/ui/Icon";
 
-import WindowsImage from "static/images/windows.png";
+import IntegrationImage from "static/images/integration.svg";
 import CompatibilityImage from "static/images/compatibility.png";
 
 const PromoSection = () => (
@@ -28,8 +28,8 @@ const PromoSection = () => (
                 </Icon>
             </Row>
             <Row theme="no-col" className="info">
-                <Icon type="big-circled" theme="compatibility" className="info__image info__block">
-                    <img src={WindowsImage} alt="Compatibility" />
+                <Icon type="big-circled" theme="integration" className="info__image info__block">
+                    <img src={IntegrationImage} alt="Integration" />
                 </Icon>
                 <div className="info__text info__block">
                     <h5 className="info__text-title">
