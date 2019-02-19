@@ -34,7 +34,7 @@ const MainMenu = ({ theme, onClose }) => {
                         </Link>
                     </NextLink>
                 </li>
-                <li className="m-menu__item">
+                <li className="m-menu__item m-menu__item--mobile">
                     <NextLink href={routes.ABOUT_PAGE.path}>
                         <Link theme={linkTheme} className="m-menu__link">
                             {routes.ABOUT_PAGE.name}

@@ -28,13 +28,6 @@ const FooterMenu = () => (
             </NextLink>
         </li>
         <li className="f-menu__item">
-            <NextLink href={routes.FAQ_PAGE.path}>
-                <Link href="" theme="grey-light" className="f-menu__link">
-                    {routes.FAQ_PAGE.name}
-                </Link>
-            </NextLink>
-        </li>
-        <li className="f-menu__item">
             <NextLink href={routes.ABOUT_PAGE.path}>
                 <Link href="" theme="grey-light" className="f-menu__link">
                     {routes.ABOUT_PAGE.name}
