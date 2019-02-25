@@ -1,4 +1,7 @@
 import React from "react";
+import NextLink from "next/link";
+
+import { routes } from "config";
 
 import { Container, Row } from "components/grid/index";
 import Button from "components/ui/Button/index";
@@ -18,12 +21,16 @@ const PromoSection = () => (
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
                     <div className="button__wrapper">
-                        <Button type="solid" theme="red-white chevron chevron-down">
-                            Download for free
-                        </Button>
-                        <Button type="hollow" theme="red-white chevron promo-home">
-                            Learn more
-                        </Button>
+                        <NextLink href={routes.GET_MEMURAI_PAGE.path}>
+                            <Button type="solid" theme="red-white chevron chevron-down">
+                                Download for free
+                            </Button>
+                        </NextLink>
+                        <NextLink href={routes.WHY_MEMURAI_PAGE.path}>
+                            <Button type="hollow" theme="red-white chevron promo-home">
+                                Learn more
+                            </Button>
+                        </NextLink>
                     </div>
                 </Row>
                 <p className="block__postfix block__postfix--promo-home">

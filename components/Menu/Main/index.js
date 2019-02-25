@@ -2,9 +2,10 @@ import React  from "react";
 import PropTypes from "prop-types";
 import NextLink from "next/link";
 
+import { routes } from "config";
+
 import Button from "components/ui/Button";
 import Link from "components/ui/Link";
-import { routes } from "config";
 
 import XIcon from "svg/XIcon";
 
