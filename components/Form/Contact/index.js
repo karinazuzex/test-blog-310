@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import jsonp from "jsonp";
 import toQueryString from "to-querystring";
+import axios from "axios";
 
 import { validators, helpers } from "utils";
 import { consts } from "config";
@@ -48,7 +49,7 @@ class SubscribeForm extends Component {
         this.setState({ messageError: null });
     };
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         const nameError = validators.validateName(this.name.value.trim());
         const emailError = validators.validateEmail(this.email.value.trim());
@@ -63,20 +64,26 @@ class SubscribeForm extends Component {
         if (nameError || emailError || subjectError || messageError) {
             return;
         }
-        const params = toQueryString({
-            NAME: this.name.value.trim(),
-            EMAIL: this.email.value.trim(),
-            SUBJECT: this.subject.value.trim(),
-            MESSAGE: this.message.value.trim(),
-            [consts.MAILCHIMP_HIDDEN_INPUT_NAME]: "",
+        const response = await axios.post("/api/contact", {
+            name: this.name.value.trim(),
+            email: this.email.value.trim(),
+            subject: this.subject.value.trim(),
+            message: this.message.value.trim(),
         });
-        const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_ACTION_URL)}&${params}`;
-        jsonp(
-            url,
-            { param: "c" },
-            (err, data) => {
-            },
-        );
+        // const params = toQueryString({
+        //     NAME: this.name.value.trim(),
+        //     EMAIL: this.email.value.trim(),
+        //     SUBJECT: this.subject.value.trim(),
+        //     MESSAGE: this.message.value.trim(),
+        //     [consts.MAILCHIMP_HIDDEN_INPUT_NAME]: "",
+        // });
+        // const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_ACTION_URL)}&${params}`;
+        // jsonp(
+        //     url,
+        //     { param: "c" },
+        //     (err, data) => {
+        //     },
+        // );
     };
 
     render() {
