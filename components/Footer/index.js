@@ -26,12 +26,12 @@ const Footer = () => (
                 <Col attributes="xs-12 lg-4" className="footer__col">
                     <Column className="align-center-xs align-end-lg">
                         <div className="footer__contacts">
-                            Menurai Inc.<br />
+                            Memurai Inc.<br />
                             113 Cherry Street<br />
                             #11630<br />
                             Seattle, WA 98104<br />
                             © 2019<br />
-                            All rights reserved by Menurai Inc.<br />
+                            All rights reserved by Memurai Inc.<br />
                             <span className="footer__terms">
                                 <NextLink href={routes.TERMS_PAGE.path}>
                                     <Link href="" theme="grey-light">
