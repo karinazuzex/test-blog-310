@@ -1,13 +1,23 @@
 .image {
+  path {
+    transition: fill $defaultTransition;
+  }
 
   &__logo {
-    .text {
-      transition: fill $defaultTransition;
+    .helper-text,
+    .umlaut,
+    .circle {
+      fill: $red;
+    }
+
+    .symbol,
+    .memurai {
       fill: $white;
     }
 
     &.black {
-      .text {
+      .circle,
+      .memurai {
         fill: $black;
       }
     }
