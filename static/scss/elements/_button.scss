@@ -58,11 +58,11 @@
 
       &:hover {
         background-color: $red;
-        color: $white;
+        color: $black;
 
         svg {
           path {
-            fill: $white;
+            fill: $black;
           }
         }
       }
@@ -74,6 +74,13 @@
 
       &:hover {
         background-color: $red;
+        color: $black;
+
+        svg {
+          path {
+            fill: $black;
+          }
+        }
       }
     }
 
@@ -81,9 +88,14 @@
       border: 2px solid $red;
       color: $black;
 
+      svg {
+        path {
+          fill: $black;
+        }
+      }
+
       &:hover {
         background-color: $red;
-        color: $white;
       }
     }
   }
