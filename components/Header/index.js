@@ -61,9 +61,7 @@ class Header extends Component {
         return (
             <header className={`header ${
                 this.state.isWhite ? "header--white" : ""
-            } ${this.state.isScrolled ? "header--scrolled" : ""} ${
-                this.state.showMenu ? "header--show-menu" : ""
-            }`} role="header">
+            } ${this.state.isScrolled ? "header--scrolled" : ""}`} role="header">
                 <Container>
                     <Row theme="no-col" className="justify-center-xs justify-between-lg align-center-xs">
                         <NextLink href={routes.HOME_PAGE.path}>
