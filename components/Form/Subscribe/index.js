@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import jsonp from "jsonp";
-import toQueryString from "to-querystring";
 import { info, error } from "react-notification-system-redux";
 
 import { validators, helpers } from "utils";
-import { consts } from "config";
+import { consts, exceptions, types } from "config";
+import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
@@ -38,11 +37,20 @@ class SubscribeForm extends Component {
         this.setState({ emailError: null });
     };
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         const { dispatch } = this.props;
-        const nameError = validators.validateName(this.name.value.trim());
-        const emailError = validators.validateEmail(this.email.value.trim());
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        let requredFieldsMissing = 0;
+        const nameError = validators.validateName(name);
+        if (nameError === exceptions.FIELD_REQUIRED) {
+            requredFieldsMissing += 1;
+        }
+        const emailError = validators.validateEmail(email);
+        if (emailError === exceptions.FIELD_REQUIRED) {
+            requredFieldsMissing += 1;
+        }
         this.setState({
             nameError,
             emailError,
@@ -51,35 +59,14 @@ class SubscribeForm extends Component {
             dispatch(error({
                 position: "bc",
                 autoDismiss: 0,
-                message: nameError || emailError,
+                message: requredFieldsMissing > 1 ? exceptions.MULTIPLE_FIELD_REQUIRED : (nameError || emailError),
             }));
             return;
         }
-        const params = toQueryString({
-            NAME: this.name.value.trim(),
-            EMAIL: this.email.value.trim(),
-            [consts.MAILCHIMP_HIDDEN_INPUT_NAME]: "",
-        });
-        const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_ACTION_URL)}&${params}`;
-        jsonp(
-            url,
-            { param: "c" },
-            (err, data) => {
-                if (err) {
-                    dispatch(error({
-                        position: "bc",
-                        autoDismiss: 0,
-                        message: err,
-                    }));
-                } else {
-                    dispatch(info({
-                        position: "bc",
-                        autoDismiss: 0,
-                        message: data,
-                    }));
-                }
-            },
-        );
+        const response = await dispatch(mailerOperations.mailchimpSubscribe(name, email));
+        if (response.result === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
+            this.reset();
+        }
     };
 
     render() {
