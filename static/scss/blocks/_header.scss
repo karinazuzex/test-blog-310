@@ -10,7 +10,14 @@
   box-shadow: none;
   transition: background-color $defaultTransition, box-shadow $defaultTransition, left $defaultTransition;
 
+  &__element {
+    &-side {
+      width: 180px;
+    }
+  }
+
   &__logo {
+    display: flex;
     height: 42px;
 
     img,
@@ -67,6 +74,10 @@
 
     &__logo {
       height: 50px;
+      width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
 
       img,
       svg {
