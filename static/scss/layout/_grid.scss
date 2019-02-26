@@ -15,6 +15,14 @@
   &--big {
     max-width: $bigDesktopWidth;
   }
+
+  &--reversed {
+    width: calc(100% + 40px);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 .content-center {
@@ -418,6 +426,14 @@
   .container {
     padding-left: 40px;
     padding-right: 40px;
+
+    &--reversed {
+      width: calc(100% + 80px);
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: -40px;
+      margin-right: -40px;
+    }
   }
 
   .col-md,

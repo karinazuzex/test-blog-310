@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container, Row } from "components/grid/index";
 import ComparsionTable from "components/ui/Table/Comparsion";
 
 const PromoSection = () => (
@@ -14,7 +14,11 @@ const PromoSection = () => (
                     Redis-compatible server on Windows<br />
                     Options compared
                 </h3>
-                <ComparsionTable />
+                <Container theme="reversed">
+                    <Row theme="no-col" className="justify-center-xs">
+                        <ComparsionTable />
+                    </Row>
+                </Container>
             </div>
         </Container>
     </section>

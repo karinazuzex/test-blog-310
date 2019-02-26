@@ -6,6 +6,15 @@
   line-height: 36px;
   background-color: $white;
 
+  &--comparsion {
+    width: 1160px;
+  }
+
+  &__wrapper {
+    max-width: 100%;
+    overflow-y: auto;
+  }
+
   &__row {
     &--header {
       font-size: 24px;
@@ -26,7 +35,7 @@
   &__col {
     height: 60px;
     padding: 0 35px;
-    flex: 1 1 0;
+    flex: 1 1;
     display: flex;
     align-items: center;
 
