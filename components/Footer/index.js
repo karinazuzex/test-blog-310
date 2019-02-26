@@ -27,8 +27,7 @@ const Footer = () => (
                     <Column className="align-center-xs align-end-lg">
                         <div className="footer__contacts">
                             Memurai Inc.<br />
-                            113 Cherry Street<br />
-                            #11630<br />
+                            113 Cherry Street #11630<br />
                             Seattle, WA 98104<br />
                             © 2019<br />
                             All rights reserved by Memurai Inc.<br />
