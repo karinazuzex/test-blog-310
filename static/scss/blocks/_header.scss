@@ -53,6 +53,14 @@
   }
 }
 
+@media screen and (min-width: $phabletWidth) {
+  .header {
+    &__burger {
+      right: 32px;
+    }
+  }
+}
+
 @media screen and (min-width: $tabletWidth) {
   .header {
     padding-top: 25px;
