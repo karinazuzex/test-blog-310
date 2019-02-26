@@ -9,7 +9,7 @@ const PromoSection = () => (
                 <h3 className="block__title block__elem text-bold">
                     Get Memurai
                 </h3>
-                <p className="block_description">
+                <p className="block__description block__description--fixed">
                     Please fill in the information below so we can send you a download link.
                 </p>
             </div>

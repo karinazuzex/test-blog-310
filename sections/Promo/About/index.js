@@ -9,7 +9,7 @@ const PromoSection = () => (
                 <h3 className="block__title block__elem text-bold">
                     About Us
                 </h3>
-                <p className="block_description">
+                <p className="block__description block__description--fixed">
                     The Memurai team is comprised of individuals who are passionate about delivering cutting edge
                     solutions that solve customer problems. Our journey with Memurai can be traced back to 2013, when a
                     few of our team members started working on the Microsoft Open Technologies port of Redis to Windows.

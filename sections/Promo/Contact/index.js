@@ -9,7 +9,7 @@ const PromoSection = () => (
                 <h3 className="block__title block__elem text-bold">
                     Contact
                 </h3>
-                <p className="block_description">
+                <p className="block__description block__description--fixed">
                     Have a question? Send us a note using the form below and someone from the Memurai team will be in
                     touch soon.
                 </p>
