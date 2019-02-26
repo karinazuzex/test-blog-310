@@ -24,11 +24,12 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        window.addEventListener("scroll", this.handleWindowScroll);
+        this.updateWindowPosition()
+        window.addEventListener("scroll", this.updateWindowPosition);
     }
 
     componentWillUnmount() {
-        window.removeEventListener("scroll", this.handleWindowScroll);
+        window.removeEventListener("scroll", this.updateWindowPosition);
     }
 
     openMenu = () => {
@@ -45,10 +46,10 @@ class Header extends Component {
         this.props.onMenuChange(false);
     };
 
-    handleWindowScroll = () => {
+    updateWindowPosition = () => {
         const { theme } = this.props;
         const { scrollY } = window;
-        const isScrolled = theme === "white" ? scrollY > 30 : scrollY > 600;
+        const isScrolled = scrollY > 600;
         const isWhite = theme === "white" || scrollY > 600;
         this.setState({
             isScrolled,

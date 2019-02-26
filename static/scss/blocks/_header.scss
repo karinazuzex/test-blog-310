@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   left: 0;
   top: 0;
@@ -8,7 +8,7 @@
   padding-bottom: 19px;
   z-index: 10;
   box-shadow: none;
-  transition: background-color $defaultTransition, box-shadow $defaultTransition, left $defaultTransition;
+  transition: box-shadow $defaultTransition, left $defaultTransition;
 
   &__element {
     &-side {
@@ -36,6 +36,8 @@
   }
 
   &--scrolled {
+    position: fixed;
+    animation: headerSlideDown $doubleTransition;
     box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.03);
   }
 
