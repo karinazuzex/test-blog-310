@@ -14,6 +14,7 @@
     position: relative;
     cursor: pointer;
     transition: color $defaultTransition;
+    background-color: $white;
 
     &:after {
       content: "";
@@ -27,13 +28,13 @@
       border-color: transparent;
       border-style: solid;
       border-top-color: $black;
-      transition: transform $defaultTransition, top $defaultTransition;
     }
   }
 
   &__info {
     display: none;
     padding: 20px 24px;
+    background-color: $white;
   }
 
   &.active {
