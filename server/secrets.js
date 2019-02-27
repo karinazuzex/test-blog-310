@@ -14,6 +14,6 @@ module.exports.sample = getVar('sample', 'myvalue');
 module.exports.smtp_server = getVar('smtp_server', 'smtp.sendgrid.net');
 module.exports.smtp_port = getVar('smtp_port', '465');
 module.exports.smtp_username = getVar('smtp_username', 'apikey');
-module.exports.smtp_password = getVar('smtp_password', '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');
+module.exports.smtp_password = getVar('smtp_password', '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');
 
 
