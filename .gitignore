@@ -70,3 +70,6 @@ typings/
 
 .vscode
 dist
+
+# Output of next export
+out
