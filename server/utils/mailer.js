@@ -1,22 +1,24 @@
 const nodemailer = require("nodemailer");
+const secrets = require("../secrets");
 
 const sendContact = ({ email, name, subject, message }) => {
     const transporter = nodemailer.createTransport({
-        service: "gmail",
+        port: secrets.smtp_port,
+        host: secrets.smtp_server,
+        secure: true,
+        requireTLS: true,
+        disableFileAccess: true,
         auth: {
-            type: 'OAuth2',
-            user: "",
-            clientId: "",
-            clientSecret: "",
-            refreshToken: "",
-            accessToken: "",
+            type: 'login',
+            user: secrets.smtp_username,
+            pass: secrets.smtp_password
         },
     });
 
     const from = `${name} <${email}>`;
     const mailOptions = {
-        from,
-        to: "dnskoub@gmail.com",
+        from : "Memurai Website",
+        to: "contact@memurai.com",
         subject,
         text: message,
     };
