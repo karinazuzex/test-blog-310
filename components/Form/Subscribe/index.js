@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { info, error } from "react-notification-system-redux";
+import { info, error, removeAll } from "react-notification-system-redux";
 
 import { validators, helpers } from "utils";
 import { consts, exceptions, types } from "config";
@@ -60,6 +60,7 @@ class SubscribeForm extends Component {
         const response = await dispatch(mailerOperations.mailchimpSubscribe(name, email));
         if (response.result === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
             this.reset();
+            dispatch(removeAll());
         }
     };
 

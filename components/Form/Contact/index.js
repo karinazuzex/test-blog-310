@@ -2,17 +2,15 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
+import {error, info, removeAll} from "react-notification-system-redux";
 
 import { validators, helpers } from "utils";
-import { consts } from "config";
+import { consts, messages } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
 import Checkbox from "components/ui/Checkbox";
-import Container from "../../grid/Container";
-import {exceptions} from "../../../config";
-import {error} from "react-notification-system-redux";
 
 class ContactForm extends Component {
     constructor(props) {
@@ -85,6 +83,17 @@ class ContactForm extends Component {
         const response = await axios.post("/api/contact", {
             name, email, subject, message,
         });
+        if (
+            response.status === mailerTypes.MAILER_SUCCESS_STATUS
+            && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
+            this.reset();
+            dispatch(removeAll());
+            dispatch(info({
+                position: "bc",
+                autoDismiss: 3,
+                message: messages.REQUEST_SUCCESSFULLY_SENT,
+            }));
+        }
     };
 
     render() {

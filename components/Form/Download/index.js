@@ -50,10 +50,10 @@ class SubscribeForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const nameError = validators.validateName(this.name.value.trim());
-        const emailError = validators.validateEmail(this.email.value.trim());
-        const subjectError = validators.validateSubject(this.subject.value.trim());
-        const messageError = validators.validateMessage(this.message.value.trim());
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const nameError = validators.validateName(name);
+        const emailError = validators.validateEmail(email);
         this.setState({
             nameError,
             emailError,

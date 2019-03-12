@@ -18,7 +18,7 @@ app.prepare()
             const { email, name, subject, message } = req.body;
             try {
                 mailer({ email, name, subject, message });
-                res.send("Success");
+                res.send("success");
             } catch (err) {
                 res.send(err)
             }
