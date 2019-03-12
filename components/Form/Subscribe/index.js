@@ -42,24 +42,18 @@ class SubscribeForm extends Component {
         const { dispatch } = this.props;
         const name = this.name.value.trim();
         const email = this.email.value.trim();
-        let requredFieldsMissing = 0;
         const nameError = validators.validateName(name);
-        if (nameError === exceptions.FIELD_REQUIRED) {
-            requredFieldsMissing += 1;
-        }
         const emailError = validators.validateEmail(email);
-        if (emailError === exceptions.FIELD_REQUIRED) {
-            requredFieldsMissing += 1;
-        }
         this.setState({
             nameError,
             emailError,
         });
-        if (nameError || emailError) {
+        const formError = validators.formatFormError([nameError, emailError]);
+        if (formError) {
             dispatch(error({
                 position: "bc",
                 autoDismiss: 0,
-                message: requredFieldsMissing > 1 ? exceptions.MULTIPLE_FIELD_REQUIRED : (nameError || emailError),
+                message: formError,
             }));
             return;
         }

@@ -1,16 +1,20 @@
 import React, { Component } from "react";
-import jsonp from "jsonp";
-import toQueryString from "to-querystring";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import axios from "axios";
 
 import { validators, helpers } from "utils";
 import { consts } from "config";
+import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
 import Checkbox from "components/ui/Checkbox";
+import Container from "../../grid/Container";
+import {exceptions} from "../../../config";
+import {error} from "react-notification-system-redux";
 
-class SubscribeForm extends Component {
+class ContactForm extends Component {
     constructor(props) {
         super(props);
 
@@ -51,39 +55,36 @@ class SubscribeForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        const nameError = validators.validateName(this.name.value.trim());
-        const emailError = validators.validateEmail(this.email.value.trim());
-        const subjectError = validators.validateSubject(this.subject.value.trim());
-        const messageError = validators.validateMessage(this.message.value.trim());
+        const { dispatch } = this.props;
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const subject = this.subject.value.trim();
+        const message = this.message.value.trim();
+        const nameError = validators.validateName(name);
+        const emailError = validators.validateEmail(email);
+        const subjectError = validators.validateSubject(subject);
+        const messageError = validators.validateMessage(message);
         this.setState({
             nameError,
             emailError,
             subjectError,
             messageError,
         });
-        if (nameError || emailError || subjectError || messageError) {
+        const formError = validators.formatFormError([nameError, emailError, subjectError, messageError]);
+        if (formError) {
+            dispatch(error({
+                position: "bc",
+                autoDismiss: 0,
+                message: formError,
+            }));
             return;
         }
+        if (this.subscribe.getValue()) {
+            dispatch(mailerOperations.mailchimpSubscribe(name, email));
+        }
         const response = await axios.post("/api/contact", {
-            name: this.name.value.trim(),
-            email: this.email.value.trim(),
-            subject: this.subject.value.trim(),
-            message: this.message.value.trim(),
+            name, email, subject, message,
         });
-        // const params = toQueryString({
-        //     NAME: this.name.value.trim(),
-        //     EMAIL: this.email.value.trim(),
-        //     SUBJECT: this.subject.value.trim(),
-        //     MESSAGE: this.message.value.trim(),
-        //     [consts.MAILCHIMP_HIDDEN_INPUT_NAME]: "",
-        // });
-        // const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_ACTION_URL)}&${params}`;
-        // jsonp(
-        //     url,
-        //     { param: "c" },
-        //     (err, data) => {
-        //     },
-        // );
     };
 
     render() {
@@ -162,4 +163,8 @@ class SubscribeForm extends Component {
     }
 }
 
-export default SubscribeForm;
+ContactForm.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+};
+
+export default connect(null)(ContactForm);

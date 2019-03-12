@@ -24,7 +24,7 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        this.updateWindowPosition()
+        this.updateWindowPosition();
         window.addEventListener("scroll", this.updateWindowPosition);
     }
 
