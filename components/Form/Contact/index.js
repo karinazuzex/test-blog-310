@@ -94,15 +94,15 @@ class ContactForm extends Component {
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             this.reset();
             dispatch(removeAll());
-            this.setState({
-                processing: false,
-            });
             dispatch(info({
                 position: "bc",
                 autoDismiss: 3,
                 message: messages.REQUEST_SUCCESSFULLY_SENT,
             }));
         }
+        this.setState({
+            processing: false,
+        });
     };
 
     render() {

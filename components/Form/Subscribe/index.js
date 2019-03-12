@@ -67,10 +67,10 @@ class SubscribeForm extends Component {
         if (response.result === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
             this.reset();
             dispatch(removeAll());
-            this.setState({
-                processing: false,
-            });
         }
+        this.setState({
+            processing: false,
+        });
     };
 
     render() {

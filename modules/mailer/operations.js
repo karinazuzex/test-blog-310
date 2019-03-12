@@ -19,14 +19,14 @@ export const formatMailchimpMessage = (message) => {
     return exceptions.EMAIL_INVALID;
 };
 
-export const mailchimpSubscribe = (name, email) => {
-    return (dispatch) => {
+export const mailchimpSubscribe = (name, email) =>
+    dispatch => {
         const params = toQueryString({
             NAME: name,
             EMAIL: email,
-            [consts.MAILCHIMP_HIDDEN_INPUT_NAME]: "",
+            [consts.MAILCHIMP_SUBSCRIBE_NAME]: "",
         });
-        const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_ACTION_URL)}&${params}`;
+        const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_SUBSCRIBE_URL)}&${params}`;
         return new Promise((resolve, reject) => {
             jsonp(
                 url,
@@ -53,4 +53,38 @@ export const mailchimpSubscribe = (name, email) => {
             );
         });
     };
-};
+
+export const mailchimpDownload = (name, email) =>
+    dispatch => {
+        const params = toQueryString({
+            NAME: name,
+            EMAIL: email,
+            [consts.MAILCHIMP_DOWNLOAD_NAME]: "",
+        });
+        const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_DOWNLOAD_URL)}&${params}`;
+        return new Promise((resolve, reject) => {
+            jsonp(
+                url,
+                {param: "c"},
+                (err, data) => {
+                    if (err || data.result !== types.MAILCHIMP_TYPE_SUCCESS) {
+                        const message = formatMailchimpMessage(err ? err.msg : data.msg);
+                        dispatch(error({
+                            position: "bc",
+                            autoDismiss: 0,
+                            message,
+                        }));
+                        reject(message);
+                    } else {
+                        const message = formatMailchimpMessage(data.msg);
+                        dispatch(info({
+                            position: "bc",
+                            autoDismiss: 3,
+                            message,
+                        }));
+                        resolve(message);
+                    }
+                },
+            );
+        });
+    };
