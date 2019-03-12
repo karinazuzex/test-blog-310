@@ -30,6 +30,13 @@ export const validateMessage = (message) => {
     return null;
 };
 
+export const validateTerms = (terms) => {
+    if (!terms) {
+        return exceptions.TERMS_NOT_ACCEPTED;
+    }
+    return null;
+};
+
 export const detectMultipleFieldsRequired = (errors) => {
     const errorsArray = Array.isArray(errors) ? errors : [errors];
     return errorsArray.filter(item => item === exceptions.FIELD_REQUIRED).length > 1;

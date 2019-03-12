@@ -1,23 +1,26 @@
 import React, { Component } from "react";
 import NextLink from "next/link";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import axios from "axios";
+import { error, info, removeAll } from "react-notification-system-redux";
 
 import { validators, helpers } from "utils";
-import { consts, routes } from "config";
+import { consts, routes, messages } from "config";
+import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
 import Link from "components/ui/Link";
 import Checkbox from "components/ui/Checkbox";
 
-class SubscribeForm extends Component {
+class DownloadForm extends Component {
     constructor(props) {
         super(props);
 
         this.getInitialState = () => ({
             nameError: null,
             emailError: null,
-            subjectError: null,
-            messageError: null,
             status: null,
         });
 
@@ -28,8 +31,6 @@ class SubscribeForm extends Component {
         this.setState(this.getInitialState());
         this.name.value = null;
         this.email.value = null;
-        this.subject.value = null;
-        this.message.value = null;
     };
 
     handleNameChange = () => {
@@ -40,43 +41,46 @@ class SubscribeForm extends Component {
         this.setState({ emailError: null });
     };
 
-    handleSubjectChange = () => {
-        this.setState({ subjectError: null });
-    };
-
-    handleMessageChange = () => {
-        this.setState({ messageError: null });
-    };
-
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
+        const { dispatch } = this.props;
+        const terms = this.terms.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
+        const termsError = validators.validateTerms(terms);
         const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         this.setState({
             nameError,
             emailError,
-            subjectError,
-            messageError,
         });
-        if (nameError || emailError || subjectError || messageError) {
+        const formError = validators.formatFormError([nameError, emailError, termsError]);
+        if (formError) {
+            dispatch(error({
+                position: "bc",
+                autoDismiss: 0,
+                message: formError,
+            }));
             return;
         }
-        const params = toQueryString({
-            NAME: this.name.value.trim(),
-            EMAIL: this.email.value.trim(),
-            SUBJECT: this.subject.value.trim(),
-            MESSAGE: this.message.value.trim(),
-            [consts.MAILCHIMP_HIDDEN_INPUT_NAME]: "",
+        if (this.subscribe.getValue()) {
+            dispatch(mailerOperations.mailchimpSubscribe(name, email));
+        }
+        const response = await axios.post("/api/download", {
+            name, email,
         });
-        const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_ACTION_URL)}&${params}`;
-        jsonp(
-            url,
-            { param: "c" },
-            (err, data) => {
-            },
-        );
+        if (
+            response.status === mailerTypes.MAILER_SUCCESS_STATUS
+            && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
+            this.reset();
+            dispatch(removeAll());
+            // dispatch(mailerOperations.mailchimpDownload(name, email));
+            dispatch(info({
+                position: "bc",
+                autoDismiss: 3,
+                message: messages.REQUEST_SUCCESSFULLY_SENT,
+            }));
+        }
     };
 
     render() {
@@ -121,7 +125,7 @@ class SubscribeForm extends Component {
                 <Row className="form__row">
                     <div className="form__group">
                         <Checkbox
-                            ref={(ref) => {this.policy = ref}}
+                            ref={(ref) => {this.terms = ref}}
                         >
                             I agree to the&nbsp;
                             <NextLink href={routes.TERMS_PAGE.path}>
@@ -149,4 +153,8 @@ class SubscribeForm extends Component {
     }
 }
 
-export default SubscribeForm;
+DownloadForm.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+};
+
+export default connect(null)(DownloadForm);

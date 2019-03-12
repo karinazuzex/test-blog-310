@@ -24,6 +24,11 @@ app.prepare()
             }
         });
 
+        server.post("/api/download", (req, res) => {
+            const { email, name } = req.body;
+            res.send("success");
+        });
+
         server.get("*", (req, res) => {
             return handle(req, res)
         });
