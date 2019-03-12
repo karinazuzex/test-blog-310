@@ -11,7 +11,7 @@ export const validateEmail = (email) => {
     if (!email) {
         return exceptions.FIELD_REQUIRED;
     } else if (!consts.EMAIL_PATTERN.test(String(email).toLowerCase())) {
-        return exceptions.EMAIL_WRONG_PATTERN;
+        return exceptions.EMAIL_INVALID;
     }
     return null;
 };
