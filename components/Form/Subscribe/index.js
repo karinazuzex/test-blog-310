@@ -17,7 +17,7 @@ class SubscribeForm extends Component {
         this.getInitialState = () => ({
             nameError: null,
             emailError: null,
-            status: null,
+            processing: false,
         });
 
         this.state = this.getInitialState();
@@ -40,6 +40,9 @@ class SubscribeForm extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         const { dispatch } = this.props;
+        this.setState({
+            processing: true,
+        });
         const name = this.name.value.trim();
         const email = this.email.value.trim();
         const nameError = validators.validateName(name);
@@ -55,17 +58,23 @@ class SubscribeForm extends Component {
                 autoDismiss: 0,
                 message: formError,
             }));
+            this.setState({
+                processing: false,
+            });
             return;
         }
         const response = await dispatch(mailerOperations.mailchimpSubscribe(name, email));
         if (response.result === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
             this.reset();
             dispatch(removeAll());
+            this.setState({
+                processing: false,
+            });
         }
     };
 
     render() {
-        const disabled = this.state.status === "pending" || this.state.status === "success";
+        const disabled = this.state.processing;
         return (
             <form className="form form--subscribe" onSubmit={this.handleSubmit}>
                 <Row className="form__row align-end-xs">

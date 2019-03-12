@@ -21,7 +21,7 @@ class ContactForm extends Component {
             emailError: null,
             subjectError: null,
             messageError: null,
-            status: null,
+            processing: false,
         });
 
         this.state = this.getInitialState();
@@ -54,6 +54,9 @@ class ContactForm extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         const { dispatch } = this.props;
+        this.setState({
+            processing: true,
+        });
         const name = this.name.value.trim();
         const email = this.email.value.trim();
         const subject = this.subject.value.trim();
@@ -75,6 +78,9 @@ class ContactForm extends Component {
                 autoDismiss: 0,
                 message: formError,
             }));
+            this.setState({
+                processing: false,
+            });
             return;
         }
         if (this.subscribe.getValue()) {
@@ -88,6 +94,9 @@ class ContactForm extends Component {
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             this.reset();
             dispatch(removeAll());
+            this.setState({
+                processing: false,
+            });
             dispatch(info({
                 position: "bc",
                 autoDismiss: 3,
@@ -97,7 +106,7 @@ class ContactForm extends Component {
     };
 
     render() {
-        const disabled = this.state.status === "pending" || this.state.status === "success";
+        const disabled = this.state.processing;
         return (
             <form className="form form--contact" onSubmit={this.handleSubmit}>
                 <Row className="form__row">

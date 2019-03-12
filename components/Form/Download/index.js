@@ -21,7 +21,7 @@ class DownloadForm extends Component {
         this.getInitialState = () => ({
             nameError: null,
             emailError: null,
-            status: null,
+            processing: false,
         });
 
         this.state = this.getInitialState();
@@ -44,6 +44,9 @@ class DownloadForm extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         const { dispatch } = this.props;
+        this.setState({
+            processing: true,
+        });
         const terms = this.terms.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
@@ -61,6 +64,9 @@ class DownloadForm extends Component {
                 autoDismiss: 0,
                 message: formError,
             }));
+            this.setState({
+                processing: false,
+            });
             return;
         }
         if (this.subscribe.getValue()) {
@@ -74,6 +80,9 @@ class DownloadForm extends Component {
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             this.reset();
             dispatch(removeAll());
+            this.setState({
+                processing: false,
+            });
             // dispatch(mailerOperations.mailchimpDownload(name, email));
             dispatch(info({
                 position: "bc",
@@ -84,7 +93,7 @@ class DownloadForm extends Component {
     };
 
     render() {
-        const disabled = this.state.status === "pending" || this.state.status === "success";
+        const disabled = this.state.processing;
         return (
             <form className="form form--download" onSubmit={this.handleSubmit}>
                 <Row className="form__row">
