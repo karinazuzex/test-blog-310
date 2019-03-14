@@ -4,6 +4,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Notifications from "react-notification-system-redux";
 import { connect } from "react-redux";
+import Head from "next/head";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
@@ -27,6 +28,15 @@ class Layout extends Component {
         const { theme, children, notifications } = this.props;
         return (
             <Fragment>
+                <Head>
+                    <script
+                        id="Cookiebot"
+                        src="https://consent.cookiebot.com/uc.js"
+                        data-cbid="ad4b92a8-bdac-4756-852d-30e83d1feba3"
+                        type="text/javascript"
+                        async
+                    />
+                </Head>
                 <div className={`layout ${this.state.showMenu ? "layout--show-menu" : ""}`}>
                     <Header
                         theme={theme}
