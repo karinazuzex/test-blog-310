@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const secrets = require("../secrets");
 
-const sendContact = ({ email, name, subject, message }) => {
+const contact = ({ email, name, subject, message }) => {
     const transporter = nodemailer.createTransport({
         port: secrets.smtp_port,
         host: secrets.smtp_server,
@@ -31,4 +31,6 @@ const sendContact = ({ email, name, subject, message }) => {
 
 };
 
-module.exports = sendContact;
+module.exports = {
+    contact,
+};

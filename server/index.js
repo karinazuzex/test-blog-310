@@ -17,7 +17,7 @@ app.prepare()
         server.post("/api/contact", (req, res) => {
             const { email, name, subject, message } = req.body;
             try {
-                mailer({ email, name, subject, message });
+                mailer.contact({ email, name, subject, message });
                 res.send("success");
             } catch (err) {
                 res.send(err)

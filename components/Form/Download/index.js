@@ -80,7 +80,7 @@ class DownloadForm extends Component {
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             this.reset();
             dispatch(removeAll());
-            // dispatch(mailerOperations.mailchimpDownload(name, email));
+            dispatch(mailerOperations.mailchimpDownload(name, email));
             dispatch(info({
                 position: "bc",
                 autoDismiss: 3,

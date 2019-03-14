@@ -69,6 +69,12 @@
   .link {
     font-weight: 500;
   }
+
+  #iubenda_policy {
+    .iub_content {
+      padding: 0;
+    }
+  }
 }
 
 @media screen and (min-width: $phabletWidth) {
