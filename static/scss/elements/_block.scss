@@ -34,6 +34,7 @@
 
   &__pretitle {
     font-size: 12px;
+    line-height: 12px;
     color: $blue;
     letter-spacing: 1.2px;
     font-weight: bold;
@@ -75,6 +76,7 @@
     }
 
     &__pretitle {
+      line-height: 14px;
       font-size: 14px;
     }
 
