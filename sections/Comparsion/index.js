@@ -7,7 +7,7 @@ const PromoSection = () => (
     <section className="section section__comparsion bg-white-grey separator-bt">
         <Container>
             <div className="block text-center">
-                <div className="block__pretitle block__elem">
+                <div className="block__pretitle block__elem--xs">
                     COMPARSION
                 </div>
                 <h3 className="block__title block__elem--xl">

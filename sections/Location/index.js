@@ -9,7 +9,7 @@ const PromoSection = () => (
     <section className="section section__location bg-white-grey">
         <Container>
             <div className="block text-center">
-                <div className="block__pretitle block__elem">
+                <div className="block__pretitle block__elem--xs">
                     Location
                 </div>
                 <h3 className="block__title block__elem">

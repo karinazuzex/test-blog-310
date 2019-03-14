@@ -6,7 +6,8 @@
       margin-bottom: 30px;
     }
 
-    &--sm {
+    &--sm,
+    &--xs {
       margin-bottom: 20px;
     }
 
@@ -54,6 +55,10 @@
 
       &.block__header {
         margin-bottom: 36px;
+      }
+
+      &--xs {
+        margin-bottom: 20px;
       }
 
       &--sm {
