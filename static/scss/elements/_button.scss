@@ -238,13 +238,13 @@
 
         &:after {
           opacity: 1;
-          color: $black;
+          color: $greyDisabled;
         }
 
         &:hover {
 
           &:after {
-            color: $black;
+            color: $greyDisabled;
           }
         }
       }

@@ -75,7 +75,7 @@ class Header extends Component {
                         />
                         <NextLink href={routes.GET_MEMURAI_PAGE.path}>
                             <Button as="a" type="hollow" theme={`${
-                                this.state.isWhite ? "red-black" : "red-white"
+                                this.state.isWhite ? "red-black versioned-black" : "red-white"
                                 } versioned ${
                                 this.state.isScrolled ? "versioned-hidden" : ""
                                 }`} className="header__button header__button--action">
