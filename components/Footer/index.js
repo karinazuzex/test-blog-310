@@ -42,6 +42,11 @@ const Footer = () => (
                                         {routes.PRIVACY_PAGE.name}
                                     </Link>
                                 </NextLink>
+                                <NextLink href={routes.COOKIE_PAGE.path}>
+                                    <Link href="" theme="grey-light">
+                                        {routes.COOKIE_PAGE.name}
+                                    </Link>
+                                </NextLink>
                             </span>
                         </div>
                     </Column>

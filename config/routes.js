@@ -42,3 +42,8 @@ export const PRIVACY_PAGE = {
     name: "Privacy",
     path: "/privacy",
 };
+
+export const COOKIE_PAGE = {
+    name: "Cookie",
+    path: "/cookie",
+};
