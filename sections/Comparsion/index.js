@@ -12,7 +12,7 @@ const PromoSection = () => (
                 </div>
                 <h3 className="block__title block__elem--xl">
                     Redis-compatible server on Windows<br />
-                    Options compared
+                    <span className="text-normal">Options compared</span>
                 </h3>
                 <Container theme="reversed">
                     <Row theme="no-col" className="justify-center-xs">

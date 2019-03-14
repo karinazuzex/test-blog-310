@@ -2,7 +2,7 @@
   &__elem {
     margin-bottom: 20px;
 
-    &.block__header {
+    &.block__title {
       margin-bottom: 30px;
     }
 
@@ -17,6 +17,10 @@
     &--xl {
       margin-bottom: 80px;
     }
+  }
+
+  &__title {
+    font-weight: bold;
   }
 
   &__description {
@@ -39,6 +43,8 @@
     font-size: 12px;
     margin-top: 80px;
   }
+
+
 }
 
 @media screen and (min-width: $tabletWidth) {

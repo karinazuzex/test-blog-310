@@ -15,7 +15,7 @@ const PromoSection = () => (
                 </div>
                 <h3 className="block__title block__elem--lg">
                     Download the free technical preview<br />
-                    Try Memurai today
+                    <span className="text-normal">Try Memurai today</span>
                 </h3>
                 <Row theme="no-col" className="justify-center-xs">
                     <NextLink href={routes.GET_MEMURAI_PAGE.path}>

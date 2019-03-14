@@ -9,7 +9,7 @@ const SubscribeSection = () => (
             <div className="block text-center">
                 <div className="block__pretitle block__elem">LATEST NEWS</div>
                 <h3 className="block__title block__elem--lg">
-                    Stay informed.<br />
+                    <span className="text-bold">Stay informed.</span><br />
                     Our newsletter is sent weekly
                 </h3>
                 <SubscribeForm />

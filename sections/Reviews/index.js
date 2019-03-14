@@ -10,7 +10,7 @@ const ReviewsSection = () => (
                 <Stars amount={5} className="block__elem" />
                 <h3 className="block__title block__elem--lg">
                     The reviews are in.<br />
-                    People love Memurai
+                    <span className="text-normal">People love Memurai</span>
                 </h3>
             </div>
         </Container>

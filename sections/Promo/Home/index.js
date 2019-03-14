@@ -14,7 +14,9 @@ const PromoSection = () => (
                     Introducing Memurai for Windows
                 </p>
                 <h1 className="block__title block__elem--lg">
-                    Redis-compatible, enterprise-grade in-memory database for Windows
+                    <span className="text-normal">
+                        Redis-compatible, enterprise-grade in-memory database for Windows
+                    </span>
                 </h1>
                 <p className="block__description block__elem">
                     Technical preview now available for download.
