@@ -43,6 +43,9 @@ class DownloadForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        let response = await axios.post("/api/request-download", {
+            name, email,
+        });
         const { dispatch } = this.props;
         this.setState({
             processing: true,
@@ -72,7 +75,7 @@ class DownloadForm extends Component {
         if (this.subscribe.getValue()) {
             dispatch(mailerOperations.mailchimpSubscribe(name, email));
         }
-        const response = await axios.post("/api/download", {
+        response = await axios.post("/api/request-download", {
             name, email,
         });
         if (
