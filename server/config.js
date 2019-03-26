@@ -1,4 +1,3 @@
-
 function getVar(key, defaultValue) {
   if(key in process.env)
     return process.env[key];
@@ -17,4 +16,6 @@ module.exports = {
     aws_key_pair_id: getVar("aws_key_pair_id", ""),
     aws_private_key_string: getVar("aws_private_key_string", ""),
     aws_file_path: getVar("aws_file_path", ""),
+    crypto_key: getVar("crypto_key", "someKey"),
+    memurai_base_url: getVar("memurai_base_url", "https://memurai.com")
 };

@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 
 const mailer = require("./utils/mailer");
 const aws = require("./utils/aws");
+const crypto = require("./utils/crypto");
+const config = require("./config");
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -29,11 +31,23 @@ app.prepare()
             const { email, name } = req.body;
             try {
                 const response = await aws.getDownloadUrl();
-                await mailer.download({ name, email, url: response.data });
+                const encryptedCfUrl = crypto.encrypt(response.data);
+                const url = `${config.memurai_base_url}/download?id=${encryptedCfUrl}`;
+                await mailer.download({ name, email, url });
                 res.send("success");
             } catch (err) {
                 res.send(err)
             }
+        });
+
+        server.get("/download", async (req, res) => {
+            try {
+                const request = req.query.id;
+                const decryptedCfUrl = crypto.decrypt(request);
+                res.send(decryptedCfUrl);
+            } catch (err) {
+                res.send(err);
+            };
         });
 
         server.get("*", (req, res) => {
