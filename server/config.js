@@ -14,12 +14,7 @@ module.exports = {
     smtp_port: getVar("smtp_port", "465"),
     smtp_username: getVar("smtp_username", "apikey"),
     smtp_password: getVar("smtp_password", "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"),
-    aws_access_key_id: getVar("aws_access_key_id", ""),
-    aws_secret_access_key: getVar("aws_secret_access_key", ""),
-    aws_region: getVar("aws_region", ""),
-    aws_bucket: getVar("aws_bucket", ""),
-    aws_key: getVar("aws_key", ""),
-    aws_expires: getVar("aws_bucket", 2 * 24 * 60),
+    aws_key_pair_id: getVar("aws_key_pair_id", ""),
+    aws_private_key_string: getVar("aws_private_key_string", ""),
+    aws_file_path: getVar("aws_file_path", ""),
 };
-
-

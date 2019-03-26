@@ -1,23 +1,23 @@
-const aws = require("aws-sdk");
+const cfsign = require("aws-cloudfront-sign");
+const moment = require("moment");
 const config = require("../config");
-
-const s3 = new aws.S3();
-
-s3.config.update({
-    accessKeyId: config.aws_access_key_id,
-    secretAccessKey: config.aws_secret_access_key,
-});
 
 const getDownloadUrl = () => {
     const params = {
-        Bucket: config.aws_bucket,
-        Key: config.aws_key,
-        Expires: config.aws_expires,
+        keypairId: config.aws_key_pair_id,
+        privateKeyString: config.aws_private_key_string,
+        expireTime: moment().add({ days: 2 }).unix(),
     };
     return new Promise((resolve, reject) => {
-        s3.getSignedUrl("getObject", params, (err, res) => {
-            err ? reject(err) : resolve(res);
-        });
+        try {
+            const signedUrl = cfsign.getSignedUrl(
+                config.aws_file_path,
+                params,
+            );
+            resolve(signedUrl);
+        } catch (err) {
+            reject(err);
+        }
     });
 };
 
