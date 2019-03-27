@@ -32,7 +32,7 @@ app.prepare()
             try {
                 const response = await aws.getDownloadUrl();
                 const encryptedCfUrl = crypto.encrypt(response.data);
-                const url = `${config.memurai_base_url}/download?id=${encryptedCfUrl}`;
+                const url = `${config.memurai_base_url}/download?key=${encryptedCfUrl}`;
                 await mailer.download({ name, email, url });
                 res.send("success");
             } catch (err) {
@@ -40,14 +40,14 @@ app.prepare()
             }
         });
 
-        server.get("/download", async (req, res) => {
+        server.post("/api/decrypt", async (req, res) => {
             try {
-                const request = req.query.id;
-                const decryptedCfUrl = crypto.decrypt(request);
+                const { data } = req.body;
+                const decryptedCfUrl = crypto.decrypt(data);
                 res.send(decryptedCfUrl);
             } catch (err) {
                 res.send(err);
-            };
+            }
         });
 
         server.get("*", (req, res) => {

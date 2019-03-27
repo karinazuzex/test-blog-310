@@ -2,7 +2,7 @@ const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
 
 module.exports = withCSS(withSass({
-    webpack (config, options) {
+    webpack (config) {
         config.module.rules.push({
             test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
             use: {
@@ -22,6 +22,7 @@ module.exports = withCSS(withSass({
         "/about": { page: "/about" },
         "/why-memurai": { page: "/why-memurai" },
         "/get-memurai": { page: "/get-memurai" },
+        "/download": { page: "/download" },
         "/contact": { page: "/contact" },
         "/terms": { page: "/terms" },
         "/privacy": { page: "/privacy" },
