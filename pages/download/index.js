@@ -4,12 +4,10 @@ import NextLink from "next/link";
 import axios from "axios";
 
 import { consts, routes } from "config";
+import { mailerOperations, mailerTypes } from "modules/mailer";
 
-import { Container, Row } from "components/grid";
+import { Container } from "components/grid";
 import Link from "components/ui/Link";
-import {mailerOperations, mailerTypes} from "../../modules/mailer";
-import {messages} from "../../config";
-import {info, removeAll} from "react-notification-system-redux";
 
 class DownloadPage extends Component {
     static getInitialProps({query}) {

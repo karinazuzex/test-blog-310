@@ -6,7 +6,8 @@ class LegalSection extends Component {
     componentDidMount() {
         const privacyScript = document.createElement("script");
         privacyScript.type = "text/javascript";
-        privacyScript.innerHTML = "(function (w,d) {var loader = function () {var s = d.createElement(\"script\"), tag = d.getElementsByTagName(\"script\")[0]; s.src=\"https://cdn.iubenda.com/iubenda.js\"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener(\"load\", loader, false);}else if(w.attachEvent){w.attachEvent(\"onload\", loader);}else{w.onload = loader;}})(window, document);";
+        privacyScript.async = true;
+        privacyScript.src = "https://cdn.iubenda.com/iubenda.js";
         this.content.appendChild(privacyScript);
     }
     render() {
