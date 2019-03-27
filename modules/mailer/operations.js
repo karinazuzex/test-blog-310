@@ -69,19 +69,9 @@ export const mailchimpDownload = (name, email) =>
                 (err, data) => {
                     if (err || data.result !== types.MAILCHIMP_TYPE_SUCCESS) {
                         const message = formatMailchimpMessage(err ? err.msg : data.msg);
-                        dispatch(error({
-                            position: "bc",
-                            autoDismiss: 0,
-                            message,
-                        }));
                         reject(message);
                     } else {
                         const message = formatMailchimpMessage(data.msg);
-                        dispatch(info({
-                            position: "bc",
-                            autoDismiss: 3,
-                            message,
-                        }));
                         resolve(message);
                     }
                 },
