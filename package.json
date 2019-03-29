@@ -5,9 +5,9 @@
   "author": "Memurai",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node server",
+    "dev": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node server",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node server",
+    "start": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node server",
     "export": "next export"
   },
   "repository": {
