@@ -2,10 +2,11 @@ const express = require("express");
 const next = require("next");
 const bodyParser = require("body-parser");
 
+const config = require("./config");
 const mailer = require("./utils/mailer");
 const aws = require("./utils/aws");
 const crypto = require("./utils/crypto");
-const config = require("./config");
+const wwwhisper = require('connect-wwwhisper');
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -15,6 +16,7 @@ app.prepare()
     .then(() => {
         const server = express();
 
+        server.use(wwwhisper(false));
         server.use(bodyParser.json());
 
         server.post("/api/contact", async (req, res) => {
@@ -54,9 +56,10 @@ app.prepare()
             return handle(req, res)
         });
 
-        server.listen(3000, (err) => {
+        const port = config.port;
+        server.listen(port, (err) => {
             if (err) throw err;
-            console.log("> Ready on http://localhost:3000");
+            console.log("> Ready on http://localhost:" + port);
         })
     })
     .catch((ex) => {

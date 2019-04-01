@@ -9,6 +9,7 @@ function getVar(key, defaultValue) {
 /* For production, or otherwise security-sensitive values, use environment variables */
 
 module.exports = {
+    port: getVar("PORT", 3000),
     smtp_server: getVar("smtp_server", "smtp.sendgrid.net"),
     smtp_port: getVar("smtp_port", "465"),
     smtp_username: getVar("smtp_username", "apikey"),
