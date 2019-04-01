@@ -24,10 +24,10 @@ class DownloadPage extends Component {
     }
 
     componentDidMount() {
-        this.startDownload();
+        this.getLink();
     }
 
-    startDownload = async () => {
+    getLink = async () => {
         const { query } = this.props;
         if (!query.key) {
             this.setState({
@@ -37,21 +37,24 @@ class DownloadPage extends Component {
         }
         const response = await axios.post("/api/decrypt", { data: query.key });
         if (
-            response.status === mailerTypes.MAILER_SUCCESS_STATUS
-            && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
+            response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
             this.setState({
                 link: response.data,
             });
-            const downloadLink = document.createElement("a");
-            downloadLink.href = response.data;
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
+            this.download();
         } else {
             this.setState({
                 valid: false,
             });
         }
+    };
+
+    download = () => {
+        const downloadLink = document.createElement("a");
+        downloadLink.href = this.state.link;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
     };
 
     renderValidContext = () => (
@@ -61,7 +64,12 @@ class DownloadPage extends Component {
                 Your download should be starting automatically. {this.state.link &&
             <Fragment>
                 If it doesn’t click&nbsp;
-                <Link href={this.state.link} theme="red">
+                <Link
+                    as="button"
+                    type="button"
+                    onClick={this.download}
+                    theme="red"
+                >
                     here
                 </Link>.
             </Fragment>
