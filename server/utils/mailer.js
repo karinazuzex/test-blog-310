@@ -42,7 +42,7 @@ const download = ({ email, name, url }) => {
         subject: "Download link",
         html: `
         <h2>Your download link for <strong>Memurai</strong></h2><br />
-        <a href="${url}">Download Memurai</a>
+        <a clicktracking=off href="${url}">Download Memurai</a>
         `,
     };
 
