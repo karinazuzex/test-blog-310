@@ -18,6 +18,12 @@ class Checkbox extends Component {
         });
     };
 
+    reset = () => {
+        this.setState({
+            checked: false,
+        });
+    };
+
     render() {
         const { theme, children } = this.props;
         return (

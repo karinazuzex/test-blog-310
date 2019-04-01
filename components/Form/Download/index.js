@@ -31,6 +31,8 @@ class DownloadForm extends Component {
         this.setState(this.getInitialState());
         this.name.value = null;
         this.email.value = null;
+        this.terms.reset();
+        this.subscribe.reset();
     };
 
     handleNameChange = () => {
@@ -43,9 +45,6 @@ class DownloadForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        let response = await axios.post("/api/request-download", {
-            name, email,
-        });
         const { dispatch } = this.props;
         this.setState({
             processing: true,
@@ -75,7 +74,7 @@ class DownloadForm extends Component {
         if (this.subscribe.getValue()) {
             dispatch(mailerOperations.mailchimpSubscribe(name, email));
         }
-        response = await axios.post("/api/request-download", {
+        const response = await axios.post("/api/request-download", {
             name, email,
         });
         if (

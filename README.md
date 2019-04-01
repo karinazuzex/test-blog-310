@@ -74,4 +74,5 @@ Link lead to `/download` page, where url is being decrypted on visit with api ca
 - Add cookiebot styling after load on live server
 - Add slider with reviews to section
 - Finalize in-app dev architecture
+- Favicon, meta, titles, descriptions, etc. (head)
 ... TBD
