@@ -18,5 +18,5 @@ module.exports = {
     aws_private_key_path: getVar("aws_private_key_string", "server/config/aws-pk.pem"),
     aws_file_path: getVar("aws_file_path", "https://dmig02f1dvad2.cloudfront.net/hello-v1.txt"),
     crypto_key: getVar("crypto_key", "test_crypto_key"),
-    memurai_base_url: getVar("memurai_base_url", "https://memurai.com")
+    memurai_base_url: getVar("memurai_base_url", "https://www.memurai.com")
 };
