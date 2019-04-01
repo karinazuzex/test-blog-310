@@ -52,6 +52,8 @@ class DownloadPage extends Component {
     download = () => {
         const downloadLink = document.createElement("a");
         downloadLink.href = this.state.link;
+        downloadLink.target = "_blank";
+        downloadLink.rel = "noreferrer noopener";
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
