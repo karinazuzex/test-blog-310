@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 
 const contact = ({ email, name, subject, message }) => {
     const mailOptions = {
-        from : "Memurai Website",
+        from : "Memurai Wersite <noreply@memurai.com>",
         to: "contact@memurai.com",
         subject,
         html: `
@@ -37,12 +37,12 @@ const contact = ({ email, name, subject, message }) => {
 
 const download = ({ email, name, url }) => {
     const mailOptions = {
-        from : "Memurai Website",
-        to: `${name} <${email}>`,
+        from: "Memurai Wersite <noreply@memurai.com>",
+        to: email,
         subject: "Download link",
         html: `
         <h2>Your download link for <strong>Memurai</strong></h2><br />
-        <a href="${url}">url</a>
+        <a href="${url}">Download Memurai</a>
         `,
     };
 

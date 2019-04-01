@@ -21,22 +21,22 @@ app.prepare()
             const { email, name, subject, message } = req.body;
             try {
                 await mailer.contact({ email, name, subject, message });
-                res.send("success");
+                res.status(200).send("success");
             } catch (err) {
-                res.send(err)
+                res.status(400).send(err);
             }
         });
 
         server.post("/api/request-download", async (req, res) => {
             const { email, name } = req.body;
             try {
-                const response = await aws.getDownloadUrl();
-                const encryptedCfUrl = crypto.encrypt(response.data);
+                const awsLink = await aws.getDownloadUrl();
+                const encryptedCfUrl = crypto.encrypt(awsLink);
                 const url = `${config.memurai_base_url}/download?key=${encryptedCfUrl}`;
                 await mailer.download({ name, email, url });
-                res.send("success");
+                res.status(200).send("success");
             } catch (err) {
-                res.send(err)
+                res.status(400).send(err);
             }
         });
 
@@ -44,9 +44,9 @@ app.prepare()
             try {
                 const { data } = req.body;
                 const decryptedCfUrl = crypto.decrypt(data);
-                res.send(decryptedCfUrl);
+                res.status(200).send(decryptedCfUrl);
             } catch (err) {
-                res.send(err);
+                res.status(400).send(err);
             }
         });
 
