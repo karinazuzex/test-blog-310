@@ -1,5 +1,7 @@
 import React from "react";
 
+import { reviews } from "config";
+
 import { Container, Row } from "components/grid/index";
 import Icon from "components/ui/Icon/index";
 
@@ -7,7 +9,9 @@ import IntegrationImage from "static/images/integration.svg";
 import CompatibilityImage from "static/images/compatibility.png";
 
 const PromoSection = () => (
-    <section className="section section__info bg-white-grey">
+    <section className={`section section__info bg-white-grey ${
+        (!reviews || !reviews.length) ? "pb-0" : ""
+    }`}>
         <Container>
             <Row theme="no-col" className="info info--reversed">
                 <div className="info__text info__block">
