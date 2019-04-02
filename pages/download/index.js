@@ -87,11 +87,14 @@ class DownloadPage extends Component {
                 >
                     Twitter
                 </Link>. Read the&nbsp;
-                <NextLink href={routes.DOCUMENTATION_PAGE.path}>
-                    <Link theme="red">
-                        {routes.DOCUMENTATION_PAGE.name}
-                    </Link>
-                </NextLink>.
+                <Link
+                    theme="red"
+                    href={consts.MEMURAI_DOCS_LINK}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                >
+                    Documentation
+                </Link>.
             </p>
         </Fragment>
     );

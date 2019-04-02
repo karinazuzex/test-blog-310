@@ -2,7 +2,7 @@ import React  from "react";
 import PropTypes from "prop-types";
 import NextLink from "next/link";
 
-import { routes } from "config";
+import { routes, consts } from "config";
 
 import Button from "components/ui/Button";
 import Link from "components/ui/Link";
@@ -29,11 +29,15 @@ const MainMenu = ({ theme, onClose }) => {
                     </NextLink>
                 </li>
                 <li className="m-menu__item">
-                    <NextLink href={routes.DOCUMENTATION_PAGE.path}>
-                        <Link theme={linkTheme} className="m-menu__link">
-                            {routes.DOCUMENTATION_PAGE.name}
-                        </Link>
-                    </NextLink>
+                    <Link
+                        href={consts.MEMURAI_DOCS_LINK}
+                        theme={linkTheme}
+                        className="m-menu__link"
+                        rel="noreferrer noopener"
+                        target="_blank"
+                    >
+                        Documentation
+                    </Link>
                 </li>
                 <li className="m-menu__item m-menu__item--mobile">
                     <NextLink href={routes.ABOUT_PAGE.path}>

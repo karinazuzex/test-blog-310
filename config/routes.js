@@ -8,11 +8,6 @@ export const WHY_MEMURAI_PAGE = {
     path: "/why-memurai",
 };
 
-export const DOCUMENTATION_PAGE = {
-    name: "Documentation",
-    path: "/documentation",
-};
-
 export const FAQ_PAGE = {
     name: "Frequently asked questions",
     path: "/frequently-asked-questions",
