@@ -1,7 +1,7 @@
 import React from "react";
 import NextLink from "next/link";
 
-import { routes } from "config/index";
+import { routes, consts } from "config";
 
 import { Container, Row } from "components/grid/index";
 import Button from "components/ui/Button/index";
@@ -36,7 +36,7 @@ const PromoSection = () => (
                     </div>
                 </Row>
                 <p className="block__postfix block__postfix--promo-home">
-                    Current version: 0.1.0 - Redis API 5
+                    Current version: {consts.MEMURAI_VERSION}
                 </p>
             </div>
         </Container>
