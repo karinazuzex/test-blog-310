@@ -163,7 +163,7 @@ class ContactForm extends Component {
                         <Checkbox
                             ref={(ref => {this.subscribe = ref})}
                         >
-                            Subscribe to our weekly newsletter
+                            Subscribe to our newsletter
                         </Checkbox>
                     </div>
                     <div className="form__group form__group--fixed">

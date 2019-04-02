@@ -9,10 +9,10 @@ const PromoSection = () => (
                 <h3 className="block__title block__elem text-bold">
                     Why Memurai
                 </h3>
-                <p className="block__description block__description--fixed">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae.
-                </p>
+                {/* <p className="block__description block__description--fixed">
+                Redis-compatible, enterprise-grade in-memory database for Windows.
+                </p> 
+                */}
             </div>
         </Container>
     </section>
