@@ -57,6 +57,7 @@ class ContactForm extends Component {
         this.setState({
             processing: true,
         });
+        dispatch(removeAll());
         const name = this.name.value.trim();
         const email = this.email.value.trim();
         const subject = this.subject.value.trim();
@@ -93,7 +94,6 @@ class ContactForm extends Component {
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             this.reset();
-            dispatch(removeAll());
             dispatch(info({
                 position: "bc",
                 autoDismiss: 3,

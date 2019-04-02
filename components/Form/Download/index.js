@@ -49,6 +49,7 @@ class DownloadForm extends Component {
         this.setState({
             processing: true,
         });
+        dispatch(removeAll());
         const terms = this.terms.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
@@ -81,7 +82,6 @@ class DownloadForm extends Component {
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             this.reset();
-            dispatch(removeAll());
             dispatch(mailerOperations.mailchimpDownload(name, email));
             dispatch(info({
                 position: "bc",

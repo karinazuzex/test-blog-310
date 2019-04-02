@@ -43,6 +43,7 @@ class SubscribeForm extends Component {
         this.setState({
             processing: true,
         });
+        dispatch(removeAll());
         const name = this.name.value.trim();
         const email = this.email.value.trim();
         const nameError = validators.validateName(name);
@@ -66,7 +67,6 @@ class SubscribeForm extends Component {
         const response = await dispatch(mailerOperations.mailchimpSubscribe(name, email));
         if (response.result === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
             this.reset();
-            dispatch(removeAll());
         }
         this.setState({
             processing: false,
