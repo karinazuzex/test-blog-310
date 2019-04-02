@@ -15,9 +15,8 @@ const PromoSection = () => (
                         Uncompromised performance
                     </h5>
                     <div className="info__text-description">
-                        Memurai for Windows provides the functionality of Redis on Windows without the need for
-                        emulation or virtualization. Because it’s designed and optimized to use the native Windows APIs,
-                        it uses RAM, CPU, disk and network resources in the most efficient way possible. It can handle
+                        Memurai for Windows is built on top of Windows' native APIs, thus providing compatibility with Redis without the need for
+                        emulation or virtualization. It is optimized to use hardware resources in the most efficient way possible, and can handle
                         huge datasets and mission-critical production workloads.
                     </div>
                 </div>

@@ -25,7 +25,7 @@ const PromoSection = () => (
                     </NextLink>
                 </Row>
                 <p className="block__postfix block__postfix--promo-home">
-                    Current version: 0.1.2-beta. Compatible with Redis 4.2
+                    Current version: 0.1.0 - Redis API 5
                 </p>
             </div>
         </Container>
