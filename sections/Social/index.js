@@ -8,7 +8,7 @@ const PromoSection = () => (
         <Container>
             <div className="block text-center">
                 <div className="block__pretitle block__elem--xs">
-                    GET MEMURAI
+                    SOCIAL
                 </div>
                 <h3 className="block__title block__elem--lg">
                     Follow Memurai
