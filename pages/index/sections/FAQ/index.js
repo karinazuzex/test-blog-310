@@ -1,6 +1,8 @@
 import React from "react";
+import NextLink from "next/link";
 
 import { faq } from "content";
+import { routes } from "config";
 
 import { Container, Row, Col } from "components/grid/index";
 import { Button } from "components/ui";
@@ -16,9 +18,11 @@ const FAQSection = () => (
                         <h3 className="block__title block__elem">
                             Common questions about Memurai
                         </h3>
-                        <Button className="block__elem" type="hollow" theme="red chevron">
-                            Ask a question
-                        </Button>
+                        <NextLink href={routes.CONTACT_PAGE.path}>
+                            <Button className="block__elem" type="hollow" theme="red chevron">
+                                Ask a question
+                            </Button>
+                        </NextLink>
                     </div>
                 </Col>
                 <Col attributes="xs-12 lg-6">
