@@ -30,11 +30,13 @@ export const GET_MEMURAI_PAGE = {
 
 export const TERMS_PAGE = {
     name: "Terms",
+    nameLong: "Terms of service",
     path: "/terms",
 };
 
 export const PRIVACY_PAGE = {
     name: "Privacy",
+    nameLong: "Privacy policy",
     path: "/privacy",
 };
 

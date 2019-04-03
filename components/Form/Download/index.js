@@ -132,7 +132,12 @@ class DownloadForm extends Component {
                             I agree to the&nbsp;
                             <NextLink href={routes.TERMS_PAGE.path}>
                                 <Link theme="red">
-                                    terms of service
+                                    {routes.TERMS_PAGE.nameLong}
+                                </Link>
+                            </NextLink> and&nbsp;
+                            <NextLink href={routes.PRIVACY_PAGE.path}>
+                                <Link theme="red">
+                                    {routes.PRIVACY_PAGE.nameLong}
                                 </Link>
                             </NextLink>
                         </Checkbox>
