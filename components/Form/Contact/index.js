@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import NextLink from "next/link";
 import axios from "axios";
-import {error, info, removeAll} from "react-notification-system-redux";
+import { error, info, removeAll } from "react-notification-system-redux";
 
 import { validators, helpers } from "utils";
-import { consts, messages } from "config";
+import { consts, messages, routes } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
 import Checkbox from "components/ui/Checkbox";
+import Link from "components/ui/Link";
 
 class ContactForm extends Component {
     constructor(props) {
@@ -58,10 +60,12 @@ class ContactForm extends Component {
             processing: true,
         });
         dispatch(removeAll());
+        const agreement = this.agreement.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
         const subject = this.subject.value.trim();
         const message = this.message.value.trim();
+        const agreementError = validators.validateAgreement(agreement);
         const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         const subjectError = validators.validateSubject(subject);
@@ -72,7 +76,9 @@ class ContactForm extends Component {
             subjectError,
             messageError,
         });
-        const formError = validators.formatFormError([nameError, emailError, subjectError, messageError]);
+        const formError = validators.formatFormError([
+            nameError, emailError, subjectError, messageError, agreementError,
+        ]);
         if (formError) {
             dispatch(error({
                 position: "bc",
@@ -158,20 +164,42 @@ class ContactForm extends Component {
                         />
                     </div>
                 </Row>
-                <Row className="form__row align-center-xs justify-between-xs">
+                <Row className="form__row">
                     <div className="form__group">
                         <Checkbox
-                            ref={(ref => {this.subscribe = ref})}
+                            ref={(ref) => {this.agreement = ref}}
                         >
-                            Subscribe to our newsletter
+                            I agree to the&nbsp;
+                            <NextLink href={routes.TERMS_PAGE.path}>
+                                <Link theme="red">
+                                    {routes.TERMS_PAGE.nameLong}
+                                </Link>
+                            </NextLink> and&nbsp;
+                            <NextLink href={routes.PRIVACY_PAGE.path}>
+                                <Link theme="red">
+                                    {routes.PRIVACY_PAGE.nameLong}
+                                </Link>
+                            </NextLink>
                         </Checkbox>
                     </div>
+                </Row>
+                <Row className="form__row">
+                    <div className="form__group">
+                        <Checkbox
+                            ref={(ref) => {this.subscribe = ref}}
+                        >
+                            Subscribe to our weekly newsletter
+                        </Checkbox>
+                    </div>
+                </Row>
+                <Row className="form__row justify-center-xs">
                     <div className="form__group form__group--fixed">
                         <Button
                             disabled={disabled}
                             role="submit"
                             type="solid"
-                            theme="red-white">
+                            theme="red-white"
+                        >
                             Submit
                         </Button>
                     </div>
