@@ -25,7 +25,7 @@ const FAQSection = () => (
             <Row>
                 <Col attributes="xs-12 lg-6">
                     <div className="block">
-                        <div className="block__pretitle block__elem--xs text-no-transform">FAQs</div>
+                        <div className="block__pretitle block__elem--xs text-no-transform">FAQ</div>
                         <h3 className="block__title block__elem">
                             Common questions about Memurai
                         </h3>
