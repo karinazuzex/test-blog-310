@@ -27,21 +27,7 @@ const ComparsionTable = () => (
             </Row>
             <Row theme="no-col" className="table__row">
                 <div className="col-xs-3 table__col">
-                    Production-ready?
-                </div>
-                <div className="col-xs-3 table__col">
-                    <div className="icon icon--checked" />
-                </div>
-                <div className="col-xs-3 table__col">
-                    <div className="icon icon--unchecked" />
-                </div>
-                <div className="col-xs-3 table__col">
-                    <div className="icon icon--unchecked" />
-                </div>
-            </Row>
-            <Row theme="no-col" className="table__row">
-                <div className="col-xs-3 table__col">
-                    Performance environment
+                    System environment
                 </div>
                 <div className="col-xs-3 table__col">
                     Native
@@ -55,7 +41,21 @@ const ComparsionTable = () => (
             </Row>
             <Row theme="no-col" className="table__row">
                 <div className="col-xs-3 table__col">
-                    Feature X available?
+                    Suitable for production use?
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--checked" />
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--checked" />
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--unchecked" />
+                </div>
+            </Row>
+            <Row theme="no-col" className="table__row">
+                <div className="col-xs-3 table__col">
+                    Designed and optimized for Windows?
                 </div>
                 <div className="col-xs-3 table__col">
                     <div className="icon icon--checked" />
@@ -69,16 +69,44 @@ const ComparsionTable = () => (
             </Row>
             <Row theme="no-col" className="table__row">
                 <div className="col-xs-3 table__col">
-                    Performance score
+                    Easy setup experience?
                 </div>
                 <div className="col-xs-3 table__col">
-                    99.97
+                    <div className="icon icon--checked" />
                 </div>
                 <div className="col-xs-3 table__col">
-                    63.8
+                    <div className="icon icon--unchecked" />
                 </div>
                 <div className="col-xs-3 table__col">
-                    42.5
+                    <div className="icon icon--checked" />
+                </div>
+            </Row>
+            <Row theme="no-col" className="table__row">
+                <div className="col-xs-3 table__col">
+                    Runs on older versions of Windows?
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--checked" />
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--unchecked" />
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--unchecked" />
+                </div>
+            </Row>
+            <Row theme="no-col" className="table__row">
+                <div className="col-xs-3 table__col">
+                    Uncompromised performance?
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--checked" />
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--unchecked" />
+                </div>
+                <div className="col-xs-3 table__col">
+                    <div className="icon icon--unchecked" />
                 </div>
             </Row>
         </div>
