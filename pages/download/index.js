@@ -77,7 +77,7 @@ class DownloadPage extends Component {
             </Fragment>
             }
             </p>
-            <p className="block__description block__elem--lg">
+            <p className="block__description">
                 Other things you can do: Follow Memurai on&nbsp;
                 <Link
                     theme="red"

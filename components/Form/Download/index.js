@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import NextLink from "next/link";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -17,7 +17,9 @@ class DownloadForm extends Component {
         super(props);
 
         this.getInitialState = () => ({
+            done: false,
             nameError: null,
+            email: null,
             emailError: null,
             processing: false,
         });
@@ -31,6 +33,13 @@ class DownloadForm extends Component {
         this.email.value = null;
         this.agreement.reset();
         this.subscribe.reset();
+    };
+
+    clearResult = () => {
+        this.setState({
+            done: false,
+            email: null,
+        });
     };
 
     handleNameChange = () => {
@@ -79,7 +88,10 @@ class DownloadForm extends Component {
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
-            this.reset();
+            this.setState({
+                done: true,
+                email,
+            });
             dispatch(mailerOperations.mailchimpDownload(name, email));
             dispatch(info({
                 position: "bc",
@@ -92,7 +104,7 @@ class DownloadForm extends Component {
         });
     };
 
-    render() {
+    renderForm = () => {
         const disabled = this.state.processing;
         return (
             <form className="form form--download" onSubmit={this.handleSubmit}>
@@ -161,6 +173,37 @@ class DownloadForm extends Component {
                     </div>
                 </Row>
             </form>
+        );
+    };
+
+    renderDoneContent = () => (
+        <div className="block text-center">
+            <p className="block__description block__description--fixed block__elem">
+                Thank you for your interest in Memurai. We have sent an email to&nbsp;
+                <span className="text-bold">
+                    {this.state.email}
+                </span> containing a link to download the software.
+            </p>
+            <p className="block__description">
+                If you don&apos;t receive the email, please check your spam folder, or&nbsp;
+                <Link
+                    theme="red"
+                    onClick={this.clearResult}
+                >
+                    try again
+                </Link>.
+            </p>
+        </div>
+    );
+
+    render() {
+        return (
+            <Fragment>
+                {this.state.done
+                    ? this.renderDoneContent()
+                    : this.renderForm()
+                }
+            </Fragment>
         );
     }
 }
