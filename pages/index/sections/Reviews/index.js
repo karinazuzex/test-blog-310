@@ -1,6 +1,6 @@
 import React from "react";
 
-import { reviews } from "config";
+import { reviews } from "content";
 
 import { Container } from "components/grid";
 import { Stars } from "components/ui";

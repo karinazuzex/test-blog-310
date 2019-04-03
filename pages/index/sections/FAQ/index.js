@@ -1,6 +1,6 @@
 import React from "react";
 
-import { faq } from "config";
+import { faq } from "content";
 
 import { Container, Row, Col } from "components/grid/index";
 import { Button } from "components/ui";

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { reviews } from "config";
+import { reviews } from "content";
 
 import { Container, Row } from "components/grid/index";
 import { Icon } from "components/ui";
