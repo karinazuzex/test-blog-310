@@ -26,12 +26,12 @@ export default [
         info: (
             <Fragment>
                 Unix domain sockets are not supported. Besides that, there are a few configuration flags that are not
-                supported because they don't make sense on Windows. See&nbsp;
+                supported because they don't make sense on Windows. See the&nbsp;
                 <Link
                     href={consts.MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS}
                     theme="red"
                 >
-                    the documentation
+                    Documentation
                 </Link> for more information.
             </Fragment>
         ),
@@ -41,12 +41,12 @@ export default [
         info: (
             <Fragment>
                 Yes, Memurai can be installed as a Windows service during the initial setup or later on using the
-                command line options. See&nbsp;
+                command line options. See the&nbsp;
                 <Link
                     href={consts.MEMURAI_DOCS_WINDOWS_SERVICE_LINK}
                     theme="red"
                 >
-                    the documentation
+                    Documentation
                 </Link> for more information.
             </Fragment>
         ),

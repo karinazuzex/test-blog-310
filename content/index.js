@@ -1,2 +1,2 @@
-export reviews from "../content/reviews";
-export faq from "../content/faq";
+export reviews from "./reviews";
+export faq from "./faq";
