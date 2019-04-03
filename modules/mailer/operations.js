@@ -60,21 +60,11 @@ export const mailchimpDownload = (email) =>
             [consts.MAILCHIMP_DOWNLOAD_NAME]: "",
         });
         const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_DOWNLOAD_URL)}&${params}`;
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             jsonp(
                 url,
                 {param: "c"},
-                (err, data) => {
-                    if (err || data.result !== types.MAILCHIMP_TYPE_SUCCESS) {
-                        const message = formatMailchimpMessage(err ? err.msg : data.msg);
-                        message === exceptions.EMAIL_IN_USE
-                            ? reject(message)
-                            : resolve(message);
-                    } else {
-                        const message = formatMailchimpMessage(data.msg);
-                        resolve(message);
-                    }
-                },
+                () => resolve(),
             );
         });
     };
