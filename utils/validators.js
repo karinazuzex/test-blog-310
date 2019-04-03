@@ -30,9 +30,9 @@ export const validateMessage = (message) => {
     return null;
 };
 
-export const validateTerms = (terms) => {
-    if (!terms) {
-        return exceptions.TERMS_NOT_ACCEPTED;
+export const validateAgreement = (agreement) => {
+    if (!agreement) {
+        return exceptions.AGREEMENT_NOT_ACCEPTED;
     }
     return null;
 };

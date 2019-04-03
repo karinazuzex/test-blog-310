@@ -11,8 +11,8 @@ export const MULTIPLE_FIELD_REQUIRED = "These fields are required.";
 // Incorrect email pattern
 export const EMAIL_INVALID = "Incorrect email pattern.";
 
-// Terms of use not accepted
-export const TERMS_NOT_ACCEPTED = "You must accept terms of service to continue.";
+// Agreemnt is not accepted
+export const AGREEMENT_NOT_ACCEPTED = "You must accept Terms of service and Privacy Policy to continue.";
 
 /**
  * Mailchimp

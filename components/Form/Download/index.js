@@ -31,7 +31,7 @@ class DownloadForm extends Component {
         this.setState(this.getInitialState());
         this.name.value = null;
         this.email.value = null;
-        this.terms.reset();
+        this.agreement.reset();
         this.subscribe.reset();
     };
 
@@ -50,17 +50,17 @@ class DownloadForm extends Component {
             processing: true,
         });
         dispatch(removeAll());
-        const terms = this.terms.getValue();
+        const agreement = this.agreement.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
-        const termsError = validators.validateTerms(terms);
+        const agreementError = validators.validateAgreement(agreement);
         const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         this.setState({
             nameError,
             emailError,
         });
-        const formError = validators.formatFormError([nameError, emailError, termsError]);
+        const formError = validators.formatFormError([nameError, emailError, agreementError]);
         if (formError) {
             dispatch(error({
                 position: "bc",
@@ -127,7 +127,7 @@ class DownloadForm extends Component {
                 <Row className="form__row">
                     <div className="form__group">
                         <Checkbox
-                            ref={(ref) => {this.terms = ref}}
+                            ref={(ref) => {this.agreement = ref}}
                         >
                             I agree to the&nbsp;
                             <NextLink href={routes.TERMS_PAGE.path}>

@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import NextLink from "next/link";
 import { info, error, removeAll } from "react-notification-system-redux";
 
 import { validators, helpers } from "utils";
-import { consts, exceptions, types } from "config";
+import { consts, exceptions, types, routes } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import Button from "components/ui/Button";
+import Checkbox from "components/ui/Checkbox";
+import Link from "components/ui/Link";
 
 class SubscribeForm extends Component {
     constructor(props) {
@@ -44,15 +47,17 @@ class SubscribeForm extends Component {
             processing: true,
         });
         dispatch(removeAll());
+        const agreement = this.agreement.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
+        const agreementError = validators.validateAgreement(agreement);
         const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         this.setState({
             nameError,
             emailError,
         });
-        const formError = validators.formatFormError([nameError, emailError]);
+        const formError = validators.formatFormError([nameError, emailError, agreementError]);
         if (formError) {
             dispatch(error({
                 position: "bc",
@@ -100,13 +105,34 @@ class SubscribeForm extends Component {
                             ref={(ref) => { this.email = ref }}
                         />
                     </div>
-                    <div className="form__group form__group--fixed form__group--lg">
+                </Row>
+                <Row className="form__row">
+                    <div className="form__group">
+                        <Checkbox
+                            ref={(ref) => {this.agreement = ref}}
+                        >
+                            I agree to the&nbsp;
+                            <NextLink href={routes.TERMS_PAGE.path}>
+                                <Link theme="red">
+                                    {routes.TERMS_PAGE.nameLong}
+                                </Link>
+                            </NextLink> and&nbsp;
+                            <NextLink href={routes.PRIVACY_PAGE.path}>
+                                <Link theme="red">
+                                    {routes.PRIVACY_PAGE.nameLong}
+                                </Link>
+                            </NextLink>
+                        </Checkbox>
+                    </div>
+                </Row>
+                <Row className="form__row justify-center-xs">
+                    <div className="form__group form__group--fixed">
                         <Button
                             role="submit"
                             disabled={disabled}
-                            className="form__group-button"
                             type="solid"
-                            theme="red-white">
+                            theme="red-white"
+                        >
                             Susbcribe
                         </Button>
                     </div>
