@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container } from "components/grid/index";
-import Icon from "components/ui/Icon/index";
+import { Icon } from "components/ui";
 
 import CityImage from "static/images/city.png";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TagProvider from "components/ui/TagProvider";
+import TagProvider from "components/TagProvider";
 import { Arrow } from "svg";
 
 const Button = ({ className = "", theme = "", type = "", as, children, ...rest }) => {

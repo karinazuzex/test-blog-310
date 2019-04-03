@@ -1,7 +1,7 @@
 import Item from "./Item";
 import Group from "./Group";
 
-export default Details = {
+export default {
     Group,
     Item,
 };

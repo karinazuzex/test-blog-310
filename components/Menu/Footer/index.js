@@ -3,7 +3,7 @@ import NextLink from "next/link";
 
 import { routes, consts } from "config";
 
-import Link from "components/ui/Link";
+import { Link } from "components/ui";
 
 const FooterMenu = () => (
     <ul className="f-menu">

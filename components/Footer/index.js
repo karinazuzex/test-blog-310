@@ -5,7 +5,7 @@ import { routes } from "config";
 
 import { Container, Col, Row, Column } from "components/grid";
 import FooterMenu from "components/Menu/Footer";
-import Link from "components/ui/Link";
+import { Link } from "components/ui";
 import Social from "components/Social";
 
 const Footer = () => (

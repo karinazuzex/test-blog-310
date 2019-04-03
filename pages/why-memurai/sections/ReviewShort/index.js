@@ -3,7 +3,7 @@ import React from "react";
 import { reviews } from "config";
 
 import { Container } from "components/grid/index";
-import UserPromo from "components/ui/User/Promo/index";
+import UserPromo from "components/User/Promo";
 
 const ReviewsSection = () =>
     reviews && reviews.length

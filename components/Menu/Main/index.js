@@ -4,8 +4,7 @@ import NextLink from "next/link";
 
 import { routes, consts } from "config";
 
-import Button from "components/ui/Button";
-import Link from "components/ui/Link";
+import { Link, Button } from "components/ui";
 
 import XIcon from "svg/XIcon";
 

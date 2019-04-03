@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Row, Column } from "components/grid";
+import { Row, Column } from "components/grid/index";
 
 const UserPromo = () => (
     <Row theme="no-col" className="user-promo justify-center-xs">

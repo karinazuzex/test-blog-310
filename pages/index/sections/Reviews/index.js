@@ -2,8 +2,8 @@ import React from "react";
 
 import { reviews } from "config";
 
-import { Container } from "components/grid/index";
-import Stars from "components/ui/Stars/index";
+import { Container } from "components/grid";
+import { Stars } from "components/ui";
 
 const ReviewsSection = () =>
     reviews && reviews.length

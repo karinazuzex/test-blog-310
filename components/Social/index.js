@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { TWITTER_LINK, FACEBOOK_LINK, GITHUB_LINK, LINKEDIN_LINK } from "config/consts";
 
 import { Row } from "components/grid";
-import Link from "components/ui/Link";
+import { Link } from "components/ui";
 import { FacebookLogo, LinkedInLogo, GithubLogo, TwitterLogo } from "svg";
 
 const Social = ({ theme = "" }) => (

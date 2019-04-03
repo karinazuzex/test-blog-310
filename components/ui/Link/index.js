@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import TagProvoder from "components/ui/TagProvider";
+import TagProvider from "components/TagProvider";
 
 const Link = ({ className, theme, children, as, ...rest }) => (
-    <TagProvoder
+    <TagProvider
         {...rest}
         defaultTag="a"
         as={as}
         className={`link ${className ? className : ""} ${theme ? `link--${theme}` : ""}`}
     >
         {children}
-    </TagProvoder>
+    </TagProvider>
 );
 
 Link.propTypes = {

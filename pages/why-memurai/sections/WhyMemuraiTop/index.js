@@ -3,7 +3,7 @@ import React from "react";
 import { reviews } from "config";
 
 import { Container, Row } from "components/grid/index";
-import Icon from "components/ui/Icon/index";
+import { Icon } from "components/ui";
 
 import IntegrationImage from "static/images/integration.svg";
 import CompatibilityImage from "static/images/compatibility.png";

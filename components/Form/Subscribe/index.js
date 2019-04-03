@@ -9,9 +9,7 @@ import { consts, exceptions, types, routes } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
-import Button from "components/ui/Button";
-import Checkbox from "components/ui/Checkbox";
-import Link from "components/ui/Link";
+import { Button, Checkbox, Link } from "components/ui";
 
 class SubscribeForm extends Component {
     constructor(props) {

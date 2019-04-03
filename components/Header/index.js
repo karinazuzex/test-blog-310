@@ -6,9 +6,7 @@ import { routes } from "config";
 
 import { Container, Row } from "components/grid";
 import MainMenu from "components/Menu/Main";
-import Button from "components/ui/Button";
-import Link from "components/ui/Link";
-import Burger from "components/ui/Burger";
+import { Button, Link, Burger } from "components/ui";
 
 import { Logo } from "svg";
 

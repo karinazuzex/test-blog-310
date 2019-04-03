@@ -4,7 +4,7 @@ import NextLink from "next/link";
 import { routes, consts } from "config";
 
 import { Container, Row } from "components/grid/index";
-import Button from "components/ui/Button/index";
+import { Button } from "components/ui";
 
 const PromoSection = () => (
     <section className="section section__promo section__promo--home bg-black">

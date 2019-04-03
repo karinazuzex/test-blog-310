@@ -7,7 +7,7 @@ import { consts, routes } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Container } from "components/grid";
-import Link from "components/ui/Link";
+import { Link } from "components/ui";
 
 class DownloadPage extends Component {
     static getInitialProps({query}) {

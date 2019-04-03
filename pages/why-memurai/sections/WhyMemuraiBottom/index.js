@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Row } from "components/grid/index";
-import Icon from "components/ui/Icon/index";
+import { Icon } from "components/ui";
 
 import PerformanceImage from "static/images/performance.png";
 import SupportImage from "static/images/support.png";

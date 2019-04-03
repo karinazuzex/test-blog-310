@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Container, Row, Col } from "components/grid/index";
-import Button from "components/ui/Button/index";
-import DetailsGroup from "components/ui/Details/Group/index";
+import { Container, Row, Col } from "components/grid";
+import { Button } from "components/ui";
+import DetailsGroup from "components/ui/Details/Group";
 
 const FAQs = [
     {
