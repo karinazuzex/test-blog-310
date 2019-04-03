@@ -46,7 +46,10 @@ class DetailsItem extends Component {
 DetailsItem.propTypes = {
     defaultState: PropTypes.bool,
     summary: PropTypes.string.isRequired,
-    info: PropTypes.string.isRequired,
+    info: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+    ]).isRequired,
     uuid: PropTypes.string,
     onOpen: PropTypes.func,
 };

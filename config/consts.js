@@ -15,3 +15,6 @@ export const EMAIL_PATTERN =
 export const MEMURAI_VERSION = "0.1.0 - Redis API 5";
 
 export const MEMURAI_DOCS_LINK = "https://docs.memurai.com";
+export const MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS =
+    `${MEMURAI_DOCS_LINK}config-file#difference-with-redis-configuration-flags`;
+export const MEMURAI_DOCS_WINDOWS_SERVICE_LINK = `${MEMURAI_DOCS_LINK}/windows-service`;

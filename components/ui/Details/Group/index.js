@@ -46,7 +46,10 @@ DetailsGroup.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
             summary: PropTypes.string.isRequired,
-            info: PropTypes.string.isRequired,
+            info: PropTypes.oneOfType([
+                PropTypes.string,
+                PropTypes.node,
+            ]).isRequired,
         }).isRequired,
     ).isRequired,
 };

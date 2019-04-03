@@ -1,3 +1,9 @@
+import React, { Fragment } from "react";
+
+import { consts } from "config";
+
+import { Link } from "components/ui";
+
 export default [
     {
         summary: "What are the minimum system requirements to run Memurai for Windows?",
@@ -17,11 +23,37 @@ export default [
     },
     {
         summary: "Does Memurai for Windows have any limitations compared to Redis on Linux?",
-        info: "Unix domain sockets are not supported. Besides that, there are a few configuration flags that are not supported because they don't make sense on Windows. See https://docs.com/config-file#difference-with-redis-configuration-flags for more information.",
+        info: (
+            <Fragment>
+                Unix domain sockets are not supported. Besides that, there are a few configuration flags that are not
+                supported because they don't make sense on Windows. See&nbsp;
+                <Link
+                    href={consts.MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS}
+                    theme="red"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                >
+                    the documentation
+                </Link> for more information.
+            </Fragment>
+        ),
     },
     {
         summary: "Can I run Memurai as a Windows service?",
-        info: "Yes, Memurai can be installed as a Windows service during the initial setup or later on using the command line options. See https://docs.memurai.com/windows-service for more information.",
+        info: (
+            <Fragment>
+                Yes, Memurai can be installed as a Windows service during the initial setup or later on using the
+                command line options. See&nbsp;
+                <Link
+                    href={consts.MEMURAI_DOCS_WINDOWS_SERVICE_LINK}
+                    theme="red"
+                    rel="noreferrer noopener"
+                    target="_blank"
+                >
+                    the documentation
+                </Link> for more information.
+            </Fragment>
+        ),
     },
     {
         summary: "How fast is Memurai for Windows?",
