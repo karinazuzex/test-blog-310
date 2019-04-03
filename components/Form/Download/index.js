@@ -127,15 +127,6 @@ class DownloadForm extends Component {
                 <Row className="form__row">
                     <div className="form__group">
                         <Checkbox
-                            ref={(ref) => {this.subscribe = ref}}
-                        >
-                            Subscribe to our weekly newsletter
-                        </Checkbox>
-                    </div>
-                </Row>
-                <Row className="form__row">
-                    <div className="form__group">
-                        <Checkbox
                             ref={(ref) => {this.terms = ref}}
                         >
                             I agree to the&nbsp;
@@ -144,6 +135,15 @@ class DownloadForm extends Component {
                                     terms of service
                                 </Link>
                             </NextLink>
+                        </Checkbox>
+                    </div>
+                </Row>
+                <Row className="form__row">
+                    <div className="form__group">
+                        <Checkbox
+                            ref={(ref) => {this.subscribe = ref}}
+                        >
+                            Subscribe to our weekly newsletter
                         </Checkbox>
                     </div>
                 </Row>
