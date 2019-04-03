@@ -22,7 +22,7 @@ const FAQSection = () => (
                     </div>
                 </Col>
                 <Col attributes="xs-12 lg-6">
-                    <DetailsGroup data={faq} />
+                    <DetailsGroup data={faq} autoExpand={0} />
                 </Col>
             </Row>
         </Container>

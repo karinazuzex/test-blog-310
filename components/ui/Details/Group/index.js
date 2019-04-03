@@ -15,11 +15,12 @@ class DetailsGroup extends Component {
     };
 
     renderData = () => {
-        const { data } = this.props;
+        const { data, autoExpand } = this.props;
         return data.map((item, index) => {
             const key = `${index}__${item.summary.split(" ").join("")}`;
             return (
                 <Item
+                    defaultState={!isNaN(autoExpand) && autoExpand === index}
                     summary={item.summary}
                     info={item.info}
                     ref={(ref) => { this.details[key] = ref }}
@@ -41,6 +42,7 @@ class DetailsGroup extends Component {
 }
 
 DetailsGroup.propTypes = {
+    autoExpand: PropTypes.number,
     data: PropTypes.arrayOf(
         PropTypes.shape({
             summary: PropTypes.string.isRequired,

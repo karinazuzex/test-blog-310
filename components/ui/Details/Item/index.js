@@ -6,7 +6,7 @@ class DetailsItem extends Component {
         super(props);
 
         this.state = {
-            active: false,
+            active: props.defaultState || false,
         };
     }
 
@@ -44,6 +44,7 @@ class DetailsItem extends Component {
 }
 
 DetailsItem.propTypes = {
+    defaultState: PropTypes.bool,
     summary: PropTypes.string.isRequired,
     info: PropTypes.string.isRequired,
     uuid: PropTypes.string,
