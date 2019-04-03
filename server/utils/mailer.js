@@ -35,7 +35,7 @@ const contact = ({ email, name, subject, message }) => {
     });
 };
 
-const download = ({ email, name, url }) => {
+const download = ({ email, url }) => {
     const mailOptions = {
         from: "Memurai <noreply@memurai.com>",
         to: email,

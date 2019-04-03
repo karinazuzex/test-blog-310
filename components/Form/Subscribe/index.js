@@ -16,7 +16,6 @@ class SubscribeForm extends Component {
         super(props);
 
         this.getInitialState = () => ({
-            nameError: null,
             emailError: null,
             processing: false,
         });
@@ -26,12 +25,8 @@ class SubscribeForm extends Component {
 
     reset = () => {
         this.setState(this.getInitialState());
-        this.name.value = null;
         this.email.value = null;
-    };
-
-    handleNameChange = () => {
-        this.setState({ nameError: null });
+        this.agreement.reset();
     };
 
     handleEmailChange = () => {
@@ -46,16 +41,13 @@ class SubscribeForm extends Component {
         });
         dispatch(removeAll());
         const agreement = this.agreement.getValue();
-        const name = this.name.value.trim();
         const email = this.email.value.trim();
         const agreementError = validators.validateAgreement(agreement);
-        const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         this.setState({
-            nameError,
             emailError,
         });
-        const formError = validators.formatFormError([nameError, emailError, agreementError]);
+        const formError = validators.formatFormError([emailError, agreementError]);
         if (formError) {
             dispatch(error({
                 position: "bc",
@@ -67,8 +59,8 @@ class SubscribeForm extends Component {
             });
             return;
         }
-        const response = await dispatch(mailerOperations.mailchimpSubscribe(name, email));
-        if (response.result === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
+        const response = await dispatch(mailerOperations.mailchimpSubscribe(email));
+        if (response === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
             this.reset();
         }
         this.setState({
@@ -81,17 +73,6 @@ class SubscribeForm extends Component {
         return (
             <form className="form form--subscribe" onSubmit={this.handleSubmit}>
                 <Row className="form__row align-end-xs">
-                    <div className="form__group">
-                        <label className="form__group-label" htmlFor="name-subscribe">Full name</label>
-                        <input
-                            type="text"
-                            className={`input ${this.state.nameError ? "input--error" : ""}`}
-                            id="name-subscribe"
-                            disabled={disabled}
-                            onChange={this.handleNameChange}
-                            ref={(ref) => { this.name = ref }}
-                        />
-                    </div>
                     <div className="form__group">
                         <label className="form__group-label" htmlFor="email-subscribe">Email address</label>
                         <input

@@ -33,6 +33,8 @@ class ContactForm extends Component {
         this.email.value = null;
         this.subject.value = null;
         this.message.value = null;
+        this.agreement.reset();
+        this.subscribe.reset();
     };
 
     handleNameChange = () => {
@@ -89,7 +91,7 @@ class ContactForm extends Component {
             return;
         }
         if (this.subscribe.getValue()) {
-            dispatch(mailerOperations.mailchimpSubscribe(name, email));
+            dispatch(mailerOperations.mailchimpSubscribe(email));
         }
         const response = await axios.post("/api/contact", {
             name, email, subject, message,

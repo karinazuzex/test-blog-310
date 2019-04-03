@@ -30,12 +30,12 @@ app.prepare()
         });
 
         server.post("/api/request-download", async (req, res) => {
-            const { email, name } = req.body;
+            const { email } = req.body;
             try {
                 const awsLink = await aws.getDownloadUrl();
                 const encryptedCfUrl = crypto.encrypt(awsLink);
                 const url = `${config.memurai_base_url}/download?key=${encryptedCfUrl}`;
-                await mailer.download({ name, email, url });
+                await mailer.download({ email, url });
                 res.status(200).send("success");
             } catch (err) {
                 res.status(400).send(err);

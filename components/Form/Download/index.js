@@ -18,7 +18,6 @@ class DownloadForm extends Component {
 
         this.getInitialState = () => ({
             done: false,
-            nameError: null,
             email: null,
             emailError: null,
             processing: false,
@@ -29,7 +28,6 @@ class DownloadForm extends Component {
 
     reset = () => {
         this.setState(this.getInitialState());
-        this.name.value = null;
         this.email.value = null;
         this.agreement.reset();
         this.subscribe.reset();
@@ -40,10 +38,6 @@ class DownloadForm extends Component {
             done: false,
             email: null,
         });
-    };
-
-    handleNameChange = () => {
-        this.setState({ nameError: null });
     };
 
     handleEmailChange = () => {
@@ -58,16 +52,13 @@ class DownloadForm extends Component {
         });
         dispatch(removeAll());
         const agreement = this.agreement.getValue();
-        const name = this.name.value.trim();
         const email = this.email.value.trim();
         const agreementError = validators.validateAgreement(agreement);
-        const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         this.setState({
-            nameError,
             emailError,
         });
-        const formError = validators.formatFormError([nameError, emailError, agreementError]);
+        const formError = validators.formatFormError([emailError, agreementError]);
         if (formError) {
             dispatch(error({
                 position: "bc",
@@ -80,10 +71,10 @@ class DownloadForm extends Component {
             return;
         }
         if (this.subscribe.getValue()) {
-            dispatch(mailerOperations.mailchimpSubscribe(name, email));
+            dispatch(mailerOperations.mailchimpSubscribe(email));
         }
         const response = await axios.post("/api/request-download", {
-            name, email,
+            email,
         });
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
@@ -92,7 +83,8 @@ class DownloadForm extends Component {
                 done: true,
                 email,
             });
-            dispatch(mailerOperations.mailchimpDownload(name, email));
+            dispatch(mailerOperations.mailchimpDownload(email));
+            dispatch(removeAll());
             dispatch(info({
                 position: "bc",
                 autoDismiss: 3,
@@ -109,17 +101,6 @@ class DownloadForm extends Component {
         return (
             <form className="form form--download" onSubmit={this.handleSubmit}>
                 <Row className="form__row align-end-xs">
-                    <div className="form__group">
-                        <label className="form__group-label" htmlFor="name-download">Full name</label>
-                        <input
-                            type="text"
-                            className={`input ${this.state.nameError ? "input--error" : ""}`}
-                            id="name-download"
-                            disabled={disabled}
-                            onChange={this.handleNameChange}
-                            ref={(ref) => { this.name = ref }}
-                        />
-                    </div>
                     <div className="form__group">
                         <label className="form__group-label" htmlFor="email-download">Email address</label>
                         <input

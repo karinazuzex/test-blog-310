@@ -19,45 +19,43 @@ export const formatMailchimpMessage = (message) => {
     return exceptions.EMAIL_INVALID;
 };
 
-export const mailchimpSubscribe = (name, email) =>
-    dispatch => {
+export const mailchimpSubscribe = (email) =>
+    async dispatch => {
         const params = toQueryString({
-            NAME: name,
             EMAIL: email,
             [consts.MAILCHIMP_SUBSCRIBE_NAME]: "",
         });
         const url = `${helpers.getAjaxUrl(consts.MAILCHIMP_SUBSCRIBE_URL)}&${params}`;
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             jsonp(
                 url,
                 {param: "c"},
                 (err, data) => {
+                    let message;
                     if (err || data.result !== types.MAILCHIMP_TYPE_SUCCESS) {
-                        const message = formatMailchimpMessage(err ? err.msg : data.msg);
+                        message = formatMailchimpMessage(err ? err.msg : data.msg);
                         dispatch(error({
                             position: "bc",
                             autoDismiss: 0,
                             message,
                         }));
-                        reject(message);
                     } else {
-                        const message = formatMailchimpMessage(data.msg);
+                        message = data.result;
                         dispatch(info({
                             position: "bc",
                             autoDismiss: 3,
-                            message,
+                            message: formatMailchimpMessage(data.msg),
                         }));
-                        resolve(message);
                     }
+                    resolve(message);
                 },
             );
         });
     };
 
-export const mailchimpDownload = (name, email) =>
-    dispatch => {
+export const mailchimpDownload = (email) =>
+    async dispatch => {
         const params = toQueryString({
-            NAME: name,
             EMAIL: email,
             [consts.MAILCHIMP_DOWNLOAD_NAME]: "",
         });
@@ -69,7 +67,9 @@ export const mailchimpDownload = (name, email) =>
                 (err, data) => {
                     if (err || data.result !== types.MAILCHIMP_TYPE_SUCCESS) {
                         const message = formatMailchimpMessage(err ? err.msg : data.msg);
-                        reject(message);
+                        message === exceptions.EMAIL_IN_USE
+                            ? reject(message)
+                            : resolve(message);
                     } else {
                         const message = formatMailchimpMessage(data.msg);
                         resolve(message);
