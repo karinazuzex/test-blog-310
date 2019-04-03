@@ -26,8 +26,6 @@ const FooterMenu = () => (
                 href={consts.MEMURAI_DOCS_LINK}
                 theme="grey-light"
                 className="f-menu__link"
-                rel="noreferrer noopener"
-                target="_blank"
             >
                 Documentation
             </Link>

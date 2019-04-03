@@ -30,8 +30,6 @@ export default [
                 <Link
                     href={consts.MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS}
                     theme="red"
-                    rel="noreferrer noopener"
-                    target="_blank"
                 >
                     the documentation
                 </Link> for more information.
@@ -47,8 +45,6 @@ export default [
                 <Link
                     href={consts.MEMURAI_DOCS_WINDOWS_SERVICE_LINK}
                     theme="red"
-                    rel="noreferrer noopener"
-                    target="_blank"
                 >
                     the documentation
                 </Link> for more information.

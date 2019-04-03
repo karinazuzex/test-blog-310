@@ -90,8 +90,6 @@ class DownloadPage extends Component {
                 <Link
                     theme="red"
                     href={consts.MEMURAI_DOCS_LINK}
-                    rel="noreferrer noopener"
-                    target="_blank"
                 >
                     Documentation
                 </Link>.

@@ -32,8 +32,6 @@ const MainMenu = ({ theme, onClose }) => {
                         href={consts.MEMURAI_DOCS_LINK}
                         theme={linkTheme}
                         className="m-menu__link"
-                        rel="noreferrer noopener"
-                        target="_blank"
                     >
                         Documentation
                     </Link>
