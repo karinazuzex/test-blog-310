@@ -10,9 +10,7 @@ import { consts, routes, messages } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
-import Button from "components/ui/Button";
-import Link from "components/ui/Link";
-import Checkbox from "components/ui/Checkbox";
+import { Button, Link, Checkbox } from "components/ui";
 
 class DownloadForm extends Component {
     constructor(props) {
@@ -98,7 +96,7 @@ class DownloadForm extends Component {
         const disabled = this.state.processing;
         return (
             <form className="form form--download" onSubmit={this.handleSubmit}>
-                <Row className="form__row">
+                <Row className="form__row align-end-xs">
                     <div className="form__group">
                         <label className="form__group-label" htmlFor="name-download">Full name</label>
                         <input
@@ -110,8 +108,6 @@ class DownloadForm extends Component {
                             ref={(ref) => { this.name = ref }}
                         />
                     </div>
-                </Row>
-                <Row className="form__row">
                     <div className="form__group">
                         <label className="form__group-label" htmlFor="email-download">Email address</label>
                         <input
