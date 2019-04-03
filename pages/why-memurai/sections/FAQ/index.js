@@ -1,23 +1,10 @@
 import React from "react";
 
+import { faq } from "config";
+
 import { Container, Row, Col } from "components/grid";
 import { Button } from "components/ui";
 import DetailsGroup from "components/ui/Details/Group";
-
-const FAQs = [
-    {
-        summary: "How does Memurai work?",
-        info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-        summary: "What is the file size?",
-        info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-    {
-        summary: "How do I get in touch with the developers?",
-        info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-];
 
 const FAQSection = () => (
     <section className="section section__faq section__faq--why-memurai bg-white-grey separator-bt">
@@ -35,7 +22,7 @@ const FAQSection = () => (
                     </div>
                 </Col>
                 <Col attributes="xs-12 lg-6">
-                    <DetailsGroup data={FAQs} />
+                    <DetailsGroup data={faq} />
                 </Col>
             </Row>
         </Container>
