@@ -61,10 +61,11 @@ class DownloadPage extends Component {
 
     renderValidContext = () => (
         <Fragment>
-            <p className="block__description block__description--fixed block__elem">
-                Thank your for downloading Memurai Technical Preview.<br />
-                Your download should be starting automatically. {this.state.link &&
-            <Fragment>
+            <h5 className="block__title">
+                Your download should be starting automatically.
+            </h5>
+            {this.state.link &&
+            <div className="block__description block__description--fixed block__elem--xl text-sm">
                 If it doesn’t click&nbsp;
                 <Link
                     as="button"
@@ -74,11 +75,13 @@ class DownloadPage extends Component {
                 >
                     here
                 </Link>.
-            </Fragment>
+            </div>
             }
+            <p className="block__description text-bold">
+                Other things you can do
             </p>
-            <p className="block__description">
-                Other things you can do: Follow Memurai on&nbsp;
+            <p className="block__description text-sm">
+                Follow Memurai on&nbsp;
                 <Link
                     theme="red"
                     href={consts.TWITTER_LINK}
@@ -114,12 +117,9 @@ class DownloadPage extends Component {
     render () {
         return (
             <Layout theme="white">
-                <section className="section section__promo section__promo--download">
+                <section className="section section__promo section__promo--result">
                     <Container>
                         <div className="block text-center">
-                            <h3 className="block__title block__elem text-bold">
-                                Download Memurai
-                            </h3>
                             {this.state.valid
                                 ? this.renderValidContext()
                                 : this.renderInvalidContext()

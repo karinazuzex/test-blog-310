@@ -53,7 +53,7 @@ class GetMemuraiPage extends Component {
     );
 
     renderDoneContent = () => (
-        <section className="section section__promo section__promo--get-memurai-success">
+        <section className="section section__promo section__promo--result">
             <Container>
                 <div className="block text-center">
                     <h5 className="block__title">
