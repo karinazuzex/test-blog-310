@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import NextLink from "next/link";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -17,8 +17,6 @@ class DownloadForm extends Component {
         super(props);
 
         this.getInitialState = () => ({
-            done: false,
-            email: null,
             emailError: null,
             processing: false,
         });
@@ -33,20 +31,13 @@ class DownloadForm extends Component {
         this.subscribe.reset();
     };
 
-    clearResult = () => {
-        this.setState({
-            done: false,
-            email: null,
-        });
-    };
-
     handleEmailChange = () => {
         this.setState({ emailError: null });
     };
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        const { dispatch } = this.props;
+        const { dispatch, onCallback } = this.props;
         this.setState({
             processing: true,
         });
@@ -79,10 +70,6 @@ class DownloadForm extends Component {
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
-            this.setState({
-                done: true,
-                email,
-            });
             dispatch(mailerOperations.mailchimpDownload(email));
             dispatch(removeAll());
             dispatch(info({
@@ -90,13 +77,14 @@ class DownloadForm extends Component {
                 autoDismiss: 3,
                 message: messages.REQUEST_SUCCESSFULLY_SENT,
             }));
+            onCallback(email);
         }
         this.setState({
             processing: false,
         });
     };
 
-    renderForm = () => {
+    render() {
         const disabled = this.state.processing;
         return (
             <form className="form form--download" onSubmit={this.handleSubmit}>
@@ -155,42 +143,12 @@ class DownloadForm extends Component {
                 </Row>
             </form>
         );
-    };
-
-    renderDoneContent = () => (
-        <div className="block text-center">
-            <p className="block__description block__description--fixed block__elem">
-                Thank you for your interest in Memurai. We have sent an email to&nbsp;
-                <span className="text-bold">
-                    {this.state.email}
-                </span> containing a link to download the software.
-            </p>
-            <p className="block__description">
-                If you don&apos;t receive the email, please check your spam folder, or&nbsp;
-                <Link
-                    theme="red"
-                    onClick={this.clearResult}
-                >
-                    try again
-                </Link>.
-            </p>
-        </div>
-    );
-
-    render() {
-        return (
-            <Fragment>
-                {this.state.done
-                    ? this.renderDoneContent()
-                    : this.renderForm()
-                }
-            </Fragment>
-        );
     }
 }
 
 DownloadForm.propTypes = {
     dispatch: PropTypes.func.isRequired,
+    onCallback: PropTypes.func.isRequired,
 };
 
 export default connect(null)(DownloadForm);

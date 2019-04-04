@@ -9,12 +9,18 @@
   &-right { text-align: right; }
 
   &-white { color: $white; }
+  &-red { color: $red; }
 
   &-light { font-weight: 300; }
   &-normal { font-weight: normal; }
   &-bold { font-weight: bold; }
 
   &-no-transform { text-transform: none; }
+
+  &-sm {
+    line-height: 21px;
+    font-size: 14px;
+  }
 }
 
 .separator {
@@ -30,4 +36,31 @@
 
 .pb {
   &-0 { padding-bottom: 0; }
+}
+
+@media screen and (min-width: $phabletWidth) {
+  .text {
+    &-sm {
+      line-height: 24px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: $tabletWidth) {
+  .text {
+    &-sm {
+      line-height: 27px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktopWidth) {
+  .text {
+    &-sm {
+      line-height: 30px;
+      font-size: 20px;
+    }
+  }
 }
