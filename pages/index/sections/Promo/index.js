@@ -23,13 +23,13 @@ const PromoSection = () => (
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
                     <div className="button__wrapper">
-                        <NextLink href={routes.GET_MEMURAI_PAGE.path}>
-                            <Button type="solid" theme="red-white chevron chevron-down">
+                        <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+                            <Button as="a" type="solid" theme="red-white chevron chevron-down">
                                 Download for free
                             </Button>
                         </NextLink>
-                        <NextLink href={routes.WHY_MEMURAI_PAGE.path}>
-                            <Button type="hollow" theme="red-white chevron promo-home">
+                        <NextLink href={routes.WHY_MEMURAI_PAGE.path} passHref prefetch>
+                            <Button as="a" type="hollow" theme="red-white chevron promo-home">
                                 Learn more
                             </Button>
                         </NextLink>

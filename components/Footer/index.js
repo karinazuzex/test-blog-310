@@ -32,17 +32,17 @@ const Footer = () => (
                             © 2019<br />
                             All rights reserved by Janea Systems, Inc.<br />
                             <span className="footer__terms">
-                                <NextLink href={routes.TERMS_PAGE.path}>
+                                <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
                                     <Link href="" theme="grey-light">
                                         {routes.TERMS_PAGE.name}
                                     </Link>
                                 </NextLink>
-                                <NextLink href={routes.PRIVACY_PAGE.path}>
+                                <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
                                     <Link href="" theme="grey-light">
                                         {routes.PRIVACY_PAGE.name}
                                     </Link>
                                 </NextLink>
-                                <NextLink href={routes.COOKIE_PAGE.path}>
+                                <NextLink href={routes.COOKIE_PAGE.path} passHref prefetch>
                                     <Link href="" theme="grey-light">
                                         {routes.COOKIE_PAGE.name}
                                     </Link>

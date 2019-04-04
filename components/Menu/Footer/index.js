@@ -8,14 +8,14 @@ import { Link } from "components/ui";
 const FooterMenu = () => (
     <ul className="f-menu">
         <li className="f-menu__item">
-            <NextLink href={routes.HOME_PAGE.path}>
+            <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
                 <Link theme="grey-light" className="f-menu__link">
                     {routes.HOME_PAGE.name}
                 </Link>
             </NextLink>
         </li>
         <li className="f-menu__item">
-            <NextLink href={routes.WHY_MEMURAI_PAGE.path}>
+            <NextLink href={routes.WHY_MEMURAI_PAGE.path} passHref prefetch>
                 <Link theme="grey-light" className="f-menu__link">
                     {routes.WHY_MEMURAI_PAGE.name}
                 </Link>
@@ -31,14 +31,14 @@ const FooterMenu = () => (
             </Link>
         </li>
         <li className="f-menu__item">
-            <NextLink href={routes.ABOUT_PAGE.path}>
+            <NextLink href={routes.ABOUT_PAGE.path} passHref prefetch>
                 <Link theme="grey-light" className="f-menu__link">
                     {routes.ABOUT_PAGE.name}
                 </Link>
             </NextLink>
         </li>
         <li className="f-menu__item">
-            <NextLink href={routes.CONTACT_PAGE.path}>
+            <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
                 <Link theme="grey-light" className="f-menu__link">
                     {routes.CONTACT_PAGE.name}
                 </Link>

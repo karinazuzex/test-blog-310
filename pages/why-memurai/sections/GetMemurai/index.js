@@ -17,8 +17,8 @@ const PromoSection = () => (
                     Download the free technical preview<br />
                 </h3>
                 <Row theme="no-col" className="justify-center-xs">
-                    <NextLink href={routes.GET_MEMURAI_PAGE.path}>
-                        <Button type="solid" theme="red-white chevron chevron-down">
+                    <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+                        <Button as="a" type="solid" theme="red-white chevron chevron-down">
                             Download for free
                         </Button>
                     </NextLink>

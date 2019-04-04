@@ -15,7 +15,7 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            isScrolled: false,
+            isFixed: false,
             isWhite: props.theme === "white",
             showMenu: false,
         };
@@ -47,10 +47,10 @@ class Header extends Component {
     updateWindowPosition = () => {
         const { theme } = this.props;
         const { scrollY } = window;
-        const isScrolled = scrollY > 600;
+        const isFixed = scrollY > 600;
         const isWhite = theme === "white" || scrollY > 600;
         this.setState({
-            isScrolled,
+            isFixed,
             isWhite,
         });
     };
@@ -59,10 +59,12 @@ class Header extends Component {
         return (
             <header className={`header ${
                 this.state.isWhite ? "header--white" : ""
-            } ${this.state.isScrolled ? "header--scrolled" : ""}`} role="header">
+            } ${this.state.isFixed || this.state.showMenu ? "header--fixed" : ""} ${
+                this.state.showMenu ? "header--show-menu" : ""
+                }`} role="header">
                 <Container>
                     <Row theme="no-col" className="justify-center-xs justify-between-lg align-center-xs">
-                        <NextLink href={routes.HOME_PAGE.path}>
+                        <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
                             <Link className="header__logo">
                                 <Logo className={`header__logo--img ${this.state.isWhite ? "black" : ""}`} />
                             </Link>
@@ -71,11 +73,11 @@ class Header extends Component {
                             theme={this.state.isWhite ? "white" : ""}
                             onClose={this.handleMenuClose}
                         />
-                        <NextLink href={routes.GET_MEMURAI_PAGE.path}>
+                        <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
                             <Button as="a" type="hollow" theme={`${
                                 this.state.isWhite ? "red-black versioned-black" : "red-white"
                                 } versioned ${
-                                this.state.isScrolled ? "versioned-hidden" : ""
+                                this.state.isFixed ? "versioned-hidden" : ""
                                 }`} className="header__button header__button--action">
                                 {routes.GET_MEMURAI_PAGE.name}
                             </Button>

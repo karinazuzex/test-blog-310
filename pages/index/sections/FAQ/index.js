@@ -18,8 +18,8 @@ const FAQSection = () => (
                         <h3 className="block__title block__elem">
                             Common questions about Memurai
                         </h3>
-                        <NextLink href={routes.CONTACT_PAGE.path}>
-                            <Button className="block__elem" type="hollow" theme="red chevron">
+                        <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
+                            <Button as="a" className="block__elem" type="hollow" theme="red chevron">
                                 Ask a question
                             </Button>
                         </NextLink>

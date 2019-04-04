@@ -10,6 +10,10 @@
 
   &--show-menu {
     left: -$mobileMenuWidth;
+
+    .header--fixed {
+      left: -$mobileMenuWidth;
+    }
   }
 }
 
