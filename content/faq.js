@@ -31,7 +31,7 @@ export default [
                     href={consts.MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS}
                     theme="red"
                 >
-                    Documentation
+                    documentation
                 </Link> for more information.
             </Fragment>
         ),
@@ -46,7 +46,7 @@ export default [
                     href={consts.MEMURAI_DOCS_WINDOWS_SERVICE_LINK}
                     theme="red"
                 >
-                    Documentation
+                    documentation
                 </Link> for more information.
             </Fragment>
         ),
