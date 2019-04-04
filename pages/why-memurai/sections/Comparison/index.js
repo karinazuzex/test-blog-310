@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Container, Row } from "components/grid/index";
-import ComparsionTable from "components/Table/Comparsion";
+import ComparisonTable from "components/Table/Comparison";
 
 const PromoSection = () => (
-    <section className="section section__comparsion bg-white-grey separator-bt">
+    <section className="section section__comparison bg-white-grey separator-bt">
         <Container>
             <div className="block text-center">
                 <div className="block__pretitle block__elem--xs">
@@ -15,7 +15,7 @@ const PromoSection = () => (
                 </h3>
                 <Container theme="reversed">
                     <Row theme="no-col" className="justify-center-xs">
-                        <ComparsionTable />
+                        <ComparisonTable />
                     </Row>
                 </Container>
             </div>

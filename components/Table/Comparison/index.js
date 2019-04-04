@@ -2,12 +2,12 @@ import React from "react";
 
 import { Row } from "components/grid/index";
 
-const ComparsionTable = () => (
+const ComparisonTable = () => (
     <div className="table__wrapper">
-        <div className="table table--comparsion">
+        <div className="table table--comparison">
             <Row theme="no-col" className="table__row table__row--header">
                 <div className="col-xs-3 table__col">
-                    Comparsion
+                    Comparison
                 </div>
                 <div className="col-xs-3 table__col">
                     <label className="label label__solid label__solid--red">
@@ -113,4 +113,4 @@ const ComparsionTable = () => (
     </div>
 );
 
-export default ComparsionTable;
+export default ComparisonTable;
