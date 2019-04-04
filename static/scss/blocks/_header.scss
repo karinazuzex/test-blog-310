@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   top: 0;
@@ -8,7 +8,7 @@
   padding-bottom: 19px;
   z-index: 10;
   box-shadow: none;
-  transition: box-shadow $defaultTransition, left $defaultTransition background-color $defaultTransition;
+  transition: box-shadow $defaultTransition, left $defaultTransition, background-color $defaultTransition;
 
   &__element {
     &-side {
@@ -35,15 +35,6 @@
     background-color: $white;
   }
 
-  &--fixed {
-    position: fixed;
-    box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.03);
-
-    &:not(.header--show-menu) {
-      animation: headerSlideDown $doubleTransition;
-    }
-  }
-
   &__burger {
     position: absolute;
     top: 50%;
@@ -62,6 +53,7 @@
 
 @media screen and (min-width: $tabletWidth) {
   .header {
+    position: absolute;
     padding-top: 25px;
     padding-bottom: 25px;
 
@@ -99,8 +91,10 @@
       display: none;
     }
 
-    &--show-menu {
-      left: 0;
+    &--fixed {
+      position: fixed;
+      box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.03);
+      animation: headerSlideDown $doubleTransition;
     }
   }
 }
