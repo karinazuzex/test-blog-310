@@ -87,8 +87,8 @@ class SubscribeForm extends Component {
                         />
                     </div>
                 </Row>
-                <Row className="form__row">
-                    <div className="form__group">
+                <Row className="form__row align-center-xs justify-center-xs">
+                    <div className="form__group form__group--checkbox">
                         <Checkbox
                             ref={(ref) => {this.agreement = ref}}
                         >
@@ -105,9 +105,7 @@ class SubscribeForm extends Component {
                             </NextLink>
                         </Checkbox>
                     </div>
-                </Row>
-                <Row className="form__row justify-center-xs">
-                    <div className="form__group form__group--fixed">
+                    <div className="form__group form__group--fixed form__group--lg">
                         <Button
                             role="submit"
                             disabled={disabled}

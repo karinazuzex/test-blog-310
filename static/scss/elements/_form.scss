@@ -20,12 +20,12 @@
       margin-bottom: 6px;
     }
 
-    &--fixed {
+    &--lg {
       margin-top: 30px;
     }
 
-    &--lg {
-      margin-top: 30px;
+    &--checkbox {
+      margin-top: 10px;
     }
 
     .button {
@@ -47,6 +47,10 @@
         flex-grow: 0;
         flex-shrink: 0;
       };
+
+      &--checkbox {
+        margin-top: 30px;
+      }
 
       &-label {
         font-size: 14px;

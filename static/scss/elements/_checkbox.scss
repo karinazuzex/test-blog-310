@@ -6,6 +6,11 @@
   line-height: 25px;
   height: 25px;
   cursor: pointer;
+  display: block;
+
+  & + & {
+    margin-top: 8px;
+  }
 
   &:before {
     box-sizing: border-box;

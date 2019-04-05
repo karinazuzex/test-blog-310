@@ -166,8 +166,8 @@ class ContactForm extends Component {
                         />
                     </div>
                 </Row>
-                <Row className="form__row">
-                    <div className="form__group">
+                <Row className="form__row align-center-xs justify-center-xs">
+                    <div className="form__group form__group--checkbox">
                         <Checkbox
                             ref={(ref) => {this.agreement = ref}}
                         >
@@ -183,19 +183,13 @@ class ContactForm extends Component {
                                 </Link>
                             </NextLink>
                         </Checkbox>
-                    </div>
-                </Row>
-                <Row className="form__row">
-                    <div className="form__group">
                         <Checkbox
                             ref={(ref) => {this.subscribe = ref}}
                         >
                             Subscribe to our weekly newsletter
                         </Checkbox>
                     </div>
-                </Row>
-                <Row className="form__row justify-center-xs">
-                    <div className="form__group form__group--fixed">
+                    <div className="form__group form__group--fixed form__group--lg">
                         <Button
                             disabled={disabled}
                             role="submit"
