@@ -42,7 +42,9 @@ class Layout extends Component {
                         theme={theme}
                         onMenuChange={this.handleMenuChange}
                     />
-                    {children}
+                    <main role="main">
+                        {children}
+                    </main>
                     <Footer />
                 </div>
                 <Notifications
