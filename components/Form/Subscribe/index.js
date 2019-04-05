@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NextLink from "next/link";
 import { info, error, removeAll } from "react-notification-system-redux";
+import ReCaptcha from "react-google-recaptcha";
 
 import { validators, helpers } from "utils";
 import { consts, exceptions, types, routes } from "config";
@@ -35,6 +36,7 @@ class SubscribeForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        this.recaptcha.current.execute();
         const { dispatch } = this.props;
         this.setState({
             processing: true,
@@ -116,6 +118,11 @@ class SubscribeForm extends Component {
                         </Button>
                     </div>
                 </Row>
+                <ReCaptcha
+                    ref={(ref) => { this.recaptcha = ref }}
+                    size="invisible"
+                    sitekey={consts.RECAPTCHA_SITE_KEY}
+                />
             </form>
         );
     }

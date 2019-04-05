@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
 import { error, info, removeAll } from "react-notification-system-redux";
+import ReCaptcha from "react-google-recaptcha";
 
 import { validators, helpers } from "utils";
 import { consts, routes, messages } from "config";
@@ -37,6 +38,7 @@ class DownloadForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        this.recaptcha.current.execute();
         const { dispatch, onCallback } = this.props;
         this.setState({
             processing: true,
@@ -141,6 +143,11 @@ class DownloadForm extends Component {
                         </Button>
                     </div>
                 </Row>
+                <ReCaptcha
+                    ref={(ref) => { this.recaptcha = ref }}
+                    size="invisible"
+                    sitekey={consts.RECAPTCHA_SITE_KEY}
+                />
             </form>
         );
     }

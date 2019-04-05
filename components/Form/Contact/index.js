@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import NextLink from "next/link";
 import axios from "axios";
 import { error, info, removeAll } from "react-notification-system-redux";
+import ReCaptcha from "react-google-recaptcha";
 
 import { validators, helpers } from "utils";
 import { consts, messages, routes } from "config";
@@ -55,6 +56,7 @@ class ContactForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        this.recaptcha.current.execute();
         const { dispatch } = this.props;
         this.setState({
             processing: true,
@@ -204,6 +206,11 @@ class ContactForm extends Component {
                         </Button>
                     </div>
                 </Row>
+                <ReCaptcha
+                    ref={(ref) => { this.recaptcha = ref }}
+                    size="invisible"
+                    sitekey={consts.RECAPTCHA_SITE_KEY}
+                />
             </form>
         );
     }

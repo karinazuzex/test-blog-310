@@ -4,6 +4,9 @@ export const MAILCHIMP_SUBSCRIBE_NAME = "b_5788bc3268a4b1be403817cce_c705de38dc"
 export const MAILCHIMP_DOWNLOAD_URL = "https://janeasystems.us16.list-manage.com/subscribe/post?u=5788bc3268a4b1be403817cce&amp;id=3c32c7ca53";
 export const MAILCHIMP_DOWNLOAD_NAME = "b_5788bc3268a4b1be403817cce_3c32c7ca53";
 
+export const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+// export const RECAPTCHA_SITE_KEY = "6LeJRpwUAAAAAHcLJYG0WWFZc6vLPMryh1eZrvFG";
+
 export const TWITTER_LINK = "https://twitter.com/MemuraiHQ";
 export const LINKEDIN_LINK = "https://www.linkedin.com/company/memurai";
 export const GITHUB_LINK = "https://github.com/memurai";
