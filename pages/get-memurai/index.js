@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Layout from "components/Layout";
 
-import { Container } from "components/grid";
+import { Container, Row, Col } from "components/grid";
 import DownloadForm from "components/Form/Download";
 import { Link } from "components/ui";
 
@@ -45,7 +45,11 @@ class GetMemuraiPage extends Component {
             <section className="section section__download bg-white-grey">
                 <Container>
                     <div className="block">
-                        <DownloadForm onCallback={this.handleFormCallback} />
+                        <Row className="justify-center-xs">
+                            <Col attributes="xs-12 md-8">
+                                <DownloadForm onCallback={this.handleFormCallback} />
+                            </Col>
+                        </Row>
                     </div>
                 </Container>
             </section>

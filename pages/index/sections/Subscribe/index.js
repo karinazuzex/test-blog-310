@@ -12,7 +12,11 @@ const SubscribeSection = () => (
                     Stay informed.<br />
                     <span className="text-normal">Subscribe to our newsletter</span>
                 </h3>
-                <SubscribeForm />
+                <Row className="justify-center-xs">
+                    <Col attributes="xs-12 md-8">
+                        <SubscribeForm />
+                    </Col>
+                </Row>
             </div>
         </Container>
     </section>

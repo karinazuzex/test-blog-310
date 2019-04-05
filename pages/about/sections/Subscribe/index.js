@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container, Row, Col } from "components/grid/index";
 import SubscribeForm from "components/Form/Subscribe/index";
 
 const SubscribeSection = () => (
@@ -12,7 +12,11 @@ const SubscribeSection = () => (
                     Stay informed.<br />
                     <span className="text-normal">Our newsletter is sent weekly</span>
                 </h3>
-                <SubscribeForm />
+                <Row className="justify-center-xs">
+                    <Col attributes="xs-12 md-8">
+                        <SubscribeForm />
+                    </Col>
+                </Row>
             </div>
         </Container>
     </section>
