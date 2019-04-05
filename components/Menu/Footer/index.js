@@ -15,9 +15,9 @@ const FooterMenu = () => (
             </NextLink>
         </li>
         <li className="f-menu__item">
-            <NextLink href={routes.WHY_MEMURAI_PAGE.path} passHref prefetch>
+            <NextLink href={routes.FAQ_PAGE.path} passHref prefetch>
                 <Link theme="grey-light" className="f-menu__link">
-                    {routes.WHY_MEMURAI_PAGE.name}
+                    {routes.FAQ_PAGE.name}
                 </Link>
             </NextLink>
         </li>
@@ -41,6 +41,13 @@ const FooterMenu = () => (
             <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
                 <Link theme="grey-light" className="f-menu__link">
                     {routes.CONTACT_PAGE.name}
+                </Link>
+            </NextLink>
+        </li>
+        <li className="f-menu__item">
+            <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+                <Link theme="grey-light" className="f-menu__link">
+                    {routes.GET_MEMURAI_PAGE.name}
                 </Link>
             </NextLink>
         </li>

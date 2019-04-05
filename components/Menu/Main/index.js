@@ -21,9 +21,9 @@ const MainMenu = ({ theme, onClose }) => {
                     </NextLink>
                 </li>
                 <li className="m-menu__item">
-                    <NextLink href={routes.WHY_MEMURAI_PAGE.path} passHref prefetch>
+                    <NextLink href={routes.FAQ_PAGE.path} passHref prefetch>
                         <Link theme={linkTheme} className="m-menu__link">
-                            {routes.WHY_MEMURAI_PAGE.name}
+                            {routes.FAQ_PAGE.name}
                         </Link>
                     </NextLink>
                 </li>
