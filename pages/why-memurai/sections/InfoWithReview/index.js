@@ -52,7 +52,7 @@ const InfoWithReviewSection = () => {
 
     return (
         <Fragment>
-            <section className="section section__info bg-white-grey">
+            <section className={`section section__info bg-white-grey ${containReview ? "" : "separator-bt"}`}>
                 <Container>
                     <Row theme="no-col" className="info info--reversed">
                         <div className="info__text info__block">
