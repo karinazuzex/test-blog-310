@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container, Row, Col } from "components/grid/index";
 import SubscribeForm from "components/Form/Subscribe/index";
 
 const SubscribeSection = () => (
