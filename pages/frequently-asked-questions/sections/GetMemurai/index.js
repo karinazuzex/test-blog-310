@@ -1,3 +1,4 @@
+
 import React from "react";
 import NextLink from "next/link";
 
@@ -6,7 +7,7 @@ import { routes, consts } from "config/index";
 import { Container, Row } from "components/grid/index";
 import { Button } from "components/ui/index";
 
-const PromoSection = () => (
+const GetMemuraiSection = () => (
     <section className="section section__get-memurai bg-white-grey">
         <Container>
             <div className="block text-center">
@@ -31,4 +32,4 @@ const PromoSection = () => (
     </section>
 );
 
-export default PromoSection;
+export default GetMemuraiSection;

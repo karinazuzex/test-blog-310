@@ -65,7 +65,7 @@ class DownloadPage extends Component {
                 Your download should be starting automatically.
             </h5>
             {this.state.link &&
-            <div className="block__description block__description--fixed block__elem--xl text-sm">
+            <div className="block__description block__description--fixed block__elem--80 text-sm">
                 If it doesn’t click&nbsp;
                 <Link
                     as="button"

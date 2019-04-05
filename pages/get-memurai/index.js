@@ -63,7 +63,7 @@ class GetMemuraiPage extends Component {
                     <h5 className="block__title">
                         Thank you for your interest in Memurai.
                     </h5>
-                    <p className="block__description block__description--fixed block__elem--xl text-sm">
+                    <p className="block__description block__description--fixed block__elem--80 text-sm">
                         We have sent an email to&nbsp;
                         <span className="text-red">
                             {this.state.email}

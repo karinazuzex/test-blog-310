@@ -10,7 +10,7 @@ const PromoSection = () => (
                 <div className="block__pretitle block__elem--xs">
                     OPTIONS COMPARED
                 </div>
-                <h3 className="block__title block__elem--xl">
+                <h3 className="block__title block__elem--80">
                     Redis-compatible servers on Windows
                 </h3>
                 <Container theme="reversed">
