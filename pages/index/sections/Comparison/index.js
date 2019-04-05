@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Container, Row } from "components/grid/index";
-import ComparisonTable from "components/Table/Comparison";
+import ComparisonTable from "components/Table/Comparison/index";
 
 const PromoSection = () => (
-    <section className="section section__comparison bg-white-grey separator-bt">
+    <section className="section section__comparison section__comparison--home bg-white-grey separator-bt">
         <Container>
             <div className="block text-center">
                 <div className="block__pretitle block__elem--xs">

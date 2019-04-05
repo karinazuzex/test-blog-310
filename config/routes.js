@@ -9,7 +9,8 @@ export const WHY_MEMURAI_PAGE = {
 };
 
 export const FAQ_PAGE = {
-    name: "Frequently asked questions",
+    name: "FAQ",
+    nameLong: "Frequently asked questions",
     path: "/frequently-asked-questions",
 };
 
@@ -20,6 +21,7 @@ export const ABOUT_PAGE = {
 
 export const CONTACT_PAGE = {
     name: "Contact",
+    nameLong: "contact us",
     path: "/contact",
 };
 

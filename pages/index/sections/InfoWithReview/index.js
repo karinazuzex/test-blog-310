@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
-import { reviews } from "content";
+import { reviews } from "content/index";
 
-import { Container, Row } from "components/grid/index";
+import { Container, Row } from "components/grid";
 import { Icon } from "components/ui";
 import UserPromo from "components/User/Promo";
 

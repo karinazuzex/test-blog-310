@@ -2,15 +2,19 @@ import Layout from "components/Layout"
 
 import PromoSection from "./sections/Promo";
 import ReviewsSection from "./sections/Reviews";
-import FAQSection from "./sections/FAQ";
-import SubscribeSection from "./sections/Subscribe";
+import InfoWithReviewSection from "./sections/InfoWithReview";
+import ComparisonSection from "./sections/Comparison";
+import GetMemuraiSection from "./sections/GetMemurai";
+import AdditionalInfoSection from "./sections/AdditionalInfo";
 
 const IndexPage = () => (
     <Layout>
         <PromoSection />
         <ReviewsSection />
-        <FAQSection />
-        <SubscribeSection />
+        <InfoWithReviewSection />
+        <ComparisonSection />
+        <AdditionalInfoSection />
+        <GetMemuraiSection />
     </Layout>
 );
 
