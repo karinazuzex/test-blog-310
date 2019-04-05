@@ -28,11 +28,9 @@ const PromoSection = () => (
                                 Download for free
                             </Button>
                         </NextLink>
-                        <NextLink href={routes.WHY_MEMURAI_PAGE.path} passHref prefetch>
-                            <Button as="a" type="hollow" theme="red-white chevron promo-home">
-                                Learn more
-                            </Button>
-                        </NextLink>
+                        <Button as="a" type="hollow" theme="red-white chevron promo-home">
+                            Learn more
+                        </Button>
                     </div>
                 </Row>
                 <p className="block__postfix block__postfix--promo-home">

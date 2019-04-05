@@ -3,11 +3,6 @@ export const HOME_PAGE = {
     path: "/",
 };
 
-export const WHY_MEMURAI_PAGE = {
-    name: "Why Memurai",
-    path: "/why-memurai",
-};
-
 export const FAQ_PAGE = {
     name: "FAQ",
     nameLong: "Frequently asked questions",
