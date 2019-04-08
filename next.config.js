@@ -16,6 +16,10 @@ module.exports = withCSS(withSass({
         return config;
     },
 
+    publicRuntimeConfig: {
+        NODE_ENV: process.env.NODE_ENV,
+    },
+
     exportPathMap: function () {
       return {
         "/": { page: "/" },
