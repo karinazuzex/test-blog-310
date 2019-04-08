@@ -29,6 +29,10 @@ class Layout extends Component {
         return (
             <Fragment>
                 <Head>
+                    <meta key="charset" charSet="utf-8" />
+                    <meta key="format-detection" name="format-detection" content="telephone=no" />
+                    <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta key="http-equiv" httpEquiv="x-ua-compatible" content="ie=edge" />
                     <script
                         id="Cookiebot"
                         src="https://consent.cookiebot.com/uc.js"
