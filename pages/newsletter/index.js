@@ -2,10 +2,10 @@ import Layout from "components/Layout"
 
 import PromoSection from "./sections/Promo";
 
-const AboutPage = () => (
+const NewsletterPage = () => (
     <Layout theme="white">
         <PromoSection />
     </Layout>
 );
 
-export default AboutPage;
+export default NewsletterPage;

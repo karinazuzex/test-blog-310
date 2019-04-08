@@ -25,6 +25,11 @@ export const GET_MEMURAI_PAGE = {
     path: "/get-memurai",
 };
 
+export const NEWSLETTER_PAGE = {
+    name: "Newsletter",
+    path: "/newsletter",
+};
+
 export const TERMS_PAGE = {
     name: "Terms",
     nameLong: "Terms of service",

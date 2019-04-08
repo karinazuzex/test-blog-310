@@ -24,6 +24,7 @@ module.exports = withCSS(withSass({
         "/get-memurai": { page: "/get-memurai" },
         "/download": { page: "/download" },
         "/contact": { page: "/contact" },
+        "/newsletter": { page: "/newsletter" },
         "/terms": { page: "/terms" },
         "/privacy": { page: "/privacy" },
         "/cookie": { page: "/cookie" }
