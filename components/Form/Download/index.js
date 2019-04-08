@@ -80,10 +80,11 @@ class DownloadForm extends Component {
                 message: messages.REQUEST_SUCCESSFULLY_SENT,
             }));
             onCallback(email);
+        } else {
+            this.setState({
+                processing: false,
+            });
         }
-        this.setState({
-            processing: false,
-        });
     };
 
     render() {
