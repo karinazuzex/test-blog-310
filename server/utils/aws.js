@@ -6,7 +6,7 @@ const getDownloadUrl = () => {
     const params = {
         keypairId: config.aws_key_pair_id,
         privateKeyPath: config.aws_private_key_path,
-        expireTime: moment().add({ days: 2 }).unix() * 1000,
+        expireTime: moment().add({ minutes: parseInt(config.aws_expire_timeout, 10) }).unix() * 1000,
     };
     return new Promise(async (resolve, reject) => {
         try {

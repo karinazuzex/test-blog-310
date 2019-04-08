@@ -17,6 +17,7 @@ module.exports = {
     aws_key_pair_id: getVar("aws_key_pair_id", "AKIA3LC2RKLTO3CGYZZW"),
     aws_private_key_path: getVar("aws_private_key_string", "server/config/aws-pk.pem"),
     aws_file_path: getVar("aws_file_path", "https://dmig02f1dvad2.cloudfront.net/hello-v1.txt"),
+    aws_expire_timeout: getVar("aws_expire_timeout", 48 * 60),
     crypto_key: getVar("crypto_key", "test_crypto_key"),
     memurai_base_url: getVar(
         "memurai_base_url",
