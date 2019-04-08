@@ -36,7 +36,7 @@ class SubscribeForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        this.recaptcha.current.execute();
+        this.recaptcha.execute();
         const { dispatch } = this.props;
         this.setState({
             processing: true,
