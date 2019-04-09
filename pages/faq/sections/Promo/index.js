@@ -7,7 +7,7 @@ const PromoSection = () => (
         <Container>
             <div className="block text-center">
                 <h3 className="block__title text-bold">
-                    Frequently asked questions
+                    Frequently Asked Questions
                 </h3>
             </div>
         </Container>

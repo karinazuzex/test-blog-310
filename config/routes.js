@@ -6,7 +6,7 @@ export const HOME_PAGE = {
 export const FAQ_PAGE = {
     name: "FAQ",
     nameLong: "Frequently asked questions",
-    path: "/frequently-asked-questions",
+    path: "/faq",
 };
 
 export const ABOUT_PAGE = {

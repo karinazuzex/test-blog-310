@@ -24,7 +24,7 @@ module.exports = withCSS(withSass({
       return {
         "/": { page: "/" },
         "/about": { page: "/about" },
-        "/frequently-asked-questions": { page: "/frequently-asked-questions" },
+        "/faq": { page: "/faq" },
         "/get-memurai": { page: "/get-memurai" },
         "/download": { page: "/download" },
         "/contact": { page: "/contact" },
