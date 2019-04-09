@@ -8,11 +8,10 @@ const PromoSection = () => (
         <Container>
             <div className="block text-center">
                 <h3 className="block__title block__elem text-bold">
-                    Latest news
+                    Subscribe to our newsletter
                 </h3>
                 <p className="block__description block__description--fixed block__elem--xl">
-                    Stay informed.<br />
-                    Our newsletter is sent weekly.
+                    Receive updates about key news and special offers.<br />
                 </p>
                 <Row className="justify-center-xs">
                     <Col attributes="xs-12 md-8">
