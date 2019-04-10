@@ -28,7 +28,14 @@ const PromoSection = () => (
                                 Download for free
                             </Button>
                         </NextLink>
-                        <Button as="a" type="hollow" theme="red-white chevron promo-home">
+                        <Button as="scroll"
+                                to="learn-more-anchor"
+                                smooth="easeOutQuad"
+                                duration={400}
+                                offset={-60}
+                                type="hollow"
+                                theme="red-white chevron promo-home"
+                        >
                             Learn more
                         </Button>
                     </div>
