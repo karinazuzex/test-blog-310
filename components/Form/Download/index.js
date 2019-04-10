@@ -74,11 +74,6 @@ class DownloadForm extends Component {
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             dispatch(mailerOperations.mailchimpDownload(email));
             dispatch(removeAll());
-            dispatch(info({
-                position: "bc",
-                autoDismiss: 3,
-                message: messages.REQUEST_SUCCESSFULLY_SENT,
-            }));
             onCallback(email);
         } else {
             this.setState({
