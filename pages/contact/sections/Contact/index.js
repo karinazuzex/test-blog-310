@@ -1,13 +1,17 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container, Row, Col } from "components/grid/index";
 import ContactForm from "components/Form/Contact/index";
 
 const ContactSection = () => (
     <section className="section section__contact section__contact--contact bg-white-grey">
         <Container>
             <div className="block">
-                <ContactForm />
+                <Row className="justify-center-xs">
+                    <Col attributes="xs-12 md-8">
+                        <ContactForm />
+                    </Col>
+                </Row>
             </div>
         </Container>
     </section>
