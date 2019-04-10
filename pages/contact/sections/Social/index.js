@@ -4,7 +4,7 @@ import { Container } from "components/grid/index";
 import Social from "components/Social/index";
 
 const PromoSection = () => (
-    <section className="section section__social section__social--contact">
+    <section className="section section__social section__social--contact bg-white-grey separator-bt">
         <Container>
             <div className="block text-center">
                 <div className="block__pretitle block__elem--xs">

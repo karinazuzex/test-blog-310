@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container, Row, Col } from "components/grid/index";
+import ContactForm from "components/Form/Contact/index";
 
 const PromoSection = () => (
     <section className="section section__promo section__promo--contact">
@@ -9,10 +10,15 @@ const PromoSection = () => (
                 <h3 className="block__title block__elem text-bold">
                     Contact
                 </h3>
-                <p className="block__description block__description--fixed">
+                <p className="block__description block__description--fixed block__elem--lg">
                     Have a question? Send us a note using the form below and someone from the Memurai team will be in
                     touch soon.
                 </p>
+                <Row className="justify-center-xs">
+                    <Col attributes="xs-12 md-8">
+                        <ContactForm />
+                    </Col>
+                </Row>
             </div>
         </Container>
     </section>
