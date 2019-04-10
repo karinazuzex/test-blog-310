@@ -33,7 +33,9 @@ class Layout extends Component {
                     <meta key="format-detection" name="format-detection" content="telephone=no" />
                     <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta key="http-equiv" httpEquiv="x-ua-compatible" content="ie=edge" />
+                    <script key="recaptcha" src="https://www.google.com/recaptcha/api.js?render=explicit" async defer />
                     <script
+                        key="cookiebot"
                         id="Cookiebot"
                         src="https://consent.cookiebot.com/uc.js"
                         data-cbid="ad4b92a8-bdac-4756-852d-30e83d1feba3"

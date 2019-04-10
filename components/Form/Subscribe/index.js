@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NextLink from "next/link";
@@ -22,6 +23,16 @@ class SubscribeForm extends Component {
         });
 
         this.state = this.getInitialState();
+    }
+
+    componentDidMount() {
+        ReactDOM.render(
+            <ReCaptcha
+                ref={(ref) => { this.recaptcha = ref }}
+                size="invisible"
+                sitekey={consts.RECAPTCHA_SITE_KEY}
+            />,
+            this.recaptchaWrapper);
     }
 
     reset = () => {
@@ -68,6 +79,7 @@ class SubscribeForm extends Component {
         this.setState({
             processing: false,
         });
+        this.recaptcha.reset();
     };
 
     render() {
@@ -116,11 +128,7 @@ class SubscribeForm extends Component {
                         </Button>
                     </div>
                 </Row>
-                <ReCaptcha
-                    ref={(ref) => { this.recaptcha = ref }}
-                    size="invisible"
-                    sitekey={consts.RECAPTCHA_SITE_KEY}
-                />
+                <div ref={(ref) => { this.recaptchaWrapper = ref }} />
             </form>
         );
     }
