@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container } from "components/grid";
 
 const PromoSection = () => (
     <section className="section section__promo section__promo--faq">

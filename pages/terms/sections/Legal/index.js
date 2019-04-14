@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container } from "components/grid/index";
+import { Container } from "components/grid";
 
 const LegalSection = () => (
     <section className="section section__legal section__legal--terms">

@@ -3,7 +3,7 @@ import NextLink from "next/link";
 
 import { routes } from "config";
 
-import { Container } from "components/grid/index";
+import { Container } from "components/grid";
 import { Link } from "components/ui";
 
 const AdditionalInfoSection = () => (

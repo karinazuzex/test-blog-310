@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, Row, Col } from "components/grid/index";
-import SubscribeForm from "components/Form/Subscribe/index";
+import { Container, Row, Col } from "components/grid";
+import SubscribeForm from "components/Form/Subscribe";
 
 const PromoSection = () => (
     <section className="section section__promo section__promo--newsletter">

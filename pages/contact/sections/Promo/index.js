@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, Row, Col } from "components/grid/index";
-import ContactForm from "components/Form/Contact/index";
+import { Container, Row, Col } from "components/grid";
+import ContactForm from "components/Form/Contact";
 
 const PromoSection = () => (
     <section className="section section__promo section__promo--contact">

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { reviews } from "content/index";
+import { reviews } from "content";
 
 import { Container, Row } from "components/grid";
 import { Icon } from "components/ui";

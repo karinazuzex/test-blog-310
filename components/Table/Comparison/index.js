@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Row } from "components/grid/index";
+import { Row } from "components/grid";
 
 const ComparisonTable = () => (
     <div className="table__wrapper">

@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container, Row } from "components/grid/index";
-import ComparisonTable from "components/Table/Comparison/index";
+import { Container, Row } from "components/grid";
+import ComparisonTable from "components/Table/Comparison";
 
 const PromoSection = () => (
     <section className="section section__comparison section__comparison--home bg-white-grey separator-bt">

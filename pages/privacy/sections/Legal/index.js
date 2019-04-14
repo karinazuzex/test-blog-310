@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Container } from "components/grid/index";
+import { Container } from "components/grid";
 
 class LegalSection extends Component {
     componentDidMount() {

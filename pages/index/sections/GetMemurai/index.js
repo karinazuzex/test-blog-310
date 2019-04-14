@@ -1,10 +1,10 @@
 import React from "react";
 import NextLink from "next/link";
 
-import { routes, consts } from "config/index";
+import { routes, consts } from "config";
 
-import { Container, Row } from "components/grid/index";
-import { Button } from "components/ui/index";
+import { Container, Row } from "components/grid";
+import { Button } from "components/ui";
 
 const PromoSection = () => (
     <section className="section section__get-memurai bg-white-grey">

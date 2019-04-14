@@ -3,7 +3,7 @@ import NextLink from "next/link";
 
 import { routes, consts } from "config";
 
-import { Container, Row } from "components/grid/index";
+import { Container, Row } from "components/grid";
 import { Button } from "components/ui";
 
 const PromoSection = () => (
