@@ -1,10 +1,13 @@
 import "static/scss/index.scss";
 
 import React, { Component, Fragment } from "react";
+import { withRouter } from "next/router";
 import PropTypes from "prop-types";
 import Notifications from "react-notification-system-redux";
 import { connect } from "react-redux";
 import Head from "next/head";
+
+import { head } from "config";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
@@ -25,10 +28,12 @@ class Layout extends Component {
     };
 
     render() {
-        const { theme, children, notifications } = this.props;
+        const { theme, children, notifications, router } = this.props;
         return (
             <Fragment>
                 <Head>
+                    <title>{head.title[router.asPath]}</title>
+                    <meta name="description" content={head.description[router.asPath]} />
                     <meta key="charset" charSet="utf-8" />
                     <meta key="format-detection" name="format-detection" content="telephone=no" />
                     <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -95,4 +100,4 @@ const mapStateToProps = state => ({
     notifications: state.notifications,
 });
 
-export default connect(mapStateToProps)(Layout);
+export default withRouter(connect(mapStateToProps)(Layout));
