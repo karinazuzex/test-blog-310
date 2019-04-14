@@ -170,7 +170,7 @@ class ContactForm extends Component {
                     <div className="form__group">
                         <label className="form__group-label" htmlFor="message-contact">Message</label>
                         <textarea
-                            className={`textarea ${this.state.subjectError ? "textarea--error" : ""}`}
+                            className={`textarea ${this.state.messageError ? "textarea--error" : ""}`}
                             id="message-contact"
                             disabled={disabled}
                             onChange={this.handleMessageChange}
