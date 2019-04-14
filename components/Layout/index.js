@@ -32,8 +32,8 @@ class Layout extends Component {
         return (
             <Fragment>
                 <Head>
-                    <title>{head.title[router.asPath]}</title>
-                    <meta name="description" content={head.description[router.asPath]} />
+                    <title>{head.title[router.asPath] || head.title.defaultValue}</title>
+                    <meta name="description" content={head.description[router.asPath] || head.description.defaultValue} />
                     <meta key="charset" charSet="utf-8" />
                     <meta key="format-detection" name="format-detection" content="telephone=no" />
                     <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1.0" />

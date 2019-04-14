@@ -10,7 +10,7 @@ export const title = {
     [routes.TERMS_PAGE.path]: "",
     [routes.PRIVACY_PAGE.path]: "",
     [routes.COOKIE_PAGE.path]: "",
-    defaultTitle: "Memurai Website",
+    defaultValue: "Memurai Website",
 };
 
 export const description = {
@@ -23,5 +23,5 @@ export const description = {
     [routes.TERMS_PAGE.path]: "",
     [routes.PRIVACY_PAGE.path]: "",
     [routes.COOKIE_PAGE.path]: "",
-    defaultTitle: "Redis-compatible, enterprise-grade in-memory database for Windows",
+    defaultValue: "Redis-compatible, enterprise-grade in-memory database for Windows",
 };
