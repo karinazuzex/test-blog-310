@@ -12,10 +12,15 @@ class Checkbox extends Component {
 
     getValue = () => this.state.checked;
 
-    handleCheck = () => {
+    handleChange = () => {
+        const { onChange } = this.props;
+        const checked = !this.state.checked;
         this.setState({
-            checked: !this.state.checked,
+            checked,
         });
+        if (onChange) {
+            onChange(checked);
+        }
     };
 
     reset = () => {
@@ -32,7 +37,7 @@ class Checkbox extends Component {
                     className="checkbox__input"
                     type="checkbox"
                     hidden
-                    onClick={this.handleCheck}
+                    onClick={this.handleChange}
                 />
                 {children}
             </label>
@@ -47,6 +52,7 @@ Checkbox.propTypes = {
         PropTypes.string,
     ]),
     theme: PropTypes.string,
+    onChange: PropTypes.func,
 };
 
 export default Checkbox;

@@ -19,6 +19,7 @@ class ContactForm extends Component {
         super(props);
 
         this.getInitialState = () => ({
+            agreementError: null,
             nameError: null,
             emailError: null,
             subjectError: null,
@@ -49,20 +50,52 @@ class ContactForm extends Component {
         this.subscribe.reset();
     };
 
-    handleNameChange = () => {
-        this.setState({ nameError: null });
+    handleNameChange = async () => {
+        if (this.state.nameError) {
+            await this.setState({ nameError: null });
+            this.checkIsErrorLeft();
+        }
     };
 
-    handleEmailChange = () => {
-        this.setState({ emailError: null });
+    handleEmailChange = async () => {
+        if (this.state.emailError) {
+            await this.setState({ emailError: null });
+            this.checkIsErrorLeft();
+        }
     };
 
-    handleSubjectChange = () => {
-        this.setState({ subjectError: null });
+    handleSubjectChange = async () => {
+        if (this.state.subjectError) {
+            await this.setState({ subjectError: null });
+            this.checkIsErrorLeft();
+        }
     };
 
-    handleMessageChange = () => {
-        this.setState({ messageError: null });
+    handleMessageChange = async () => {
+        if (this.state.messageError) {
+            await this.setState({ messageError: null });
+            this.checkIsErrorLeft();
+        }
+    };
+
+    handleAgreementChange = async () => {
+        if (this.state.agreementError) {
+            await this.setState({ agreementError: null });
+            this.checkIsErrorLeft();
+        }
+    };
+
+    checkIsErrorLeft = () => {
+        const { dispatch } = this.props;
+        if (!(
+            this.state.nameError
+            || this.state.emailError
+            || this.state.subjectError
+            || this.state.messageError
+            || this.state.agreementError
+        )) {
+            dispatch(removeAll());
+        }
     };
 
     handleSubmit = async (e) => {
@@ -83,15 +116,16 @@ class ContactForm extends Component {
         const emailError = validators.validateEmail(email);
         const subjectError = validators.validateSubject(subject);
         const messageError = validators.validateMessage(message);
+        const formError = validators.formatFormError([
+            nameError, emailError, subjectError, messageError, agreementError,
+        ]);
         this.setState({
             nameError,
             emailError,
             subjectError,
             messageError,
+            agreementError: agreementError === formError ? agreementError : null,
         });
-        const formError = validators.formatFormError([
-            nameError, emailError, subjectError, messageError, agreementError,
-        ]);
         if (formError) {
             dispatch(error({
                 position: "bc",
@@ -182,6 +216,7 @@ class ContactForm extends Component {
                     <div className="form__group form__group--checkbox">
                         <Checkbox
                             ref={(ref) => {this.agreement = ref}}
+                            onChange={this.handleAgreementChange}
                         >
                             I agree to the&nbsp;
                             <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
