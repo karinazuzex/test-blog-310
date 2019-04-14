@@ -18,6 +18,7 @@ class SubscribeForm extends Component {
         super(props);
 
         this.getInitialState = () => ({
+            agreementError: null,
             emailError: null,
             processing: false,
         });
@@ -41,8 +42,28 @@ class SubscribeForm extends Component {
         this.agreement.reset();
     };
 
-    handleEmailChange = () => {
-        this.setState({ emailError: null });
+    handleEmailChange = async () => {
+        if (this.state.emailError) {
+            await this.setState({ emailError: null });
+            this.checkIsErrorLeft();
+        }
+    };
+
+    handleAgreementChange = async () => {
+        if (this.state.agreementError) {
+            await this.setState({ agreementError: null });
+            this.checkIsErrorLeft();
+        }
+    };
+
+    checkIsErrorLeft = () => {
+        const { dispatch } = this.props;
+        if (!(
+            this.state.emailError
+            || this.state.agreementError
+        )) {
+            dispatch(removeAll());
+        }
     };
 
     handleSubmit = async (e) => {
@@ -57,10 +78,11 @@ class SubscribeForm extends Component {
         const email = this.email.value.trim();
         const agreementError = validators.validateAgreement(agreement);
         const emailError = validators.validateEmail(email);
+        const formError = validators.formatFormError([emailError, agreementError]);
         this.setState({
             emailError,
+            agreementError: agreementError === formError ? agreementError : null,
         });
-        const formError = validators.formatFormError([emailError, agreementError]);
         if (formError) {
             dispatch(error({
                 position: "bc",
@@ -103,6 +125,7 @@ class SubscribeForm extends Component {
                     <div className="form__group form__group--checkbox">
                         <Checkbox
                             ref={(ref) => {this.agreement = ref}}
+                            onChange={this.handleAgreementChange}
                         >
                             I agree to the&nbsp;
                             <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
