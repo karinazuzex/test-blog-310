@@ -105,7 +105,6 @@ class DownloadForm extends Component {
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
-            dispatch(mailerOperations.mailchimpDownload(email));
             dispatch(removeAll());
             this.recaptcha.reset();
             onCallback(email);

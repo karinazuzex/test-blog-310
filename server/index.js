@@ -34,7 +34,8 @@ app.prepare()
             try {
                 const awsLink = await aws.getDownloadUrl();
                 const encryptedCfUrl = crypto.encrypt(awsLink);
-                const url = `${config.memurai_base_url}/download?key=${encryptedCfUrl}`;
+                const encryptedEmail = crypto.encrypt(email);
+                const url = `${config.memurai_base_url}/download?key=${encryptedCfUrl}&id=${encryptedEmail}`;
                 await mailer.download({ email, url });
                 res.status(200).send("success");
             } catch (err) {

@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import Layout from "components/Layout";
 import NextLink from "next/link";
 import axios from "axios";
@@ -11,7 +13,7 @@ import { Link } from "components/ui";
 
 class DownloadPage extends Component {
     static getInitialProps({query}) {
-        return {query}
+        return {query};
     }
 
     constructor(props) {
@@ -24,28 +26,36 @@ class DownloadPage extends Component {
     }
 
     componentDidMount() {
-        this.getLink();
+        this.getData();
     }
 
-    getLink = async () => {
+    getData = async () => {
         const { query } = this.props;
-        if (!query.key) {
+        if (!(query.key && query.id)) {
             this.setState({
                 valid: false,
             });
             return;
         }
         const response = await axios.post("/api/decrypt", { data: query.key });
-        if (
-            response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
+        if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
             this.setState({
                 link: response.data,
             });
+            this.addEmailToMailchimp(query.id);
             this.download();
         } else {
             this.setState({
                 valid: false,
             });
+        }
+    };
+
+    addEmailToMailchimp = async (encryptedEmail) => {
+        const { dispatch } = this.props;
+        const response = await axios.post("/api/decrypt", { data: encryptedEmail });
+        if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
+            dispatch(mailerOperations.mailchimpDownload(response.data));
         }
     };
 
@@ -130,4 +140,8 @@ class DownloadPage extends Component {
     }
 }
 
-export default DownloadPage;
+DownloadPage.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+};
+
+export default connect(null)(DownloadPage);
