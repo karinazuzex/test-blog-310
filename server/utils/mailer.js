@@ -43,8 +43,8 @@ const download = ({ email, url }) => {
         html: `
         Thank you for your interest in the Memurai for Windows Technical Preview!<br /><br />
         <b>To download the software please follow the link below:</b><br /><br />
-        <a clicktracking=off href="${url}" style="text-decoration: none; color:#f6282f;">Download Memurai for Windows (Technical Preview)</a><br /><br />
-        For help with installation and more, check out the documentation at <a clicktracking=off href="https://docs.memurai.com" style="text-decoration: none; color:#f6282f;">https://docs.memurai.com</a><br /><br />
+        <a clicktracking=off href="${url}">Download Memurai for Windows (Technical Preview)</a><br /><br />
+        For help with installation and more, check out the documentation at <a clicktracking=off href="https://docs.memurai.com">https://docs.memurai.com</a><br /><br />
         Feel free to contact us if you have any questions. We’re happy to help!<br /><br />
         Kind regards,<br />
         The Memurai team<br />
