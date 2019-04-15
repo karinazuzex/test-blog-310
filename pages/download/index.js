@@ -74,7 +74,7 @@ class DownloadPage extends Component {
             </h5>
             {this.state.link &&
             <div className="block__description block__description--fixed block__elem--80 text-sm">
-                If it doesn’t&nbsp;
+                If it doesn’t,&nbsp;
                 <Link
                     as="button"
                     type="button"
