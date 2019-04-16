@@ -21,10 +21,8 @@ const InfoWithReviewSection = () => {
                         Uncompromised performance
                     </h5>
                     <div className="info__text-description">
-                        Memurai for Windows is built on top of Windows' native APIs, thus providing compatibility with
-                        Redis without the need for emulation or virtualization. It is optimized to use hardware
-                        resources in the most efficient way possible, and can handle huge datasets and mission-critical
-                        production workloads.
+                        Memurai is built on top of Windows' native APIs and fine-tuned to offer uncompromised performance
+                        and the reliability required to handle huge datasets and mission-critical workloads. 
                     </div>
                 </div>
                 <Icon type="big-circled" theme="performance" className="info__image info__block">
