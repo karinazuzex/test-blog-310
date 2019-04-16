@@ -25,6 +25,7 @@ const Social = ({ theme = "" }) => (
         >
             <LinkedInLogo />
         </Link>
+        {/*
         <Link
             href={GITHUB_LINK}
             rel="noreferrer noopener"
@@ -33,6 +34,7 @@ const Social = ({ theme = "" }) => (
         >
             <GithubLogo/>
         </Link>
+        */}
         <Link
             href={FACEBOOK_LINK}
             rel="noreferrer noopener"
