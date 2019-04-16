@@ -35,13 +35,11 @@ const InfoWithReviewSection = () => {
                 </Icon>
                 <div className="info__text info__block">
                     <h5 className="info__text-title">
-                        Enterprise-grade support
+                        Enterprise Ready
                     </h5>
                     <div className="info__text-description">
-                        Whether it&apos;s for use on development machines or production servers, Memurai for Windows
-                        seamlessly integrates with Windows best practices, tools and workflows. Engineering teams with
-                        an existing investment in Windows infrastructure and know-how will be up to speed with Memurai
-                        in no time.
+                        Memurai is a fully supported platform that meets enterprise customers’ requirements in terms
+                        of support, scale, performance and security.                    
                     </div>
                 </div>
             </Row>
