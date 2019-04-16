@@ -63,12 +63,13 @@ const InfoWithReviewSection = () => {
                                 Fully compatible with Redis
                             </h5>
                             <div className="info__text-description">
-                                The core of Memurai is based on the source code of Redis, ported to run natively on Windows.
-                                That&apos;s how Memurai for Windows reliably supports all the features that make Redis the most
+                                The core of Memurai is based on Redis source code, ported to run natively on Windows.
+                                That&apos;s to ensure that Memurai reliably supports all the features that make Redis the most
                                 popular NoSQL data store, including: LRU eviction, persistence, replication, transactions, LUA
-                                scripting, high-availabilty, cluster, pub/sub and streams. Furthermore, this ensures
-                                compatibility with the myriad of libraries and tools already available for Redis. You can even
-                                replicate data between Memurai and Redis, or use a mix of both within the same cluster!
+                                scripting, high-availabilty, cluster, pub/sub and streams. A lot of attention has been put into
+                                ensuring full compatibility, you can even replicate data between Memurai and Redis, or use a mix
+                                of both within the same cluster! Memurai is also compatible with the myriad of libraries and
+                                tools already available for Redis. 
                             </div>
                         </div>
                         <Icon type="big-circled" theme="compatibility" className="info__image info__block">
