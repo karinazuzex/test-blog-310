@@ -19,14 +19,14 @@ export default [
     },
     {
         summary: "How much will Memurai cost?",
-        info: "We are working on a tiered pricing scheme that will fit different users needs, and for that we will rely on feedback gathered from the technical preview. While the details are not available yet, we intend to have a free edition aimed at development use.",
+        info: "We are working on a tiered pricing scheme that will fit different users needs. While the details are not available yet, there will be a free edition aimed at development use.",
     },
     {
         summary: "Does Memurai for Windows have any limitations compared to Redis on Linux?",
         info: (
             <Fragment>
                 Unix domain sockets are not supported. Besides that, there are a few configuration flags that are not
-                supported because they don't make sense on Windows. See the&nbsp;
+                supported because they don't apply to the Windows environment. See the&nbsp;
                 <Link
                     href={consts.MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS}
                     theme="red"
