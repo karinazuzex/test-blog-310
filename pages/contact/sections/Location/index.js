@@ -16,7 +16,7 @@ const PromoSection = () => (
                     Our office
                 </h3>
                 <p className="block__description block__elem--lg">
-                    Memurai Inc.<br />
+                    Memurai<br />
                     113 Cherry Street #11630<br />
                     Seattle, WA 98104
                 </p>
