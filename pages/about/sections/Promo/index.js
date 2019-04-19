@@ -14,7 +14,7 @@ const PromoSection = () => (
                     cutting edge solutions to software developers and enterprise customers. We combine our expertise in open source
                     technologies with deep understanding of the needs and challenges that enterprise customers are facing in the new
                     fast-moving world of cloud-native app and service development.
-                    Our journey with Memurai for Windows can be traced back to 2013, when we began leading the development the Redis
+                    Our journey with Memurai for Windows can be traced back to 2013, when we began leading the development of the Redis
                     on Windows project by Microsoft Open Technologies (MSOpenTech).<br /><br />
 
                     Memurai is a division and d/b/a of Janea Systems, Inc.
