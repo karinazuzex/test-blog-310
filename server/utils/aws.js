@@ -5,7 +5,7 @@ const config = require("../config");
 const getDownloadUrl = () => {
     const params = {
         keypairId: config.aws_key_pair_id,
-        privateKeyPath: config.aws_private_key_path,
+        privateKeyString: config.aws_private_key_string,
         expireTime: moment().add({ minutes: parseInt(config.aws_expire_timeout, 10) }).unix() * 1000,
     };
     return new Promise(async (resolve, reject) => {
