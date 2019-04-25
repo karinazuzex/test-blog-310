@@ -60,7 +60,7 @@ const InfoWithReviewSection = () => {
                             </h5>
                             <div className="info__text-description">
                                 The core of Memurai is based on Redis source code, ported to run natively on Windows.
-                                That&apos;s to ensure that Memurai reliably supports all the features that make Redis the most
+                                Memurai reliably supports all the features that make Redis the most
                                 popular NoSQL data store, including LRU eviction, persistence, replication, transactions, LUA
                                 scripting, high-availability, cluster, pub/sub and streams. A lot of attention has been put into
                                 ensuring full compatibility, including with the myriad of libraries and
