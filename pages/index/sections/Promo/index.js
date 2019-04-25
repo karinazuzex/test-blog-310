@@ -15,7 +15,7 @@ const PromoSection = () => (
                 </p>
                 <h1 className="block__title block__elem--lg">
                     <span className="text-normal">
-                        Redis-compatible, enterprise-grade in-memory database for Windows
+                        Redis compatible, enterprise grade in-memory database for Windows
                     </span>
                 </h1>
                 <p className="block__description block__elem">
