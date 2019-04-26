@@ -19,7 +19,7 @@ export default [
     },
     {
         summary: "How much will Memurai cost?",
-        info: "We are working on a tiered pricing scheme that will fit different users needs. While the details are not available yet, there will be a free edition aimed at development use.",
+        info: "Memurai will have a tiered pricing scheme that will fit different users' needs. The details are not available yet, but there will be a free edition aimed at development use.",
     },
     {
         summary: "Does Memurai for Windows have any limitations compared to Redis on Linux?",
