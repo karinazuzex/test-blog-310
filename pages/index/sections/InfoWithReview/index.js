@@ -18,11 +18,11 @@ const InfoWithReviewSection = () => {
             <Row theme="no-col" className="info info--reversed">
                 <div className="info__text info__block">
                     <h5 className="info__text-title">
-                        Uncompromised performance
+                        Maximum performance and reliability
                     </h5>
                     <div className="info__text-description">
-                        Memurai is built on top of Windows' native APIs and fine-tuned to offer uncompromised performance
-                        and the reliability required to handle huge datasets and mission-critical workloads. 
+                        Memurai runs natively on the Windows APIs, and is fine-tuned to offer the performance
+                        and reliability required to handle huge datasets and mission-critical workloads. 
                     </div>
                 </div>
                 <Icon type="big-circled" theme="performance" className="info__image info__block">
@@ -38,7 +38,7 @@ const InfoWithReviewSection = () => {
                         Enterprise Ready
                     </h5>
                     <div className="info__text-description">
-                        Memurai is a fully supported platform that meets enterprise customers’ requirements in terms
+                        Memurai is a fully-supported platform that meets enterprise customers’ requirements in terms
                         of support, scale, performance and security.                    
                     </div>
                 </div>
@@ -81,7 +81,7 @@ const InfoWithReviewSection = () => {
                                 Seamless integration with Windows infrastructure and workflows
                             </h5>
                             <div className="info__text-description">
-                                Whether it&apos;s for use on development machines or production servers, Memurai for Windows
+                                Whether it's used for development or production, Memurai for Windows
                                 seamlessly integrates with Windows best practices, tools and workflows. Engineering teams with
                                 an existing investment in Windows infrastructure and know-how will be up to speed with Memurai
                                 in no time.

@@ -129,14 +129,10 @@ class SubscribeForm extends Component {
                         >
                             I agree to the&nbsp;
                             <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
-                                <Link theme="red">
-                                    {routes.TERMS_PAGE.nameLong}
-                                </Link>
+                                <Link theme="red">terms of service</Link>
                             </NextLink> and&nbsp;
                             <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
-                                <Link theme="red">
-                                    {routes.PRIVACY_PAGE.nameLong}
-                                </Link>
+                                <Link theme="red">privacy policy</Link>
                             </NextLink>
                         </Checkbox>
                     </div>
