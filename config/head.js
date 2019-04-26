@@ -1,7 +1,7 @@
 import * as routes from "./routes";
 
 export const title = {
-    [routes.HOME_PAGE.path]: "Memurai - Redis compatible data store and cache for Windows",
+    [routes.HOME_PAGE.path]: "Memurai - Redis-compatible cache and datastore for Windows",
     [routes.FAQ_PAGE.path]: "Frequently Asked Questions - Memurai",
     [routes.ABOUT_PAGE.path]: "About Us - Memurai",
     [routes.CONTACT_PAGE.path]: "Contact the Memurai team - Memurai",
@@ -23,5 +23,5 @@ export const description = {
     [routes.TERMS_PAGE.path]: "Terms of service for the Memurai website.",
     [routes.PRIVACY_PAGE.path]: "Privacy policy for the Memurai website and services.",
     [routes.COOKIE_PAGE.path]: "Cookie policy for the Memurai website.",
-    defaultValue: "Redis compatible, enterprise grade in-memory database for Windows.",
+    defaultValue: "Redis-compatible cache and datastore for Windows.",
 };
