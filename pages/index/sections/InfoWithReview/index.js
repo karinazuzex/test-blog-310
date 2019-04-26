@@ -64,8 +64,8 @@ const InfoWithReviewSection = () => {
                                 popular NoSQL data store, including LRU eviction, persistence, replication, transactions, LUA
                                 scripting, high-availability, cluster, pub/sub and streams. A lot of attention has been put into
                                 ensuring full compatibility, including with the myriad of libraries and
-                                tools already available for Redis. You can even replicate data between Memurai and Redis, or use a mix
-                                of both within the same cluster!
+                                tools already available for Redis. You can even replicate data between Memurai and Redis, or use
+                                both within the same cluster!
                             </div>
                         </div>
                         <Icon type="big-circled" theme="compatibility" className="info__image info__block">
