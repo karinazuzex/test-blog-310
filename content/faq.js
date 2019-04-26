@@ -53,10 +53,10 @@ export default [
     },
     {
         summary: "How fast is Memurai for Windows?",
-        info: "Perfomance is on par with Redis on Linux.",
+        info: "Perfomance is at par with Redis on Linux.",
     },
     {
         summary: "Can I use Memurai as a cache? Or as a primary database?",
-        info: "Yes, Memurai can be used both as a cache and a primary database.",
+        info: "Yes, Memurai can be used as a cache and a primary database.",
     },
 ];
