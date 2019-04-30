@@ -81,7 +81,7 @@ const InfoWithReviewSection = () => {
                                 Seamless integration with Windows infrastructure and workflows
                             </h5>
                             <div className="info__text-description">
-                                Whether it's used for development or production, Memurai for Windows
+                                Whether it's used for development or production, Memurai
                                 seamlessly integrates with Windows best practices, tools and workflows. Engineering teams with
                                 an existing investment in Windows infrastructure and know-how will be up to speed with Memurai
                                 in no time.
