@@ -62,7 +62,7 @@ const InfoWithReviewSection = () => {
                                 The core of Memurai is based on Redis source code, ported to run natively on Windows.
                                 Memurai reliably supports all the features that make Redis the most
                                 popular NoSQL data store, including LRU eviction, persistence, replication, transactions, LUA
-                                scripting, high-availability, cluster, pub/sub and streams. A lot of attention has been put into
+                                scripting, high-availability, pub/sub, cluster, modules and streams. A lot of attention has been put into
                                 ensuring full compatibility, including with the myriad of libraries and
                                 tools already available for Redis. You can even replicate data between Memurai and Redis, or use
                                 both within the same cluster!
