@@ -58,6 +58,16 @@ const FooterMenu = () => (
                 </Link>
             </NextLink>
         </li>
+        <li className="f-menu__item">
+            <Link
+                href="https://support.memurai.com"
+                rel="noreferrer noopener"
+                target="_blank"
+                theme="grey-light" className="f-menu__link">
+                Support
+            </Link>
+
+        </li>
     </ul>
 );
 
