@@ -5,6 +5,7 @@ import Layout from "components/Layout";
 import NextLink from "next/link";
 import axios from "axios";
 import moment from "moment";
+import queryString from "query-string";
 
 import { consts, routes } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
@@ -21,14 +22,13 @@ class DownloadPage extends Component {
         super(props);
 
         this.state = {
-            valid: true,
+            valid: null,
             link: null,
         }
     }
 
     componentDidMount() {
         this.getData();
-        console.log(moment(1555286565));
     }
 
     getData = async () => {
@@ -41,11 +41,28 @@ class DownloadPage extends Component {
         }
         const response = await axios.post("/api/decrypt", { data: query.key });
         if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
+            const linkQuery = response.data.split("?")[1];
+            const parsedQuery = queryString.parse(linkQuery);
+
+            // Check if expires parameter exists and is more than one minute before expiration time
+            if (
+                !parsedQuery.Expires ||
+                !moment(parseInt(parsedQuery.Expires, 10) * 1000).subtract(1, 'days').isAfter(moment())
+            ) {
+                console.log("asdf");
+                this.setState({
+                    valid: false,
+                });
+                return;
+            }
             this.setState({
                 link: response.data,
             });
             this.addEmailToMailchimp(query.id);
             this.download();
+            this.setState({
+                valid: true,
+            });
         } else {
             this.setState({
                 valid: false,
@@ -131,9 +148,12 @@ class DownloadPage extends Component {
                 <section className="section section__promo section__promo--result">
                     <Container>
                         <div className="block text-center">
-                            {this.state.valid
-                                ? this.renderValidContext()
-                                : this.renderInvalidContext()
+                            {this.state.valid !== null
+                                ? (
+                                    this.state.valid
+                                        ? this.renderValidContext()
+                                        : this.renderInvalidContext()
+                                ) : null
                             }
                         </div>
                     </Container>

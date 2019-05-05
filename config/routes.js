@@ -46,3 +46,8 @@ export const COOKIE_PAGE = {
     name: "Cookie",
     path: "/cookie",
 };
+
+export const DOWNLOAD_PAGE = {
+    name: "Download",
+    path: "/download",
+};
