@@ -1,3 +1,5 @@
+import "static/scss/index.scss";
+
 import React from "react";
 import App, { Container } from "next/app";
 import { Provider } from "react-redux";

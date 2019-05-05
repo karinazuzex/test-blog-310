@@ -1,16 +1,14 @@
-import "static/scss/index.scss";
-
-import React, { PureComponent, Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Notifications from "react-notification-system-redux";
 import { connect } from "react-redux";
 
-import { head, analytics } from "config";
+import { head } from "config";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
 
-class Layout extends PureComponent {
+class Layout extends Component {
     constructor(props) {
         super(props);
 
