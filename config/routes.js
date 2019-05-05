@@ -32,13 +32,13 @@ export const NEWSLETTER_PAGE = {
 
 export const TERMS_PAGE = {
     name: "Terms",
-    nameLong: "Terms of service",
+    nameLong: "terms of service",
     path: "/terms",
 };
 
 export const PRIVACY_PAGE = {
     name: "Privacy",
-    nameLong: "Privacy policy",
+    nameLong: "privacy policy",
     path: "/privacy",
 };
 

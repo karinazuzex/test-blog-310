@@ -64,4 +64,4 @@ Link lead to `/download` page, where url is being decrypted on visit with api ca
 - **aws_private_key_path** - path to private key file for AWS
 - **aws_file_path** - path to file on Amazon Cloudfront server
 - **crypto_key** - key for data encryption/decryption
-- **memurai_base_url** - website host, used for creation of download link
+- **WEBSITE_DOMAIN** - website host, used for creation of download link

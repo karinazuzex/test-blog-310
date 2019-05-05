@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Layout from "components/Layout";
 import NextLink from "next/link";
 import axios from "axios";
+import moment from "moment";
 
 import { consts, routes } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
@@ -27,6 +28,7 @@ class DownloadPage extends Component {
 
     componentDidMount() {
         this.getData();
+        console.log(moment(1555286565));
     }
 
     getData = async () => {
@@ -62,6 +64,7 @@ class DownloadPage extends Component {
     download = () => {
         const downloadLink = document.createElement("a");
         downloadLink.href = this.state.link;
+        downloadLink.target = "_blank";
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
