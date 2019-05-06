@@ -49,7 +49,6 @@ class DownloadPage extends Component {
                 !parsedQuery.Expires ||
                 !moment(parseInt(parsedQuery.Expires, 10) * 1000).add(1, 'minutes').isAfter(moment())
             ) {
-                console.log("asdf");
                 this.setState({
                     valid: false,
                 });
