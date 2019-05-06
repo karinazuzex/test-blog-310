@@ -44,3 +44,5 @@ export const MEMURAI_DOCS_LINK = NODE_ENV === "development"
 export const MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS =
     `${MEMURAI_DOCS_LINK}config-file#difference-with-redis-configuration-flags`;
 export const MEMURAI_DOCS_WINDOWS_SERVICE_LINK = `${MEMURAI_DOCS_LINK}/windows-service`;
+
+export const MEMURAI_SUPPORT_LINK = "https://support.memurai.com";

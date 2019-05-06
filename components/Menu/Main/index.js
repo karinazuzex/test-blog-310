@@ -2,7 +2,7 @@ import React  from "react";
 import PropTypes from "prop-types";
 import NextLink from "next/link";
 
-import { routes, consts } from "config";
+import { routes, consts, analytics } from "config";
 
 import { Link, Button } from "components/ui";
 
@@ -32,6 +32,13 @@ const MainMenu = ({ theme, onClose }) => {
                         href={consts.MEMURAI_DOCS_LINK}
                         theme={linkTheme}
                         className="m-menu__link"
+                        onClick={() => {
+                            analytics.event({
+                                category: "External link",
+                                action: "Open",
+                                label: "Documentation"
+                            });
+                        }}
                     >
                         Documentation
                     </Link>

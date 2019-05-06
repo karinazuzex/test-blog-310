@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
-import Layout from "components/Layout";
 
+import { analytics } from "config";
+
+import Layout from "components/Layout";
 import { Container, Row, Col } from "components/grid";
 import DownloadForm from "components/Form/Download";
 import { Link } from "components/ui";
@@ -18,6 +20,10 @@ class GetMemuraiPage extends Component {
     };
 
     clearResult = () => {
+        analytics.event({
+            category: "Request dowload link",
+            action: "Try again",
+        });
         this.setState(this.getInitialState());
     };
 

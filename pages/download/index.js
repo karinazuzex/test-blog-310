@@ -5,7 +5,7 @@ import Layout from "components/Layout";
 import NextLink from "next/link";
 import axios from "axios";
 
-import { consts, routes } from "config";
+import { consts, routes, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Container } from "components/grid";
@@ -26,12 +26,26 @@ class DownloadPage extends Component {
     }
 
     componentDidMount() {
+        analytics.event({
+            category: "Download",
+            action: "Visit page",
+        });
         this.getData();
     }
 
     getData = async () => {
         const { query } = this.props;
+        analytics.event({
+            category: "Download",
+            action: "Process query",
+            label: "Start",
+        });
         if (!(query.key && query.id)) {
+            analytics.event({
+                category: "Download",
+                action: "Process query",
+                label: "Key and/or Id absent",
+            });
             this.setState({
                 valid: false,
             });
@@ -40,6 +54,11 @@ class DownloadPage extends Component {
         try {
             const response = await axios.post("/api/get-dist-url", { data: query.key });
             if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
+                analytics.event({
+                    category: "Download",
+                    action: "Process query",
+                    label: "Sucess",
+                });
                 this.setState({
                     link: response.data,
                 });
@@ -52,6 +71,11 @@ class DownloadPage extends Component {
             }
         }
         catch(err) {}
+        analytics.event({
+            category: "Download",
+            action: "Process query",
+            label: "Error occured",
+        });
         this.setState({
             valid: false,
         });
@@ -59,6 +83,11 @@ class DownloadPage extends Component {
 
     addEmailToMailchimp = async (encryptedEmail) => {
         const { dispatch } = this.props;
+        analytics.event({
+            category: "Download",
+            action: "Add to download mailchimp list",
+            label: "Initiate",
+        });
         const response = await axios.post("/api/decrypt", { data: encryptedEmail });
         if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
             dispatch(mailerOperations.mailchimpDownload(response.data));
@@ -66,6 +95,10 @@ class DownloadPage extends Component {
     };
 
     download = () => {
+        analytics.event({
+            category: "Download",
+            action: "Start download",
+        });
         const downloadLink = document.createElement("a");
         downloadLink.href = this.state.link;
         document.body.appendChild(downloadLink);
@@ -101,12 +134,26 @@ class DownloadPage extends Component {
                     href={consts.TWITTER_LINK}
                     rel="noreferrer noopener"
                     target="_blank"
+                    onClick={() => {
+                        analytics.event({
+                            category: "External link",
+                            action: "Open",
+                            label: "Twitter"
+                        });
+                    }}
                 >
                     Twitter
                 </Link>. Read the&nbsp;
                 <Link
                     theme="red"
                     href={consts.MEMURAI_DOCS_LINK}
+                    onClick={() => {
+                        analytics.event({
+                            category: "External link",
+                            action: "Open",
+                            label: "Documentation"
+                        });
+                    }}
                 >
                     documentation
                 </Link>.

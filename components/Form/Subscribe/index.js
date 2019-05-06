@@ -12,6 +12,7 @@ import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Checkbox, Link } from "components/ui";
+import {analytics} from "../../../config";
 
 class SubscribeForm extends Component {
     constructor(props) {
@@ -68,6 +69,11 @@ class SubscribeForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        analytics.event({
+            category: "Subscribe form",
+            action: "Submit",
+            label: "Start",
+        });
         this.recaptcha.execute();
         const { dispatch } = this.props;
         this.setState({
@@ -84,6 +90,11 @@ class SubscribeForm extends Component {
             agreementError: agreementError === formError ? agreementError : null,
         });
         if (formError) {
+            analytics.event({
+                category: "Subscribe form",
+                action: "Submit",
+                label: "Error shown, terminate",
+            });
             dispatch(error({
                 position: "bc",
                 autoDismiss: 0,
@@ -96,7 +107,18 @@ class SubscribeForm extends Component {
         }
         const response = await dispatch(mailerOperations.mailchimpSubscribe(email));
         if (response === mailerTypes.MAILCHIMP_TYPE_SUCCESS) {
+            analytics.event({
+                category: "Subscribe form",
+                action: "Submit",
+                label: "Success",
+            });
             this.reset();
+        } else {
+            analytics.event({
+                category: "Subscribe form",
+                action: "Submit",
+                label: "Error on submit to mailchimp",
+            });
         }
         this.setState({
             processing: false,

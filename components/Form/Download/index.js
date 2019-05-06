@@ -13,6 +13,7 @@ import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Link, Checkbox } from "components/ui";
+import {analytics} from "../../../config";
 
 class DownloadForm extends Component {
     constructor(props) {
@@ -70,6 +71,11 @@ class DownloadForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        analytics.event({
+            category: "Download form",
+            action: "Submit",
+            label: "Start",
+        });
         this.recaptcha.execute();
         const { dispatch, onCallback } = this.props;
         this.setState({
@@ -86,6 +92,11 @@ class DownloadForm extends Component {
             agreementError: agreementError === formError ? agreementError : null,
         });
         if (formError) {
+            analytics.event({
+                category: "Download form",
+                action: "Submit",
+                label: "Error shown, terminate",
+            });
             dispatch(error({
                 position: "bc",
                 autoDismiss: 0,
@@ -97,6 +108,11 @@ class DownloadForm extends Component {
             return;
         }
         if (this.subscribe.getValue()) {
+            analytics.event({
+                category: "Download form",
+                action: "Submit",
+                label: "Subscribe choosen, attempting",
+            });
             dispatch(mailerOperations.mailchimpSubscribe(email));
         }
         const response = await axios.post("/api/request-download", {
@@ -105,10 +121,20 @@ class DownloadForm extends Component {
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
+            analytics.event({
+                category: "Contact form",
+                action: "Submit",
+                label: "Success",
+            });
             dispatch(removeAll());
             this.recaptcha.reset();
             onCallback(email);
         } else {
+            analytics.event({
+                category: "Contact form",
+                action: "Submit",
+                label: "Error on submit from backend",
+            });
             this.recaptcha.reset();
             this.setState({
                 processing: false,

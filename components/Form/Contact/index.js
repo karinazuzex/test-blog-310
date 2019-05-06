@@ -8,7 +8,7 @@ import { error, info, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "react-google-recaptcha";
 
 import { validators, helpers } from "utils";
-import { consts, messages, routes } from "config";
+import { consts, messages, routes, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
@@ -100,6 +100,11 @@ class ContactForm extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        analytics.event({
+            category: "Contact form",
+            action: "Submit",
+            label: "Start",
+        });
         this.recaptcha.execute();
         const { dispatch } = this.props;
         this.setState({
@@ -127,6 +132,11 @@ class ContactForm extends Component {
             agreementError: agreementError === formError ? agreementError : null,
         });
         if (formError) {
+            analytics.event({
+                category: "Contact form",
+                action: "Submit",
+                label: "Error shown, terminate",
+            });
             dispatch(error({
                 position: "bc",
                 autoDismiss: 0,
@@ -138,6 +148,11 @@ class ContactForm extends Component {
             return;
         }
         if (this.subscribe.getValue()) {
+            analytics.event({
+                category: "Contact form",
+                action: "Submit",
+                label: "Subscribe choosen, attempting",
+            });
             dispatch(mailerOperations.mailchimpSubscribe(email));
         }
         const response = await axios.post("/api/contact", {
@@ -147,11 +162,22 @@ class ContactForm extends Component {
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
             && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
             this.reset();
+            analytics.event({
+                category: "Contact form",
+                action: "Submit",
+                label: "Success",
+            });
             dispatch(info({
                 position: "bc",
                 autoDismiss: 3,
                 message: messages.REQUEST_SUCCESSFULLY_SENT,
             }));
+        } else {
+            analytics.event({
+                category: "Contact form",
+                action: "Submit",
+                label: "Error on submit from backend",
+            });
         }
         this.setState({
             processing: false,

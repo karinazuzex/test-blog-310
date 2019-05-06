@@ -1,7 +1,7 @@
 import React from "react";
 import NextLink from "next/link";
 
-import { routes, consts } from "config";
+import { routes, consts, analytics } from "config";
 
 import { Link } from "components/ui";
 
@@ -33,6 +33,13 @@ const FooterMenu = () => (
                 href={consts.MEMURAI_DOCS_LINK}
                 theme="grey-light"
                 className="f-menu__link"
+                onClick={() => {
+                    analytics.event({
+                        category: "External link",
+                        action: "Open",
+                        label: "Documentation"
+                    });
+                }}
             >
                 Documentation
             </Link>
@@ -60,10 +67,19 @@ const FooterMenu = () => (
         </li>
         <li className="f-menu__item">
             <Link
-                href="https://support.memurai.com"
+                href={consts.MEMURAI_SUPPORT_LINK}
                 rel="noreferrer noopener"
                 target="_blank"
-                theme="grey-light" className="f-menu__link">
+                theme="grey-light"
+                className="f-menu__link"
+                onClick={() => {
+                    analytics.event({
+                        category: "External link",
+                        action: "Open",
+                        label: "Support"
+                    });
+                }}
+            >
                 Support
             </Link>
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import NextLink from "next/link";
 
-import { consts, routes } from "config";
+import { consts, routes, analytics } from "config";
 
 import { Row } from "components/grid";
 import { Link } from "components/ui";
@@ -16,6 +16,13 @@ const Social = ({ theme = "" }) => (
             rel="noreferrer noopener"
             target="_blank"
             className="social__item social__item--twitter"
+            onClick={() => {
+                analytics.event({
+                    category: "External link",
+                    action: "Open",
+                    label: "Twitter"
+                });
+            }}
         >
             <TwitterLogo />
         </Link>
@@ -24,6 +31,13 @@ const Social = ({ theme = "" }) => (
             rel="noreferrer noopener"
             target="_blank"
             className="social__item social__item--linkedin"
+            onClick={() => {
+                analytics.event({
+                    category: "External link",
+                    action: "Open",
+                    label: "LinkedIn"
+                });
+            }}
         >
             <LinkedInLogo />
         </Link>
@@ -32,6 +46,13 @@ const Social = ({ theme = "" }) => (
             rel="noreferrer noopener"
             target="_blank"
             className="social__item social__item--facebook"
+            onClick={() => {
+                analytics.event({
+                    category: "External link",
+                    action: "Open",
+                    label: "Facebook"
+                });
+            }}
         >
             <FacebookLogo />
         </Link>

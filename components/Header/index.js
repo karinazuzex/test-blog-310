@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import NextLink from "next/link";
 
-import { routes } from "config";
+import { routes, analytics } from "config";
 
 import { Container, Row } from "components/grid";
 import MainMenu from "components/Menu/Main";
@@ -31,6 +31,10 @@ class Header extends Component {
     }
 
     openMenu = () => {
+        analytics.event({
+            category: "Mobile menu",
+            action: "Open",
+        });
         this.setState({
             showMenu: true,
         });
@@ -38,6 +42,10 @@ class Header extends Component {
     };
 
     handleMenuClose = () => {
+        analytics.event({
+            category: "Mobile menu",
+            action: "Close",
+        });
         this.setState({
             showMenu: false,
         });
