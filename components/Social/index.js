@@ -1,16 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { TWITTER_LINK, FACEBOOK_LINK, GITHUB_LINK, LINKEDIN_LINK } from "config/consts";
+import NextLink from "next/link";
+
+import { consts, routes } from "config";
 
 import { Row } from "components/grid";
 import { Link } from "components/ui";
-import { FacebookLogo, LinkedInLogo, GithubLogo, TwitterLogo } from "svg";
+import { FacebookLogo, LinkedInLogo, NewsletterLogo, TwitterLogo } from "svg";
 
 const Social = ({ theme = "" }) => (
     <Row className={`justify-center-xs text-center social ${theme ? `social--${theme}` : ""}`}>
         <Link
-            href={TWITTER_LINK}
+            href={consts.TWITTER_LINK}
             rel="noreferrer noopener"
             target="_blank"
             className="social__item social__item--twitter"
@@ -18,31 +20,26 @@ const Social = ({ theme = "" }) => (
             <TwitterLogo />
         </Link>
         <Link
-            href={LINKEDIN_LINK}
+            href={consts.LINKEDIN_LINK}
             rel="noreferrer noopener"
             target="_blank"
             className="social__item social__item--linkedin"
         >
             <LinkedInLogo />
         </Link>
-        {/*
         <Link
-            href={GITHUB_LINK}
-            rel="noreferrer noopener"
-            target="_blank"
-            className="social__item social__item--github"
-        >
-            <GithubLogo/>
-        </Link>
-        */}
-        <Link
-            href={FACEBOOK_LINK}
+            href={consts.FACEBOOK_LINK}
             rel="noreferrer noopener"
             target="_blank"
             className="social__item social__item--facebook"
         >
             <FacebookLogo />
         </Link>
+        <NextLink href={routes.NEWSLETTER_PAGE.path} passHref prefetch>
+            <Link className="social__item social__item--newsletter">
+                <NewsletterLogo />
+            </Link>
+        </NextLink>
     </Row>
 );
 

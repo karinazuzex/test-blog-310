@@ -6,3 +6,4 @@ export GithubLogo from "./GithubLogo";
 export FacebookLogo from "./FacebookLogo";
 export TwitterLogo from "./TwitterLogo";
 export LinkedInLogo from "./LinkedInLogo";
+export NewsletterLogo from "./NewsletterLogo";

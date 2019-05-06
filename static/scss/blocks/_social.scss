@@ -16,6 +16,13 @@
     color: $black;
     transition: background-color $defaultTransition;
 
+    svg {
+      path {
+        transition: fill $defaultTransition;
+        fill: $black;
+      }
+    }
+
     &:hover {
       background-color: $white;
     }
@@ -36,7 +43,8 @@
         background-color: transparent;
 
         &--twitter,
-        &--linkedin {
+        &--linkedin,
+        &--newsletter {
 
           svg {
             width: 100%;
