@@ -28,7 +28,7 @@ export default [
                 Unix domain sockets are not supported. Besides that, there are a few configuration flags that are not
                 supported because they don't apply to the Windows environment. See the&nbsp;
                 <Link
-                    href={consts.MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS}
+                    href={consts.MEMURAI_DOCS_WINDOWS_DIFFERENCE_WITH_REDIS}
                     theme="red"
                 >
                     documentation
