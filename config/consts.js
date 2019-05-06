@@ -36,7 +36,7 @@ export const FACEBOOK_LINK = "https://www.facebook.com/MemuraiHQ";
 export const EMAIL_PATTERN =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-export const MEMURAI_VERSION = "0.1.0 - Redis API 5";
+export const MEMURAI_VERSION = "1.0.7 - Redis API 5";
 
 export const MEMURAI_DOCS_LINK = NODE_ENV === "development"
     ? "https://memuweb-docs.netlify.com/"
