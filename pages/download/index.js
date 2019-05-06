@@ -50,9 +50,8 @@ class DownloadPage extends Component {
                 });
                 return;
             }
-        } 
-        catch(error) {
         }
+        catch(err) {}
         this.setState({
             valid: false,
         });

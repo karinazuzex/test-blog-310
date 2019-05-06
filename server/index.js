@@ -61,11 +61,13 @@ app.prepare()
                 const decryptedCfUrl = crypto.decrypt(data);
                 const linkQuery = decryptedCfUrl.split("?")[1];
                 const parsedQuery = queryString.parse(linkQuery);
-    
+
                 // Check if expires parameter exists and is more than X (configurable) minutes before the expiration time
                 if (
                     !parsedQuery.Expires ||
-                    !moment(parseInt(parsedQuery.Expires, 10) * 1000).subtract(config.aws_expire_timeout_padding, 'minutes').isAfter(moment())
+                    !moment(parseInt(parsedQuery.Expires, 10) * 1000)
+                        .subtract(config.aws_expire_timeout_padding, 'minutes')
+                        .isAfter(moment())
                 ) {
                     res.status(403).send("Download link expired");
                     return;
