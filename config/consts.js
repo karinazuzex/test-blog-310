@@ -9,7 +9,7 @@ export const WEBSITE_DOMAIN = process.WEBSITE_DOMAIN || (
         ? "http://localhost:3000"
         : "https://www.memurai.com"
 );
-export const MEMURAI_VERSION = env.MEMURAI_VERSION || "0.1.0 - Redis API 5";
+export const MEMURAI_VERSION = env.MEMURAI_VERSION || "1.0.7 - Redis API 5";
 
 export const MAILCHIMP_SUBSCRIBE_URL = env.NODE_ENV === "development"
     ? "https://janeasystems.us16.list-manage.com/subscribe/post?u=5788bc3268a4b1be403817cce&amp;id=d12c100c47"
@@ -38,10 +38,10 @@ export const EMAIL_PATTERN =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 export const MEMURAI_DOCS_LINK = NODE_ENV === "development"
-    ? "https://memuweb-docs.netlify.com/"
+    ? "https://memuweb-docs.netlify.com"
     : "https://docs.memurai.com";
-export const MEMURAI_DOCS_WINDOWS_DIRRERENCE_WITH_REDIS =
-    `${MEMURAI_DOCS_LINK}config-file#difference-with-redis-configuration-flags`;
-export const MEMURAI_DOCS_WINDOWS_SERVICE_LINK = `${MEMURAI_DOCS_LINK}/windows-service`;
+export const MEMURAI_DOCS_WINDOWS_DIFFERENCE_WITH_REDIS =
+    `${MEMURAI_DOCS_LINK}/en/config-file#difference-with-redis-configuration-flags`;
+export const MEMURAI_DOCS_WINDOWS_SERVICE_LINK = `${MEMURAI_DOCS_LINK}/en/windows-service`;
 
 export const MEMURAI_SUPPORT_LINK = "https://support.memurai.com";
