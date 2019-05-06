@@ -16,6 +16,13 @@
     color: $black;
     transition: background-color $defaultTransition;
 
+    &--newsletter {
+      svg {
+        width: 32px;
+        height: auto;
+      }
+    }
+
     svg {
       path {
         transition: fill $defaultTransition;
