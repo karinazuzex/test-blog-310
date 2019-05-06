@@ -1,6 +1,8 @@
 const express = require("express");
 const next = require("next");
 const bodyParser = require("body-parser");
+const queryString = require("query-string");
+const moment = require("moment");
 
 const config = require("./config");
 const mailer = require("./utils/mailer");
@@ -46,7 +48,29 @@ app.prepare()
         server.post("/api/decrypt", async (req, res) => {
             try {
                 const { data } = req.body;
+                const decryptedData = crypto.decrypt(data);
+                res.status(200).send(decryptedData);
+            } catch (err) {
+                res.status(400).send(err);
+            }
+        });
+
+        server.post("/api/get-dist-url", async (req, res) => {
+            try {
+                const { data } = req.body;
                 const decryptedCfUrl = crypto.decrypt(data);
+                const linkQuery = decryptedCfUrl.split("?")[1];
+                const parsedQuery = queryString.parse(linkQuery);
+    
+                // Check if expires parameter exists and is more than X (configurable) minutes before the expiration time
+                if (
+                    !parsedQuery.Expires ||
+                    !moment(parseInt(parsedQuery.Expires, 10) * 1000).subtract(config.aws_expire_timeout_padding, 'minutes').isAfter(moment())
+                ) {
+                    res.status(403).send("Download link expired");
+                    return;
+                }
+
                 res.status(200).send(decryptedCfUrl);
             } catch (err) {
                 res.status(400).send(err);

@@ -46,6 +46,7 @@ w2rjksAZiwvq9BT27n48Ok3JKHZzsCFTE75Hxx5wg6spx7Vl55AhjBFXqk8AYgl3
 -----END RSA PRIVATE KEY-----`),
     aws_file_path: getVar("aws_file_path", "https://dmig02f1dvad2.cloudfront.net/test-dummy.msi"),
     aws_expire_timeout: getVar("aws_expire_timeout", 48 * 60),
+    aws_expire_timeout_padding: getVar("aws_expire_timeout_padding", 2),
     crypto_key: getVar("crypto_key", "test_crypto_key"),
     WEBSITE_DOMAIN: getVar(
         "WEBSITE_DOMAIN",
