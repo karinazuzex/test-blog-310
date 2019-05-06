@@ -63,7 +63,10 @@ app.prepare()
                 const parsedQuery = queryString.parse(linkQuery);
 
                 // Check if expires parameter exists and is more than X (configurable) minutes before the expiration time
-                if (
+                if (parsedQuery['Key-Pair-Id'] !== config.aws_key_pair_id) {
+                    res.status(403).send("Key Pair Id corrupted");
+                    return;
+                } else if (
                     !parsedQuery.Expires ||
                     !moment(parseInt(parsedQuery.Expires, 10) * 1000)
                         .subtract(config.aws_expire_timeout_padding, 'minutes')
