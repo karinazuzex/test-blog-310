@@ -62,17 +62,19 @@
     position: relative;
     padding: 0;
     background-color: transparent;
-    width: initial;
-    height: initial;
+    width: auto;
+    height: auto;
+    flex: 1 0 auto;
 
     &__content {
       margin-left: -16px;
       margin-right: -16px;
+      justify-content: center;
     }
 
     &__item {
-      flex-basis: initial;
-      width: initial;
+      flex-basis: auto;
+      width: auto;
       padding: 0 16px;
 
       &--mobile {
