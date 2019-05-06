@@ -27,7 +27,6 @@ class Layout extends Component {
         const { theme, children, notifications } = this.props;
         return (
             <Fragment>
-
                 <div className={`layout ${this.state.showMenu ? "layout--show-menu" : ""}`}>
                     <Header
                         theme={theme}

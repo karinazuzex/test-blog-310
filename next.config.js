@@ -28,6 +28,7 @@ module.exports = withCSS(withSass({
         NODE_ENV: process.env.NODE_ENV,
         GA_TRACKING_ID: process.env.GA_TRACKING_ID,
         WEBSITE_DOMAIN: process.env.WEBSITE_DOMAIN,
+        MEMURAI_VERSION: process.env.MEMURAI_VERSION,
     },
 
     exportPathMap: function () {
