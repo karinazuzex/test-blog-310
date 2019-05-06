@@ -47,7 +47,7 @@ class DownloadPage extends Component {
             // Check if expires parameter exists and is more than one minute before expiration time
             if (
                 !parsedQuery.Expires ||
-                !moment(parseInt(parsedQuery.Expires, 10) * 1000).subtract(1, 'days').isAfter(moment())
+                !moment(parseInt(parsedQuery.Expires, 10) * 1000).add(1, 'minutes').isAfter(moment())
             ) {
                 console.log("asdf");
                 this.setState({
