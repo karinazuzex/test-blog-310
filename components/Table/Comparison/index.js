@@ -83,7 +83,7 @@ const ComparisonTable = () => (
             </Row>
             <Row theme="no-col" className="table__row">
                 <div className="col-xs-3 table__col">
-                    Runs on older versions of Windows?
+                    Runs on all versions of Windows?
                 </div>
                 <div className="col-xs-3 table__col">
                     <div className="icon icon--checked" />
