@@ -1,4 +1,5 @@
 import "static/scss/index.scss";
+import "@babel/polyfill";
 
 import React from "react";
 import App, { Container } from "next/app";
