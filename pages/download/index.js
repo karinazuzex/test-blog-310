@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import Layout from "components/Layout";
 import NextLink from "next/link";
 import axios from "axios";
-import moment from "moment";
-import queryString from "query-string";
 
 import { consts, routes } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
@@ -39,34 +37,25 @@ class DownloadPage extends Component {
             });
             return;
         }
-        const response = await axios.post("/api/decrypt", { data: query.key });
-        if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
-            const linkQuery = response.data.split("?")[1];
-            const parsedQuery = queryString.parse(linkQuery);
-
-            // Check if expires parameter exists and is more than one minute before expiration time
-            if (
-                !parsedQuery.Expires ||
-                !moment(parseInt(parsedQuery.Expires, 10) * 1000).add(1, 'minutes').isAfter(moment())
-            ) {
+        try {
+            const response = await axios.post("/api/get-dist-url", { data: query.key });
+            if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
                 this.setState({
-                    valid: false,
+                    link: response.data,
+                });
+                this.addEmailToMailchimp(query.id);
+                this.download();
+                this.setState({
+                    valid: true,
                 });
                 return;
             }
-            this.setState({
-                link: response.data,
-            });
-            this.addEmailToMailchimp(query.id);
-            this.download();
-            this.setState({
-                valid: true,
-            });
-        } else {
-            this.setState({
-                valid: false,
-            });
+        } 
+        catch(error) {
         }
+        this.setState({
+            valid: false,
+        });
     };
 
     addEmailToMailchimp = async (encryptedEmail) => {
