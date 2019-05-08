@@ -102,12 +102,14 @@ class MyApp extends App {
                         place="top"
                         type="light"
                         effect="solid"
+                        className="tooltip tooltip--light"
                     />
                     <ReactTooltip
                         id="tooltip-dark"
                         place="top"
                         type="dark"
                         effect="solid"
+                        className="tooltip tooltip--dark"
                     />
                 </Provider>
             </Container>
