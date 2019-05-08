@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { consts } from "config";
 import Head from "next/head";
 import { withRouter } from "next/router";
+import ReactTooltip from "react-tooltip";
 
 import withReduxStore from "libs/withReduxStore";
 import { analytics, head, routes } from "config";
@@ -96,6 +97,18 @@ class MyApp extends App {
                         />
                     </Head>
                     <Component {...pageProps} />
+                    <ReactTooltip
+                        id="tooltip-light"
+                        place="top"
+                        type="light"
+                        effect="solid"
+                    />
+                    <ReactTooltip
+                        id="tooltip-dark"
+                        place="top"
+                        type="dark"
+                        effect="solid"
+                    />
                 </Provider>
             </Container>
         )
