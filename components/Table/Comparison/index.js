@@ -36,7 +36,7 @@ const ComparisonTable = () => (
                     Virtualization
                 </div>
                 <div className="col-xs-3 table__col">
-                    Emulation
+                    Emulation / Virtualization
                 </div>
             </Row>
             <Row theme="no-col" className="table__row">

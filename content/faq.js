@@ -7,7 +7,7 @@ import { Link } from "components/ui";
 export default [
     {
         summary: "What are the minimum system requirements to run Memurai for Windows?",
-        info: "Memurai runs on Windows 7 / Windows Server 2008 R2, or higher. Windows 10 / Windows Server 2016, or higher, are recommended for optimal performance. At the moment, only 64-bit version of Windows are supported.",
+        info: "Memurai runs on Windows 7 / Windows Server 2008 R2, or higher. Windows 10 / Windows Server 2016, or higher, are recommended for optimal performance. At the moment, only 64-bit versions of Windows are supported.",
     },
     {
         summary: "What version of Redis is Memurai compatible with?",
