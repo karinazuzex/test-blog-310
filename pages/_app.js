@@ -48,17 +48,19 @@ class MyApp extends App {
         window.removeEventListener("CookiebotOnAccept", this.onCookiebotAccept, false);
     };
 
+    onCookiebotAccept = () => {
+        const { router } = this.props;
+        if (Cookiebot && Cookiebot.consent && Cookiebot.consent.marketing && Cookiebot.consent.statistics) {
+            this.setState({ analyticsState: true });
+            analytics.init(true);
+            this.sendPageview(router.route);
+        }
+    };
+
     sendPageview = (route) => {
         this.setState({ lastRoute: route });
         const routeObj = Object.values(routes).find(item => item.path === route);
         analytics.pageview(routeObj.path, routeObj.name);
-    };
-
-    onCookiebotAccept = () => {
-        if (Cookiebot && Cookiebot.consent && Cookiebot.consent.marketing && Cookiebot.consent.statistics) {
-            this.setState({ analyticsState: true });
-            analytics.init(true);
-        }
     };
 
     render () {
