@@ -21,6 +21,15 @@ app.prepare()
         server.use(wwwhisper(false));
         server.use(bodyParser.json());
 
+        server.get("/api/request-download-link", async (req,res) => {
+            try {
+                const awsLink = await aws.getDownloadUrl();
+                res.status(200).send(awsLink);
+            } catch (err) {
+                res.status(400).send(err);
+            }
+        });
+
         server.post("/api/contact", async (req, res) => {
             const { email, name, subject, message } = req.body;
             try {

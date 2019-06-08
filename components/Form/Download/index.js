@@ -8,12 +8,11 @@ import { error, info, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "react-google-recaptcha";
 
 import { validators, helpers } from "utils";
-import { consts, routes, messages } from "config";
+import { consts, routes, messages, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Link, Checkbox } from "components/ui";
-import {analytics} from "../../../config";
 
 class DownloadForm extends Component {
     constructor(props) {

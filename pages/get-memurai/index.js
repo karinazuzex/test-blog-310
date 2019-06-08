@@ -1,98 +1,127 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
+import axios from "axios";
+import { connect } from "react-redux";
+import { error } from "react-notification-system-redux";
+import ReCaptcha from "react-google-recaptcha";
 
-import { analytics } from "config";
+import { analytics, consts, exceptions } from "config";
+import { mailerTypes } from "modules/mailer";
 
 import Layout from "components/Layout";
-import { Container, Row, Col } from "components/grid";
-import DownloadForm from "components/Form/Download";
-import { Link } from "components/ui";
+import { Container, Row } from "components/grid";
+import { Button } from "components/ui";
 
 class GetMemuraiPage extends Component {
     constructor(props) {
         super(props);
 
-        this.getInitialState = () => ({
-            done: false,
-            email: null,
-        });
-
-        this.state = this.getInitialState();
+        this.state = {
+            processing: false,
+        };
     };
 
-    clearResult = () => {
+    componentDidMount() {
+        ReactDOM.render(
+            <ReCaptcha
+                ref={(ref) => { this.recaptcha = ref }}
+                size="invisible"
+                sitekey={consts.RECAPTCHA_SITE_KEY}
+            />,
+            this.recaptchaWrapper);
+    }
+
+    reset = () => {
+        this.setState({ processing: false });
+        this.recaptcha.reset();
+    };
+
+    handleDownloadClick = async (e) => {
+        e.preventDefault();
         analytics.event({
-            category: "Request dowload link",
-            action: "Try again",
+            category: "Simplified download",
+            action: "Button click",
         });
-        this.setState(this.getInitialState());
-    };
-
-    handleFormCallback = (email) => {
+        const {dispatch} = this.props;
         this.setState({
-            done: true,
-            email,
-        })
+            processing: true,
+        });
+        this.recaptcha.execute();
+
+        try {
+            const response = await axios.get("/api/request-download-link");
+            if (
+                response
+                && response.ok
+                && response.status === mailerTypes.MAILER_SUCCESS_STATUS
+            ) {
+                analytics.event({
+                    category: "Simplified download",
+                    action: "Success, start download",
+                });
+                const downloadLink = document.createElement("a");
+                downloadLink.href = response.data;
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+            } else {
+                analytics.event({
+                    category: "Simplified download",
+                    action: "Error upon link request",
+                    label: response.data.error,
+                });
+                dispatch(error({
+                    position: "bc",
+                    autoDismiss: 0,
+                    message: response.data.error,
+                }));
+            }
+        } catch(err) {
+            analytics.event({
+                category: "Simplified download",
+                action: "Error upon link request",
+                label: exceptions.SERVER_NOT_RESPONDING,
+            });
+            dispatch(error({
+                position: "bc",
+                autoDismiss: 0,
+                message: exceptions.SERVER_NOT_RESPONDING,
+            }));
+        }
+        this.reset();
     };
-
-    renderDefaultContent = () => (
-        <Fragment>
-            <section className="section section__promo section__promo--get-memurai">
-                <Container>
-                    <div className="block text-center">
-                        <h3 className="block__title block__elem text-bold">
-                            Get Memurai
-                        </h3>
-                        <p className="block__description block__description--fixed block__elem--xl">
-                            Please fill in the information below so we can send you a download link.
-                        </p>
-                        <Row className="justify-center-xs">
-                            <Col attributes="xs-12 md-8">
-                                <DownloadForm onCallback={this.handleFormCallback} />
-                            </Col>
-                        </Row>
-                    </div>
-                </Container>
-            </section>
-        </Fragment>
-    );
-
-    renderDoneContent = () => (
-        <section className="section section__promo section__promo--result">
-            <Container>
-                <div className="block text-center">
-                    <h5 className="block__title">
-                        Thank you for your interest in Memurai.
-                    </h5>
-                    <p className="block__description block__description--fixed block__elem--80 text-sm">
-                        We have sent an email to&nbsp;
-                        <span className="text-red">
-                            {this.state.email}
-                        </span> containing a link to download the software.
-                    </p>
-                    <p className="block__description text-sm">
-                        If you don&apos;t receive the email, please check your spam folder, or&nbsp;
-                        <Link
-                            theme="red"
-                            onClick={this.clearResult}
-                        >
-                            try again
-                        </Link>.
-                    </p>
-                </div>
-            </Container>
-        </section>
-    );
 
     render() {
         return (
             <Layout theme="white">
-                {this.state.done
-                    ? this.renderDoneContent()
-                    : this.renderDefaultContent()
-                }
+                <section className="section section__promo section__promo--get-memurai">
+                    <Container>
+                        <div className="block text-center">
+                            <h3 className="block__title block__elem text-bold">
+                                Get Memurai
+                            </h3>
+                            <Row theme="no-col" className="justify-center-xs">
+                                <Button
+                                    onClick={this.handleDownloadClick}
+                                    type="solid"
+                                    theme="red-white free-width multi-line"
+                                    disabled={this.state.processing}
+                                >
+                                    {consts.DOWNLOAD_BUTTON_TEXT}
+                                </Button>
+                            </Row>
+                        </div>
+                    </Container>
+                </section>
+                <div ref={(ref) => { this.recaptchaWrapper = ref }} />
             </Layout>
         );
     }
 }
 
-export default GetMemuraiPage;
+GetMemuraiPage.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+};
+
+export default connect()(GetMemuraiPage);
