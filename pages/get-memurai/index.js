@@ -51,9 +51,9 @@ class GetMemuraiPage extends Component {
 
         try {
             const response = await axios.get("/api/request-download-link");
+            console.log(response);
             if (
                 response
-                && response.ok
                 && response.status === mailerTypes.MAILER_SUCCESS_STATUS
             ) {
                 analytics.event({

@@ -55,7 +55,6 @@ class DownloadPage extends Component {
             const response = await axios.post("/api/get-dist-url", { data: query.key });
             if (
                 response
-                && response.ok
                 && response.status === mailerTypes.MAILER_SUCCESS_STATUS
             ) {
                 analytics.event({
@@ -77,7 +76,7 @@ class DownloadPage extends Component {
         analytics.event({
             category: "Download",
             action: "Process query",
-            label: "Error occured",
+            label: "Error occurred",
         });
         this.setState({
             valid: false,
