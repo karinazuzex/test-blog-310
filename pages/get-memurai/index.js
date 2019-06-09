@@ -101,6 +101,9 @@ class GetMemuraiPage extends Component {
                             <h3 className="block__title block__elem text-bold">
                                 Get Memurai
                             </h3>
+                            <p className="block__description block__description--fixed block__elem--xl">
+                                Download the latest version for Windows 64-bit.<br />
+                            </p>
                             <Row theme="no-col" className="justify-center-xs">
                                 <Button
                                     onClick={this.handleDownloadClick}
