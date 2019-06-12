@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import { connect } from "react-redux";
-import { error } from "react-notification-system-redux";
+import { error, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "react-google-recaptcha";
 
 import { analytics, consts, exceptions } from "config";
@@ -43,7 +43,8 @@ class GetMemuraiPage extends Component {
             category: "Simplified download",
             action: "Button click",
         });
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
+        dispatch(removeAll());
         this.setState({
             processing: true,
         });
