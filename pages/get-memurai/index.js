@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ReactDOM from "react-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { error, removeAll } from "react-notification-system-redux";
-import ReCaptcha from "react-google-recaptcha";
 
 import { analytics, consts, exceptions } from "config";
 import { mailerTypes } from "modules/mailer";
@@ -12,6 +10,7 @@ import { mailerTypes } from "modules/mailer";
 import Layout from "components/Layout";
 import { Container, Row } from "components/grid";
 import { Button } from "components/ui";
+import ReCaptcha from "components/ReCaptcha";
 
 class GetMemuraiPage extends Component {
     constructor(props) {
@@ -19,22 +18,34 @@ class GetMemuraiPage extends Component {
 
         this.state = {
             processing: false,
+            recaptchaValue: null,
+            recaptchaLoaded: false,
         };
     };
 
-    componentDidMount() {
-        ReactDOM.render(
-            <ReCaptcha
-                ref={(ref) => { this.recaptcha = ref }}
-                size="invisible"
-                sitekey={consts.RECAPTCHA_SITE_KEY}
-            />,
-            this.recaptchaWrapper);
+    componentWillUnmount() {
+        this.recaptcha.reset();
     }
 
     reset = () => {
+        const { dispatch } = this.props;
         this.setState({ processing: false });
-        this.recaptcha.reset();
+        dispatch(removeAll());
+    };
+
+    onRecaptchaLoad = () => {
+        this.setState({
+            recaptchaLoaded: true,
+        });
+    };
+
+    onRecaptchaChange = (value) => {
+        this.setState({
+            recaptchaValue: value,
+        });
+        if (this.state.processing) {
+            this.download(value);
+        }
     };
 
     handleDownloadClick = async (e) => {
@@ -48,11 +59,32 @@ class GetMemuraiPage extends Component {
         this.setState({
             processing: true,
         });
-        this.recaptcha.execute();
+        if (!this.state.recaptchaValue) {
+            this.recaptcha.execute();
+        } else {
+            this.download(this.state.recaptchaValue);
+        }
+    };
 
+    download = async (token) => {
+        const { dispatch } = this.props;
+        if (!token) {
+            analytics.event({
+                category: "Simplified download",
+                action: exceptions.RECAPTCHA_VALIDATION_FAILED,
+            });
+            dispatch(error({
+                position: "bc",
+                autoDismiss: 0,
+                message: exceptions.RECAPTCHA_VALIDATION_FAILED,
+            }));
+            this.setState({
+                processing: false,
+            });
+            return;
+        }
         try {
             const response = await axios.get("/api/request-download-link");
-            console.log(response);
             if (
                 response
                 && response.status === mailerTypes.MAILER_SUCCESS_STATUS
@@ -110,7 +142,7 @@ class GetMemuraiPage extends Component {
                                     onClick={this.handleDownloadClick}
                                     type="solid"
                                     theme="red-white free-width multi-line"
-                                    disabled={this.state.processing}
+                                    disabled={this.state.processing || !this.state.recaptchaLoaded}
                                 >
                                     {consts.DOWNLOAD_BUTTON_TEXT}
                                 </Button>
@@ -118,7 +150,11 @@ class GetMemuraiPage extends Component {
                         </div>
                     </Container>
                 </section>
-                <div ref={(ref) => { this.recaptchaWrapper = ref }} />
+                <ReCaptcha
+                    onLoad={this.onRecaptchaLoad}
+                    onChange={this.onRecaptchaChange}
+                    ref={(ref) => { this.recaptcha = ref }}
+                />
             </Layout>
         );
     }

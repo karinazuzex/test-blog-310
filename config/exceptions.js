@@ -14,6 +14,9 @@ export const EMAIL_INVALID = "Incorrect email pattern.";
 // Agreemnt is not accepted
 export const AGREEMENT_NOT_ACCEPTED = "You must accept Terms of service and Privacy Policy to continue.";
 
+// Recaptcha validation failed
+export const RECAPTCHA_VALIDATION_FAILED = "Recaptcha validation failed.";
+
 /**
  * Mailchimp
  */
