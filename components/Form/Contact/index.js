@@ -7,12 +7,11 @@ import { error, info, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "components/ReCaptcha";
 
 import { validators, helpers } from "utils";
-import { consts, messages, routes, analytics } from "config";
+import { consts, messages, routes, analytics, exceptions } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Link, Checkbox } from "components/ui";
-import {exceptions} from "../../../config";
 
 class ContactForm extends Component {
     constructor(props) {

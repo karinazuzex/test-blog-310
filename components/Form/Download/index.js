@@ -7,12 +7,11 @@ import { error, info, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "components/ReCaptcha";
 
 import { validators, helpers } from "utils";
-import { consts, routes, messages, analytics } from "config";
+import { consts, routes, messages, analytics, exceptions } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Link, Checkbox } from "components/ui";
-import {exceptions} from "../../../config";
 
 class DownloadForm extends Component {
     constructor(props) {
