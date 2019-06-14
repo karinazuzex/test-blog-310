@@ -9,7 +9,7 @@ import { mailerTypes } from "modules/mailer";
 
 import Layout from "components/Layout";
 import { Container, Row } from "components/grid";
-import { Button } from "components/ui";
+import { Button, Link } from "components/ui";
 import ReCaptcha from "components/ReCaptcha";
 
 class GetMemuraiPage extends Component {
@@ -18,6 +18,7 @@ class GetMemuraiPage extends Component {
 
         this.state = {
             processing: false,
+            done: false,
             recaptchaValue: null,
             recaptchaLoaded: false,
         };
@@ -98,6 +99,9 @@ class GetMemuraiPage extends Component {
                 document.body.appendChild(downloadLink);
                 downloadLink.click();
                 document.body.removeChild(downloadLink);
+                this.setState({
+                    done: true,
+                });
             } else {
                 analytics.event({
                     category: "Simplified download",
@@ -125,31 +129,60 @@ class GetMemuraiPage extends Component {
         this.reset();
     };
 
+    renderDoneContent = () => (
+        <section className="section section__promo section__promo--result">
+            <Container>
+                <div className="block text-center">
+                    <h5 className="block__title block__elem--lg">
+                        Thank you for your interest in Memurai.
+                    </h5>
+                    <p className="block__description text-sm">
+                        Your download should be started. If it doesn’t, you can try again&nbsp;
+                        <Link
+                            theme="red"
+                            disabled={this.state.processing || !this.state.recaptchaLoaded}
+                            onClick={this.handleDownloadClick}
+                        >
+                            here
+                        </Link>.
+                    </p>
+                </div>
+            </Container>
+        </section>
+    );
+
+    renderDefaultContent = () => (
+        <section className="section section__promo section__promo--get-memurai">
+            <Container>
+                <div className="block text-center">
+                    <h3 className="block__title block__elem text-bold">
+                        Get Memurai
+                    </h3>
+                    <p className="block__description block__description--fixed block__elem--xl">
+                        Download the latest version for Windows 64-bit.<br />
+                    </p>
+                    <Row theme="no-col" className="justify-center-xs">
+                        <Button
+                            onClick={this.handleDownloadClick}
+                            type="solid"
+                            theme="red-white free-width multi-line"
+                            disabled={this.state.processing || !this.state.recaptchaLoaded}
+                        >
+                            {consts.DOWNLOAD_BUTTON_TEXT}
+                        </Button>
+                    </Row>
+                </div>
+            </Container>
+        </section>
+    );
+
     render() {
         return (
             <Layout theme="white">
-                <section className="section section__promo section__promo--get-memurai">
-                    <Container>
-                        <div className="block text-center">
-                            <h3 className="block__title block__elem text-bold">
-                                Get Memurai
-                            </h3>
-                            <p className="block__description block__description--fixed block__elem--xl">
-                                Download the latest version for Windows 64-bit.<br />
-                            </p>
-                            <Row theme="no-col" className="justify-center-xs">
-                                <Button
-                                    onClick={this.handleDownloadClick}
-                                    type="solid"
-                                    theme="red-white free-width multi-line"
-                                    disabled={this.state.processing || !this.state.recaptchaLoaded}
-                                >
-                                    {consts.DOWNLOAD_BUTTON_TEXT}
-                                </Button>
-                            </Row>
-                        </div>
-                    </Container>
-                </section>
+                {this.state.done
+                    ? this.renderDoneContent()
+                    : this.renderDefaultContent()
+                }
                 <ReCaptcha
                     onLoad={this.onRecaptchaLoad}
                     onChange={this.onRecaptchaChange}
