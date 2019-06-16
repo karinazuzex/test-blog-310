@@ -21,6 +21,7 @@ class GetMemuraiPage extends Component {
             done: false,
             recaptchaValue: null,
             recaptchaLoaded: false,
+            link: null,
         };
     };
 
@@ -94,6 +95,9 @@ class GetMemuraiPage extends Component {
                     category: "Simplified download",
                     action: "Success, start download",
                 });
+                this.setState({
+                    link: response.data,
+                });
                 const downloadLink = document.createElement("a");
                 downloadLink.href = response.data;
                 document.body.appendChild(downloadLink);
@@ -133,19 +137,56 @@ class GetMemuraiPage extends Component {
         <section className="section section__promo section__promo--result">
             <Container>
                 <div className="block text-center">
-                    <h5 className="block__title block__elem--lg">
-                        Thank you for your interest in Memurai.
-                    </h5>
-                    <p className="block__description text-sm">
-                        Your download should be started. If it doesn’t, you can try again&nbsp;
-                        <Link
-                            theme="red"
-                            disabled={this.state.processing || !this.state.recaptchaLoaded}
-                            onClick={this.handleDownloadClick}
-                        >
-                            here
-                        </Link>.
-                    </p>
+                <h5 className="block__title">
+                Thank you for your interest in Memurai
+            </h5>
+            {this.state.link &&
+            <div className="block__description block__description--fixed block__elem--80 text-sm">
+                Your download should be starting automatically. If it doesn’t,&nbsp;
+                <Link
+                    as="button"
+                    type="button"
+                    onClick={this.download}
+                    theme="red"
+                >
+                    click here
+                </Link>.
+            </div>
+            }
+            <p className="block__description text-bold">
+                Other things you can do
+            </p>
+            <p className="block__description text-sm">
+                Follow Memurai on&nbsp;
+                <Link
+                    theme="red"
+                    href={consts.TWITTER_LINK}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    onClick={() => {
+                        analytics.event({
+                            category: "External link",
+                            action: "Open",
+                            label: "Twitter"
+                        });
+                    }}
+                >
+                    Twitter
+                </Link>. Read the&nbsp;
+                <Link
+                    theme="red"
+                    href={consts.MEMURAI_DOCS_LINK}
+                    onClick={() => {
+                        analytics.event({
+                            category: "External link",
+                            action: "Open",
+                            label: "Documentation"
+                        });
+                    }}
+                >
+                    documentation
+                </Link>.
+            </p>
                 </div>
             </Container>
         </section>
