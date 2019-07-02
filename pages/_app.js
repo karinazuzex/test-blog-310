@@ -9,7 +9,7 @@ import { withRouter } from "next/router";
 import ReactTooltip from "react-tooltip";
 
 import withReduxStore from "libs/withReduxStore";
-import { analytics, head, routes } from "config";
+import { analytics, head, routes, tagManager } from "config";
 
 class MyApp extends App {
     constructor(props) {
@@ -61,6 +61,7 @@ class MyApp extends App {
         this.setState({ lastRoute: route });
         const routeObj = Object.values(routes).find(item => item.path === route);
         analytics.pageview(routeObj.path, routeObj.name);
+        tagManager.pageview(routeObj.path);
     };
 
     render () {

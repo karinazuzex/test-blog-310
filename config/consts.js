@@ -4,6 +4,7 @@ export const { NODE_ENV } = env;
 export const GA_TRACKING_ID = NODE_ENV === "development"
     ? "UA-XXXXXXXX-X"
     : env.GA_TRACKING_ID;
+export const GTM_TRACKING_ID = env.GTM_TRACKING_ID;
 export const WEBSITE_DOMAIN = process.WEBSITE_DOMAIN || (
     NODE_ENV === "development"
         ? "http://localhost:3000"
