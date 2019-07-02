@@ -30,6 +30,7 @@ module.exports = withCSS(withSass({
         GTM_TRACKING_ID: process.env.GTM_TRACKING_ID,
         WEBSITE_DOMAIN: process.env.WEBSITE_DOMAIN,
         MEMURAI_VERSION: process.env.MEMURAI_VERSION,
+        DOWNLOAD_BUTTON_TEXT: process.env.DOWNLOAD_BUTTON_TEXT,
     },
 
     exportPathMap: function () {

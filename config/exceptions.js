@@ -14,6 +14,9 @@ export const EMAIL_INVALID = "Incorrect email pattern.";
 // Agreemnt is not accepted
 export const AGREEMENT_NOT_ACCEPTED = "You must accept Terms of service and Privacy Policy to continue.";
 
+// Recaptcha validation failed
+export const RECAPTCHA_VALIDATION_FAILED = "Recaptcha validation failed.";
+
 /**
  * Mailchimp
  */
@@ -23,3 +26,10 @@ export const EMAIL_IN_USE = "This email is already in subscription list.";
 
 // Too many recent requests on email
 export const TOO_MANY_REQUESTS = "Too many recent requests on this email.";
+
+/**
+ * Server
+ */
+
+// Server not responding
+export const SERVER_NOT_RESPONDING = "Server is not responding. Check your internet connection.";

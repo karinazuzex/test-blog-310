@@ -37,10 +37,10 @@
 
   &__hollow {
     height: 58px;
-    line-height: 54px;
+    line-height: 38px;
     font-size: 14px;
     text-transform: uppercase;
-    padding: 0 20px;
+    padding: 8px 20px;
     font-weight: bold;
     letter-spacing: 1.7px;
     border-radius: 3px;
@@ -102,10 +102,10 @@
 
   &__solid {
     height: 58px;
-    line-height: 58px;
+    line-height: 38px;
     font-size: 14px;
     text-transform: uppercase;
-    padding: 0 20px;
+    padding: 10px 20px;
     font-weight: bold;
     letter-spacing: 1.7px;
     border-radius: 3px;
@@ -163,6 +163,15 @@
 
   &--promo-home {
     min-width: 240px;
+  }
+
+  &--free-width {
+    width: auto;
+  }
+
+  &--multi-line {
+    white-space: pre-wrap;
+    height: auto;
   }
 }
 

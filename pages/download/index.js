@@ -53,11 +53,14 @@ class DownloadPage extends Component {
         }
         try {
             const response = await axios.post("/api/get-dist-url", { data: query.key });
-            if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
+            if (
+                response
+                && response.status === mailerTypes.MAILER_SUCCESS_STATUS
+            ) {
                 analytics.event({
                     category: "Download",
                     action: "Process query",
-                    label: "Sucess",
+                    label: "Success",
                 });
                 this.setState({
                     link: response.data,
@@ -69,12 +72,11 @@ class DownloadPage extends Component {
                 });
                 return;
             }
-        }
-        catch(err) {}
+        } catch(err) {}
         analytics.event({
             category: "Download",
             action: "Process query",
-            label: "Error occured",
+            label: "Error occurred",
         });
         this.setState({
             valid: false,
