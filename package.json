@@ -8,7 +8,7 @@
     "dev": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development WWWHISPER_DISABLE=1 node server",
     "build": "next build",
     "start": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node server",
-    "export": "next export"
+    "export": "next export && cp public/* out"
   },
   "repository": {
     "type": "git",

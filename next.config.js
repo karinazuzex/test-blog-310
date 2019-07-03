@@ -26,7 +26,6 @@ module.exports = withCSS(withSass({
 
     publicRuntimeConfig: {
         NODE_ENV: process.env.NODE_ENV,
-        GA_TRACKING_ID: process.env.GA_TRACKING_ID,
         GTM_TRACKING_ID: process.env.GTM_TRACKING_ID,
         WEBSITE_DOMAIN: process.env.WEBSITE_DOMAIN,
         MEMURAI_VERSION: process.env.MEMURAI_VERSION,
@@ -44,7 +43,7 @@ module.exports = withCSS(withSass({
         "/newsletter": { page: "/newsletter" },
         "/terms": { page: "/terms" },
         "/privacy": { page: "/privacy" },
-        "/cookie": { page: "/cookie" }
+        "/cookie": { page: "/cookie" },
       }
     }
 }));
