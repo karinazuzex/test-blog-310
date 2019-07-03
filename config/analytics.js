@@ -1,40 +1,20 @@
-import ReactGA from "react-ga";
+import { GTM_TRACKING_ID } from "./consts";
 
-import { GA_TRACKING_ID, WEBSITE_DOMAIN } from "./consts";
-
-let disabled = false;
-
-const init = couldUseGA => {
-    disabled = !(GA_TRACKING_ID && WEBSITE_DOMAIN && couldUseGA);
-    if (disabled) {
-        return;
-    }
-    const testMode = GA_TRACKING_ID === "UA-XXXXXXXX-X";
-    ReactGA.initialize(GA_TRACKING_ID, { testMode });
-    ReactGA.set({ location: WEBSITE_DOMAIN });
-    ReactGA.set({ checkProtocolTask: false });
+const pageview = url => {
+    window.gtag('config', GTM_TRACKING_ID, {
+        page_path: url,
+    })
 };
 
-const pageview = (path, title = "", trackerNames = []) => {
-    if (disabled) {
-        return;
-    }
-    ReactGA.set({
-        page: path,
-        title,
-    });
-    ReactGA.pageview(path, trackerNames, title);
-};
-
-const event = (params) => {
-    if (disabled) {
-        return;
-    }
-    ReactGA.event(params);
+const event = ({ action, category, label, value }) => {
+    window.gtag('event', action, {
+        event_category: category,
+        event_label: label,
+        value: value
+    })
 };
 
 export default {
-    init,
-    pageview,
-    event,
+    pageview: GTM_TRACKING_ID ? pageview : () => {},
+    event: GTM_TRACKING_ID ? event : () => {},
 };

@@ -9,29 +9,18 @@ import { withRouter } from "next/router";
 import ReactTooltip from "react-tooltip";
 
 import withReduxStore from "libs/withReduxStore";
-import { analytics, head, routes, tagManager } from "config";
+import { analytics, head, routes } from "config";
 
 class MyApp extends App {
     constructor(props) {
         super(props);
 
-        // Store routes avoiding duplication into GA, cause nextProps are similar to current using next/router
         this.state = {
-            analyticsState: false,
             lastRoute: null,
         };
     };
     componentDidMount() {
-        let { analyticsState } = this.state;
         const { router } = this.props;
-
-        if (Cookiebot && Cookiebot.consent && Cookiebot.consent.marketing && Cookiebot.consent.statistics) {
-            analyticsState = true;
-        }
-
-        window.addEventListener("CookiebotOnAccept", this.onCookiebotAccept, false);
-        analytics.init(analyticsState);
-        this.setState({ analyticsState });
 
         this.sendPageview(router.route);
     };
@@ -44,24 +33,12 @@ class MyApp extends App {
         }
     };
 
-    componentWillUnmount() {
-        window.removeEventListener("CookiebotOnAccept", this.onCookiebotAccept, false);
-    };
-
-    onCookiebotAccept = () => {
-        const { router } = this.props;
-        if (Cookiebot && Cookiebot.consent && Cookiebot.consent.marketing && Cookiebot.consent.statistics) {
-            this.setState({ analyticsState: true });
-            analytics.init(true);
-            this.sendPageview(router.route);
-        }
-    };
-
     sendPageview = (route) => {
         this.setState({ lastRoute: route });
         const routeObj = Object.values(routes).find(item => item.path === route);
-        analytics.pageview(routeObj.path, routeObj.name);
-        tagManager.pageview(routeObj.path);
+        if (routeObj) {
+            analytics.pageview(routeObj.path);
+        }
     };
 
     render () {
