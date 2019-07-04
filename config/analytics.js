@@ -3,7 +3,7 @@ import { GTM_TRACKING_ID } from "./consts";
 let disabled = true;
 
 const init = couldUseGtm => {
-    disabled = couldUseGtm && GTM_TRACKING_ID;
+    disabled = !(couldUseGtm && GTM_TRACKING_ID);
 };
 
 const pageview = url => {
