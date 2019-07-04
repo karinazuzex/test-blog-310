@@ -15,12 +15,23 @@ class MyApp extends App {
     constructor(props) {
         super(props);
 
+        // Store routes avoiding duplication into GA, cause nextProps are similar to current using next/router
         this.state = {
+            analyticsState: false,
             lastRoute: null,
         };
     };
     componentDidMount() {
+        let { analyticsState } = this.state;
         const { router } = this.props;
+
+        if (Cookiebot && Cookiebot.consent && Cookiebot.consent.marketing && Cookiebot.consent.statistics) {
+            analyticsState = true;
+        }
+
+        window.addEventListener("CookiebotOnAccept", this.onCookiebotAccept, false);
+        analytics.init(analyticsState);
+        this.setState({ analyticsState });
 
         this.sendPageview(router.route);
     };
@@ -30,6 +41,19 @@ class MyApp extends App {
         const { lastRoute } = this.state;
         if (lastRoute !== route) {
             this.sendPageview(route);
+        }
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener("CookiebotOnAccept", this.onCookiebotAccept, false);
+    };
+
+    onCookiebotAccept = () => {
+        const { router } = this.props;
+        if (Cookiebot && Cookiebot.consent && Cookiebot.consent.marketing && Cookiebot.consent.statistics) {
+            this.setState({ analyticsState: true });
+            analytics.init(true);
+            this.sendPageview(router.route);
         }
     };
 
