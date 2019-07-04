@@ -3,6 +3,7 @@ const next = require("next");
 const bodyParser = require("body-parser");
 const queryString = require("query-string");
 const moment = require("moment");
+const path = require("path");
 
 const config = require("./config");
 const mailer = require("./utils/mailer");
@@ -13,6 +14,7 @@ const wwwhisper = require('connect-wwwhisper');
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const staticDir = path.join(__dirname, "../static");
 
 app.prepare()
     .then(() => {
@@ -20,6 +22,24 @@ app.prepare()
 
         server.use(wwwhisper(false));
         server.use(bodyParser.json());
+
+        server.get('/robots.txt', (req, res) => (
+            res.status(200).sendFile('robots.txt', {
+                root: staticDir,
+                headers: {
+                    'Content-Type': 'text/plain;charset=UTF-8',
+                },
+            })
+        ));
+
+        server.get('/sitemap.xml', (req, res) => (
+            res.status(200).sendFile('sitemap.xml', {
+                root: staticDir,
+                headers: {
+                    'Content-Type': 'text/xml;charset=UTF-8',
+                },
+            })
+        ));
 
         server.get("/api/request-download-link", async (req,res) => {
             try {
