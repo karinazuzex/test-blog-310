@@ -61,7 +61,7 @@ class MyApp extends App {
         this.setState({ lastRoute: route });
         const routeObj = Object.values(routes).find(item => item.path === route);
         if (routeObj) {
-            analytics.pageview(routeObj.path);
+            analytics.pageview(routeObj.path, routeObj.name);
         }
     };
 
