@@ -12,15 +12,16 @@ export default class extends Document {
                     <Fragment>
                         <script
                             async
-                            src={`https://www.googletagmanager.com/gtag/js?id=${GTM_TRACKING_ID}`}
+                            src={`https://www.googletagmanager.com/gtm.js?id=${GTM_TRACKING_ID}`}
                         />
                         <script
                             dangerouslySetInnerHTML={{
                                 __html: `
                                     window.dataLayer = window.dataLayer || [];
-                                    function gtag(){dataLayer.push(arguments);}
-                                    gtag('js', new Date());
-                                    gtag('config', '${GTM_TRACKING_ID}');
+                                    window.dataLayer.push({
+                                        'gtm.start': new Date().getTime(),
+                                        event: 'gtm.js'
+                                    });
                                 `
                             }}
                         />
