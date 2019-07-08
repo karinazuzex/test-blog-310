@@ -6,12 +6,13 @@ const init = couldUseGtm => {
     disabled = !(couldUseGtm && GTM_TRACKING_ID);
 };
 
-const pageview = url => {
+const pageview = (url, title) => {
     if (disabled) {
         return;
     }
     window.gtag('config', GTM_TRACKING_ID, {
         page_path: url,
+        page_title: title,
     })
 };
 
