@@ -10,9 +10,9 @@ const pageview = (url, title) => {
     if (disabled) {
         return;
     }
-    window.gtag('config', GTM_TRACKING_ID, {
-        page_path: url,
-        page_title: title,
+    window.dataLayer.push({
+        pagePath: url,
+        pageTitle: title,
     })
 };
 
@@ -20,12 +20,13 @@ const event = ({ action, category, label, value }) => {
     if (disabled) {
         return;
     }
-    const formattedAction = action.toLowerCase().split(' ').join('_');
-    window.gtag('event', formattedAction, {
-        event_category: category,
-        event_label: label,
-        value: value
-    })
+    const data = {};
+    if (action) { data.event = action.toLowerCase().split(' ').join('_'); }
+    if (category) { data.category = category; }
+    if (label) { data.label = label; }
+    if (value) { data.value = value; }
+
+    window.dataLayer.push(data);
 };
 
 export default {
