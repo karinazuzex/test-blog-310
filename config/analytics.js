@@ -20,7 +20,8 @@ const event = ({ action, category, label, value }) => {
     if (disabled) {
         return;
     }
-    window.gtag('event', action, {
+    const formattedAction = action.toLowerCase().split(' ').join('_');
+    window.gtag('event', formattedAction, {
         event_category: category,
         event_label: label,
         value: value
