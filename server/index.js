@@ -41,6 +41,15 @@ app.prepare()
             })
         ));
 
+        server.get('/BingSiteAuth.xml', (req, res) => (
+            res.status(200).sendFile('BingSiteAuth.xml', {
+                root: staticDir,
+                headers: {
+                    'Content-Type': 'text/xml;charset=UTF-8',
+                },
+            })
+        ));
+
         server.get("/api/request-download-link", async (req,res) => {
             try {
                 const awsLink = await aws.getDownloadUrl();
