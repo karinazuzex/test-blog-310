@@ -11,6 +11,7 @@ const pageview = (url, title) => {
         return;
     }
     window.dataLayer.push({
+        event: 'pageview',
         pagePath: url,
         pageTitle: title,
     })
