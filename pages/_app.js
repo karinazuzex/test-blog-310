@@ -71,16 +71,16 @@ class MyApp extends App {
             <Container>
                 <Provider store={reduxStore}>
                     <Head>
-                        <title>{head.title[router.route] || head.title.defaultValue}</title>
-                        <meta name="description" content={head.description[router.route] || head.description.defaultValue} />
+                        <title key="title">{head.title[router.route] || head.title.defaultValue}</title>
+                        <meta key="description" name="description" content={head.description[router.route] || head.description.defaultValue} />
                         <meta key="charset" charSet="utf-8" />
                         <meta key="format-detection" name="format-detection" content="telephone=no" />
                         <meta key="viewport" name="viewport" content="width=device-width, initial-scale=1.0" />
                         <meta key="http-equiv" httpEquiv="x-ua-compatible" content="ie=edge" />
-                        <meta name="msapplication-TileColor" content="#ffffff" />
-                        <meta name="msapplication-TileImage" content="/static/favicon/mstile-150x150.png" />
-                        <meta name="theme-color" content="#ffffff" />
-                        <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
+                        <meta key="tile-color" name="msapplication-TileColor" content="#ffffff" />
+                        <meta key="tile-image" name="msapplication-TileImage" content="/static/favicon/mstile-150x150.png" />
+                        <meta key="theme-color" name="theme-color" content="#ffffff" />
+                        <meta key="ms-config" name="msapplication-config" content="/static/favicon/browserconfig.xml" />
                         <link key="manifest" rel="manifest" href="/static/favicon/manifest.json" />
                         <link key="favicon" rel="icon" type="image/x-icon" href="/static/favicon/favicon.ico" />
                         <link key="favicon-at16" rel="apple-touch-icon" sizes="16x16" href="/static/favicon/16x16.png" />

@@ -1,18 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import TagProvider from "components/TagProvider";
 
-const Link = ({ className, theme, children, as, ...rest }) => (
-    <TagProvider
-        {...rest}
-        defaultTag="a"
-        as={as}
-        className={`link ${className ? className : ""} ${theme ? `link--${theme}` : ""}`}
-    >
-        {children}
-    </TagProvider>
-);
+class Link extends Component {
+    render() {
+        const { className, theme, children, as, ...rest } = this.props;
+        return (
+            <TagProvider
+                {...rest}
+                defaultTag="a"
+                as={as}
+                className={`link ${className ? className : ""} ${theme ? `link--${theme}` : ""}`}
+            >
+                {children}
+            </TagProvider>
+        );
+    }
+}
 
 Link.propTypes = {
     className: PropTypes.string,
