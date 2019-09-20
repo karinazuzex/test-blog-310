@@ -100,6 +100,23 @@
     }
   }
 
+  &__arrow {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    color: $red;
+    cursor: pointer;
+
+    .image__arrow {
+      margin-left: 10px;
+      #red {
+        fill: $red;
+      }
+    }
+  }
+
   &__solid {
     height: 58px;
     line-height: 38px;

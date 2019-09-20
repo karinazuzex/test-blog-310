@@ -21,6 +21,7 @@
 
     &:hover {
       color: $red;
+
     }
   }
 
@@ -37,6 +38,13 @@
 
     &:hover {
       color: $black;
+
+      svg {
+        fill: $black;
+        #red {
+          fill: $black; 
+        }
+      }
     }
   }
 }

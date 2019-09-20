@@ -19,6 +19,10 @@
       margin-bottom: 60px;
     }
 
+    &--40 {
+      margin-bottom: 40px;
+    }
+
     &--80 {
       margin-bottom: 80px;
     }
@@ -48,6 +52,13 @@
   &__postfix {
     font-size: 12px;
     margin-top: 80px;
+  }
+
+  &__blog {
+    border-radius: 3px;
+    border: solid 1px $grey;
+    background-color: $white;
+    padding: 50px;
   }
 
 
