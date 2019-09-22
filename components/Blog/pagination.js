@@ -7,13 +7,8 @@ class Pagination extends Component {
     
     render() {
         
-        const { postsCount, currentPage, routePage } = this.props;
+        const { postsCount, currentPage } = this.props;
         const pages = Math.ceil(postsCount / 5);
-
-        console.log(routePage);
-        console.log(currentPage);
-        
-        
 
         const pagesLink = [];
 

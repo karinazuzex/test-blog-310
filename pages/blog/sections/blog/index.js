@@ -1,4 +1,3 @@
-import React from 'react';
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import withData from "libs/apollo";
@@ -7,6 +6,7 @@ import Arrow from 'svg/Arrow';
 import { withRouter } from 'next/router';
 import { Link } from "components/ui";
 import Pagination from '../pagination';
+import { Category, BlogItem } from 'components/category'
 
 const GET_POSTS = gql`
     query allArticles($first: IntType, $skip: IntType) {
@@ -60,51 +60,6 @@ const Blog = (props) => {
     if (data) {
 
         const blogs = data.allArticles;
-        
-
-        const blockItem = blogs.map((item) => {
-
-            const { _firstPublishedAt, title, autor, id, body } = item;
-
-            const optionsCreate = {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-            }
-
-            const text = body.slice(0, 160).split(' ').slice(1,-1).join(' ').trim() + '...';
-
-            const dateCreate = new Date(_firstPublishedAt).toLocaleString("en-US", optionsCreate);
-
-            const time = Math.ceil(body.split(/\s/).length / 200);
-                        
-
-            return (
-                <div className="block__blog block__elem--40" key={id}>
-                    <h4 className="blog__title blog__text--bottom">{title}</h4>
-                    <p className="blog__text blog__text--bottom">
-                        <Link className="blog__text--underline link link--black">{autor}</Link>
-                        <span> on </span>
-                        <Link className="blog__text--underline link link--black">{item.category} </Link>
-                        &bull; <span> {dateCreate} </span>&bull;
-                        <span> {time} min read</span>
-                    </p>
-                    <p className="blog__text blog__text--bottom">{text}</p>
-                    <Link className="button__arrow link link--red">
-                        <span className="blog__text">Continue reading</span>
-                        <Arrow />
-                    </Link>
-                    
-                </div>
-            )
-        });
-
-        const category = Object.keys(blogs).reduce((result, key) => {
-            const curr = blogs[key]
-            if (!result.includes(curr.category)) result.push(curr.category)
-        
-            return result
-        }, [])
 
         return (
             <section className="blog section section__promo section__promo--home pb-0">
@@ -122,7 +77,7 @@ const Blog = (props) => {
                     <Container>
                         <div className="blog-section">
                             <div className="blog-content">
-                                { blockItem }
+                                <BlogItem/>
                             </div>
                             <div className="blog-category">
                                 <form className="blog-form">
@@ -136,15 +91,13 @@ const Blog = (props) => {
                                 <div>
                                     <p className="blog__subtitle blog__subtitle--bottom">categories</p>
                                     <div className="blog-categories blog__text">
-                                        {category.map((cat, index) => 
-                                            <p className="link link--black" key={index}>{cat}</p>
-                                        )}
+                                        <Category />
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-                        <Pagination postsCount={data._allArticlesMeta.count} currentPage={currentPage} routePage={props.router.query.page}/>
+                        <Pagination postsCount={data._allArticlesMeta.count} currentPage={currentPage}/>
                     </Container>
                 </div>
 
