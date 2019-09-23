@@ -2,7 +2,7 @@
 import Arrow from 'svg/Arrow';
 import { Link } from "components/ui";
         
-const BlockItem = (props) => props.data.allArticles.map((item) => {
+const BlockItem = ({data}) => data.allArticles.map((item) => {
 
     const { _firstPublishedAt, title, autor, id, body } = item;
 

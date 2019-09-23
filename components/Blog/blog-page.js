@@ -1,16 +1,10 @@
 import { Container, Row, Col } from "components/grid";
-import { Pagination, BlogItem, EmailForm } from 'components/Blog';
+import { Pagination, BlogItem, SubscribeForm, Category } from 'components/Blog';
 
 const BlogPage = ({data, currentPage}) => {
 
-    const blogs = data.allArticles;
-
-    const category = Object.keys(blogs).reduce((result, key) => {
-        const curr = blogs[key]
-        if (!result.includes(curr.category)) result.push(curr.category)
+    console.log(data);
     
-        return result
-    }, [])
     
     return (
         <section className="blog section section__promo section__promo--home pb-0">
@@ -31,16 +25,10 @@ const BlogPage = ({data, currentPage}) => {
                             <BlogItem data={data}/>
                         </div>
                         <div className="blog-category">
-
-                            <EmailForm/>
+                            <SubscribeForm right/>
                             <div>
                                 <p className="blog__subtitle blog__subtitle--bottom">categories</p>
-                                <div className="blog-categories blog__text">
-                                    {category.map((cat, index) => 
-                                        <p className="link link--black" key={index}>{cat}</p>
-                                    )}
-                                </div>
-
+                                <Category blogs={data.allArticles}/>
                             </div>
                         </div>
                     </div>

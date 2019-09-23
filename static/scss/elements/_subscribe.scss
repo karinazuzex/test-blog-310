@@ -1,0 +1,60 @@
+.subscribe {
+
+    width: 100%;
+    &-right {
+        &__text {
+            font-size: 24px;
+            line-height: 1.5;
+
+            &--bottom {
+                margin-bottom: 25px;
+            }
+        }
+        &__label {
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 1.4;
+
+            &--bottom {
+                margin-bottom: 7px;
+            }
+        }
+    }
+    &-footer {
+        width: 100%;
+
+        &--border {
+            border-top: 1px solid #ECECEC;
+        }
+
+        &-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .email {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            &__label {
+                align-self: flex-start;
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+
+            &__input {
+                width: 100%;
+            }
+
+            &-policy {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+}

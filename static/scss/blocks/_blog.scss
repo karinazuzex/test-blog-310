@@ -16,25 +16,6 @@
             border-radius: 3px;
         }
     }
-    &-form {
-        &__text {
-            font-size: 24px;
-            line-height: 1.5;
-
-            &--bottom {
-                margin-bottom: 25px;
-            }
-        }
-        &__label {
-            font-size: 14px;
-            letter-spacing: 1px;
-            line-height: 1.4;
-
-            &--bottom {
-                margin-bottom: 7px;
-            }
-        }
-    }
     &__title {
         font-size: 32px;
         font-weight: bold;
@@ -69,6 +50,13 @@
         }
         &--semibold {
             font-weight: 500;
+        }
+    }
+    &-item {
+        width: 100%;
+
+        img {
+            width: 100%;
         }
     }
 }

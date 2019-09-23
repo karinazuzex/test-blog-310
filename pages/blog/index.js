@@ -36,6 +36,7 @@ const GET_POSTS = gql`
 const POSTS_PER_PAGE = 5;
 
 const Blog = (props) => {
+
     let currentPage = 1;
 
     if (props.router && props.router.query.page) {
@@ -51,30 +52,26 @@ const Blog = (props) => {
         skip: false, 
         notifyOnNetworkStatusChange: true
     });
-    
+
     if (loading) {
         return <div>loading...</div>
     }
+    
 
     if (data) {
+        return (
+            <Layout theme="white">
+                <BlogPage 
+                    data={data} 
+                    currentPage={currentPage}
+                />
+            </Layout>
+        )
 
-        <BlogPage 
-            data={data} 
-            currentPage={currentPage}
-        />
     }
     return (
-        <BlogPage 
-            data={data} 
-            currentPage={currentPage}
-        />
+        <div>asdasd</div>
     )
 }
 
-const TermsPage = () => (
-    <Layout theme="white">
-        <Blog/>
-    </Layout>
-);
-
-export default withData(withRouter(TermsPage));
+export default withData(withRouter(Blog));
