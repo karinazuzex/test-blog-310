@@ -120,6 +120,10 @@ app.prepare()
             }
         });
 
+        server.post("/api/subscribe", async (req, res) => {
+            res.status(200).send("success");
+        });
+
         server.get("*", (req, res) => {
             return handle(req, res)
         });

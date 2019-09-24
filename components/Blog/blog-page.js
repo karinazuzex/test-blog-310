@@ -2,9 +2,6 @@ import { Container, Row, Col } from "components/grid";
 import { Pagination, BlogItem, SubscribeForm, Category } from 'components/Blog';
 
 const BlogPage = ({data, currentPage}) => {
-
-    console.log(data);
-    
     
     return (
         <section className="blog section section__promo section__promo--home pb-0">

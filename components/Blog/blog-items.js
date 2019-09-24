@@ -1,6 +1,7 @@
 
 import Arrow from 'svg/Arrow';
 import { Link } from "components/ui";
+import NextLink from "next/link";
         
 const BlockItem = ({data}) => data.allArticles.map((item) => {
 
@@ -23,18 +24,23 @@ const BlockItem = ({data}) => data.allArticles.map((item) => {
         <div className="block__blog block__elem--40" key={id}>
             <h4 className="blog__title blog__text--bottom">{title}</h4>
             <p className="blog__text blog__text--bottom">
-                <Link className="blog__text--underline link link--black">{autor}</Link>
+                <NextLink href={"/"} passHref prefetch >
+                    <Link className="blog__text--underline link link--black">{autor}</Link>
+                </NextLink>
                 <span> on </span>
-                <Link className="blog__text--underline link link--black">{item.category} </Link>
+                <NextLink href={"/"} passHref prefetch>
+                    <Link className="blog__text--underline link link--black">{item.category} </Link>
+                </NextLink>
                 &bull; <span> {dateCreate} </span>&bull;
                 <span> {time} min read</span>
             </p>
             <p className="blog__text blog__text--bottom">{text}</p>
-            <Link className="button__arrow link link--red">
-                <span className="blog__text">Continue reading</span>
-                <Arrow />
-            </Link>
-            
+            <NextLink href={{ pathname: 'blog/[id]', query: { item }}} as={`/blog/${id}`} passHref prefetch>
+                <Link className="button__arrow link link--red">
+                    <span className="blog__text">Continue reading</span>
+                    <Arrow />
+                </Link>
+            </NextLink>
         </div>
     )
 });

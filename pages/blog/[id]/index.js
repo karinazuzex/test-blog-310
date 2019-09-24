@@ -3,28 +3,31 @@ import Layout from "components/Layout"
 import withData from "libs/apollo";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import { BlogItemPage } from 'components/Blog';
+import { BlogItemPage, Loader, ErrorMessage } from 'components/Blog';
 
 const GET_POSTS = gql`
     query allArticles($id: ItemId) {
-        allArticles(filter: {id: {eq: $id}}) {
-            id
-            title
-            description {
-              description
-              title
-            }
-            category
-            body
-            headerImage {
-              url
-            }
-            footerImage {
-              url
-            }
-            _firstPublishedAt
-            autor
+      allArticles(filter: {id: {eq: $id}}) {
+        id
+        title
+        description {
+          description
+          title
+          image {
+            url
+          }
         }
+        category
+        body
+        headerImage {
+          url
+        }
+        footerImage {
+          url
+        }
+        _firstPublishedAt
+        autor
+      }
     }
 `;
 
@@ -44,11 +47,11 @@ const ItemPage = () => {
       </Layout>
     )
   }
-  if (loading) {
-    <div>loading</div>
+  if (error) {
+    <ErrorMessage/>
   }
   return (
-    <div>sdasd</div>
+    <Loader />
   )
 
 }

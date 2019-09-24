@@ -1,13 +1,13 @@
 .subscribe {
-
     width: 100%;
+
     &-right {
         &__text {
             font-size: 24px;
             line-height: 1.5;
 
             &--bottom {
-                margin-bottom: 25px;
+                margin-bottom: 10px;
             }
         }
         &__label {
@@ -19,12 +19,40 @@
                 margin-bottom: 7px;
             }
         }
+        &__btn {
+            min-width: 150px;
+            padding: 5px 0;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 2.8;
+            letter-spacing: 1.7px;
+        }
+        &__input {
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid $cyan;
+            font-size: 12px;
+            line-height: 28px;
+            margin: 0;
+            height: 48px;
+            padding: 0px 20px;
+            color: $black;
+            caret-color: $red;
+            background-color: $white;
+            transition: border 0.3s ease-in-out;
+        }
     }
     &-footer {
         width: 100%;
+        padding: 6% 0px;
 
         &--border {
             border-top: 1px solid #ECECEC;
+        }
+
+        &__btn {
+            width: 149px;
         }
 
         &-block {
@@ -32,24 +60,26 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            max-width: 800px;
+            margin: auto;
         }
 
         .email {
             display: flex;
             align-items: center;
             flex-direction: column;
-
-            &__label {
-                align-self: flex-start;
-                font-size: 14px;
-                letter-spacing: 1px;
-            }
+            width: 100%;
 
             &__input {
                 width: 100%;
             }
 
+            &-form {
+                width: 100%;
+            }
+
             &-policy {
+                width: 100%;
                 display: flex;
                 align-items: center;
                 flex-direction: row;

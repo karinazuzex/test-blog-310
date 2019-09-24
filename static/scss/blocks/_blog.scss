@@ -9,12 +9,6 @@
     }
     &-category {
         max-width: 297px;
-
-        &__button {
-            min-width: 150px;
-            padding: 10px 0;
-            border-radius: 3px;
-        }
     }
     &__title {
         font-size: 32px;
@@ -58,5 +52,9 @@
         img {
             width: 100%;
         }
+    }
+
+    &__helper {
+        line-height: 0px;
     }
 }
