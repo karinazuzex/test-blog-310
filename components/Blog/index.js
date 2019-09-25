@@ -1,17 +1,15 @@
-import BlogPage from './blog-page';
-import BlogItem from './blog-items';
-import SubscribeForm from './subscribe-form';
-import Pagination from './pagination';
-import BlogItemPage from './blog-item-page';
-import Category from './category';
-import Loader from './loader';
-import ErrorMessage from './error';
+import BlogPage from './BlogPage';
+import BlogItem from './BlogItems';
+import Pagination from './Pagination';
+import BlogItemPage from './BlogItemPage';
+import Category from './Category';
+import Loader from './Loader';
+import ErrorMessage from './Error';
 
 export {
     BlogPage,
     BlogItem,
     BlogItemPage,
-    SubscribeForm,
     Pagination,
     Category,
     Loader,

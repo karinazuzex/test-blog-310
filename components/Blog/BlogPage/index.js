@@ -2,8 +2,8 @@ import { Container, Row, Col } from "components/grid";
 import { Pagination, BlogItem, Category } from 'components/Blog';
 import SubscribeForm from 'components/Form/Subscribe';
 
-const BlogPage = ({data, currentPage}) => {
-    
+const BlogPage = ({data, currentPage}) => {    
+
     return (
         <section className="blog section section__promo section__promo--home pb-0">
             <Container>

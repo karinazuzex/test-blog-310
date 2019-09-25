@@ -33,6 +33,35 @@ const GET_POSTS = gql`
     }
 `;
 
+// categories: allArticles(filter: {category: {eq: ""}}, first: $first, skip: $skip) {
+//     category
+//     autor
+//     id
+//     title
+//     body
+// }
+// allData: allArticles(first: $first, skip: $skip) {
+//     id
+//     title
+//     description {
+//       description
+//       title
+//     }
+//     category
+//     body
+//     headerImage {
+//       url
+//     }
+//     footerImage {
+//       url
+//     }
+//     _firstPublishedAt
+//     autor
+// }
+// _allArticlesMeta {
+//     count
+// }
+
 const POSTS_PER_PAGE = 5;
 
 const Blog = (props) => {
@@ -56,8 +85,11 @@ const Blog = (props) => {
     if (loading) {
         return <Loader/>
     }
+    
 
     if (data) {
+        console.log(data);
+        
         return (
             <Layout theme="white">
                 <BlogPage 

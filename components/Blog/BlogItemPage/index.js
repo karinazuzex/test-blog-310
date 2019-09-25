@@ -1,5 +1,5 @@
 import { Container} from "components/grid";
-import Meta from 'components/Meta';
+import Head from 'components/Head';
 import { Link } from "components/ui";
 import NextLink from "next/link";
 import  SubscribeForm from "components/Form/Subscribe";
@@ -10,12 +10,12 @@ const BlogItemPage = ({data}) => {
             category, 
             body, 
             autor, 
-            description, //: { title: seoTitle, description: seoDescription, image: seoImage }, 
+            description,
             footerImage, 
             headerImage, 
             _firstPublishedAt
         } = data.allArticles[0];
-    let seoTitle = '', seoDescription = '', seoImage = { url: ''};
+    let seoTitle = '', seoDescription = '', seoImage = { url: '/static/favicon/mstile-150x150.png'};
     if (description) {
         seoTitle = description.title
         seoDescription = description.description
@@ -44,7 +44,7 @@ const BlogItemPage = ({data}) => {
     
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">
-        <Meta title={seoTitle} description={seoDescription} img={seoImage.url}/>
+            <Head title={seoTitle} description={seoDescription} img={seoImage.url}/>
             <Container>
                 <h3 className="block__title text-bold block__elem--xs">{title}</h3>
                 <p className="blog__text blog__text--bottom block__elem--50">

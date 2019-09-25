@@ -160,53 +160,108 @@ class SubscribeForm extends Component {
 
     render() {
         const disabled = this.state.processing || !this.state.recaptchaLoaded;
+
+        const { right, footer } = this.props;
+
         return (
+
             <Fragment>
-                <form className="form form--subscribe" onSubmit={this.handleSubmit}>
-                    <Row className="form__row align-end-xs">
-                        <div className="form__group">
-                            <label className="form__group-label" htmlFor="email-subscribe">Email address</label>
-                            <input
-                                type="text"
-                                className={`input ${this.state.emailError ? "input--error" : ""}`}
-                                id="email-subscribe"
-                                disabled={disabled}
-                                onChange={this.handleEmailChange}
-                                ref={(ref) => { this.email = ref }}
-                            />
+                { right &&
+                    <form onSubmit={this.handleSubmit}>
+                        <p className="blog__subtitle">Newsletter</p>
+                        <div>
+
+                            <div>
+                                <label className="form__group-label" htmlFor="email-subscribe">Email address</label>
+                                <input
+                                    type="text"
+                                    className={`input ${this.state.emailError ? "input--error" : ""}`}
+                                    id="email-subscribe"
+                                    disabled={disabled}
+                                    onChange={this.handleEmailChange}
+                                    ref={(ref) => { this.email = ref }}
+                                />
+                            </div>
+                            <div>
+                                <Checkbox
+                                    ref={(ref) => {this.agreement = ref}}
+                                    onChange={this.handleAgreementChange}
+                                >
+                                    I agree to the&nbsp;
+                                    <NextLink href={routes.path} passHref prefetch>
+                                        <Link theme="red">
+                                            {routes.TERMS_PAGE.nameLong}
+                                        </Link>
+                                    </NextLink> and&nbsp;
+                                    <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
+                                        <Link theme="red">
+                                            {routes.PRIVACY_PAGE.nameLong}
+                                        </Link>
+                                    </NextLink>
+                                </Checkbox>
+                            </div>
+                            <div>
+                                <Button
+                                    role="submit"
+                                    disabled={disabled}
+                                    type="solid"
+                                    theme="red-white"
+                                >
+                                    Susbcribe
+                                </Button>
+                            </div>
                         </div>
-                    </Row>
-                    <Row className="form__row align-center-xs justify-center-xs">
-                        <div className="form__group form__group--checkbox">
-                            <Checkbox
-                                ref={(ref) => {this.agreement = ref}}
-                                onChange={this.handleAgreementChange}
-                            >
-                                I agree to the&nbsp;
-                                <NextLink href={routes.path} passHref prefetch>
-                                    <Link theme="red">
-                                        {routes.TERMS_PAGE.nameLong}
-                                    </Link>
-                                </NextLink> and&nbsp;
-                                <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
-                                    <Link theme="red">
-                                        {routes.PRIVACY_PAGE.nameLong}
-                                    </Link>
-                                </NextLink>
-                            </Checkbox>
-                        </div>
-                        <div className="form__group form__group--fixed form__group--lg">
-                            <Button
-                                role="submit"
-                                disabled={disabled}
-                                type="solid"
-                                theme="red-white"
-                            >
-                                Susbcribe
-                            </Button>
-                        </div>
-                    </Row>
-                </form>
+                    </form>
+                }
+
+                { footer &&
+                    <form className="form form--subscribe" onSubmit={this.handleSubmit}>
+                        <Row className="form__row align-end-xs">
+                            <div className="form__group">
+                                <label className="form__group-label" htmlFor="email-subscribe">Email address</label>
+                                <input
+                                    type="text"
+                                    className={`input ${this.state.emailError ? "input--error" : ""}`}
+                                    id="email-subscribe"
+                                    disabled={disabled}
+                                    onChange={this.handleEmailChange}
+                                    ref={(ref) => { this.email = ref }}
+                                />
+                            </div>
+                        </Row>
+                        <Row className="form__row align-center-xs justify-center-xs">
+                            <div className="form__group form__group--checkbox">
+                                <Checkbox
+                                    ref={(ref) => {this.agreement = ref}}
+                                    onChange={this.handleAgreementChange}
+                                >
+                                    I agree to the&nbsp;
+                                    <NextLink href={routes.path} passHref prefetch>
+                                        <Link theme="red">
+                                            {routes.TERMS_PAGE.nameLong}
+                                        </Link>
+                                    </NextLink> and&nbsp;
+                                    <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
+                                        <Link theme="red">
+                                            {routes.PRIVACY_PAGE.nameLong}
+                                        </Link>
+                                    </NextLink>
+                                </Checkbox>
+                            </div>
+                            <div className="form__group form__group--fixed form__group--lg">
+                                <Button
+                                    role="submit"
+                                    disabled={disabled}
+                                    type="solid"
+                                    theme="red-white"
+                                >
+                                    Susbcribe
+                                </Button>
+                            </div>
+                        </Row>
+                    </form>
+                }
+
                 <ReCaptcha
                     onLoad={this.onRecaptchaLoad}
                     onChange={this.onRecaptchaChange}

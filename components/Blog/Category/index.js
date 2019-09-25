@@ -1,5 +1,9 @@
 
 const Category = ({blogs}) => {
+    
+    // console.log(blogs);
+    
+
     const filterCategory = Object.keys(blogs).reduce((result, key) => {
         const curr = blogs[key]
         if (!result.includes(curr.category)) result.push(curr.category)
