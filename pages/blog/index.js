@@ -8,8 +8,14 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
 const GET_POSTS = gql`
-    query allArticles($first: IntType, $skip: IntType) {
-        allArticles(first: $first, skip: $skip) {
+
+    query allArticles($category: String!, $autor: String!, $first: IntType, $skip: IntType) {
+
+        categories: allArticles {
+            category
+        }
+
+        allArticles(filter: { category: { matches: { pattern: $category } }, autor: {matches: { pattern: $autor } } }, first: $first, skip: $skip) {
             id
             title
             description {
@@ -27,40 +33,11 @@ const GET_POSTS = gql`
             _firstPublishedAt
             autor
         }
-        _allArticlesMeta {
+        _allArticlesMeta(filter: { category: { matches: { pattern: $category } }, autor: {matches: { pattern: $autor } } }) {
             count
         }
     }
 `;
-
-// categories: allArticles(filter: {category: {eq: ""}}, first: $first, skip: $skip) {
-//     category
-//     autor
-//     id
-//     title
-//     body
-// }
-// allData: allArticles(first: $first, skip: $skip) {
-//     id
-//     title
-//     description {
-//       description
-//       title
-//     }
-//     category
-//     body
-//     headerImage {
-//       url
-//     }
-//     footerImage {
-//       url
-//     }
-//     _firstPublishedAt
-//     autor
-// }
-// _allArticlesMeta {
-//     count
-// }
 
 const POSTS_PER_PAGE = 5;
 
@@ -68,38 +45,56 @@ const Blog = (props) => {
 
     let currentPage = 1;
 
-    if (props.router && props.router.query.page) {
-        const queryPage = Number (props.router.query.page);
-        if (typeof queryPage === 'number' && queryPage >= 1) {
-            currentPage = queryPage;
+    const { router, router: { query: { page, category, autor} } } = props;
+
+    let queryAutor = '';
+    let queryCategory = '';
+    
+    if (router) {
+        if (autor) {
+            queryAutor = autor;
+        }
+        if (category) {
+            queryCategory = category;
+        }
+        if (page) {
+            const queryPage = Number (page);
+            
+            if (typeof queryPage === 'number' && queryPage >= 1) {
+                currentPage = queryPage;
+            }
         }
     }
+
     const needToSkip = (currentPage - 1) * 5;
 
     const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
-        variables: { first: POSTS_PER_PAGE, skip: needToSkip },
-        skip: false, 
+        variables: { 
+            first: POSTS_PER_PAGE, 
+            skip: needToSkip,
+            category: queryCategory,
+            autor: queryAutor
+        },
         notifyOnNetworkStatusChange: true
     });
 
     if (loading) {
-        return <Loader/>
+        return <Loader />
     }
     
-
-    if (data) {
-        console.log(data);
-        
+    if (data) {        
         return (
             <Layout theme="white">
-                <BlogPage 
+                <BlogPage
+                    router={props.router}
                     data={data} 
                     currentPage={currentPage}
                 />
             </Layout>
         )
-
     }
+    console.log(error);
+    
     return (
        <ErrorMessage/>
     )

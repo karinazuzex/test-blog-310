@@ -15,7 +15,7 @@ const PromoSection = () => (
                 </p>
                 <Row className="justify-center-xs">
                     <Col attributes="xs-12 md-8">
-                        <SubscribeForm />
+                        <SubscribeForm footer/>
                     </Col>
                 </Row>
             </div>

@@ -188,7 +188,7 @@ class SubscribeForm extends Component {
                                     onChange={this.handleAgreementChange}
                                 >
                                     I agree to the&nbsp;
-                                    <NextLink href={routes.path} passHref prefetch>
+                                    <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
                                         <Link theme="red">
                                             {routes.TERMS_PAGE.nameLong}
                                         </Link>
@@ -236,7 +236,7 @@ class SubscribeForm extends Component {
                                     onChange={this.handleAgreementChange}
                                 >
                                     I agree to the&nbsp;
-                                    <NextLink href={routes.path} passHref prefetch>
+                                    <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
                                         <Link theme="red">
                                             {routes.TERMS_PAGE.nameLong}
                                         </Link>

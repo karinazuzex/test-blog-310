@@ -3,15 +3,15 @@ import Arrow from 'svg/Arrow';
 import { Link } from "components/ui";
 import NextLink from "next/link";
         
-const BlockItem = ({data}) => data.allArticles.map((item) => {
+const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((item) => {
 
-    const { _firstPublishedAt, title, autor, id, body } = item;
+    const { _firstPublishedAt, title, category, autor, id, body } = item;    
 
     const optionsCreate = {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-    }
+    }    
 
     const text = body.slice(0, 160).split(' ').slice(1,-1).join(' ').trim() + '...';
 
@@ -24,11 +24,11 @@ const BlockItem = ({data}) => data.allArticles.map((item) => {
         <div className="block__blog block__elem--40" key={id}>
             <h4 className="blog__title blog__text--bottom">{title}</h4>
             <p className="blog__text blog__text--bottom">
-                <NextLink href={"/"} passHref prefetch >
+                <NextLink href={{pathname: pathname, query: { ...query, autor: autor }}} passHref prefetch >
                     <Link className="blog__text--underline link link--black">{autor}</Link>
                 </NextLink>
                 <span> on </span>
-                <NextLink href={"/"} passHref prefetch>
+                <NextLink href={{pathname: pathname, query: { ...query, category: category }}} passHref prefetch>
                     <Link className="blog__text--underline link link--black">{item.category} </Link>
                 </NextLink>
                 &bull; <span> {dateCreate} </span>&bull;

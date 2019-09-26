@@ -3,6 +3,7 @@ import Head from 'components/Head';
 import { Link } from "components/ui";
 import NextLink from "next/link";
 import  SubscribeForm from "components/Form/Subscribe";
+import { IconsShare } from 'components/Blog';
 
 const BlogItemPage = ({data}) => {
     const { id, 
@@ -15,7 +16,7 @@ const BlogItemPage = ({data}) => {
             headerImage, 
             _firstPublishedAt
         } = data.allArticles[0];
-    let seoTitle = '', seoDescription = '', seoImage = { url: '/static/favicon/mstile-150x150.png'};
+    let seoTitle = '', seoDescription = '', seoImage = { url: "/static/favicon/mstile-150x150.png"};
     if (description) {
         seoTitle = description.title
         seoDescription = description.description
@@ -48,11 +49,11 @@ const BlogItemPage = ({data}) => {
             <Container>
                 <h3 className="block__title text-bold block__elem--xs">{title}</h3>
                 <p className="blog__text blog__text--bottom block__elem--50">
-                    <NextLink href={"/"} passHref prefetch>
+                    <NextLink href={'/blog?autor=' + autor} passHref prefetch>
                         <Link className="blog__text--underline link link--black">{autor}</Link>
                     </NextLink>
                     <span> on </span>
-                    <NextLink href={"/"} passHref prefetch>
+                    <NextLink href={'/blog?category=' + category} passHref prefetch>
                         <Link className="blog__text--underline link link--black">{category} </Link>
                     </NextLink>
                     &bull; <span> {dateCreate} </span>&bull;
@@ -71,6 +72,7 @@ const BlogItemPage = ({data}) => {
                     </div>
                 }
                 <SubscribeForm footer/>
+                <IconsShare/>
             </Container>
             
         </section>

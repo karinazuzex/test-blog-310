@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "components/grid";
-import { Pagination, BlogItem, Category } from 'components/Blog';
+import { Pagination, BlogItems, Category } from 'components/Blog';
 import SubscribeForm from 'components/Form/Subscribe';
 
-const BlogPage = ({data, currentPage}) => {    
+const BlogPage = ({data, currentPage, router}) => {
 
     return (
         <section className="blog section section__promo section__promo--home pb-0">
@@ -20,19 +20,30 @@ const BlogPage = ({data, currentPage}) => {
                 <Container>
                     <div className="blog-section">
                         <div className="blog-content">
-                            <BlogItem data={data}/>
+                            <BlogItems
+                                data={data}
+                                router={router}
+                            />
                         </div>
                         <div className="blog-category">
                             <SubscribeForm right/>
                             <div>
                                 <p className="blog__subtitle blog__subtitle--bottom">categories</p>
-                                <Category blogs={data.allArticles}/>
+                                <Category 
+                                    blogs={data.categories}
+                                />
                             </div>
                         </div>
                     </div>
-                    <Pagination postsCount={data._allArticlesMeta.count} currentPage={currentPage}/>
+                    <Pagination 
+                        router={router} 
+                        postsCount={data._allArticlesMeta.count} 
+                        currentPage={currentPage}
+                    />
                 </Container>
+                
             </div>
+
         </section>
     )
 }
