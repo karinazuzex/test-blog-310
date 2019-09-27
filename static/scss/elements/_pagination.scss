@@ -1,6 +1,8 @@
 .pagination {
-    display: flex;
-
+    
+    &-block {
+        display: flex;
+    }
     a {
         font-size: 18px;
         font-weight: bold;

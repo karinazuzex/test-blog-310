@@ -93,8 +93,7 @@ const Blog = (props) => {
             </Layout>
         )
     }
-    console.log(error);
-    
+
     return (
        <ErrorMessage/>
     )

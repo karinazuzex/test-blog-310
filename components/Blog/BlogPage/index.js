@@ -8,7 +8,7 @@ const BlogPage = ({data, currentPage, router}) => {
         <section className="blog section section__promo section__promo--home pb-0">
             <Container>
                 <Row className="justify-center-xs">
-                    <Col attributes="xs-10">
+                    <Col attributes="xs-12">
                         <div className="block text-center block__elem--xl">
                             <h3 className="block__title block__elem--xs">Blog</h3>
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
@@ -26,20 +26,26 @@ const BlogPage = ({data, currentPage, router}) => {
                             />
                         </div>
                         <div className="blog-category">
-                            <SubscribeForm right/>
-                            <div>
+                            <div className="blog-subscribe">
+                                <p className="blog__subtitle">newsletter</p>
+                                <p className="blog-subscribe__title">Receive updates about key news and special offers.</p>
+                                <SubscribeForm/>
+                            </div>
+
+                            <div className="blog-category-block">
                                 <p className="blog__subtitle blog__subtitle--bottom">categories</p>
                                 <Category 
                                     blogs={data.categories}
                                 />
                             </div>
                         </div>
+                        <Pagination 
+                            router={router} 
+                            postsCount={data._allArticlesMeta.count} 
+                            currentPage={currentPage}
+                        />
                     </div>
-                    <Pagination 
-                        router={router} 
-                        postsCount={data._allArticlesMeta.count} 
-                        currentPage={currentPage}
-                    />
+
                 </Container>
                 
             </div>

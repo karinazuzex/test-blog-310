@@ -71,7 +71,17 @@ const BlogItemPage = ({data}) => {
                         <img src={footerImage.url} alt="footer-image"/>
                     </div>
                 }
-                <SubscribeForm footer/>
+                <div className="blog-item-footer blog-subscribe block text-center">
+                    <h3 className="block__title block__elem blog-subscribe__title--mobile text-bold">
+                        Subscribe to our newsletter
+                    </h3>
+                    <p className="blog__subtitle blog-subscribe__text--mobile">newsletter</p>
+                    <p className="blog-subscribe__title">
+                        Receive updates about key news and special offers.<br />
+                    </p>
+                    <SubscribeForm/>
+                </div>
+                
                 <IconsShare/>
             </Container>
             

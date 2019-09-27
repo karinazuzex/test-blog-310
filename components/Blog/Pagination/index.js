@@ -25,14 +25,14 @@ class Pagination extends Component {
         if (startPage < 2) {
             startPage = 1;
         }
-        let countDisplayPages = 0;
+        let countDisplayPages = 0;        
 
         if (currentPage > pages) {
             Router.push({pathname: pathname, query: { ...query, page: pages }});
         }
 
-        for (let i = startPage; i <= pages -1; i++) {
-            if (countDisplayPages >= 10) break;
+        for (let i = startPage; currentPage === 1 ? i <= currentPage + 2 : i <= currentPage + 1; i++) {
+            if (countDisplayPages >= 10 || i === pages) break;
 
             const active = i === currentPage;
             
@@ -45,9 +45,9 @@ class Pagination extends Component {
         }
         
         return (
-            <div >
+            <div className="pagination">
                 {pages > 1 &&
-                    <div className="pagination">                
+                    <div className="pagination-block">                
                     {currentPage !== 1 &&
                     <NextLink href={"?page=" + (currentPage - 1) + category} passHref prefetch>
                         <Link className="link--red pagination--left pagination-arrow">
@@ -60,7 +60,7 @@ class Pagination extends Component {
                     }
                     <div className="pagination-pages">
                         {pagesLink}
-                        {pages - currentPage >= 2 &&
+                        {pages - currentPage > 3 &&
                             <span className="pagination__dots">...</span>
                         }
                         <NextLink href={"?page=" + (pages) + category} passHref prefetch>

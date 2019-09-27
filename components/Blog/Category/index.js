@@ -14,7 +14,7 @@ const Category = ({ blogs } ) => {
         <div className="blog-categories blog__text">
             {filterCategory.map((cat, index) => 
                 <NextLink href={'/blog' + '?'+ 'category=' + cat} passHref prefetch key={index}>
-                    <Link className="link link--black">{cat}</Link>
+                    <Link className="link link--black">{cat[0].toUpperCase() + cat.slice(1)}</Link>
                 </NextLink>
             )}        
         </div>
