@@ -5,7 +5,6 @@ import { head, routes } from "config";
 
 const Head = (props) => {
     const { router = {} } = props
-    console.log(props.img)
     const defaultTitle = head.title[router.route] || head.title.defaultValue;
     const defaultDescription = head.description[router.route] || head.description.defaultValue;
     const defaultImage = "/static/favicon/mstile-150x150.png";

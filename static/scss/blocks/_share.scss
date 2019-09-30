@@ -31,7 +31,6 @@
             
         }
         svg {
-            fill: white;
             #red {
                 fill: white;
             }
@@ -148,6 +147,7 @@
                 opacity: 0;
                 svg {
                     width: 25px;
+                    fill: $white;
                 }
             }
             &--open {

@@ -47,7 +47,6 @@
         }
         input {
             padding: 0 20px;
-            height: 48px;
         }
         .form__row {
             display: flex;
@@ -55,6 +54,9 @@
         }
         .button {
             height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             line-height: 20px;
         }
 
@@ -114,7 +116,6 @@
             }
             .button {
                 height: 64px;
-                line-height: 64px;
             }
             .checkbox {
                 line-height: 30px;
@@ -161,6 +162,10 @@
         }
     }
     .blog {
+        .section {
+            padding-top: 30px;
+            padding-bottom: 60px;
+        }
         &-subscribe {
             &__button {
                 display: flex;
