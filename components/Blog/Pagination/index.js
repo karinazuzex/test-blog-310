@@ -45,7 +45,7 @@ class Pagination extends Component {
         }
         
         return (
-            <div className="pagination">
+            <div className={`pagination ${pages <= 1 ? "pagination--none" : ""}`}>
                 {pages > 1 &&
                     <div className="pagination-block">                
                     {currentPage !== 1 &&

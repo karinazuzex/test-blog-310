@@ -31,8 +31,8 @@ const BlogItemPage = ({data}) => {
     let newText = body.split('\n').map((item, i) => { 
         if(item.match(/\!\[\]\((.*)\)/)){
             return (
-                <div className="block__elem--40 blog__helper">
-                    <img src={item.match(/\!\[\]\((.*)\)/)[1]} key = {i}/>
+                <div className="block__elem--40 blog__helper" key = {i}>
+                    <img src={item.match(/\!\[\]\((.*)\)/)[1]} />
                 </div>
             ); 
         }

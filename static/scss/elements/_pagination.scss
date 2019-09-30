@@ -1,4 +1,8 @@
 .pagination {
+
+    &--none {
+        display: none;
+    }
     
     &-block {
         display: flex;
