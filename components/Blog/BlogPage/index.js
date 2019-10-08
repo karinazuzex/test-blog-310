@@ -11,12 +11,12 @@ const BlogPage = ({data, currentPage, router}) => {
                     <Col attributes="xs-12">
                         <div className="block text-center block__elem--xl">
                             <h3 className="block__title block__elem--xs">Blog</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                            <p className="blog-info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
                         </div>
                     </Col>
                 </Row>
             </Container>
-            <div className="section section__faq bg-white-grey separator-bt">
+            <div className="blog-main section__faq bg-white-grey separator-bt">
                 <Container>
                     <div className="blog-section">
                         <div className="blog-content">

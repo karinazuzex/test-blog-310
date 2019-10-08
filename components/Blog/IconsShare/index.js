@@ -24,7 +24,10 @@ class IconsShare extends React.Component {
 
         return(
             <div className={`share ${openShare ? "active" : ""}`}>
-                <div className="wrap"></div>
+                <div 
+                    className="wrap"
+                    onClick={() => this.setState({openShare: false})}
+                ></div>
                 <div className="share-block">
                     <p className="share__title link m-menu__link">SHARE</p>
                     <div className="share__icon share__icon--red share__icon--twitter">

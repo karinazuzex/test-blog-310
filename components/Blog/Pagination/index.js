@@ -51,7 +51,7 @@ class Pagination extends Component {
                     {currentPage !== 1 &&
                     <NextLink href={"?page=" + (currentPage - 1) + category} passHref prefetch>
                         <Link className="link--red pagination--left pagination-arrow">
-                            Previus
+                            Previous
                             <div className="pagination-arrow__icon pagination-arrow--prev">
                                 <ArrowPagination/>
                             </div>

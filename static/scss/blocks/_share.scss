@@ -9,7 +9,8 @@
         z-index: 100;
     }
     &__title {
-        color: $black
+        color: $black;
+        cursor: default;
     }
     &__icon {
         width: 65px;

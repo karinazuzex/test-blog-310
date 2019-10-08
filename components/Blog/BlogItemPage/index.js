@@ -4,6 +4,7 @@ import { Link } from "components/ui";
 import NextLink from "next/link";
 import  SubscribeForm from "components/Form/Subscribe";
 import { IconsShare } from 'components/Blog';
+import ImageZoom from 'react-medium-image-zoom'
 
 const BlogItemPage = ({data}) => {
     const { id, 
@@ -29,10 +30,27 @@ const BlogItemPage = ({data}) => {
     }
 
     let newText = body.split('\n').map((item, i) => { 
-        if(item.match(/\!\[\]\((.*)\)/)){
+        if(item.match(/\!\[.*]\((.*)\)/)){
+            console.log(item.match(/\!\[.*]\((.*)\)/));
+            
             return (
-                <div className="block__elem--40 blog__helper" key = {i}>
-                    <img src={item.match(/\!\[\]\((.*)\)/)[1]} />
+                <div className="block__elem--40 blog__helper blog__image" key = {i}>
+                    <ImageZoom
+                        image={{
+                            src: item.match(/\!\[.*]\((.*)\)/)[1],
+                            alt: 'Golden Gate Bridge',
+                        }}
+                        zoomImage={{
+                            src: item.match(/\!\[.*]\((.*)\)/)[1],
+                            alt: 'Golden Gate Bridge',
+                            className: 'blog__image--zoom'
+                        }}
+                        defaultStyles={{
+                            zoomContainer: { background: '#999999'},
+                            overlay: { background: '#4A4A4A'},
+                            zoomImage: { width: '100%'},
+                        }}
+                    />
                 </div>
             ); 
         }
@@ -54,21 +72,51 @@ const BlogItemPage = ({data}) => {
                     </NextLink>
                     <span> on </span>
                     <NextLink href={'/blog?category=' + category} passHref prefetch>
-                        <Link className="blog__text--underline link link--black">{category} </Link>
+                        <Link className="blog__text--underline link link--black">{category}</Link>
                     </NextLink>
-                    &bull; <span> {dateCreate} </span>&bull;
+                    <span> &bull; {dateCreate} &bull; </span>
                     <span> {time} min read</span>
                 </p>
                 {headerImage &&
-                    <div className="block__elem--50 blog__helper">
-                        <img src={headerImage.url} alt="header-image"/>
+                    <div className="block__elem--50 blog__helper blog__image">
+                        <ImageZoom
+                            image={{
+                                src: headerImage.url,
+                                alt: 'Golden Gate Bridge',
+                            }}
+                            zoomImage={{
+                                src: headerImage.url,
+                                alt: 'Golden Gate Bridge',
+                                className: 'blog__image--zoom'
+                            }}
+                            defaultStyles={{
+                                zoomContainer: { background: '#999999'},
+                                overlay: { background: '#4A4A4A'},
+                                zoomImage: { width: '100%'},
+                            }}
+                        />
                     </div>
                 }
                 <div>{newText}</div>
 
                 {footerImage &&
-                    <div className="block__elem--50 blog__helper">
-                        <img src={footerImage.url} alt="footer-image"/>
+                    <div className="block__elem--50 blog__helper blog__image">
+                        <ImageZoom
+                            image={{
+                                src: footerImage.url,
+                                alt: 'Golden Gate Bridge',
+                            }}
+                            zoomImage={{
+                                src: footerImage.url,
+                                alt: 'Golden Gate Bridge',
+                                className: 'blog__image--zoom'
+                            }}
+                            defaultStyles={{
+                                zoomContainer: { background: '#999999'},
+                                overlay: { background: '#4A4A4A'},
+                                zoomImage: { width: '100%'},
+                            }}
+                        />
                     </div>
                 }
                 <div className="blog-item-footer blog-subscribe block text-center">
