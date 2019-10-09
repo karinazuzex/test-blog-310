@@ -119,7 +119,9 @@ const BlogItemPage = ({data}) => {
                         />
                     </div>
                 }
+                
                 <div className="blog-item-footer blog-subscribe block text-center">
+                    <div className="blog-subscribe__line blog-subscribe__line--page"></div>
                     <h3 className="block__title block__elem blog-subscribe__title--mobile text-bold">
                         Subscribe to our newsletter
                     </h3>
@@ -127,6 +129,7 @@ const BlogItemPage = ({data}) => {
                     <p className="blog-subscribe__title">
                         Receive updates about key news and special offers.<br />
                     </p>
+                    
                     <SubscribeForm/>
                 </div>
                 

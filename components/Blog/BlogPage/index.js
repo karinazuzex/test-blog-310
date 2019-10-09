@@ -26,8 +26,9 @@ const BlogPage = ({data, currentPage, router}) => {
                             />
                         </div>
                         <div className="blog-category">
+                            <div className="blog-subscribe__line"></div>
                             <div className="blog-subscribe">
-                                <p className="blog__subtitle">newsletter</p>
+                                <p className="blog__subtitle blog__subtitle--height">newsletter</p>
                                 <p className="blog-subscribe__title">Receive updates about key news and special offers.</p>
                                 <SubscribeForm/>
                             </div>
