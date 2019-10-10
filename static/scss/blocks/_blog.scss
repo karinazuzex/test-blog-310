@@ -127,7 +127,7 @@
         line-height: 1.8;
 
         &--bottom {
-            margin-bottom: 17px;
+            margin-bottom: 55px;
         }
         &--underline {
             text-decoration: underline!important;
@@ -148,6 +148,44 @@
             margin: auto;
             padding-top: 60px;
             padding-bottom: 100px;
+        }
+
+        &-content {
+            a {
+                transition: color $defaultTransition;
+                color: $red;
+
+                &:hover {
+                    color: $black;
+                }
+            }
+            p {
+                margin-bottom: 20px;
+                font-size: 20px;
+                line-height: 36px;
+            }
+            h1 {
+                margin-bottom: 20px;
+                font-size: 36px;
+                line-height: 44px;
+                font-weight: bold;
+            }
+            code {
+                font-family: 'Roboto';
+            }
+            pre {
+                display: flex;
+                justify-content: center;
+                padding: 20px 10px;
+                font-size: 18px;
+                line-height: 40px;
+                border-radius: 5px;
+                background-color: $whiteGrey;
+
+                code {
+                    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+                }
+            }
         }
 
         img {

@@ -4,7 +4,8 @@ import { Link } from "components/ui";
 import NextLink from "next/link";
 import  SubscribeForm from "components/Form/Subscribe";
 import { IconsShare } from 'components/Blog';
-import ImageZoom from 'react-medium-image-zoom'
+import ImageZoom from 'react-medium-image-zoom';
+import marked from 'marked';
 
 const BlogItemPage = ({data}) => {
     const { id, 
@@ -29,33 +30,9 @@ const BlogItemPage = ({data}) => {
         day: 'numeric',
     }
 
-    let newText = body.split('\n').map((item, i) => { 
-        if(item.match(/\!\[.*]\((.*)\)/)){
-            console.log(item.match(/\!\[.*]\((.*)\)/));
-            
-            return (
-                <div className="block__elem--40 blog__helper blog__image" key = {i}>
-                    <ImageZoom
-                        image={{
-                            src: item.match(/\!\[.*]\((.*)\)/)[1],
-                            alt: 'Golden Gate Bridge',
-                        }}
-                        zoomImage={{
-                            src: item.match(/\!\[.*]\((.*)\)/)[1],
-                            alt: 'Golden Gate Bridge',
-                            className: 'blog__image--zoom'
-                        }}
-                        defaultStyles={{
-                            zoomContainer: { background: '#999999'},
-                            overlay: { background: '#4A4A4A'},
-                            zoomImage: { width: '100%'},
-                        }}
-                    />
-                </div>
-            ); 
-        }
-        return <p className="blog__text block__elem--40" key = {i}> {item} </p>; 
-    });
+    const rawMarkup = marked(body, {sanitize: true});
+    
+    const textMarked = { __html: rawMarkup };
 
     const dateCreate = new Date(_firstPublishedAt).toLocaleString("en-US", optionsCreate);
 
@@ -97,7 +74,7 @@ const BlogItemPage = ({data}) => {
                         />
                     </div>
                 }
-                <div>{newText}</div>
+                <div className="blog-item-content" dangerouslySetInnerHTML={textMarked} ></div>
 
                 {footerImage &&
                     <div className="block__elem--50 blog__helper blog__image">
