@@ -6,6 +6,31 @@ import  SubscribeForm from "components/Form/Subscribe";
 import { IconsShare } from 'components/Blog';
 import ImageZoom from 'react-medium-image-zoom';
 import marked from 'marked';
+import ReactHtmlParser from 'react-html-parser';
+
+
+const tranform = (node, index) => {
+    if (node.type === 'tag' && node.name === 'img') {
+        const imgSrc = node.attribs.src || ''
+        return <ImageZoom
+                    key={index}
+                    image={{
+                        src: imgSrc,
+                        alt: 'Golden Gate Bridge',
+                    }}
+                    zoomImage={{
+                        src: imgSrc,
+                        alt: 'Golden Gate Bridge',
+                        className: 'blog__image--zoom'
+                    }}
+                    defaultStyles={{
+                        zoomContainer: { background: '#999999'},
+                        overlay: { background: '#4A4A4A'},
+                        zoomImage: { width: '100%'},
+                    }}
+                />
+    }
+}
 
 const BlogItemPage = ({data}) => {
     const { id, 
@@ -32,7 +57,15 @@ const BlogItemPage = ({data}) => {
 
     const rawMarkup = marked(body, {sanitize: true});
     
-    const textMarked = { __html: rawMarkup };
+    // const textMarked = { __html: rawMarkup };
+
+
+    const options = {
+        decodeEntities: true,
+        transform: tranform
+    }
+
+    let convertedHtml = ReactHtmlParser(rawMarkup, options);
 
     const dateCreate = new Date(_firstPublishedAt).toLocaleString("en-US", optionsCreate);
 
@@ -74,7 +107,7 @@ const BlogItemPage = ({data}) => {
                         />
                     </div>
                 }
-                <div className="blog-item-content" dangerouslySetInnerHTML={textMarked} ></div>
+                <div className="blog-item-content">{convertedHtml}</div>
 
                 {footerImage &&
                     <div className="block__elem--50 blog__helper blog__image">

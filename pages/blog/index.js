@@ -1,7 +1,7 @@
 
 
 import Layout from "components/Layout"
-import { BlogPage, Loader, ErrorMessage } from "components/Blog";
+import { BlogPage } from "components/Blog";
 import withData from "libs/apollo";
 import { withRouter } from 'next/router';
 import { useQuery } from "@apollo/react-hooks";
@@ -79,7 +79,8 @@ const Blog = (props) => {
     });
 
     if (loading) {
-        return <Loader />
+        <Layout theme="white">
+        </Layout>
     }
     
     if (data) {        
@@ -95,7 +96,8 @@ const Blog = (props) => {
     }
 
     return (
-       <ErrorMessage/>
+        <Layout theme="white">
+        </Layout>
     )
 }
 

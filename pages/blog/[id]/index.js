@@ -51,7 +51,8 @@ const ItemPage = () => {
     <ErrorMessage/>
   }
   return (
-    <Loader />
+    <Layout theme="white">
+    </Layout>
   )
 
 }

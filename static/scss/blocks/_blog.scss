@@ -46,14 +46,14 @@
             margin-bottom: 30px;
         }
     }
-    &__image {
-        &--zoom {
-            left: 0px!important;
-            transition: width 0.3s ease, transform 300ms ease 0s!important;
-            width: 100%!important;
-            height: auto!important;
-        }
-    }
+    // &__image {
+    //     &--zoom {
+    //         left: 0px!important;
+    //         transition: width 0.3s ease, transform 300ms ease 0s!important;
+    //         width: 100%!important;
+    //         height: auto!important;
+    //     }
+    // }
     &-subscribe {
         margin-bottom: 80px;
 
@@ -174,16 +174,22 @@
                 font-family: 'Roboto';
             }
             pre {
-                display: flex;
-                justify-content: center;
-                padding: 20px 10px;
-                font-size: 18px;
-                line-height: 40px;
-                border-radius: 5px;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                width: max-content;
+                overflow: auto;
+                overflow-y: hidden;
+                margin-bottom: 20px;
+                line-height: 20px;
+                border: 1px solid #777;
+                padding: 20px;
                 background-color: $whiteGrey;
+                white-space: pre-wrap;
 
                 code {
                     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+                    font-size: 12px;
                 }
             }
         }
@@ -249,6 +255,17 @@
                 padding-top: 10px;
                 padding-bottom: 50px;
             }
+            &-content {
+                pre {
+                    code {
+                        font-size: 10px;
+                    }
+                }
+                h1 {
+                    font-size: 24px;
+                }
+
+            }
         }
 
         .pagination {
@@ -258,8 +275,10 @@
     }
 }
 @media (min-width: 1200px) {
-    .blog__image {
-        pointer-events: none;
+    .blog-item-content {
+        img {
+            pointer-events: none;
+        }
     }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -284,6 +303,13 @@
         }
         &-main {
             padding-bottom: 0px;
+        }
+        &-item {
+            &-content {
+                pre {
+                    width: auto;
+                }
+            }
         }
         &-subscribe {
             &__button {
