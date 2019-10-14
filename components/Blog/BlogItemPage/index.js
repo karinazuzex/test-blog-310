@@ -2,8 +2,8 @@ import { Container} from "components/grid";
 import Head from 'components/Head';
 import { Link } from "components/ui";
 import NextLink from "next/link";
-import  SubscribeForm from "components/Form/Subscribe";
-import { IconsShare } from 'components/Blog';
+import SubscribeForm from "components/Form/Subscribe";
+import IconsShare from 'components/Blog/IconsShare';
 import ImageZoom from 'react-medium-image-zoom';
 import marked from 'marked';
 import ReactHtmlParser from 'react-html-parser';
@@ -26,7 +26,6 @@ const tranform = (node, index) => {
                     defaultStyles={{
                         zoomContainer: { background: '#999999'},
                         overlay: { background: '#4A4A4A'},
-                        zoomImage: { width: '100%'},
                     }}
                 />
     }
@@ -102,7 +101,6 @@ const BlogItemPage = ({data}) => {
                             defaultStyles={{
                                 zoomContainer: { background: '#999999'},
                                 overlay: { background: '#4A4A4A'},
-                                zoomImage: { width: '100%'},
                             }}
                         />
                     </div>
@@ -124,7 +122,6 @@ const BlogItemPage = ({data}) => {
                             defaultStyles={{
                                 zoomContainer: { background: '#999999'},
                                 overlay: { background: '#4A4A4A'},
-                                zoomImage: { width: '100%'},
                             }}
                         />
                     </div>

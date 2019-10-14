@@ -1,11 +1,11 @@
 
 
 import Layout from "components/Layout"
-import { BlogPage } from "components/Blog";
-import withData from "libs/apollo";
+import BlogPage from "components/Blog/BlogPage";
 import { withRouter } from 'next/router';
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
+import ErrorMessage from 'components/Blog/ErrorMessage';
 
 const GET_POSTS = gql`
 
@@ -24,6 +24,7 @@ const GET_POSTS = gql`
             }
             category
             body
+            slug
             headerImage {
               url
             }
@@ -82,6 +83,10 @@ const Blog = (props) => {
         <Layout theme="white">
         </Layout>
     }
+
+    if (error) {
+        <ErrorMessage/>
+    }
     
     if (data) {        
         return (
@@ -101,4 +106,4 @@ const Blog = (props) => {
     )
 }
 
-export default withData(withRouter(Blog));
+export default withRouter(Blog);

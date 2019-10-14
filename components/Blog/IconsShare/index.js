@@ -3,24 +3,28 @@ import {
     LinkedinShareButton,
     TwitterShareButton,
 } from 'react-share';
-import {
-    FacebookLogo,
-    TwitterLogo,
-    LinkedInLogo,
-    Upload,
-    Close
-} from 'svg';
+import FacebookLogo from 'svg/FacebookLogo';
+import TwitterLogo from 'svg/TwitterLogo';
+import LinkedInLogo from 'svg/LinkedInLogo';
+import Upload from 'svg/Upload';
+import Close from 'svg/Close';
 
 class IconsShare extends React.Component {
 
     state = {
-        openShare: false
+        openShare: false,
+        url: ''
+    }
+
+    componentDidMount() {
+        this.setState({
+            url: window.location.href
+        })
     }
 
     render() {
 
-        const { openShare } = this.state;
-        const url = window.location.href; 
+        const { openShare, url } = this.state;        
 
         return(
             <div className={`share ${openShare ? "active" : ""}`}>

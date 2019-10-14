@@ -1,5 +1,7 @@
 import { Container, Row, Col } from "components/grid";
-import { Pagination, BlogItems, Category } from 'components/Blog';
+import Pagination from 'components/Blog/Pagination';
+import BlogItems from 'components/Blog/BlogItems';
+import Category from 'components/Blog/Category';
 import SubscribeForm from 'components/Form/Subscribe';
 
 const BlogPage = ({data, currentPage, router}) => {

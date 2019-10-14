@@ -1,5 +1,5 @@
 import Layout from "components/Layout"
-import { Container} from "components/grid";
+import { Container } from "components/grid";
 
 const ErrorMessage = () => {
     return (
