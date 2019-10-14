@@ -54,7 +54,7 @@ const BlogItemPage = ({data}) => {
         day: 'numeric',
     }
 
-    const rawMarkup = marked(body, {sanitize: true});
+    const rawMarkup = marked(body);
     
     // const textMarked = { __html: rawMarkup };
 

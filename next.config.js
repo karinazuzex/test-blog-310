@@ -18,11 +18,13 @@ module.exports = withCSS(withSass({
                 options: {
                     limit: 100000
                 }
-            }
+            },
+            
         });
 
         return config;
     },
+      
 
     publicRuntimeConfig: {
         NODE_ENV: process.env.NODE_ENV,
@@ -31,6 +33,7 @@ module.exports = withCSS(withSass({
         MEMURAI_VERSION: process.env.MEMURAI_VERSION,
         DOWNLOAD_BUTTON_TEXT: process.env.DOWNLOAD_BUTTON_TEXT,
     },
+    
 
     exportPathMap: function () {
       return {
