@@ -37,6 +37,7 @@ module.exports = withCSS(withSass({
 
     exportPathMap: function () {
       return {
+        "/blog/bloger": { page: "/blog/[slug]", query: { slug: "bloger" } },
         "/": { page: "/" },
         "/about": { page: "/about" },
         "/faq": { page: "/faq" },
