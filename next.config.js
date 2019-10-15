@@ -58,7 +58,6 @@ module.exports = withCSS(withSass({
             articles.map(post => {
                 pathMap[`/blog/${post.link}`] = { page: `/blog/[slug]`, query: { slug: post.link } };
         });
-        console.log(pathMap);
         
         return pathMap;
     }
