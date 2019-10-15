@@ -35,26 +35,8 @@ module.exports = withCSS(withSass({
         MEMURAI_VERSION: process.env.MEMURAI_VERSION,
         DOWNLOAD_BUTTON_TEXT: process.env.DOWNLOAD_BUTTON_TEXT,
     },
-    
-    
-    // async exportPathMap(defaultPathMap) {
-    //     const pathMap = {
-    //       '/': { page: '/home' },
-    //       '/about': { page: '/text', query: { slug: 'about' } },
-    //       '/contact': { page: '/text', query: { slug: 'contact' } },
-    //       '/articles': { page: '/posts' },
-    //     };
-    //     // now get the dynamic stuff:
-    //     const articles = await getPosts();
-    //     articles.map(post => {
-    //       pathMap[`/article/${post.link}`] = { page: '/post', query: { slug: post.link } };
-    //     });
-    //     return pathMap;
-    // },
 
     async exportPathMap() {
-
-        
 
         const pathMap = {
             "/": { page: "/" },
@@ -71,11 +53,13 @@ module.exports = withCSS(withSass({
         };
 
         let articles = await getPosts();
+        
 
         articles = await getPosts();
             articles.map(post => {
-                pathMap[`/blog/${post.link}`] = { page: '/post', query: { slug: post.link } };
+                pathMap[`/blog/${post.link}`] = { page: `/blog/${post.link}`, query: { slug: post.link } };
         });
+        console.log(pathMap);
         
         return pathMap;
     }
