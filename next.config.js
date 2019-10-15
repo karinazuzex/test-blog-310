@@ -48,7 +48,7 @@ module.exports = withCSS(withSass({
         "/privacy": { page: "/privacy" },
         "/cookie": { page: "/cookie" },
         "/blog": { page: "/blog"},
-        "/blog/:slug": { page: "blog/[slug]"}
+        "/blog/:slug?": { page: "blog/[slug]"}
       }
     }
 }));
