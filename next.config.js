@@ -53,11 +53,10 @@ module.exports = withCSS(withSass({
         };
 
         let articles = await getPosts();
-        
 
         articles = await getPosts();
             articles.map(post => {
-                pathMap[`/blog/${post.link}`] = { page: `/blog/${post.link}`, query: { slug: post.link } };
+                pathMap[`/blog/${post.link}`] = { page: `/blog/[slug]`, query: { slug: post.link } };
         });
         console.log(pathMap);
         
