@@ -63,6 +63,8 @@
     border: solid 1px $grey;
     background-color: $white;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
   }
 
 

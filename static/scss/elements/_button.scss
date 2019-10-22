@@ -101,6 +101,7 @@
   }
 
   &__arrow {
+    display: flex!important;
     background-color: transparent;
     border: 1px solid transparent;
     padding-right: 20px;
