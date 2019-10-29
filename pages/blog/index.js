@@ -90,17 +90,19 @@ const Blog = (props) => {
         )
     }
 
-    if (data && !data.categories.some(cat => cat.category === category) && category) {
-        
-        return (
-            <ErrorMessage
-                errorCategory
-                category={category}
-            />
-        )
-    }
     
     if (data) {
+
+        if (!data.categories.some(cat => cat.category === category) && category ||
+            !data.allArticles.some(item => item.autor === autor) && autor) {
+
+            return (
+                <ErrorMessage
+                    category={category}
+                    autor={autor}
+                />
+            )
+        }
         
         return (
             <Layout theme="white">
