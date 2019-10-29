@@ -43,7 +43,8 @@ const BlogPage = ({data, currentPage, router}) => {
                             </div>
                         </div>
                         <Pagination 
-                            router={router} 
+                            router={router}
+                            categories={data.categories}
                             postsCount={data._allArticlesMeta.count} 
                             currentPage={currentPage}
                         />

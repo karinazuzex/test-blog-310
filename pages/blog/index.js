@@ -50,13 +50,13 @@ const Blog = (props) => {
 
     let queryAutor = '';
     let queryCategory = '';
-    
+
     if (router) {
         if (autor) {
             queryAutor = autor;
         }
         if (category) {
-            queryCategory = category;
+                queryCategory = category;
         }
         if (page) {
             const queryPage = Number (page);
@@ -85,10 +85,23 @@ const Blog = (props) => {
     }
 
     if (error) {
-        <ErrorMessage/>
+        return (
+            <ErrorMessage/>
+        )
+    }
+
+    if (data && !data.categories.some(cat => cat.category === category) && category) {
+        
+        return (
+            <ErrorMessage
+                errorCategory
+                category={category}
+            />
+        )
     }
     
-    if (data) {        
+    if (data) {
+        
         return (
             <Layout theme="white">
                 <BlogPage
@@ -99,6 +112,7 @@ const Blog = (props) => {
             </Layout>
         )
     }
+
 
     return (
         <Layout theme="white">

@@ -7,9 +7,8 @@ import Router from 'next/router'
 class Pagination extends Component {
 
     render() {
-        
         const { postsCount, currentPage } = this.props;
-        const pages = Math.ceil(postsCount / 5);
+        const pages = Math.ceil(postsCount / 5) === 0 ? 1 : Math.ceil(postsCount / 5);
         const { router: { query, pathname } } = this.props;   
 
         let category = '';
@@ -25,7 +24,7 @@ class Pagination extends Component {
         if (startPage < 2) {
             startPage = 1;
         }
-        let countDisplayPages = 0;        
+        let countDisplayPages = 0;
 
         if (currentPage > pages) {
             Router.push({pathname: pathname, query: { ...query, page: pages }});
