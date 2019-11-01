@@ -1,20 +1,17 @@
 .share {
-    &-block {
-        position: fixed;
-        top: 220px;
-        left: 64px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 100;
-    }
+    position: sticky;
+    position: -webkit-sticky;
+    top: 110px;
+    display: block;
+    float: left;
+
     &__title {
         color: $black;
         cursor: default;
     }
     &__icon {
-        width: 65px;
-        height: 65px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         outline: none;
         bottom: 0;
@@ -23,7 +20,7 @@
         cursor: pointer;
 
         .SocialMediaShareButton {
-            display: flex;
+            display: flex;  
             justify-content: center;
             align-items: center;
             outline: none;
@@ -48,13 +45,15 @@
     }
 
 }
-@media (max-width: 1500px) {
+@media (max-width: 1240px) {
     .share {
         &-block {
+            position: fixed;
             bottom: 10px;
             right: 10px;
             top: auto;
             left: auto;
+            z-index: 10;
         }
         &__title {
             display: none;
@@ -83,13 +82,13 @@
             }
             .share__icon {
                 &--facebook {
-                    bottom: 75px;
+                    bottom: 60px;
                 }
                 &--linkedin {
-                    bottom: 150px;
+                    bottom: 120px;
                 }
                 &--twitter {
-                    bottom: 225px
+                    bottom: 180px
                 }
                 &--red {
                     background-color: $red;
@@ -125,8 +124,8 @@
         }
         &-upload {
             position: relative;
-            min-height: 65px;
-            min-width: 65px;
+            min-height: 50px;
+            min-width: 50px;
             display: block;
 
             &__icon {

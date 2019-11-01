@@ -69,7 +69,7 @@ class Header extends Component {
                 this.state.isWhite ? "header--white" : ""
             } ${this.state.isFixed || this.state.showMenu ? "header--fixed" : ""}`} role="header">
                 <Container>
-                    <Row theme="no-col" className="justify-center-xs justify-between-lg align-center-xs">
+                    <Row theme="no-col" className="justify-start-xs justify-between-lg align-center-xs">
                         <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
                             <Link className="header__logo">
                                 <Logo className={`header__logo--img ${this.state.isWhite ? "black" : ""}`} />
