@@ -36,7 +36,7 @@ const BlogItemPage = ({data}) => {
             title, 
             category, 
             body, 
-            autor, 
+            author, 
             description,
             footerImage, 
             headerImage, 
@@ -80,8 +80,8 @@ const BlogItemPage = ({data}) => {
                         
                         <h3 className="block__title text-bold block__elem--xs">{title}</h3>
                         <p className="blog__text blog__text--bottom block__elem--50">
-                            <NextLink href={'/blog?autor=' + autor} passHref prefetch>
-                                <Link className="blog__text--underline link link--black">{autor}</Link>
+                            <NextLink href={'/blog?author=' + author} passHref prefetch>
+                                <Link className="blog__text--underline link link--black">{author}</Link>
                             </NextLink>
                             <span> on </span>
                             <NextLink href={'/blog?category=' + category} passHref prefetch>

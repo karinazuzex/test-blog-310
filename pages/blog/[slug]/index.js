@@ -27,7 +27,7 @@ const GET_POSTS = gql`
         url
       }
       _firstPublishedAt
-      autor
+      author
     }
   }
 `;

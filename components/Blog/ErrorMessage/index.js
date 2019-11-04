@@ -1,18 +1,18 @@
 import Layout from "components/Layout"
 import { Container } from "components/grid";
 
-const ErrorMessage = ( { category, autor } )  => {
+const ErrorMessage = ( { category, author } )  => {
 
-    let message = <h5>Sorry, please reload page...</h5>
+    let message = <h5>Please reload the page...</h5>
 
-    if (category && autor) {
-        message = <h5>Sorry, unable to find "{autor}" autor for "{category}" category...</h5>
+    if (category && author) {
+        message = <h5>Author "{author}" not found in the "{category}" category.</h5>
     }
     else if (category) {
-        message = <h5>Sorry, unable to find "{category}" category...</h5>
+        message = <h5>Category "{category}" not found.</h5>
     }
-    else if (autor) {
-        message = <h5>Sorry, unable to find "{autor}" autor...</h5>
+    else if (author) {
+        message = <h5>Author "{author}" not found.</h5>
     }
 
     return (

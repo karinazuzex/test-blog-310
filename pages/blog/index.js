@@ -9,13 +9,13 @@ import ErrorMessage from 'components/Blog/ErrorMessage';
 
 const GET_POSTS = gql`
 
-    query allArticles($category: String!, $autor: String!, $first: IntType, $skip: IntType) {
+    query allArticles($category: String!, $author: String!, $first: IntType, $skip: IntType) {
 
         categories: allArticles {
             category
         }
 
-        allArticles(filter: { category: { matches: { pattern: $category } }, autor: {matches: { pattern: $autor } } }, first: $first, skip: $skip) {
+        allArticles(filter: { category: { matches: { pattern: $category } }, author: {matches: { pattern: $author } } }, first: $first, skip: $skip) {
             id
             title
             description {
@@ -32,9 +32,9 @@ const GET_POSTS = gql`
               url
             }
             _firstPublishedAt
-            autor
+            author
         }
-        _allArticlesMeta(filter: { category: { matches: { pattern: $category } }, autor: {matches: { pattern: $autor } } }) {
+        _allArticlesMeta(filter: { category: { matches: { pattern: $category } }, author: {matches: { pattern: $author } } }) {
             count
         }
     }
@@ -46,14 +46,14 @@ const Blog = (props) => {
 
     let currentPage = 1;
 
-    const { router, router: { query: { page, category, autor} } } = props;
+    const { router, router: { query: { page, category, author} } } = props;
 
-    let queryAutor = '';
+    let queryAuthor = '';
     let queryCategory = '';
 
     if (router) {
-        if (autor) {
-            queryAutor = autor;
+        if (author) {
+            queryAuthor = author;
         }
         if (category) {
                 queryCategory = category;
@@ -74,7 +74,7 @@ const Blog = (props) => {
             first: POSTS_PER_PAGE, 
             skip: needToSkip,
             category: queryCategory,
-            autor: queryAutor
+            author: queryAuthor
         },
         notifyOnNetworkStatusChange: true
     });
@@ -94,12 +94,12 @@ const Blog = (props) => {
     if (data) {
 
         if (!data.categories.some(cat => cat.category === category) && category ||
-            !data.allArticles.some(item => item.autor === autor) && autor) {
+            !data.allArticles.some(item => item.author === author) && author) {
 
             return (
                 <ErrorMessage
                     category={category}
-                    autor={autor}
+                    author={author}
                 />
             )
         }

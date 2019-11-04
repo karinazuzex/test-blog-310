@@ -5,7 +5,7 @@ import NextLink from "next/link";
         
 const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((item) => {
 
-    const { _firstPublishedAt, title, category, autor, id, body, slug } = item;    
+    const { _firstPublishedAt, title, category, author, id, body, slug } = item;    
 
     const optionsCreate = {
         year: 'numeric',
@@ -28,8 +28,8 @@ const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((
                 </Link>
             </NextLink>
             <p className="blog__text blog__text--bottom">
-                <NextLink href={{pathname: pathname, query: { ...query, autor: autor }}} passHref prefetch >
-                    <Link className="blog__text--underline link link--black">{autor}</Link>
+                <NextLink href={{pathname: pathname, query: { ...query, author: author }}} passHref prefetch >
+                    <Link className="blog__text--underline link link--black">{author}</Link>
                 </NextLink>
                 <span> on </span>
                 <NextLink href={{pathname: pathname, query: { ...query, category: category }}} passHref prefetch>
