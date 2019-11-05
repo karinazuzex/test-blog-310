@@ -52,6 +52,13 @@ const FooterMenu = () => (
             </NextLink>
         </li>
         <li className="f-menu__item">
+            <NextLink href={routes.BLOG_PAGE.path} passHref prefetch>
+                <Link theme="grey-light" className="f-menu__link">
+                    {routes.BLOG_PAGE.name}
+                </Link>
+            </NextLink>
+        </li>
+        <li className="f-menu__item">
             <NextLink href={routes.NEWSLETTER_PAGE.path} passHref prefetch>
                 <Link theme="grey-light" className="f-menu__link">
                     {routes.NEWSLETTER_PAGE.name}

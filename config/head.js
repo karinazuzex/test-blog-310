@@ -10,6 +10,7 @@ export const title = {
     [routes.TERMS_PAGE.path]: "Terms of service - Memurai",
     [routes.PRIVACY_PAGE.path]: "Privacy policy - Memurai",
     [routes.COOKIE_PAGE.path]: "Cookie policy - Memurai",
+    [routes.BLOG_PAGE.path]: "Blog - Memurai",
     defaultValue: "Memurai",
 };
 
@@ -23,5 +24,6 @@ export const description = {
     [routes.TERMS_PAGE.path]: "Terms of service for the Memurai website.",
     [routes.PRIVACY_PAGE.path]: "Privacy policy for the Memurai website and services.",
     [routes.COOKIE_PAGE.path]: "Cookie policy for the Memurai website.",
+    [routes.BLOG_PAGE.path]: "Technical articles and news about Memurai.",
     defaultValue: "Redis-compatible cache and datastore for Windows.",
 };

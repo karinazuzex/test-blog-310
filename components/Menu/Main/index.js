@@ -58,9 +58,9 @@ const MainMenu = ({ theme, onClose }) => {
                     </NextLink>
                 </li>
                 <li className="m-menu__item">
-                    <NextLink href="/blog" passHref prefetch>
+                    <NextLink href={routes.BLOG_PAGE.path} passHref prefetch>
                         <Link theme={linkTheme} className="m-menu__link">
-                            Blog
+                            {routes.BLOG_PAGE.name}
                         </Link>
                     </NextLink>
                 </li>

@@ -16,11 +16,9 @@ const tranform = (node, index) => {
                     key={index}
                     image={{
                         src: imgSrc,
-                        alt: 'Golden Gate Bridge',
                     }}
                     zoomImage={{
                         src: imgSrc,
-                        alt: 'Golden Gate Bridge',
                         className: 'blog__image--zoom'
                     }}
                     defaultStyles={{

@@ -3,6 +3,9 @@ import Pagination from 'components/Blog/Pagination';
 import BlogItems from 'components/Blog/BlogItems';
 import Category from 'components/Blog/Category';
 import SubscribeForm from 'components/Form/Subscribe';
+import NextLink from "next/link";
+import { Link } from "components/ui";
+import { consts, routes, analytics } from "config";
 
 const BlogPage = ({data, currentPage, router}) => {
 
@@ -13,7 +16,13 @@ const BlogPage = ({data, currentPage, router}) => {
                     <Col attributes="xs-12">
                         <div className="block text-center block__elem--xl">
                             <h3 className="block__title block__elem--xs">Blog</h3>
-                            <p className="blog-info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                            <p className="blog-info">Technical articles and news about Memurai.<br />
+                                <NextLink href={routes.NEWSLETTER_PAGE.path} passHref prefetch>
+                                    <Link theme="red">
+                                        Subscribe to our newsletter
+                                    </Link>
+                                </NextLink> to make sure you don't miss anything.
+                            </p>
                         </div>
                     </Col>
                 </Row>
