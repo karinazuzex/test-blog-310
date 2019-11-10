@@ -1,5 +1,3 @@
 User-Agent: *
 
 Sitemap: https://www.memurai.com/sitemap.xml
-
-Disallow: /_next/
