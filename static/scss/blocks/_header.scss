@@ -10,6 +10,13 @@
   box-shadow: none;
   transition: box-shadow $defaultTransition, left $defaultTransition, background-color $defaultTransition;
 
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1360px;
+    width: 1360px;
+  }
+
   &__element {
     &-side {
       width: 180px;
@@ -40,6 +47,23 @@
     top: 50%;
     transform: translateY(-50%);
     right: 12px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .header {
+    .container {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .header {
+    .container {
+      padding: 0 40px;
+    }
   }
 }
 
