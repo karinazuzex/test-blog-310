@@ -12,6 +12,8 @@ import withReduxStore from "libs/withReduxStore";
 import { analytics, head, routes } from "config";
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { ApolloProvider } from 'react-apollo';
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 
 import client from 'libs/apollo';
 

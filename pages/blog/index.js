@@ -4,7 +4,7 @@ import Layout from "components/Layout"
 import BlogPage from "components/Blog/BlogPage";
 import { withRouter } from 'next/router';
 import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost"
+import { gql } from "apollo-boost";
 import ErrorMessage from 'components/Blog/ErrorMessage';
 
 const GET_POSTS = gql`
@@ -69,6 +69,56 @@ const Blog = (props) => {
 
     const needToSkip = (currentPage - 1) * 5;
 
+    // return (
+    //     <Query 
+    //         query={GET_POSTS}
+    //         variables={{
+    //             first: POSTS_PER_PAGE, 
+    //             skip: needToSkip,
+    //             category: queryCategory,
+    //             author: queryAuthor
+    //         }}
+    //         notifyOnNetworkStatusChange
+    //     >
+    //         {({ loading, error, data, fetchMore }) => {
+    //             if (loading) {
+    
+    //                 <Layout theme="white">
+    //                 </Layout>
+    //             }
+            
+    //             if (error) {
+                    
+    //                 return (
+    //                     <ErrorMessage/>
+    //                 )
+    //             }
+            
+    //             if (!data.categories.some(cat => cat.category === category) && category ||
+    //                 !data.allArticles.some(item => item.author === author) && author) {
+        
+    //                 return (
+    //                     <ErrorMessage
+    //                         category={category}
+    //                         author={author}
+    //                     />
+    //                 )
+    //             }
+                
+    //             return (
+    //                 <Layout theme="white">
+    //                     <BlogPage
+    //                         router={props.router}
+    //                         data={data} 
+    //                         currentPage={currentPage}
+    //                     />
+    //                 </Layout>
+    //             )
+                
+    //         }}
+    //     </Query>
+    // )
+
     const { loading, error, data, fetchMore } = useQuery(GET_POSTS, {
         variables: { 
             first: POSTS_PER_PAGE, 
@@ -80,17 +130,18 @@ const Blog = (props) => {
     });
 
     if (loading) {
+        
         <Layout theme="white">
         </Layout>
     }
 
     if (error) {
+        
         return (
             <ErrorMessage/>
         )
     }
 
-    
     if (data) {
 
         if (!data.categories.some(cat => cat.category === category) && category ||
@@ -115,10 +166,14 @@ const Blog = (props) => {
         )
     }
 
+    
+
 
     return (
+        
         <Layout theme="white">
         </Layout>
+        
     )
 }
 
