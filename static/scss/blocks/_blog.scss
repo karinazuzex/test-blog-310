@@ -143,10 +143,10 @@
         width: 100%;
 
         .container {
-            padding-left: 20px;
-            padding-right: 20px;
-            max-width: 1360px;
-            width: 1360px;
+            padding-left: 40px;
+            padding-right: 40px;
+            max-width: 1400px;
+            width: 1400px;
         }
 
         &-container {
@@ -323,8 +323,8 @@
         }
         &-item {
             .container {
-                padding-left: 40px;
-                padding-right: 40px;
+                padding-left: 20px;
+                padding-right: 20px;
             }
             &-content {
                 pre {
@@ -359,14 +359,6 @@
             .checkbox {
                 height: auto;
             }
-        }
-    }
-}
-@media (max-width: 576px) {
-    .blog-item {
-        .container {
-            padding-left: 20px;
-            padding-right: 20px;
         }
     }
 }
