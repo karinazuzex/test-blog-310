@@ -45,7 +45,7 @@
     }
 
 }
-@media (max-width: 1240px) {
+@media (max-width: $desktopWidth) {
     .share {
         &-block {
             position: fixed;

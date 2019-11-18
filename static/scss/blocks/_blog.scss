@@ -221,7 +221,7 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: $desktopWidth) {
     .blog {
         &-section {
             flex-direction: column;
@@ -294,7 +294,7 @@
         }
     }
 }
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: $desktopWidth) {
     .blog {
         &-subscribe{
             max-width: 70%;
