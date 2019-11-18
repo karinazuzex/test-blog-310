@@ -6,10 +6,10 @@
   line-height: 24px;
 
   .container {
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 1360px;
-    width: 1360px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1400px;
+    width: 1400px;
   }
 
   &__row {
@@ -60,7 +60,7 @@
   }
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1400px) {
   .footer {
     .container {
       max-width: 100%;
