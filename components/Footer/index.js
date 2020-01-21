@@ -29,7 +29,7 @@ const Footer = () => (
                             Memurai<br />
                             113 Cherry Street #11630<br />
                             Seattle, WA 98104<br />
-                            © 2019<br />
+                            © 2019-2020<br />
                             All rights reserved by Janea Systems, Inc.<br />
                             <span className="footer__terms">
                                 <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
