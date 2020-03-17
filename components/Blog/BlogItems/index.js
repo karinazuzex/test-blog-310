@@ -5,7 +5,7 @@ import NextLink from "next/link";
         
 const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((item) => {
 
-    const { _firstPublishedAt, title, category, author, id, body, slug } = item;    
+    const { _firstPublishedAt, publishDateOverride, title, category, author, id, body, slug } = item;    
 
     const optionsCreate = {
         year: 'numeric',
@@ -15,7 +15,7 @@ const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((
 
     const text = body.slice(0, 160).split(' ').slice(0,-1).join(' ').trim() + '...';
 
-    const dateCreate = new Date(_firstPublishedAt).toLocaleString("en-US", optionsCreate);
+    const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", optionsCreate);
 
     const time = Math.ceil(body.split(/\s/).length / 200);
                 

@@ -32,6 +32,7 @@ const GET_POSTS = gql`
               url
             }
             _firstPublishedAt
+            publishDateOverride
             author
         }
         _allArticlesMeta(filter: { category: { matches: { pattern: $category } }, author: {matches: { pattern: $author } } }) {

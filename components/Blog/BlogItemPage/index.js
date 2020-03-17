@@ -38,7 +38,8 @@ const BlogItemPage = ({data}) => {
             description,
             footerImage, 
             headerImage, 
-            _firstPublishedAt
+            _firstPublishedAt,
+            publishDateOverride
         } = data.allArticles[0];
     let seoTitle = '', seoDescription = '', seoImage = { url: "/static/favicon/mstile-150x150.png"};
     if (description) {
@@ -64,7 +65,7 @@ const BlogItemPage = ({data}) => {
 
     let convertedHtml = ReactHtmlParser(rawMarkup, options);
 
-    const dateCreate = new Date(_firstPublishedAt).toLocaleString("en-US", optionsCreate);
+    const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", optionsCreate);
 
     const time = Math.ceil(body.split(/\s/).length / 200);
     
