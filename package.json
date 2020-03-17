@@ -6,9 +6,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development WWWHISPER_DISABLE=1 node server",
-    "build": "rm -rf .next && next build",
+    "build": "npx rimraf .next && npx next build",
     "start": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node server",
-    "export": "next export"
+    "export": "npx next export"
   },
   "repository": {
     "type": "git",
@@ -59,6 +59,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "regenerator-runtime": "^0.13.2",
+    "rimraf": "^3.0.2",
     "terser": "^4.1.2",
     "to-querystring": "^1.1.0"
   },
