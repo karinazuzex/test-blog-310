@@ -232,21 +232,21 @@
     &--versioned {
       overflow: visible;
 
-      &:after {
-        content: "Technical preview";
-        position: absolute;
-        bottom: -24px;
-        font-size: 12px;
-        font-weight: normal;
-        letter-spacing: normal;
-        line-height: 1.5;
-        opacity: 0.6;
-        color: $white;
-        left: 50%;
-        transform: translateX(-50%);
-        text-transform: none;
-        transition: opacity $defaultTransition;
-      }
+      // &:after {
+      //   content: "Technical preview";
+      //   position: absolute;
+      //   bottom: -24px;
+      //   font-size: 12px;
+      //   font-weight: normal;
+      //   letter-spacing: normal;
+      //   line-height: 1.5;
+      //   opacity: 0.6;
+      //   color: $white;
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      //   text-transform: none;
+      //   transition: opacity $defaultTransition;
+      // }
 
       &:hover {
 
