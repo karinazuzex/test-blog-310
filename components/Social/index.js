@@ -7,7 +7,7 @@ import { consts, routes, analytics } from "config";
 
 import { Row } from "components/grid";
 import { Link } from "components/ui";
-import { FacebookLogo, LinkedInLogo, NewsletterLogo, TwitterLogo } from "svg";
+import { FacebookLogo, LinkedInLogo, NewsletterLogo, TwitterLogo, StackOverflowLogo } from "svg";
 
 class Social extends Component {
     componentDidMount() {
@@ -86,6 +86,23 @@ class Social extends Component {
                         <NewsletterLogo />
                     </Link>
                 </NextLink>
+                <Link
+                    href={consts.STACKOVERFLOW_LINK}
+                    rel="noreferrer noopener"
+                    target="_blank"
+                    className="social__item social__item--stackoverflow"
+                    onClick={() => {
+                        analytics.event({
+                            category: "External link",
+                            action: "Open",
+                            label: "StackOverflow"
+                        });
+                    }}
+                    data-tip="Stack Overflow"
+                    data-for={tooltipTheme}
+                >
+                    <StackOverflowLogo />
+                </Link>
             </Row>
         );
     };

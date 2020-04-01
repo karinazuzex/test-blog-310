@@ -6,6 +6,7 @@ import InfoWithReviewSection from "./sections/InfoWithReview";
 import ComparisonSection from "./sections/Comparison";
 import GetMemuraiSection from "./sections/GetMemurai";
 import AdditionalInfoSection from "./sections/AdditionalInfo";
+import SocialSection from "pages/contact/sections/Social";
 
 const IndexPage = () => (
     <Layout>
@@ -15,6 +16,7 @@ const IndexPage = () => (
         <ComparisonSection />
         <AdditionalInfoSection />
         <GetMemuraiSection />
+        <SocialSection />
     </Layout>
 );
 
