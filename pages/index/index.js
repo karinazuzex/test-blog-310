@@ -13,7 +13,6 @@ const IndexPage = () => (
         <ReviewsSection />
         <InfoWithReviewSection />
         <ComparisonSection />
-        <AdditionalInfoSection />
         <GetMemuraiSection />
     </Layout>
 );
