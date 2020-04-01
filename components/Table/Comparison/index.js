@@ -16,12 +16,12 @@ const ComparisonTable = () => (
                 </div>
                 <div className="col-xs-3 table__col">
                     <label className="label label__solid label__solid--grey-light">
-                        Redis (Linux) inside docker
+                        Redis(Linux) inside Docker
                     </label>
                 </div>
                 <div className="col-xs-3 table__col">
                     <label className="label label__solid label__solid--grey-light">
-                        Redis (Linux) inside WSL
+                        Redis (Linux) on WSL/WSL2
                     </label>
                 </div>
             </Row>
