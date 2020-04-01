@@ -39,6 +39,7 @@ export const TWITTER_LINK = "https://twitter.com/MemuraiHQ";
 export const LINKEDIN_LINK = "https://www.linkedin.com/company/memurai";
 export const GITHUB_LINK = "https://github.com/memurai";
 export const FACEBOOK_LINK = "https://www.facebook.com/MemuraiHQ";
+export const STACKOVERFLOW_LINK = 'https://stackoverflow.com/questions/tagged/memurai';
 
 export const EMAIL_PATTERN =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
