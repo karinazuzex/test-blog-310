@@ -5,6 +5,7 @@ import { routes, consts } from "config";
 
 import { Container, Row } from "components/grid";
 import { Button } from "components/ui";
+import { Link } from "components/ui";
 
 const PromoSection = () => (
     <section className="section section__get-memurai bg-white-grey">
@@ -26,6 +27,19 @@ const PromoSection = () => (
                 <p className="block__postfix block__postfix--promo-home">
                     Current version: {consts.MEMURAI_VERSION}
                 </p>
+                <div className="block__description">
+                    Want to learn more? Check out the&nbsp;
+                    <NextLink href={routes.FAQ_PAGE.path} passHref prefetch>
+                        <Link theme="red">
+                            {routes.FAQ_PAGE.name}
+                        </Link>
+                    </NextLink> or&nbsp;
+                    <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
+                        <Link theme="red">
+                            {routes.CONTACT_PAGE.nameLong}
+                        </Link>
+                    </NextLink>.
+                </div>
             </div>
         </Container>
     </section>
