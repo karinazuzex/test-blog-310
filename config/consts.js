@@ -15,7 +15,7 @@ export const WEBSITE_DOMAIN = process.WEBSITE_DOMAIN || (
 export const MEMURAI_VERSION = env.MEMURAI_VERSION || "1.0.8 - Redis API 5";
 export const DOWNLOAD_BUTTON_TEXT =
     env.DOWNLOAD_BUTTON_TEXT
-    || "Download Memurai Technical Preview 1.0.8";
+    || "Download the free Developer Edition 1.0.8";
 
 export const MAILCHIMP_SUBSCRIBE_URL = env.NODE_ENV === "development"
     ? "https://janeasystems.us16.list-manage.com/subscribe/post?u=5788bc3268a4b1be403817cce&amp;id=d12c100c47"

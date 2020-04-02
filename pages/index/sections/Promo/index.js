@@ -19,7 +19,7 @@ const PromoSection = () => (
                     </span>
                 </h1>
                 <p className="block__description block__elem">
-                    Technical preview now available for download.
+                    Developer Edition now available for download.
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
                     <div className="button__wrapper">
