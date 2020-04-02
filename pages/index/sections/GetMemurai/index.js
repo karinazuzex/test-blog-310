@@ -15,7 +15,7 @@ const PromoSection = () => (
                     TRY MEMURAI TODAY
                 </div>
                 <h3 className="block__title block__elem--lg">
-                    Download the free technical preview<br />
+                    Download the free Developer Edition<br />
                 </h3>
                 <Row theme="no-col" className="justify-center-xs">
                     <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
