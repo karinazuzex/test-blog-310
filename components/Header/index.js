@@ -62,7 +62,9 @@ class Header extends Component {
             isWhite,
         });
     };
-
+    buttonTrigger = () => {
+        window.buttonTrigger()
+    };
     render () {
         return (
             <header className={`header ${
@@ -84,7 +86,8 @@ class Header extends Component {
                                 this.state.isWhite ? "red-black versioned-black" : "red-white"
                                 } versioned ${
                                 this.state.isFixed ? "versioned-hidden" : ""
-                                }`} className="header__button header__button--action">
+                                }`} className="header__button header__button--action"
+                                onClick={this.buttonTrigger}>
                                 {routes.GET_MEMURAI_PAGE.name}
                             </Button>
                         </NextLink>
