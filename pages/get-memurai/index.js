@@ -24,7 +24,11 @@ class GetMemuraiPage extends Component {
             link: null,
         };
     };
-
+    componentDidMount(){
+        window.buttonTrigger = () => {
+            this.setState({ done: false });
+        };
+    }
     componentWillUnmount() {
         this.recaptcha.reset();
     }
