@@ -24,7 +24,7 @@ const PromoSection = () => (
                 <Row theme="no-col" className="justify-center-xs">
                     <div className="button__wrapper">
                         <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
-                            <Button as="a" type="solid" theme="red-white chevron chevron-down">
+                            <Button as="a" type="solid" theme="red-white">
                                 Download for free
                             </Button>
                         </NextLink>
@@ -34,7 +34,7 @@ const PromoSection = () => (
                                 duration={400}
                                 offset={-60}
                                 type="hollow"
-                                theme="red-white chevron promo-home"
+                                theme="red-white promo-home"
                         >
                             Learn more
                         </Button>
