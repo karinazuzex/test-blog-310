@@ -1,3 +1,13 @@
 .tooltip {
   padding: 4px 21px;
+  &--link{
+    padding: 4px 15px!important;
+    line-height: 30px!important;
+  }
+  &--success{
+    background-color: #00c087!important;
+    &:after{
+      border-bottom-color: #00c087!important;
+    }
+  }
 }

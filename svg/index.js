@@ -9,3 +9,4 @@ export FacebookLogo from "./FacebookLogo";
 export TwitterLogo from "./TwitterLogo";
 export LinkedInLogo from "./LinkedInLogo";
 export NewsletterLogo from "./NewsletterLogo";
+export LinkLogo from "./LinkLogo";
