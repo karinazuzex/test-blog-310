@@ -10,16 +10,15 @@ const PromoSection = () => (
     <section className="section section__promo section__promo--home bg-black">
         <Container>
             <div className="block text-center text-white">
-                <p className="block__description block__elem--sm">
-                    Introducing Memurai for Windows
-                </p>
                 <h1 className="block__title block__elem--lg">
                     <span className="text-normal">
                         Redis-compatible cache and datastore for Windows
                     </span>
                 </h1>
                 <p className="block__description block__elem">
-                    Technical preview now available for download.
+                    Ready for the most demanding production workloads
+                    <br/>
+                    Free for development and testing
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
                     <div className="button__wrapper">
