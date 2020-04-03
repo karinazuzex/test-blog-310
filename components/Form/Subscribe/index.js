@@ -22,6 +22,9 @@ class SubscribeForm extends Component {
             processing: false,
             recaptchaValue: null,
             recaptchaLoaded: false,
+            email: '',
+            agreement: false,
+
         });
 
         this.state = this.getInitialState();
@@ -37,18 +40,20 @@ class SubscribeForm extends Component {
         this.agreement.reset();
     };
 
-    handleEmailChange = async () => {
+    handleEmailChange = async (e) => {
         if (this.state.emailError) {
             await this.setState({ emailError: null });
             this.checkIsErrorLeft();
         }
+        this.setState({email: e.currentTarget.value});
     };
 
-    handleAgreementChange = async () => {
+    handleAgreementChange = async (e) => {
         if (this.state.agreementError) {
             await this.setState({ agreementError: null });
             this.checkIsErrorLeft();
         }
+        this.setState({agreement: e});
     };
 
     checkIsErrorLeft = () => {
@@ -160,6 +165,8 @@ class SubscribeForm extends Component {
 
     render() {
         const disabled = this.state.processing || !this.state.recaptchaLoaded;
+        const buttonDisabled = !this.state.email || !this.state.agreement ? 'disabled' : '';
+        
         return (
 
             <Fragment>
@@ -202,6 +209,7 @@ class SubscribeForm extends Component {
                                 disabled={disabled}
                                 type="solid"
                                 theme="red-white"
+                                className={buttonDisabled}
                             >
                                 Susbcribe
                             </Button>
