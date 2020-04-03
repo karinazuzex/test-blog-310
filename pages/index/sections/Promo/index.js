@@ -11,7 +11,9 @@ const PromoSection = () => (
         <Container>
             <div className="block text-center text-white">
                 <p className="block__description block__elem--sm">
-                    Introducing Memurai for Windows
+                    Ready for the most demanding production workloads
+                    <br/>
+                    Free for development and testing
                 </p>
                 <h1 className="block__title block__elem--lg">
                     <span className="text-normal">
