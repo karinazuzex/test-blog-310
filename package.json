@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development WWWHISPER_DISABLE=1 node server",
-    "build": "npx rimraf .next && npx next build",
+    "build": "npx rimraf .next && npx next build && node sitemap-generator.js",
     "start": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node server",
     "export": "npx next export"
   },
@@ -35,6 +35,7 @@
     "marked": "^0.7.0",
     "moment": "^2.24.0",
     "next": "^9.0.1",
+    "nextjs-sitemap-generator": "^0.5.0",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.12.0",
     "nodemailer": "^5.1.1",
@@ -85,6 +86,7 @@
     "babel-plugin-module-resolver": "^3.2.0",
     "datocms-client": "^3.0.5",
     "file-loader": "^4.0.0",
+    "sitemap-webpack-plugin": "^0.7.1",
     "url-loader": "^2.0.1"
   }
 }
