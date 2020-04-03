@@ -77,15 +77,6 @@ class Social extends Component {
                 >
                     <FacebookLogo />
                 </Link>
-                <NextLink href={routes.NEWSLETTER_PAGE.path} passHref prefetch>
-                    <Link
-                        className="social__item social__item--newsletter"
-                        data-tip="Subscribe to our newsletter"
-                        data-for={tooltipTheme}
-                    >
-                        <NewsletterLogo />
-                    </Link>
-                </NextLink>
                 <Link
                     href={consts.STACKOVERFLOW_LINK}
                     rel="noreferrer noopener"
@@ -103,6 +94,15 @@ class Social extends Component {
                 >
                     <StackOverflowLogo />
                 </Link>
+                <NextLink href={routes.NEWSLETTER_PAGE.path} passHref prefetch>
+                    <Link
+                        className="social__item social__item--newsletter"
+                        data-tip="Subscribe to our newsletter"
+                        data-for={tooltipTheme}
+                    >
+                        <NewsletterLogo />
+                    </Link>
+                </NextLink>
             </Row>
         );
     };
