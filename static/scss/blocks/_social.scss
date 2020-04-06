@@ -16,7 +16,14 @@
     background-color: $greyLight;
     color: $black;
     transition: background-color $defaultTransition;
-
+    &--link {
+      position: absolute;
+      left: -60px;
+      background: transparent;
+      svg path{
+        fill: #989898!important;
+      }
+    }
     &--newsletter {
       svg {
         width: 32px;
