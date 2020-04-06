@@ -4,7 +4,10 @@
 
   &__promo {
     padding-top: 130px;
-
+    background-image: url(/static/images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
     &--home {
       padding-bottom: 30px;
     }
