@@ -22,6 +22,15 @@
       svg path{
         fill: #989898!important;
       }
+
+    }
+    @media screen and (max-width: 500px) {
+      &--link {
+        top: 5px;
+        left: -25px;
+        width: 14px;
+        height: 14px;
+      }
     }
     &--newsletter {
       svg {
