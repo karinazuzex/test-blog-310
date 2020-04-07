@@ -15,6 +15,14 @@
       small {
         font-size: 60%;
       }
+      .block__description{
+        white-space: nowrap;
+      }
+      @media screen and (max-width: 600px) {
+        .block__description{
+          white-space: unset;
+        }
+      }
     }
   }
   &__social {
