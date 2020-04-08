@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import { connect } from "react-redux";
 import { error, removeAll } from "react-notification-system-redux";
-
+import SocialSection from "pages/contact/sections/Social";
 import { analytics, consts, exceptions } from "config";
 import { mailerTypes } from "modules/mailer";
 
@@ -233,6 +233,7 @@ class GetMemuraiPage extends Component {
                     onChange={this.onRecaptchaChange}
                     ref={(ref) => { this.recaptcha = ref }}
                 />
+                <SocialSection/>
             </Layout>
         );
     }
