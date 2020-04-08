@@ -14,48 +14,69 @@ import copy from "copy-text-to-clipboard";
 
 const FAQSection = () => {
   const [block, setBlock] = useState("");
-  const scroll = () => {
-    const id = document.location.hash.replace("#", "");
-    if (id) {
-      document.getElementById(id).scrollIntoView({
-        behavior: "auto",
-        block: "center",
-        inline: "center"
+  const [hash, setHash] = useState("");
+  const [place, setPlace] = useState("bottom");
+  const scroll = id => {
+    const block = document.getElementById(id);
+    if (block) {
+      window.scrollTo({
+        top: block.offsetTop - 100,
+        behavior: "smooth"
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
       });
     }
   };
+  const saveHash = () => {
+    if (document.location.hash !== hash) {
+      setHash(document.location.hash);
+      const id = document.location.hash.replace("#", "");
+      setTimeout(scroll(id), 50);
+    }
+  }
+  useEffect(() => {
+    if(window.innerWidth < 500 && place !== "right"){
+      setPlace("right");
+    }
+    window.addEventListener("hashchange", saveHash);
+    return ()=>{
+      window.removeEventListener("hashchange", saveHash);
+    }
+  });
   useEffect(() => {
     ReactTooltip.rebuild();
-    window.addEventListener("hashchange", scroll());
-    return () => {
-      window.removeEventListener("hashchange", scroll());
-    };
+    saveHash();
   });
 
-  const copyLink = id => e => {
-    ReactTooltip.hide(document.getElementById('link-' + id));
-    setTimeout(()=>{
-        setBlock(id);
-        copy(document.location.origin + "/faq#" + id);
-        ReactTooltip.show(document.getElementById('link-' + id));
+  const copyLink = (summary, id) => e => {
+    ReactTooltip.hide(document.getElementById("link-" + id));
+    setTimeout(() => {
+      setBlock(id);
+      copy(
+        document.location.origin +
+          "/faq#" +
+          summary.replace(/\s/g, "-").toLowerCase()
+      );
+      ReactTooltip.show(document.getElementById("link-" + id));
     }, 50);
-    
   };
 
   const renderFAQ = () =>
-   
     faq.map((item, index) => (
       <div
-        id={index}
+        id={item.summary.replace(/\s/g, "-").toLowerCase()}
         key={helpers.getUID()}
         className="block__elem--xl text-left"
       >
         <Link
           rel="noreferrer noopener"
-          id={'link-' + index}
+          id={"link-" + index}
           target="_blank"
           className="social__item social__item--link"
-          onClick={copyLink(index)}
+          onClick={copyLink(item.summary, index)}
           data-tip={block === index ? "✔ Copied!" : "Copy link"}
           data-for={block === index ? "tooltip-copied" : "tooltip-link"}
         >
@@ -86,14 +107,14 @@ const FAQSection = () => {
         </div>
         <ReactTooltip
           id="tooltip-link"
-          place="bottom"
+          place={place}
           type="dark"
           effect="solid"
           className="tooltip tooltip--dark tooltip--link"
         />
         <ReactTooltip
           id="tooltip-copied"
-          place="bottom"
+          place={place}
           type="success"
           effect="solid"
           className="tooltip tooltip--success tooltip--link"
