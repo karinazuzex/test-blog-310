@@ -16,7 +16,7 @@ const GET_POSTS = gql`
             category
         }
 
-        allArticles(filter: { category: { matches: { pattern: $category } }, author: {matches: { pattern: $author } } }, first: $first, skip: $skip) {
+        allArticles(filter: { category: { matches: { pattern: $category } }, author: {matches: { pattern: $author } } }, first: $first, skip: $skip, orderBy: [publishDateOverride_DESC, _firstPublishedAt_DESC]) {
             id
             title
             description {
