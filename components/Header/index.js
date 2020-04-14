@@ -18,18 +18,23 @@ class Header extends Component {
             isFixed: false,
             isWhite: props.theme === "white",
             showMenu: false,
+            banner: true,
         };
     }
 
     componentDidMount() {
         this.updateWindowPosition();
         window.addEventListener("scroll", this.updateWindowPosition);
+        this.setState({banner: !localStorage.bannerClose})
     }
 
     componentWillUnmount() {
         window.removeEventListener("scroll", this.updateWindowPosition);
     }
-
+    closeBanner = () =>{
+        localStorage.setItem('bannerClose', 1);
+        this.setState({banner: !localStorage.bannerClose});
+    }
     openMenu = () => {
         analytics.event({
             category: "Mobile menu",
@@ -69,7 +74,12 @@ class Header extends Component {
         return (
             <header className={`header ${
                 this.state.isWhite ? "header--white" : ""
-            } ${this.state.isFixed || this.state.showMenu ? "header--fixed" : ""}`} role="header">
+            } ${this.state.isFixed || this.state.showMenu ? "header--fixed" : ""}`} role="header"> 
+                {this.state.banner && <div className={"header--banner"}>
+                Our commitment to the Memurai community during the COVID-19 pandemic. 
+                <a href={routes.BLOG_PAGE.path + "/our-commitment-to-customers-during-the-covid-19-outbreak"}> Read More</a>.
+                    <span onClick={this.closeBanner} className={"header--banner--close"}>×</span>
+                </div>}
                 <Container>
                     <Row theme="no-col" className="justify-start-xs justify-between-lg align-center-xs">
                         <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
