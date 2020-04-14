@@ -52,6 +52,6 @@ export const MEMURAI_DOCS_WINDOWS_DIFFERENCE_WITH_REDIS =
     `${MEMURAI_DOCS_LINK}/en/config-file#difference-with-redis-configuration-flags`;
 export const MEMURAI_DOCS_WINDOWS_SERVICE_LINK = `${MEMURAI_DOCS_LINK}/en/windows-service`;
 
-export const MEMURAI_SUPPORT_LINK = "https://support.memurai.com";
+export const MEMURAI_SUPPORT_LINK = WEBSITE_DOMAIN + "/support";
 
 export const MEMURAI_VS_REDIS_LINK = "https://www.memurai.com/blog/memurai-vs-redis-benchmark-comparison";
