@@ -22,7 +22,7 @@ export const RECAPTCHA_VALIDATION_FAILED = "Recaptcha validation failed.";
  */
 
 // Email already subscribed
-export const EMAIL_IN_USE = "This email is already in subscription list.";
+export const EMAIL_IN_USE = "This email address is already subscribed to the newsletter";
 
 // Too many recent requests on email
 export const TOO_MANY_REQUESTS = "Too many recent requests on this email.";

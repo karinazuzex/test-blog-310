@@ -7,7 +7,7 @@ import { Container, Col, Row, Column } from "components/grid";
 import { QuickLinks, Learn, GetInTouch } from "components/Menu/Footer";
 import SubscribeForm from "components/Form/Subscribe";
 import { Link } from "components/ui";
-import { Logo } from "svg";
+import { LogoFooter } from "svg";
 import Social from "components/Social";
 
 const Footer = () => (
@@ -44,7 +44,7 @@ const Footer = () => (
                     <Column className="align-center-xs align-start-lg footer__contacts-column">
                         <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
                             <Link className="header__logo">
-                                <Logo className={`header__logo--img`} />
+                                <LogoFooter className={`header__logo--img`} />
                             </Link>
                         </NextLink>
                         <div className="footer__contacts">
