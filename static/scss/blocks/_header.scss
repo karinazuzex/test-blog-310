@@ -8,7 +8,8 @@
   padding-bottom: 19px;
   z-index: 10;
   box-shadow: none;
-  transition: box-shadow $defaultTransition, left $defaultTransition, background-color $defaultTransition;
+  transition: box-shadow $defaultTransition, left $defaultTransition,
+    background-color $defaultTransition;
 
   .container {
     padding-left: 40px;
@@ -41,7 +42,35 @@
   &--white {
     background-color: $white;
   }
-
+  &--banner {
+    position: relative;
+    margin-top: -25px;
+    margin-bottom: 20px;
+    background: #9b9b9b;
+    color: #fff;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 18px;
+    a{
+      color: #fff;
+      &:hover{
+        color: #f6282f;
+      }
+    }
+    &--close {
+      position: absolute;
+      top: calc(50% - 14px);
+      right: 10px;
+      display: block;
+      font-size: 40px;
+      line-height: 26px;
+      height: 28px;
+      cursor: pointer;
+      &:hover{
+        color: #f6282f;
+      }
+    }
+  }
   &__burger {
     position: absolute;
     top: 50%;
@@ -91,7 +120,6 @@
       }
 
       .button--versioned {
-
         &:after {
           bottom: 24px;
         }
