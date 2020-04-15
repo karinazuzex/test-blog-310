@@ -11,7 +11,7 @@ export default [
     },
     {
         summary: "What version of Redis is Memurai compatible with?",
-        info: "Memurai is compatible with Redis 5.0.8.",
+        info: `Memurai is compatible with Redis ${consts.REDIS_COMPAT_FULLVER}.`,
     },
     {
         summary: "What client libraries are compatible with Memurai?",
