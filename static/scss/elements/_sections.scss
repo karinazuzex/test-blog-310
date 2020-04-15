@@ -27,6 +27,18 @@
       }
     }
   }
+  &__get-memurai {
+    .block__postfix{
+      margin-top: 50px;
+      font-size: 13px;
+      text-align: left;
+      line-height: 20px;
+    }
+    .overtext{
+      color: #F6282F;
+      margin-top: -3px;
+    }
+  }
   &__social {
     border-top: 1px solid #e4e5e7;
   }
