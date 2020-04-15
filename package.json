@@ -89,5 +89,8 @@
     "file-loader": "^4.0.0",
     "sitemap-webpack-plugin": "^0.7.1",
     "url-loader": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
