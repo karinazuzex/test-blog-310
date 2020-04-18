@@ -56,3 +56,8 @@ export const DOWNLOAD_PAGE = {
     name: "Download",
     path: "/download",
 };
+
+export const SUPPORT_PAGE = {
+    name: "Support",
+    path: "/support",
+};

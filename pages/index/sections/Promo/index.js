@@ -39,7 +39,7 @@ const PromoSection = () => (
                         </Button>
                     </div>
                 </Row>
-                <p className="block__postfix block__postfix--promo-home">
+                <p className="block__postfix block__postfix--promo-home" style={{textAlign:"center"}}>
                     Current version: {consts.MEMURAI_VERSION}
                 </p>
             </div>

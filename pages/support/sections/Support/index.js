@@ -18,6 +18,7 @@ const SupportSection = () => {
               </p>
               <Link
                 href="https://stackoverflow.com/questions/tagged/memurai"
+                target="_blank"
                 passHref
                 prefetch
               >
@@ -40,7 +41,8 @@ const SupportSection = () => {
                 </Link>
               </p>
               <Link
-                href="https://memurai.atlassian.net/servicedesk/customer/portal/2"
+                href="https://support.memurai.com"
+                target="_blank"
                 passHref
                 prefetch
               >
