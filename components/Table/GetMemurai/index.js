@@ -5,7 +5,7 @@ import { Button } from "components/ui";
 import { Row } from "components/grid";
 import { routes } from "config";
 
-const GetMemuraiTable = () => (
+const GetMemuraiTable = (props) => (
   <div className="table__wrapper">
     <div className="table table--getmemurai">
       <Row theme="no-col" className="table__row table__row--header">
@@ -22,8 +22,8 @@ const GetMemuraiTable = () => (
               Requires a restart after 10 days
             </div>
             <div className="table__block--action">
-              <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
-                <Button as="a" type="solid" theme="red-white">
+              <NextLink passHref prefetch>
+                <Button as="a" type="solid" theme="red-white" onClick={props.onClickBtn}>
                   Free download
                 </Button>
               </NextLink>
@@ -167,8 +167,8 @@ const GetMemuraiTable = () => (
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col"></div>
         <div className="col-xs-4 table__col">
-          <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
-            <Button as="a" type="solid" theme="red-white">
+          <NextLink passHref prefetch>
+            <Button as="a" type="solid" theme="red-white" onClick={props.onClickBtn}>
               Free download
             </Button>
           </NextLink>

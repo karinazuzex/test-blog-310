@@ -15,7 +15,6 @@ const IndexPage = () => (
         <InfoWithReviewSection />
         <ComparisonSection />
         <GetMemuraiSection />
-        <AdditionalInfoSection />
         <SocialSection />
     </Layout>
 );
