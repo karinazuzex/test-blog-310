@@ -2,23 +2,44 @@ import React from "react";
 import NextLink from "next/link";
 
 import { routes, consts } from "config";
-import GetMemuraiTable from "components/Table/GetMemurai";
+
 import { Container, Row } from "components/grid";
 import { Button } from "components/ui";
 import { Link } from "components/ui";
 
 const PromoSection = () => (
-    <section className="section section__get-memurai">
+    <section className="section section__get-memurai bg-white-grey">
         <Container>
             <div className="block text-center">
+                <div className="block__pretitle block__elem--xs">
+                    TRY MEMURAI TODAY
+                </div>
                 <h3 className="block__title block__elem--lg">
-                    Get Memurai<br />
+                    Download the free Developer Edition<br />
                 </h3>
-                <GetMemuraiTable/>
-                <p className="block__postfix block__postfix--promo-home">
-                    <span className="overtext">*</span> Memurai Developer Edition has certain usage restrictions such as a restart is requires after 10 days. 
-                    The Memurai Team reserves the right to change and modify those restrictions at any <br/>time for the free Developer Edition.
+                <Row theme="no-col" className="justify-center-xs">
+                    <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+                        <Button as="a" type="solid" theme="red-white">
+                            Download for free
+                        </Button>
+                    </NextLink>
+                </Row>
+                <p className="block__postfix block__postfix--promo-home" style={{textAlign:"center"}}>
+                    Current version: {consts.MEMURAI_VERSION}
                 </p>
+                <div className="block__description">
+                    Want to learn more? Check out the&nbsp;
+                    <NextLink href={routes.FAQ_PAGE.path} passHref prefetch>
+                        <Link theme="red">
+                            {routes.FAQ_PAGE.name}
+                        </Link>
+                    </NextLink> or&nbsp;
+                    <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
+                        <Link theme="red">
+                            {routes.CONTACT_PAGE.nameLong}
+                        </Link>
+                    </NextLink>.
+                </div>
             </div>
         </Container>
     </section>

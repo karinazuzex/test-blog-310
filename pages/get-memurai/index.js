@@ -4,9 +4,10 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { error, removeAll } from "react-notification-system-redux";
 import SocialSection from "pages/contact/sections/Social";
+import AdditionalInfo from "pages/index/sections/AdditionalInfo";
 import { analytics, consts, exceptions } from "config";
 import { mailerTypes } from "modules/mailer";
-
+import GetMemuraiTable from "components/Table/GetMemurai";
 import Layout from "components/Layout";
 import { Container, Row } from "components/grid";
 import { Button, Link } from "components/ui";
@@ -110,6 +111,10 @@ class GetMemuraiPage extends Component {
                 this.setState({
                     done: true,
                 });
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             } else {
                 analytics.event({
                     category: "Simplified download",
@@ -203,19 +208,9 @@ class GetMemuraiPage extends Component {
                     <h3 className="block__title block__elem text-bold">
                         Get Memurai
                     </h3>
-                    <p className="block__description block__description--fixed block__elem--xl">
-                        Download the latest version for Windows 64-bit.<br />
-                    </p>
-                    <Row theme="no-col" className="justify-center-xs">
-                        <Button
-                            onClick={this.handleDownloadClick}
-                            type="solid"
-                            theme="red-white free-width multi-line"
-                            disabled={this.state.processing || !this.state.recaptchaLoaded}
-                        >
-                            {consts.DOWNLOAD_BUTTON_TEXT}
-                        </Button>
-                    </Row>
+                    <GetMemuraiTable  
+                        onClickBtn={this.handleDownloadClick}
+                    />
                 </div>
             </Container>
         </section>
@@ -233,6 +228,7 @@ class GetMemuraiPage extends Component {
                     onChange={this.onRecaptchaChange}
                     ref={(ref) => { this.recaptcha = ref }}
                 />
+                <AdditionalInfo/>
                 <SocialSection/>
             </Layout>
         );

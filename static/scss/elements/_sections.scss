@@ -7,10 +7,32 @@
       &.bg-black {
         padding-bottom: 30px;
         padding-top: 130px;
-        background-image: url(/static/images/background.png);
+        background-image: url(/static/images/background-full.png);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position-y: bottom;
+        background-position-y: center;
+        .block__postfix{
+          margin-bottom: 0px;
+        }
+        @media screen and (max-width: 1020px) {
+          background-image: url(/static/images/background-landscape.png);
+          background-size: cover;
+          background-position-y: 70px;
+          padding-top: 100px;
+          .block__postfix{
+            margin-top: 35px;
+          }
+          h1{
+            max-width: 550px;
+            margin: auto;
+            font-size: 30px;
+            line-height: 44px;
+          }
+        }
+        @media screen and (max-width: 400px) {
+          background-image: url(/static/images/background-mobile.png);
+          
+        }
       }
     }
     &--about{
