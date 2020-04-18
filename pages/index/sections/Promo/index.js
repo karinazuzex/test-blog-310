@@ -16,9 +16,9 @@ const PromoSection = () => (
                     </span>
                 </h1>
                 <p className="block__description block__elem">
-                    Ready for the most demanding production workloads
+                    Ready for the most demanding production workloads.
                     <br/>
-                    Free for development and testing
+                    Free for development and testing.
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
                     <div className="button__wrapper">
