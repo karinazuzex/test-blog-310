@@ -12,3 +12,4 @@ export NewsletterLogo from "./NewsletterLogo";
 export StackOverflowLogo from "./StackOverflowLogo";
 export LinkLogo from "./LinkLogo";
 export LogoFooter from "./LogoFooter";
+export RSSLogo from "./RSSLogo";

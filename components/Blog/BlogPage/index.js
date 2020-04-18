@@ -6,7 +6,7 @@ import SubscribeForm from 'components/Form/Subscribe';
 import NextLink from "next/link";
 import { Link } from "components/ui";
 import { consts, routes, analytics } from "config";
-
+import { RSSLogo } from "svg";
 const BlogPage = ({data, currentPage, router}) => {
 
     return (
@@ -50,6 +50,14 @@ const BlogPage = ({data, currentPage, router}) => {
                                     blogs={data.categories}
                                 />
                             </div>
+                            <Link
+                                href={consts.WEBSITE_DOMAIN + '/rss'}
+                                target="_blank"
+                                rel="alternate"
+                                type="application/rss+xml"
+                            >
+                                <RSSLogo />
+                            </Link>
                         </div>
                         <Pagination 
                             router={router}
