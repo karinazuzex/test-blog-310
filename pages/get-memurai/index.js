@@ -111,6 +111,10 @@ class GetMemuraiPage extends Component {
                 this.setState({
                     done: true,
                 });
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             } else {
                 analytics.event({
                     category: "Simplified download",
