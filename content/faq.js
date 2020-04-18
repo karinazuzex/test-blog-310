@@ -67,10 +67,10 @@ export default [
     {
         summary: "What are the limitations of the Developer Edition?",
         info:  (
-            <Fragment> Memurai Developer Edition (DevEd) is a full-featured free edition, licensed for development and/or test systems in a non-production environment. 
+            <Fragment> Memurai Developer is a full-featured free edition, licensed for development and/or test systems in a non-production environment. 
                 It has a maximum uptime of 10 days.<br/>
                 After 10 days, Memurai will shut down and will need to be restarted. 
-                It is not a trial edition with an expiration time like the Technical Preview edition was.
+                It is not a trial edition and does not have an expiration time similar to Memurai Technical Preview.
             </Fragment>
             )
     },
