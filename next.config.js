@@ -34,6 +34,7 @@ module.exports = withCSS(withSass({
         WEBSITE_DOMAIN: process.env.WEBSITE_DOMAIN,
         MEMURAI_VERSION: process.env.MEMURAI_VERSION,
         DOWNLOAD_BUTTON_TEXT: process.env.DOWNLOAD_BUTTON_TEXT,
+        REDIS_COMPAT_FULLVER: process.env.REDIS_COMPAT_FULLVER
     },
 
     async exportPathMap() {

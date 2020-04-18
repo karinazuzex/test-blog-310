@@ -16,6 +16,7 @@ const FAQSection = () => {
   const [block, setBlock] = useState("");
   const [hash, setHash] = useState("");
   const [place, setPlace] = useState("bottom");
+  const [allowScroll, setAllowScroll] = useState(true);
   const scroll = id => {
     const block = document.getElementById(id);
     if (block) {
@@ -34,7 +35,9 @@ const FAQSection = () => {
     if (document.location.hash !== hash) {
       setHash(document.location.hash);
       const id = document.location.hash.replace("#", "");
-      setTimeout(scroll(id), 50);
+      if (allowScroll) {
+        setTimeout(scroll(id), 2000);
+      }
     }
   }
   useEffect(() => {
@@ -55,15 +58,14 @@ const FAQSection = () => {
     ReactTooltip.hide(document.getElementById("link-" + id));
     setTimeout(() => {
       setBlock(id);
-      copy(
-        document.location.origin +
-          "/faq#" +
-          summary.replace(/\s/g, "-").toLowerCase()
-      );
+      const url = document.location.origin + "/faq#" + summary.replace(/\s/g, "-").toLowerCase();
+      copy(url);
+      history.replaceState({}, '', url);
+      setAllowScroll(false);
       ReactTooltip.show(document.getElementById("link-" + id));
     }, 50);
   };
-
+ 
   const renderFAQ = () =>
     faq.map((item, index) => (
       <div
