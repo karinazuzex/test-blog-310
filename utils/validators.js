@@ -1,14 +1,14 @@
 import { exceptions, consts } from "config";
 
 export const validateName = (name) => {
-    if (!name) {
+    if (!name || email === '') {
         return exceptions.FIELD_REQUIRED;
     }
     return null;
 };
 
 export const validateEmail = (email) => {
-    if (!email) {
+    if (!email || email === '') {
         return exceptions.FIELD_REQUIRED;
     } else if (!consts.EMAIL_PATTERN.test(String(email).toLowerCase())) {
         return exceptions.EMAIL_INVALID;
@@ -17,14 +17,14 @@ export const validateEmail = (email) => {
 };
 
 export const validateSubject = (subject) => {
-    if (!subject) {
+    if (!subject || subject === '') {
         return exceptions.FIELD_REQUIRED;
     }
     return null;
 };
 
 export const validateMessage = (message) => {
-    if (!message) {
+    if (!message || message === '') {
         return exceptions.FIELD_REQUIRED;
     }
     return null;

@@ -42,10 +42,10 @@ class ContactForm extends Component {
 
     reset = () => {
         this.setState(this.getInitialState());
-        this.name.value = null;
-        this.email.value = null;
-        this.subject.value = null;
-        this.message.value = null;
+        this.name.value = '';
+        this.email.value = '';
+        this.subject.value = '';
+        this.message.value = '';
         this.agreement.reset();
         this.subscribe.reset();
     };
