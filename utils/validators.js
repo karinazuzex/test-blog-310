@@ -1,7 +1,7 @@
 import { exceptions, consts } from "config";
 
 export const validateName = (name) => {
-    if (!name || email === '') {
+    if (!name || name === '') {
         return exceptions.FIELD_REQUIRED;
     }
     return null;
