@@ -22,4 +22,17 @@
       }
     }
   }
+
+  &.RSSLogo {
+    margin-top: 20px;
+  }
+}
+
+// RSS icon positioning locic breaks under this screen resolution
+// Display is disabled until customer decision
+@media screen and (max-width: $desktopWidth) {
+  .image {
+    &.RSSLogo {
+      display: none;    }
+  }
 }

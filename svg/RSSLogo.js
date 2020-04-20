@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const RSSicon = ({ className = "" }) => (
+const RSSicon = ({ className = "RSSLogo" }) => (
   <svg
-    className={`image image__RSSicon ${className}`}
+    className={`image ${className}`}
     width="35px"
     height="35px"
     viewBox="0 0 35 35"
