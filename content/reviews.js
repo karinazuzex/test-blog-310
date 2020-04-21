@@ -7,7 +7,7 @@ export default [
     logo: "static/images/testimonials/wormly.png",
     link: "//wormly.com",
     name: "Julian Wilde",
-    title: "Senior Guy",
+    position: "Senior Dev",
   },
   {
     id: 1,
@@ -17,7 +17,7 @@ export default [
     logo: "static/images/testimonials/mediarails.png",
     link: "//mediarails.com",
     name: "Max Ciccotosto",
-    title: "Lead Guy",
+    position: "Lead QA",
   },
   {
     id: 2,
@@ -27,6 +27,6 @@ export default [
     logo: "static/images/testimonials/feature-upwote.png",
     link: "//featureupvote.com",
     name: "Steve McLeod",
-    title: "CTO Guy",
+    position: "CTO",
   },
 ];
