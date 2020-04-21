@@ -1,15 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Swiper from "swiper";
-import NextLink from "next/link";
 
 import { reviews } from "content";
 
 import { Container } from "components/grid";
 import { Stars } from "components/ui";
-import { Link } from "components/ui";
-import { Icon } from "components/ui";
 
-import SupportImage from "static/images/support.png";
+import UserPromo from "components/User/Promo";
 
 const ReviewsSection = () => {
   const swiper = new Swiper(".swiper-container", {
@@ -31,82 +28,30 @@ const ReviewsSection = () => {
         </div>
         <div className="swiper-container">
           <div className="swiper-wrapper">
-            {reviews.map(({ id, text, link, image, logo, name, title }) => (
-              <div className="swiper-slide">
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }}
-                >
-                  <div style={{ width: "75%" }}>
-                    <span key={id} style={{ textAlign: "center" }}>
-                      {text}
-                      <br />
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      paddingTop: "80px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      width: "40%",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center" }}>
-                      <Icon
-                        type="big-circled mod-small"
-                        theme="support"
-                        className="info__image info__block"
-                      >
-                        <img src={image} alt="Customer photo" />
-                      </Icon>
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          margin: "0 30px 0 10px",
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontWeight: "500",
-                            fontSize: "18px",
-                            lineHeight: "1.5em",
-                          }}
-                        >
-                          {name}
-                        </span>
-                        <span
-                          style={{
-                            fontWeight: "500",
-                            fontSize: "16px",
-                            color: "grey",
-                            lineHeight: "1em",
-                          }}
-                        >
-                          {title}
-                        </span>
+            {reviews.map(({ id, text, link, image, logo, name, position }) => (
+              <div className="swiper-slide" key={id}>
+                <Fragment>
+                  <section className="section section__review-short">
+                    <Container>
+                      <div className="block text-center">
+                        <p className="block__elem text-light">
+                          &quot;{text}&quot;
+                        </p>
                       </div>
-                    </div>
-                    <br />
-                    <NextLink href={link} passHref prefetch>
-                      <Link theme="grey-light" className="f-menu__link">
-                        <img
-                          src={logo}
-                          alt="Company logo"
-                          style={{ width: "150px" }}
-                        />
-                      </Link>
-                    </NextLink>
-                  </div>
-                </div>
+                      <UserPromo
+                        name={name}
+                        position={position}
+                        imagePath={image}
+                        logoPath={logo}
+                        link={link}
+                      />
+                    </Container>
+                  </section>
+                </Fragment>
               </div>
             ))}
           </div>
-          {/* <!-- Add Arrows --> */}
+
           <div className="swiper-button-next"></div>
           <div className="swiper-button-prev"></div>
         </div>
