@@ -160,7 +160,8 @@
             padding-top: 60px;
             padding-bottom: 100px;
         }
-
+        // div.blog-item-content is where the post content is displayed. If not specific enough,
+        // try to use '.blog-item-container.blog-item-content' selector
         &-content {
             a {
                 transition: color $defaultTransition;
@@ -180,6 +181,15 @@
                 font-size: 36px;
                 line-height: 44px;
                 font-weight: bold;
+            }
+            ul {
+                list-style: initial;
+                padding-left: 2em;
+                font-size: 20px;
+            }
+            ol {
+                padding-left: 2em;
+                font-size: 20px;
             }
             code {
                 font-family: 'Roboto';
