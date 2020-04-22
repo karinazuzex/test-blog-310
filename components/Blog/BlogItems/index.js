@@ -9,7 +9,7 @@ import { helpers } from "utils";
 
 const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((item) => {
     const { _firstPublishedAt, publishDateOverride, title, category, author, id, body, slug } = item;
-    const text = body.slice(0, 160).split(' ').slice(0,-1).join(' ').trim() + '...';
+    const text = body.slice(0, 300).split(' ').slice(0,-1).join(' ').trim() + '...';
     const rawMarkup = marked(text);
     let convertedHtml = ReactHtmlParser(rawMarkup, helpers.parserOptions);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
@@ -35,7 +35,7 @@ const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((
             </p>
             <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref prefetch>
                 <Link>
-                    <p className="blog__text blog__text--bottom blog__text--link">{convertedHtml}</p>
+                    <p className="blog__text blog__text--bottom blog__text--link blog__text--preview">{convertedHtml}</p>
                 </Link>
             </NextLink>
             <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref prefetch>
