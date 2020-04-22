@@ -7,37 +7,17 @@ import IconsShare from 'components/Blog/IconsShare';
 import ImageZoom from 'react-medium-image-zoom';
 import marked from 'marked';
 import ReactHtmlParser from 'react-html-parser';
-
-
-const tranform = (node, index) => {
-    if (node.type === 'tag' && node.name === 'img') {
-        const imgSrc = node.attribs.src || ''
-        return <ImageZoom
-                    key={index}
-                    image={{
-                        src: imgSrc,
-                    }}
-                    zoomImage={{
-                        src: imgSrc,
-                        className: 'blog__image--zoom'
-                    }}
-                    defaultStyles={{
-                        zoomContainer: { background: '#999999'},
-                        overlay: { background: '#4A4A4A'},
-                    }}
-                />
-    }
-}
+import { helpers } from "utils";
 
 const BlogItemPage = ({data}) => {
-    const { id, 
-            title, 
-            category, 
-            body, 
-            author, 
+    const { id,
+            title,
+            category,
+            body,
+            author,
             description,
-            footerImage, 
-            headerImage, 
+            footerImage,
+            headerImage,
             _firstPublishedAt,
             publishDateOverride
         } = data.allArticles[0];
@@ -47,28 +27,11 @@ const BlogItemPage = ({data}) => {
         seoDescription = description.description
         seoImage = description.image
     }
-    const optionsCreate = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    }
-
     const rawMarkup = marked(body);
-    
-    // const textMarked = { __html: rawMarkup };
-
-
-    const options = {
-        decodeEntities: true,
-        transform: tranform
-    }
-
-    let convertedHtml = ReactHtmlParser(rawMarkup, options);
-
-    const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", optionsCreate);
-
+    let convertedHtml = ReactHtmlParser(rawMarkup, helpers.parserOptions);
+    const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
-    
+
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">
             <Head title={seoTitle} description={seoDescription} img={seoImage.url}/>
@@ -76,7 +39,7 @@ const BlogItemPage = ({data}) => {
                 <div>
                     <IconsShare/>
                     <div className="blog-item-container">
-                        
+
                         <h3 className="block__title text-bold block__elem--xs">{title}</h3>
                         <p className="blog__text blog__text--bottom block__elem--50">
                             <NextLink href={'/blog?author=' + author} passHref prefetch>
@@ -142,9 +105,9 @@ const BlogItemPage = ({data}) => {
                     </p>
                     <SubscribeForm/>
                 </div>
-                
+
             </Container>
-            
+
         </section>
     )
 }
