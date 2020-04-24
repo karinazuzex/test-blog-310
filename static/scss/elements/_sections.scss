@@ -89,7 +89,7 @@
       text-align: left;
       padding-bottom: 118px;
       &.col-md-6 {
-        flex-basis: 48%;
+        flex-basis: 100%;
       }
     }
   }
@@ -160,6 +160,13 @@
         }
       }
     }
+    &__support {
+      .block__blog {
+        &.col-md-6 {
+          flex-basis: 100%;
+        }
+      }
+    }
   }
 }
 
@@ -181,6 +188,13 @@
         }
         .user-promo__icon {
           margin-right: 16px;
+        }
+      }
+    }
+    &__support {
+      .block__blog {
+        &.col-md-6 {
+          flex-basis: 48%;
         }
       }
     }
