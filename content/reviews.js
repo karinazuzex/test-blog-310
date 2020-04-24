@@ -7,7 +7,7 @@ export default [
     logo: "static/images/testimonials/wormly.png",
     link: "//wormly.com",
     name: "Julian Wilde",
-    position: "Senior Dev",
+    position: "Technical Director",
   },
   {
     id: 1,
@@ -17,7 +17,7 @@ export default [
     logo: "static/images/testimonials/mediarails.png",
     link: "//mediarails.com",
     name: "Max Ciccotosto",
-    position: "Lead QA",
+    position: "CEO",
   },
   {
     id: 2,
