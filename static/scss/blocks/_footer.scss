@@ -19,13 +19,19 @@
     margin-bottom: -50px;
     &-main {
       @media (max-width: 768px) {
-        flex-direction: column-reverse;
+        // flex-direction: column-reverse;
       }
     }
   }
 
   &__col {
     margin-bottom: 50px;
+    &--nomobile {
+      display: none;
+    }
+    &--onlymobile {
+      display: inline-block;
+    }
   }
 
   &__header {
@@ -37,7 +43,7 @@
 
   &__contacts {
     text-align: center;
-    &-column{
+    &-column {
       .header__logo {
         margin-left: -45px;
         margin-bottom: 20px;
@@ -81,7 +87,7 @@
       caret-color: white;
       &.input--error {
         border-color: rgb(246, 40, 47);
-    }
+      }
     }
     .checkbox {
       height: auto;
@@ -125,7 +131,7 @@
   .footer {
     &__contacts {
       text-align: left;
-      &-column{
+      &-column {
         flex-direction: row;
         .header__logo {
           margin: 0px;
@@ -135,6 +141,14 @@
     }
     &__terms {
       text-align: center;
+    }
+    &__col {
+      &--nomobile {
+        display: inline-block;
+      }
+      &--onlymobile {
+        display: none;
+      }
     }
   }
 }
