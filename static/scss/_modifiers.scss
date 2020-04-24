@@ -25,6 +25,9 @@
 
 .separator {
   &-bt { border-bottom: 1px solid $grey; }
+  &-no-tp{
+    border-top: none;
+  }
 }
 
 .self {

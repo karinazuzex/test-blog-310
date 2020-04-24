@@ -49,6 +49,7 @@
     }
   }
   &__get-memurai {
+    padding-bottom: 40px;
     .block__postfix {
       margin-top: 50px;
       font-size: 13px;
@@ -65,10 +66,6 @@
   }
   &__legal {
     padding-top: 130px;
-  }
-
-  &__get-memurai {
-    padding-bottom: 40px;
   }
 
   &__review-short {
@@ -202,6 +199,11 @@
       &--result {
         padding-top: 200px;
         padding-bottom: 150px;
+      }
+      &--get-memurai {
+        .block__elem.block__title {
+          margin-bottom: 100px;
+        }
       }
     }
 
