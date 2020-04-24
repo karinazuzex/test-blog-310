@@ -31,6 +31,10 @@
   &-center {
     margin-left: auto;
     margin-right: auto;
+    &--mobile{
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -53,6 +57,10 @@
       line-height: 27px;
       font-size: 18px;
     }
+  }
+  .self-center--mobile {
+    margin-left: initial;
+    margin-right: initial;
   }
 }
 
