@@ -80,7 +80,7 @@ const FAQSection = () => {
           rel="noreferrer noopener"
           id={"link-" + index}
           target="_blank"
-          className="social__item social__item--link"
+          className="social__item social__item-nohover social__item--link"
           onClick={copyLink(item.summary, index)}
           data-tip={block === index ? "✔ Copied!" : "Copy link"}
           data-for={block === index ? "tooltip-copied" : "tooltip-link"}
