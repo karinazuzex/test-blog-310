@@ -78,6 +78,15 @@
       }
     }
   }
+
+  .checkbox {
+    &.active {
+      &:before {
+        background-image: url(../images/checkmark--black.svg);
+      }
+    }
+  }
+
   .form--subscribe {
     max-width: 100%;
     input {
