@@ -151,4 +151,11 @@
       }
     }
   }
+  .row.footer__row {
+    .footer__col.col-lg-3 {
+      flex: 0 0 200px;
+      max-width: 30%;
+   }
+  }
 }
+

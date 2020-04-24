@@ -28,7 +28,7 @@ const Footer = () => (
                 <Learn />
               </Column>
             </Col>
-            <Col attributes="xs-12 lg-4" className="footer__col">
+            <Col attributes="xs-12 lg-3" className="footer__col">
               <Column className="align-center-xs align-start-lg">
                 <div className="footer__header">Get in touch</div>
                 <GetInTouch />
