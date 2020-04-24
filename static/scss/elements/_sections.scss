@@ -173,6 +173,7 @@
 @media screen and (min-width: $phabletWidth) {
   .section {
     &__reviews {
+      padding-bottom: 70px;
       .swiper-container {
         .swiper-button-next,
         .swiper-button-prev {
@@ -205,6 +206,10 @@
   .section {
     padding-top: 120px;
     padding-bottom: 120px;
+
+    &__reviews {
+      padding-bottom: 90px;
+    }
 
     &__promo {
       padding-top: 150px;
@@ -240,6 +245,10 @@
     padding-top: 140px;
     padding-bottom: 140px;
 
+    &__reviews {
+      padding-bottom: 70px;
+    }
+
     &__promo {
       padding-top: 170px;
 
@@ -261,6 +270,13 @@
     &__review-short {
       padding-top: 60px;
       padding-bottom: 80px;
+    }
+
+    &__get-memurai--main {
+      padding-bottom: 120px;
+      .block__postfix {
+        margin-top: 30px;
+      }
     }
   }
 }
