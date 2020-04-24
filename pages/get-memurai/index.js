@@ -229,7 +229,7 @@ class GetMemuraiPage extends Component {
                     ref={(ref) => { this.recaptcha = ref }}
                 />
                 <AdditionalInfo/>
-                <SocialSection/>
+                <SocialSection className="separator-no-tp"/>
             </Layout>
         );
     }

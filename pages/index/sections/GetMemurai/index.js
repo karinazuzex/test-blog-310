@@ -8,7 +8,7 @@ import { Button } from "components/ui";
 import { Link } from "components/ui";
 
 const PromoSection = () => (
-    <section className="section section__get-memurai bg-white-grey">
+    <section className="section section__get-memurai section__get-memurai--main bg-white-grey">
         <Container>
             <div className="block text-center">
                 <div className="block__pretitle block__elem--xs">

@@ -49,11 +49,15 @@
     }
   }
   &__get-memurai {
+    padding-bottom: 40px;
     .block__postfix {
       margin-top: 50px;
       font-size: 13px;
       text-align: left;
       line-height: 20px;
+    }
+    &--main {
+      padding-bottom: 100px;
     }
     .overtext {
       color: #f6282f;
@@ -65,10 +69,6 @@
   }
   &__legal {
     padding-top: 130px;
-  }
-
-  &__get-memurai {
-    padding-bottom: 40px;
   }
 
   &__review-short {
@@ -89,7 +89,7 @@
       text-align: left;
       padding-bottom: 118px;
       &.col-md-6 {
-        flex-basis: 48%;
+        flex-basis: 100%;
       }
     }
   }
@@ -160,12 +160,20 @@
         }
       }
     }
+    &__support {
+      .block__blog {
+        &.col-md-6 {
+          flex-basis: 100%;
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: $phabletWidth) {
   .section {
     &__reviews {
+      padding-bottom: 70px;
       .swiper-container {
         .swiper-button-next,
         .swiper-button-prev {
@@ -184,6 +192,13 @@
         }
       }
     }
+    &__support {
+      .block__blog {
+        &.col-md-6 {
+          flex-basis: 48%;
+        }
+      }
+    }
   }
 }
 
@@ -191,6 +206,10 @@
   .section {
     padding-top: 120px;
     padding-bottom: 120px;
+
+    &__reviews {
+      padding-bottom: 90px;
+    }
 
     &__promo {
       padding-top: 150px;
@@ -203,19 +222,24 @@
         padding-top: 200px;
         padding-bottom: 150px;
       }
+      &--get-memurai {
+        .block__elem.block__title {
+          margin-bottom: 100px;
+        }
+      }
     }
 
     &__legal {
       padding-top: 150px;
     }
 
-    &__get-memurai {
-      padding-bottom: 40px;
-    }
-
-    &__review-short {
+     &__review-short {
       padding-top: 60px;
       padding-bottom: 80px;
+    }
+
+    &__social {
+      padding-bottom: 150px;
     }
   }
 }
@@ -224,6 +248,10 @@
   .section {
     padding-top: 140px;
     padding-bottom: 140px;
+
+    &__reviews {
+      padding-bottom: 70px;
+    }
 
     &__promo {
       padding-top: 170px;
@@ -243,13 +271,20 @@
       padding-top: 170px;
     }
 
-    &__get-memurai {
-      padding-bottom: 40px;
-    }
-
     &__review-short {
       padding-top: 60px;
       padding-bottom: 80px;
+    }
+
+    &__get-memurai--main {
+      padding-bottom: 120px;
+      .block__postfix {
+        margin-top: 30px;
+      }
+    }
+
+    &__social {
+      padding-bottom: 150px;
     }
   }
 }

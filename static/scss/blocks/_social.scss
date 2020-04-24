@@ -23,6 +23,11 @@
       svg path{
         fill: #989898!important;
       }
+      &-nohover{
+        &:hover{
+          background: transparent;
+        }
+      }
 
     }
     @media screen and (max-width: 500px) {
@@ -49,6 +54,10 @@
 
     &:hover {
       background-color: $white;
+    }
+    
+    &-nohover:hover{
+      background-color: transparent;
     }
   }
 
