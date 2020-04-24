@@ -56,6 +56,9 @@
       text-align: left;
       line-height: 20px;
     }
+    &--main {
+      padding-bottom: 100px;
+    }
     .overtext {
       color: #f6282f;
       margin-top: -3px;
@@ -211,11 +214,7 @@
       padding-top: 150px;
     }
 
-    &__get-memurai {
-      padding-bottom: 40px;
-    }
-
-    &__review-short {
+     &__review-short {
       padding-top: 60px;
       padding-bottom: 80px;
     }
@@ -243,10 +242,6 @@
 
     &__legal {
       padding-top: 170px;
-    }
-
-    &__get-memurai {
-      padding-bottom: 40px;
     }
 
     &__review-short {
