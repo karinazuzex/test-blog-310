@@ -8,7 +8,7 @@ const SupportSection = () => {
     <section className="section section__support bg-white-grey separator-bt">
       <Container>
         <Col>
-          <Row className="justify-between-lg justify-center-xs">
+          <Row className="justify-between-lg justify-between-md justify-center-xs">
             <div className="block__blog block__elem--40 col-md-6 col-xs-12">
               <h4 className="blog__title blog__title--bottom">
                 Developer Edition
