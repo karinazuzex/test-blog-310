@@ -56,3 +56,5 @@ export const MEMURAI_DOCS_WINDOWS_SERVICE_LINK = `${MEMURAI_DOCS_LINK}/en/window
 export const MEMURAI_SUPPORT_LINK = WEBSITE_DOMAIN + "/support";
 
 export const MEMURAI_VS_REDIS_LINK = "https://www.memurai.com/blog/memurai-vs-redis-benchmark-comparison";
+
+export const SHOW_DRAFTS = env.SHOW_DRAFTS || env.NODE_ENV === "development" && (typeof env.SHOW_DRAFTS === 'undefined');
