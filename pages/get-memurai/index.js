@@ -228,7 +228,7 @@ class GetMemuraiPage extends Component {
                     onChange={this.onRecaptchaChange}
                     ref={(ref) => { this.recaptcha = ref }}
                 />
-                <AdditionalInfo/>
+                {/*<AdditionalInfo/>*/}
                 <SocialSection className="separator-no-tp"/>
             </Layout>
         );
