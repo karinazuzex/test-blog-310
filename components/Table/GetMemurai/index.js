@@ -50,8 +50,8 @@ const GetMemuraiTable = (props) => (
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">Version</div>
-        <div className="col-xs-4 table__col">1.0.12</div>
-        <div className="col-xs-4 table__col">1.0.12</div>
+        <div className="col-xs-4 table__col">2.0.0</div>
+        <div className="col-xs-4 table__col">2.0.0</div>
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">LRU eviction</div>
@@ -140,7 +140,7 @@ const GetMemuraiTable = (props) => (
         <div className="col-xs-4 table__col">Support</div>
         <div className="col-xs-4 table__col">Community - StackOverflow</div>
         <div className="col-xs-4 table__col">
-          3 premium support cases / year / license
+          premium email and web support
         </div>
       </Row>
       <Row theme="no-col" className="table__row">
