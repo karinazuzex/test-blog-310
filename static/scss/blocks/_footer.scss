@@ -47,6 +47,9 @@
       .header__logo {
         margin-left: -45px;
         margin-bottom: 20px;
+        &--img {
+          width: 140px;
+        }
       }
     }
   }
@@ -145,6 +148,9 @@
         .header__logo {
           margin: 0px;
           margin-right: 20px;
+          &--img {
+            width: 140px;
+          }
         }
       }
     }
