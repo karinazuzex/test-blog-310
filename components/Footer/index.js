@@ -20,34 +20,36 @@ const Footer = () => (
     <Container>
       <Row className="footer__row footer__row-main">
         <Col attributes="xs-12 lg-8" className="footer__col">
-          <Row className="footer__row">
-            <Col attributes="xs-6 lg-3" className="footer__col">
-              <Column className="align-start-xs align-start-lg">
-                <div className="footer__header">Quick links</div>
-                <QuickLinks />
-              </Column>
-            </Col>
-            <Col attributes="xs-6 lg-3" className="footer__col">
-              <Column className="align-end-xs align-start-lg">
+          <Column className="align-center-xs">
+            <Row className="footer__row">
+              <Col attributes="xs-6 lg-3" className="footer__col">
                 <Column className="align-start-xs align-start-lg">
-                  <div className="footer__header">Learn</div>
-                  <Learn />
+                  <div className="footer__header">Quick links</div>
+                  <QuickLinks />
                 </Column>
-              </Column>
-            </Col>
-            <Col attributes="xs-6 lg-3" className="footer__col">
-              <Column className="align-start-xs align-start-lg">
-                <div className="footer__header">Get in touch</div>
-                <GetInTouch />
-              </Column>
-            </Col>
-            <Col
-              attributes="xs-12 lg-12"
-              className="footer__col footer__col--nomobile "
-            >
-              <Contacts />
-            </Col>
-          </Row>
+              </Col>
+              <Col attributes="xs-6 lg-3" className="footer__col">
+                <Column className="align-end-xs align-start-lg">
+                  <Column className="align-start-xs align-start-lg">
+                    <div className="footer__header">Learn</div>
+                    <Learn />
+                  </Column>
+                </Column>
+              </Col>
+              <Col attributes="xs-6 lg-3" className="footer__col">
+                <Column className="align-start-xs align-start-lg">
+                  <div className="footer__header">Get in touch</div>
+                  <GetInTouch />
+                </Column>
+              </Col>
+              <Col
+                attributes="xs-12 lg-12"
+                className="footer__col footer__col--nomobile "
+              >
+                <Contacts />
+              </Col>
+            </Row>
+          </Column>
         </Col>
         <Col attributes="xs-12 lg-4" className="footer__col">
           <Column className="align-center-xs align-start-lg">
