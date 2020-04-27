@@ -35,7 +35,7 @@ const GetMemuraiTable = (props) => (
             <div className="table__block--header">Enterprise Edition</div>
             <div className="table__block--divider"></div>
             <div className="table__block--description">
-              Intendent for Production use with no <br />
+              Intended for Production use with no <br />
               restrictions or limitations.
             </div>
             <div className="table__block--action">
