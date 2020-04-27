@@ -39,7 +39,7 @@ const GetMemuraiTable = (props) => (
               restrictions or limitations.
             </div>
             <div className="table__block--action">
-              <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+              <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
                 <Button as="a" type="hollow" theme="red">
                   Contact us
                 </Button>
