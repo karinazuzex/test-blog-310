@@ -21,20 +21,22 @@ const Footer = () => (
       <Row className="footer__row footer__row-main">
         <Col attributes="xs-12 lg-8" className="footer__col">
           <Row className="footer__row">
-            <Col attributes="xs-12 lg-3" className="footer__col">
-              <Column className="align-center-xs align-start-lg">
+            <Col attributes="xs-6 lg-3" className="footer__col">
+              <Column className="align-start-xs align-start-lg">
                 <div className="footer__header">Quick links</div>
                 <QuickLinks />
               </Column>
             </Col>
-            <Col attributes="xs-12 lg-3" className="footer__col">
-              <Column className="align-center-xs align-start-lg">
-                <div className="footer__header">Learn</div>
-                <Learn />
+            <Col attributes="xs-6 lg-3" className="footer__col">
+              <Column className="align-end-xs align-start-lg">
+                <Column className="align-start-xs align-start-lg">
+                  <div className="footer__header">Learn</div>
+                  <Learn />
+                </Column>
               </Column>
             </Col>
-            <Col attributes="xs-12 lg-3" className="footer__col">
-              <Column className="align-center-xs align-start-lg">
+            <Col attributes="xs-6 lg-3" className="footer__col">
+              <Column className="align-start-xs align-start-lg">
                 <div className="footer__header">Get in touch</div>
                 <GetInTouch />
               </Column>
