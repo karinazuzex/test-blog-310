@@ -59,7 +59,7 @@ const SupportSection = () => {
               </h4>
               <p className="blog__text blog__text--bottom blog__text--link">
                 Our team is happy to offer consulting services for architectural
-                and techical implementations specific for you solution. Contact
+                and techical implementations specific for your solution. Contact
                 us for more details.
               </p>
               <NextLink href={routes.CONTACT_PAGE.path+'?support'} passHref prefetch>
