@@ -19,7 +19,7 @@ const GetMemuraiTable = (props) => (
             <div className="table__block--description">
               Intended for Development and Testing.
               <br />
-              Requires a restart after 10 days
+              Requires a restart after 10 days.
             </div>
             <div className="table__block--action">
               <NextLink passHref prefetch>
@@ -50,8 +50,8 @@ const GetMemuraiTable = (props) => (
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">Version</div>
-        <div className="col-xs-4 table__col">1.0.12</div>
-        <div className="col-xs-4 table__col">1.0.12</div>
+        <div className="col-xs-4 table__col">2.0.0</div>
+        <div className="col-xs-4 table__col">2.0.0</div>
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">LRU eviction</div>
@@ -117,7 +117,7 @@ const GetMemuraiTable = (props) => (
         </div>
       </Row>
       <Row theme="no-col" className="table__row">
-        <div className="col-xs-4 table__col">Modules API Support</div>
+        <div className="col-xs-4 table__col">Modules API</div>
         <div className="col-xs-4 table__col">
           <div className="icon icon--checked" />
         </div>
@@ -138,9 +138,9 @@ const GetMemuraiTable = (props) => (
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">Support</div>
-        <div className="col-xs-4 table__col">Community - StackOverflow</div>
+        <div className="col-xs-4 table__col">Community - Stack Overflow</div>
         <div className="col-xs-4 table__col">
-          3 premium support cases / year / license
+          Premium email and web support
         </div>
       </Row>
       <Row theme="no-col" className="table__row">
@@ -149,7 +149,7 @@ const GetMemuraiTable = (props) => (
         <div className="col-xs-4 table__col">Production use</div>
       </Row>
       <Row theme="no-col" className="table__row">
-        <div className="col-xs-4 table__col">Restriction</div>
+        <div className="col-xs-4 table__col">Restrictions</div>
         <div className="col-xs-4 table__col">
           Restart required after 10 days
         </div>
