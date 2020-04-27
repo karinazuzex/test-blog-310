@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import NextLink from "next/link";
 
-import { routes, analytics } from "config";
+import { routes, analytics, consts } from "config";
 
 import { Container, Row } from "components/grid";
 import MainMenu from "components/Menu/Main";
@@ -25,7 +25,9 @@ class Header extends Component {
     componentDidMount() {
         this.updateWindowPosition();
         window.addEventListener("scroll", this.updateWindowPosition);
-        this.setState({banner: !localStorage.bannerClose})
+        if(consts.COVID19) {
+            this.setState({banner: !localStorage.bannerClose});
+        }
     }
 
     componentWillUnmount() {

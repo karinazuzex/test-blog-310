@@ -65,3 +65,4 @@ Link lead to `/download` page, where url is being decrypted on visit with api ca
 - **aws_file_path** - path to file on Amazon Cloudfront server
 - **crypto_key** - key for data encryption/decryption
 - **WEBSITE_DOMAIN** - website host, used for creation of download link
+- **DISABLE_COVID19** - set to "true" to disable the COVID19 header banner
