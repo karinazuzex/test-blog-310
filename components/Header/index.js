@@ -18,7 +18,7 @@ class Header extends Component {
             isFixed: false,
             isWhite: props.theme === "white",
             showMenu: false,
-            banner: true,
+            banner: false,
         };
     }
 
