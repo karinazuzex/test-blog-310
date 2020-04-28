@@ -1,22 +1,23 @@
+$smallMobileWidth: 360px;
 $mobileWidth: 480px;
 $phabletWidth: 768px;
 $tabletWidth: 1024px;
 $desktopWidth: 1240px;
 $bigDesktopWidth: 1400px;
 
-$white: #FFFFFF;
-$whiteGrey: #F4F5F7;
-$greyLight: #9B9B9B;
-$grey: #E4E5E7;
-$greyDark: #4A4A4A;
+$white: #ffffff;
+$whiteGrey: #f4f5f7;
+$greyLight: #9b9b9b;
+$grey: #e4e5e7;
+$greyDark: #4a4a4a;
 $greyDisabled: #999999;
-$red: #F6282F;
-$blue: #4CA3D9;
-$green: #00C087;
-$cyan: #E4ECEC;
+$red: #f6282f;
+$blue: #4ca3d9;
+$green: #00c087;
+$cyan: #e4ecec;
 $black: #080606;
 
-$defaultTransition: .3s ease-in-out;
-$doubleTransition: .6s ease-in-out;
+$defaultTransition: 0.3s ease-in-out;
+$doubleTransition: 0.6s ease-in-out;
 
 $mobileMenuWidth: 320px;

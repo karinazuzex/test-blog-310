@@ -22,22 +22,22 @@ const Footer = () => (
         <Col attributes="xs-12 lg-8" className="footer__col">
           <Column className="align-center-xs">
             <Row className="footer__row">
-              <Col attributes="xs-6 lg-3" className="footer__col">
-                <Column className="align-start-xs align-start-lg">
+              <Col attributes="xs-12 xsm-6 lg-3" className="footer__col">
+                <Column className="align-center-xs align-start-xsm align-start-lg">
                   <div className="footer__header">Quick links</div>
                   <QuickLinks />
                 </Column>
               </Col>
-              <Col attributes="xs-6 lg-3" className="footer__col">
-                <Column className="align-end-xs align-start-lg">
-                  <Column className="align-start-xs align-start-lg">
+              <Col attributes="xs-12 xsm-6 lg-3" className="footer__col">
+                <Column className="align-center-xs align-end-xsm align-start-lg">
+                  <Column className="align-center-xs align-start-xsm align-start-lg">
                     <div className="footer__header">Learn</div>
                     <Learn />
                   </Column>
                 </Column>
               </Col>
-              <Col attributes="xs-6 lg-3" className="footer__col">
-                <Column className="align-start-xs align-start-lg">
+              <Col attributes="xs-12 xsm-6 sm-6 lg-3" className="footer__col">
+                <Column className="align-center-xs align-start-xsm align-start-lg">
                   <div className="footer__header">Get in touch</div>
                   <GetInTouch />
                 </Column>
@@ -53,7 +53,9 @@ const Footer = () => (
         </Col>
         <Col attributes="xs-12 lg-4" className="footer__col">
           <Column className="align-center-xs align-start-lg">
-            <div className="footer__header">Subscribe to our newsletter</div>
+            <div className="footer__header text-center--mobile">
+              Subscribe to our newsletter
+            </div>
             <SubscribeForm />
           </Column>
         </Col>

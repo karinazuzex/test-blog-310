@@ -1,21 +1,46 @@
 .bg {
-  &-black { background-color: $black; }
-  &-white-grey { background-color: $whiteGrey; }
+  &-black {
+    background-color: $black;
+  }
+  &-white-grey {
+    background-color: $whiteGrey;
+  }
 }
 
 .text {
-  &-left { text-align: left; }
-  &-center { text-align: center; }
-  &-right { text-align: right; }
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-center--mobile {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
 
-  &-white { color: $white; }
-  &-red { color: $red; }
+  &-white {
+    color: $white;
+  }
+  &-red {
+    color: $red;
+  }
 
-  &-light { font-weight: 300; }
-  &-normal { font-weight: normal; }
-  &-bold { font-weight: bold; }
+  &-light {
+    font-weight: 300;
+  }
+  &-normal {
+    font-weight: normal;
+  }
+  &-bold {
+    font-weight: bold;
+  }
 
-  &-no-transform { text-transform: none; }
+  &-no-transform {
+    text-transform: none;
+  }
 
   &-sm {
     line-height: 21px;
@@ -24,8 +49,10 @@
 }
 
 .separator {
-  &-bt { border-bottom: 1px solid $grey; }
-  &-no-tp{
+  &-bt {
+    border-bottom: 1px solid $grey;
+  }
+  &-no-tp {
     border-top: none;
   }
 }
@@ -34,7 +61,7 @@
   &-center {
     margin-left: auto;
     margin-right: auto;
-    &--mobile{
+    &--mobile {
       margin-left: auto;
       margin-right: auto;
     }
@@ -42,7 +69,9 @@
 }
 
 .pb {
-  &-0 { padding-bottom: 0; }
+  &-0 {
+    padding-bottom: 0;
+  }
 }
 
 @media screen and (min-width: $phabletWidth) {
@@ -56,6 +85,9 @@
 
 @media screen and (min-width: $tabletWidth) {
   .text {
+    &center--mobile {
+      text-align: initial;
+    }
     &-sm {
       line-height: 27px;
       font-size: 18px;

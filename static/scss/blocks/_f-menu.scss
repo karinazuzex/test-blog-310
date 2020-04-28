@@ -5,7 +5,15 @@
 
   &__item {
     height: 24px;
-    text-align: left;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $smallMobileWidth) {
+  .f-menu {
+    &__item {
+      text-align: left;
+    }
   }
 }
 
