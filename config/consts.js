@@ -50,7 +50,7 @@ export const MEMURAI_DOCS_LINK =
         ? "https://memuweb-docs.netlify.com"
         : "https://docs.memurai.com";
 export const MEMURAI_DOCS_WINDOWS_DIFFERENCE_WITH_REDIS =
-    `${MEMURAI_DOCS_LINK}/en/config-file#difference-with-redis-configuration-flags`;
+    `${MEMURAI_DOCS_LINK}/en/config-file#differences-with-redis-configuration-flags`;
 export const MEMURAI_DOCS_WINDOWS_SERVICE_LINK = `${MEMURAI_DOCS_LINK}/en/windows-service`;
 
 export const MEMURAI_SUPPORT_LINK = WEBSITE_DOMAIN + "/support";
