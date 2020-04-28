@@ -7,10 +7,23 @@
   background-color: $white;
 
   &--comparison {
-    width: 1160px;
+    max-width: 1160px;
+    .table__row {
+      &--header {
+        font-size: 20px;
+      }
+      .label__solid {
+        font-size: 13px;
+        padding: 4px 10px;
+        width: 100%;
+      }
+      .table__col {
+        padding: 5px;
+        font-size: 14px;
+      }
+    }
   }
   &--getmemurai {
-    // width: 1160px;
     min-width: 680px;
     font-size: 16px;
     .button {
@@ -130,6 +143,29 @@
         }
       }
     }
+    &--comparison {
+      max-width: 1160px;
+      .table__row {
+        &--header {
+          font-size: 20px;
+          .table__col.col-xs-3 {
+            font-size: 24px;
+            padding: 10px 20px;
+          }
+        }
+        .label__solid {
+          font-size: 14px;
+          padding: 4px 10px;
+          width: 100%;
+        }
+      }
+      .table__row {
+        .table__col {
+          padding: 16px 30px;
+          font-size: 16px;
+        }
+      }
+    }
   }
 }
 
@@ -167,6 +203,32 @@
           &--action {
             margin-top: 30px;
           }
+        }
+      }
+    }
+    &--comparison {
+      max-width: 1160px;
+
+      .table__row {
+        &--header {
+          .table__col.col-xs-3 {
+            font-size: 24px;
+            padding: 10px 5px;
+          }
+        }
+        .label__solid {
+          font-size: 14px;
+          padding: 4px 10px;
+          width: 100%;
+          br.br-mobile {
+            display: none;
+          }
+        }
+      }
+      .table__row {
+        .table__col {
+          padding: 16px 30px;
+          font-size: 18px;
         }
       }
     }
@@ -209,6 +271,36 @@
           }
         }
       }
+    }
+    &--comparison {
+      max-width: 1160px;
+      margin-left: auto;
+      margin-right: auto;
+      .table__row {
+        &--header {
+          .table__col.col-xs-3 {
+            font-size: 24px;
+            padding: 16px 35px;
+          }
+        }
+        .label__solid {
+          font-size: 14px;
+          padding: 4px 16px;
+          width: 100%;
+          br.br-tablet {
+            display: none;
+          }
+        }
+      }
+      .table__row {
+        .table__col {
+          padding: 16px 35px;
+          font-size: 18px;
+        }
+      }
+    }
+    &__wrapper {
+      width: 100%;
     }
   }
 }
