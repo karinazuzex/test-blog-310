@@ -17,14 +17,14 @@ const Contacts = () => (
       Memurai inc.
       <br />
       113 Cherry Street #11630 Seattle, WA 98104 <br />
-      © 2019-2020 All rights reserved by Janea Systems, Inc.
+      © 2020 All rights reserved by Janea Systems, Inc.
       <br />
       <span className="footer__terms">
-        <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
-          <Link theme="grey-light">{routes.TERMS_PAGE.name}</Link>
-        </NextLink>
         <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
           <Link theme="grey-light">{routes.PRIVACY_PAGE.name}</Link>
+        </NextLink>
+        <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
+          <Link theme="grey-light">{routes.TERMS_PAGE.name}</Link>
         </NextLink>
         <NextLink href={routes.COOKIE_PAGE.path} passHref prefetch>
           <Link theme="grey-light">{routes.COOKIE_PAGE.name}</Link>
