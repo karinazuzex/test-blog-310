@@ -29,7 +29,7 @@ const ReviewsSection = () => {
         <div className="swiper-container">
           <div className="swiper-wrapper">
             {reviews.map(({ id, text, link, image, logo, name, position }) => (
-              <div className="swiper-slide" key={id}>
+              <div className="swiper-slide" style={{ width: "100%" }} key={id}>
                 <Fragment>
                   <section className="section section__review-short">
                     <Container>
