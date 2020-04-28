@@ -97,7 +97,6 @@
 @media screen and (min-width: $phabletWidth) {
   .table {
     &--getmemurai {
-      // width: 1160px;
       min-width: 680px;
       .button {
         width: calc(100% - 10px);
@@ -134,5 +133,82 @@
   }
 }
 
-@media screen and (min-width: $phabletWidth) {
+@media screen and (min-width: $tabletWidth) {
+  .table {
+    &--getmemurai {
+      min-width: 680px;
+      max-width: 1160px;
+      .button {
+        width: calc(100% - 50px);
+      }
+    }
+    &__col {
+      &.col-xs-4 {
+        padding: 14px 25px;
+        align-items: center;
+        justify-content: flex-start;
+        .icon {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        // hardcoded to fix block height
+        .table__block {
+          height: 100%;
+          &.self-align-center {
+            align-self: center;
+            height: unset;
+            margin: 0;
+          }
+
+          &--description {
+            // min-height: 140px;
+            margin-bottom: auto;
+          }
+          &--action {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktopWidth) {
+  .table {
+    &--getmemurai {
+      min-width: 680px;
+      max-width: 1160px;
+      .button {
+        width: calc(100% - 90px);
+      }
+    }
+    &__col {
+      &.col-xs-4 {
+        padding: 16px 35px;
+        align-items: center;
+        justify-content: flex-start;
+        .icon {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        // hardcoded to fix block height
+        .table__block {
+          height: 100%;
+          &.self-align-center {
+            align-self: center;
+            height: unset;
+            margin: 0;
+          }
+
+          &--description {
+            // min-height: 140px;
+            margin-bottom: auto;
+          }
+          &--action {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -13,8 +13,8 @@ const GetMemuraiTable = (props) => (
           <div className="table__block self-align-center">Memurai Editions</div>
         </div>
         <div className="col-xs-4 table__col">
-          <div className="table__block">
-            <div className="table__block--header">Developer Edition</div>
+          <div className="table__block ">
+            <div className="table__block--header ">Developer Edition</div>
             <div className="table__block--divider"></div>
             <div className="table__block--description">
               Intended for Development and Testing.
@@ -35,7 +35,7 @@ const GetMemuraiTable = (props) => (
             </div>
           </div>
         </div>
-        <div className="col-xs-4 table__col">
+        <div className="col-xs-4 table__col justify-center-lg">
           <div className="table__block">
             <div className="table__block--header">Enterprise Edition</div>
             <div className="table__block--divider"></div>
