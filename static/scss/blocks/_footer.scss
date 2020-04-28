@@ -45,7 +45,7 @@
     text-align: center;
     &-column {
       .header__logo {
-        margin-left: -45px;
+        margin-left: 0px;
         margin-bottom: 20px;
         &--img {
           width: 140px;
@@ -57,7 +57,7 @@
   &__terms {
     .link {
       display: inline-block;
-      text-transform: lowercase;
+      text-transform: capitalize;
       position: relative;
 
       &:not(:last-child) {

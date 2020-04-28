@@ -7,14 +7,16 @@ import { Link } from "components/ui";
 import { LogoFooter } from "svg";
 
 const Contacts = () => (
-  <Column className="align-center-xs align-start-lg footer__contacts-column">
+  <Column className="align-start-xs align-center-sm align-start-lg footer__contacts-column">
     <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
       <Link className="header__logo">
         <LogoFooter className={`header__logo--img`} />
       </Link>
     </NextLink>
-    <div className="footer__contacts">
-      Memurai 113 Cherry Street #11630 Seattle, WA 98104 <br />
+    <div className="footer__contacts text-left">
+      Memurai inc.
+      <br />
+      113 Cherry Street #11630 Seattle, WA 98104 <br />
       © 2019-2020 All rights reserved by Janea Systems, Inc.
       <br />
       <span className="footer__terms">
