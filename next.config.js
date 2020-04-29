@@ -21,12 +21,12 @@ module.exports = withCSS(withSass({
                     limit: 100000
                 }
             },
-            
+
         });
 
         return config;
     },
-      
+
 
     publicRuntimeConfig: {
         NODE_ENV: process.env.NODE_ENV,
@@ -62,7 +62,7 @@ module.exports = withCSS(withSass({
             articles.map(post => {
                 pathMap[`/blog/${post.link}`] = { page: `/blog/[slug]`, query: { slug: post.link } };
         });
-        
+
         return pathMap;
     }
 }));
