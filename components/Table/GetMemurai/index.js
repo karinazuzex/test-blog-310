@@ -10,11 +10,11 @@ const GetMemuraiTable = (props) => (
     <div className="table table--getmemurai">
       <Row theme="no-col" className="table__row table__row--header">
         <div className="col-xs-4 table__col">
-          <div className="table__block">Memurai Editions</div>
+          <div className="table__block self-align-center">Memurai Editions</div>
         </div>
         <div className="col-xs-4 table__col">
-          <div className="table__block">
-            <div className="table__block--header">Developer Edition</div>
+          <div className="table__block ">
+            <div className="table__block--header ">Developer Edition</div>
             <div className="table__block--divider"></div>
             <div className="table__block--description">
               Intended for Development and Testing.
@@ -23,14 +23,19 @@ const GetMemuraiTable = (props) => (
             </div>
             <div className="table__block--action">
               <NextLink passHref prefetch>
-                <Button as="a" type="solid" theme="red-white" onClick={props.onClickBtn}>
+                <Button
+                  as="a"
+                  type="solid"
+                  theme="red-white"
+                  onClick={props.onClickBtn}
+                >
                   Free download
                 </Button>
               </NextLink>
             </div>
           </div>
         </div>
-        <div className="col-xs-4 table__col">
+        <div className="col-xs-4 table__col justify-center-lg">
           <div className="table__block">
             <div className="table__block--header">Enterprise Edition</div>
             <div className="table__block--divider"></div>
@@ -139,9 +144,7 @@ const GetMemuraiTable = (props) => (
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">Support</div>
         <div className="col-xs-4 table__col">Community - Stack Overflow</div>
-        <div className="col-xs-4 table__col">
-          Premium email and web support
-        </div>
+        <div className="col-xs-4 table__col">Premium email and web support</div>
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">Main purpose</div>
@@ -156,7 +159,9 @@ const GetMemuraiTable = (props) => (
         <div className="col-xs-4 table__col">None</div>
       </Row>
       <Row theme="no-col" className="table__row">
-        <div className="col-xs-4 table__col">Production use <span className="overtext">*</span></div>
+        <div className="col-xs-4 table__col">
+          Production use <span className="overtext">*</span>
+        </div>
         <div className="col-xs-4 table__col">
           <div className="icon icon--unchecked" />
         </div>
@@ -168,7 +173,12 @@ const GetMemuraiTable = (props) => (
         <div className="col-xs-4 table__col"></div>
         <div className="col-xs-4 table__col">
           <NextLink passHref prefetch>
-            <Button as="a" type="solid" theme="red-white" onClick={props.onClickBtn}>
+            <Button
+              as="a"
+              type="solid"
+              theme="red-white"
+              onClick={props.onClickBtn}
+            >
               Free download
             </Button>
           </NextLink>

@@ -9,6 +9,14 @@
   }
 }
 
+@media screen and (min-width: $smallMobileWidth) {
+  .f-menu {
+    &__item {
+      text-align: left;
+    }
+  }
+}
+
 @media screen and (min-width: $tabletWidth) {
   .f-menu {
     &__item {
