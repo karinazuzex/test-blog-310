@@ -24,10 +24,10 @@
     }
   }
   &--getmemurai {
-    min-width: 680px;
+    min-width: 580px;
     font-size: 16px;
     .button {
-      width: calc(100% - 90px);
+      width: calc(100% - 0px);
       margin: auto;
     }
     .overtext {
@@ -41,6 +41,7 @@
       align-items: flex-start;
       justify-content: flex-start;
     }
+
     & .table__block {
       display: flex;
       flex-direction: column;
@@ -64,6 +65,34 @@
         width: 100%;
         margin-top: 60px;
         margin-bottom: 30px;
+      }
+    }
+  }
+  &__col {
+    &.col-xs-4 {
+      padding: 10px 10px;
+      align-items: center;
+      justify-content: flex-start;
+      .icon {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      // hardcoded to fix block height
+      .table__block {
+        height: 100%;
+        &.self-align-center {
+          align-self: center;
+          height: unset;
+          margin: 0;
+        }
+
+        &--description {
+          // min-height: 140px;
+          margin-bottom: auto;
+        }
+        &--action {
+          margin-top: 30px;
+        }
       }
     }
   }
