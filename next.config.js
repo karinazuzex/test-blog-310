@@ -5,7 +5,7 @@ const { getPosts } = require("./get-posts");
 
 module.exports = withCSS(
   withSass({
-    webpack(config) {
+    webpack(config, { defaultLoaders }) {
       const originalEntry = config.entry;
       //   Possible solution to transpile swiper and dom7
       //   ***** https://github.com/zeit/next.js/blob/master/errors/invalid-resolve-alias.md
@@ -28,18 +28,11 @@ module.exports = withCSS(
       });
       //   Possible solution to transpile swiper and dom7
       //   ***** https://github.com/kidjp85/react-id-swiper/issues/273
-      //   config.module.rules.push({
-      //     test: /\.m?js$/,
-      //     include: /(node_modules)/,
-      //     exclude: /(node_modules[\/\\](?!(swiper|dom7)[\/\\]))/,
-      //     use: {
-      //       loader: "next-babel-loader",
-      //       options: {
-      //         presets: ["@babel/preset-env"],
-      //         plugins: ["@babel/plugin-proposal-object-rest-spread"],
-      //       },
-      //     },
-      //   });
+      config.module.rules.push({
+        exclude: [/node_modules\/(?!(swiper|dom7)\/).*/, /\.test\.js(x)?$/],
+        test: /\.js(x)?$/,
+        use: defaultLoaders.babel,
+      });
       return config;
     },
 
