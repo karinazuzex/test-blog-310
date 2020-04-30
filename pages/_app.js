@@ -107,6 +107,7 @@ class MyApp extends App {
                                     type="text/javascript"
                                     async
                                 />
+                                {/* <script src="https://unpkg.com/swiper/js/swiper.min.js" async/> */}
                             </Head>
                             <Component {...pageProps} />
                             <ReactTooltip
