@@ -1,72 +1,57 @@
 import React, { Fragment } from "react";
 import { reviews } from "content";
-import Swiper from 'swiper';
 import { Container } from "components/grid";
 import { Stars } from "components/ui";
+import Slider from "react-slick";
 
 import UserPromo from "components/User/Promo";
 
-class ReviewsSection extends React.Component {
-  state = {};
-
-  componentDidMount() {
-    const swiper = new Swiper(".swiper-container", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-    this.setState({ swiper });
-    window.dispatchEvent(new Event("resize"));
-  }
-
-  render() {
-    return reviews && reviews.length ? (
-      <section className="section section__reviews bg-white-grey separator-bt">
-        <Container>
-          <div className="block text-center">
-            <Stars amount={5} className="block__elem" />
-            <h3 className="block__title block__elem--lg">
-              The reviews are in.
-              <br />
-              <span className="text-normal">People love Memurai</span>
-            </h3>
-          </div>
-          <div className="swiper-container">
-            <div className="swiper-wrapper">
-              {reviews.map(
-                ({ id, text, link, image, logo, name, position }) => (
-                  <div className="swiper-slide" key={id}>
-                    <Fragment>
-                      <section className="section section__review-short">
-                        <Container>
-                          <div className="block text-center">
-                            <p className="block__elem text-light">
-                              &quot;{text}&quot;
-                            </p>
-                          </div>
-                          <UserPromo
-                            name={name}
-                            position={position}
-                            imagePath={image}
-                            logoPath={logo}
-                            link={link}
-                          />
-                        </Container>
-                      </section>
-                    </Fragment>
-                  </div>
-                )
-              )}
-            </div>
-
-            <div className="swiper-button-next"></div>
-            <div className="swiper-button-prev"></div>
-          </div>
-        </Container>
-      </section>
-    ) : null;
-  }
-}
+const ReviewsSection = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  return reviews && reviews.length ? (
+    <section className="section section__reviews bg-white-grey separator-bt">
+      <Container>
+        <div className="block text-center">
+          <Stars amount={5} className="block__elem" />
+          <h3 className="block__title block__elem--lg">
+            The reviews are in.
+            <br />
+            <span className="text-normal">People love Memurai</span>
+          </h3>
+        </div>
+        <div className="slider-wrapper">
+          <Slider {...settings}>
+            {reviews.map(({ id, text, link, image, logo, name, position }) => (
+              <div className="slider-slide" key={id}>
+                <Fragment>
+                  <Container>
+                    <div className="block text-center">
+                      <p className="block__elem text-light">
+                        &quot;{text}&quot;
+                      </p>
+                    </div>
+                    <UserPromo
+                      name={name}
+                      position={position}
+                      imagePath={image}
+                      logoPath={logo}
+                      link={link}
+                    />
+                  </Container>
+                </Fragment>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </Container>
+    </section>
+  ) : null;
+};
 
 export default ReviewsSection;
