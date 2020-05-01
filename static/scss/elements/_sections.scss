@@ -75,6 +75,22 @@
     padding-top: 60px;
     padding-bottom: 80px;
   }
+
+  &__reviews {
+    padding-bottom: 130px;
+    .slick-arrow::before {
+      color: $black;
+    }
+    .slick {
+      &-prev {
+        left: -18px;
+      }
+      &-next {
+        right: -18px;
+      }
+    }
+  }
+
   &__support {
     button {
       position: absolute;
@@ -104,6 +120,9 @@
         }
       }
     }
+    &__reviews {
+      padding-bottom: 130px;
+    }
   }
 }
 
@@ -116,6 +135,9 @@
         }
       }
     }
+    &__reviews {
+      padding-bottom: 130px;
+    }
   }
 }
 
@@ -125,7 +147,7 @@
     padding-bottom: 120px;
 
     &__reviews {
-      padding-bottom: 90px;
+      padding-bottom: 150px;
     }
 
     &__promo {
@@ -178,7 +200,7 @@
     padding-bottom: 140px;
 
     &__reviews {
-      padding-bottom: 70px;
+      padding-bottom: 170px;
     }
 
     &__promo {
