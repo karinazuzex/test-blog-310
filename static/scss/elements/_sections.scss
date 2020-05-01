@@ -93,73 +93,10 @@
       }
     }
   }
-  &__reviews {
-    .swiper-container {
-      .section__review-short {
-        padding-top: 0px;
-        padding-bottom: 0px;
-      }
-
-      .swiper-button-next,
-      .swiper-button-prev {
-        border-radius: 50%;
-        background-color: black;
-        width: 30px;
-        height: 30px;
-        top: 30%;
-      }
-      .block__elem.text-light {
-        padding: 0 30px;
-      }
-      .user-promo__info {
-        margin-right: 0px;
-      }
-      .user-promo__icon {
-        margin-right: 6px;
-      }
-      .swiper-button-next::after,
-      .swiper-button-prev::after {
-        font-size: 1em;
-        font-weight: 900;
-        color: white;
-      }
-      .user-promo {
-        padding: 0 20px;
-      }
-    }
-  }
 }
 
 @media screen and (min-width: $mobileWidth) {
   .section {
-    &__reviews {
-      .swiper-container {
-        .swiper-button-next,
-        .swiper-button-prev {
-          background-color: black;
-          width: 40px;
-          height: 40px;
-        }
-        .block__elem.text-light {
-          padding: 0 60px;
-        }
-        .user-promo__info {
-          margin-right: 20px;
-        }
-        .user-promo__icon {
-          margin-right: 10px;
-        }
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
-          font-size: 1em;
-          font-weight: 900;
-          color: white;
-        }
-        .user-promo {
-          padding: 0 40px;
-        }
-      }
-    }
     &__support {
       .block__blog {
         &.col-md-6 {
@@ -172,26 +109,6 @@
 
 @media screen and (min-width: $phabletWidth) {
   .section {
-    &__reviews {
-      padding-bottom: 70px;
-      .swiper-container {
-        .swiper-button-next,
-        .swiper-button-prev {
-          background-color: black;
-          width: 60px;
-          height: 60px;
-        }
-        .block__elem.text-light {
-          padding: 0 160px;
-        }
-        .user-promo__info {
-          margin-right: 46px;
-        }
-        .user-promo__icon {
-          margin-right: 16px;
-        }
-      }
-    }
     &__support {
       .block__blog {
         &.col-md-6 {

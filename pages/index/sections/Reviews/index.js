@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { reviews } from "content";
-import Swiper from "swiper";
 import { Container } from "components/grid";
 import { Stars } from "components/ui";
 
