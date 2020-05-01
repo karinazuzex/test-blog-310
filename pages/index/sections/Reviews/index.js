@@ -1,38 +1,24 @@
 import React, { Fragment } from "react";
 import { reviews } from "content";
-import Swiper from 'swiper';
+import Swiper from "swiper";
 import { Container } from "components/grid";
 import { Stars } from "components/ui";
 
 import UserPromo from "components/User/Promo";
 
-class ReviewsSection extends React.Component {
-  state = {};
-
-  componentDidMount() {
-    const swiper = new Swiper(".swiper-container", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-    this.setState({ swiper });
-    window.dispatchEvent(new Event("resize"));
-  }
-
-  render() {
-    return reviews && reviews.length ? (
-      <section className="section section__reviews bg-white-grey separator-bt">
-        <Container>
-          <div className="block text-center">
-            <Stars amount={5} className="block__elem" />
-            <h3 className="block__title block__elem--lg">
-              The reviews are in.
-              <br />
-              <span className="text-normal">People love Memurai</span>
-            </h3>
-          </div>
-          <div className="swiper-container">
+const ReviewsSection = () =>
+  reviews && reviews.length ? (
+    <section className="section section__reviews bg-white-grey separator-bt">
+      <Container>
+        <div className="block text-center">
+          <Stars amount={5} className="block__elem" />
+          <h3 className="block__title block__elem--lg">
+            The reviews are in.
+            <br />
+            <span className="text-normal">People love Memurai</span>
+          </h3>
+        </div>
+        {/* <div className="swiper-container">
             <div className="swiper-wrapper">
               {reviews.map(
                 ({ id, text, link, image, logo, name, position }) => (
@@ -62,11 +48,9 @@ class ReviewsSection extends React.Component {
 
             <div className="swiper-button-next"></div>
             <div className="swiper-button-prev"></div>
-          </div>
-        </Container>
-      </section>
-    ) : null;
-  }
-}
+          </div> */}
+      </Container>
+    </section>
+  ) : null;
 
 export default ReviewsSection;

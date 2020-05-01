@@ -7,9 +7,6 @@ module.exports = withCSS(
   withSass({
     webpack(config, { defaultLoaders }) {
       const originalEntry = config.entry;
-      //   Possible solution to transpile swiper and dom7
-      //   ***** https://github.com/zeit/next.js/blob/master/errors/invalid-resolve-alias.md
-      //   config.resolve.alias = { ...config.resolve.alias };
       config.entry = async () => {
         const entries = await originalEntry();
         if (entries["main.js"]) {
@@ -25,13 +22,6 @@ module.exports = withCSS(
             limit: 100000,
           },
         },
-      });
-      //   Possible solution to transpile swiper and dom7
-      //   ***** https://github.com/kidjp85/react-id-swiper/issues/273
-      config.module.rules.push({
-        exclude: [/node_modules\/(?!(swiper|dom7)\/).*/, /\.test\.js(x)?$/],
-        test: /\.js(x)?$/,
-        use: defaultLoaders.babel,
       });
       return config;
     },
