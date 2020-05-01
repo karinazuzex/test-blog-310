@@ -122,6 +122,9 @@
     }
     &__reviews {
       padding-bottom: 130px;
+      .slick-arrow::before {
+        font-size: 25px;
+      }
     }
   }
 }
@@ -137,6 +140,9 @@
     }
     &__reviews {
       padding-bottom: 130px;
+      .slick-arrow::before {
+        font-size: 30px;
+      }
     }
   }
 }
