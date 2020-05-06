@@ -52,18 +52,20 @@ const Footer = () => (
           </Column>
         </Col>
         <Col attributes="xs-12 lg-4" className="footer__col">
-          <Column className="align-center-xs align-start-lg">
-            <div className="footer__header text-center--mobile">
+        <Column className="align-center-xs">
+          <Column className="align-start-xs align-start-lg">
+            <div className="footer__header footer__header--subscribe">
               Subscribe to our newsletter
             </div>
             <SubscribeForm />
-          </Column>
-        </Col>
-        <Col
+            <Col
           attributes="xs-12 lg-12"
           className="footer__col footer__col--onlymobile "
         >
           <Contacts />
+        </Col>
+          </Column>
+          </Column>
         </Col>
       </Row>
     </Container>
