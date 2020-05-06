@@ -10,11 +10,11 @@ const GetMemuraiTable = (props) => (
     <div className="table table--getmemurai">
       <Row theme="no-col" className="table__row table__row--header">
         <div className="col-xs-4 table__col">
-          <div className="table__block">Memurai Editions</div>
+          <div className="table__block text-center">Memurai Editions</div>
         </div>
         <div className="col-xs-4 table__col">
           <div className="table__block ">
-            <div className="table__block--header ">Developer Edition</div>
+            <div className="table__block--header text-center">Developer Edition</div>
             <div className="table__block--divider"></div>
             <div className="table__block--description">
               Intended for Development and Testing.
@@ -37,7 +37,7 @@ const GetMemuraiTable = (props) => (
         </div>
         <div className="col-xs-4 table__col justify-center-lg">
           <div className="table__block">
-            <div className="table__block--header">Enterprise Edition</div>
+            <div className="table__block--header text-center">Enterprise Edition</div>
             <div className="table__block--divider"></div>
             <div className="table__block--description">
               Intended for Production use with no <br />
