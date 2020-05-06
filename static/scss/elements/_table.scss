@@ -20,6 +20,10 @@
       .table__col {
         padding: 5px;
         font-size: 14px;
+        line-height: 20px;
+        .label__solid {
+          line-height: 16px;
+        }
       }
     }
   }
@@ -192,6 +196,10 @@
         .table__col {
           padding: 16px 30px;
           font-size: 16px;
+          line-height: 28px;
+          .label__solid {
+            line-height: 20px;
+          }
         }
       }
     }
