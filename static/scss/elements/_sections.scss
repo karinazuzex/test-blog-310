@@ -13,6 +13,9 @@
         background-position-y: center;
         .block__postfix {
           margin-bottom: 0px;
+          &.block__postfix--promo-home {
+            text-align: center;
+          }
         }
         @media screen and (max-width: 1020px) {
           background-image: url(/static/images/background-landscape.png);
@@ -25,6 +28,7 @@
           h1 {
             max-width: 550px;
             margin: auto;
+            margin-bottom: 20px;
             font-size: 30px;
             line-height: 44px;
           }
@@ -41,9 +45,15 @@
       .block__description {
         white-space: nowrap;
       }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 599px) {
         .block__description {
           white-space: unset;
+        }
+        br {
+          display: none;
+        }
+        .br-mobile {
+          display: initial;
         }
       }
     }
@@ -55,6 +65,9 @@
       font-size: 13px;
       text-align: left;
       line-height: 20px;
+      &.block__postfix--promo-home {
+        text-align: center;
+      }
     }
     &--main {
       padding-bottom: 100px;
@@ -168,6 +181,11 @@
         &.col-md-6 {
           flex-basis: 48%;
         }
+      }
+    }
+    &__promo--about {
+      br {
+        display: initial;
       }
     }
     &__reviews {

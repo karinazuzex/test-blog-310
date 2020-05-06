@@ -7,7 +7,7 @@ import { Link } from "components/ui";
 import { LogoFooter } from "svg";
 
 const Contacts = () => (
-  <Column className="align-start-xs align-center-sm align-start-lg footer__contacts-column">
+  <Column className="align-start-xs align-start-lg footer__contacts-column">
     <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
       <Link className="header__logo">
         <LogoFooter className={`header__logo--img`} />

@@ -28,6 +28,7 @@
     background-image: url(/static/images/background-footer.png);
     filter: contrast(150%);
     background-position-y: 50%;
+    opacity: 70%;
   }
   &__row {
     margin-bottom: -50px;
@@ -44,7 +45,9 @@
       display: none;
     }
     &--onlymobile {
+      margin-top: 60px;
       display: inline-block;
+      padding: 0;
     }
   }
 
@@ -53,6 +56,10 @@
     color: $white;
     font-weight: 500;
     margin-bottom: 10px;
+    // &--subscribe {
+    //   align-self: flex-start;
+    //   margin-left: 30px;
+    // }
   }
 
   &__contacts {
@@ -133,7 +140,9 @@
       justify-content: unset;
     }
     button {
-      max-width: 100%;
+      width: initial;
+      padding: 10px 30px;
+      margin-left: 0;
       height: 55px;
       line-height: 0;
       &.disabled {
@@ -158,7 +167,7 @@
       content: "";
       position: absolute;
       z-index: -1;
-      top: 370px;
+      top: 360px;
       left: 0;
       width: 100%;
       height: calc(100% - 360px);

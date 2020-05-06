@@ -17,27 +17,22 @@
     color: $black;
     transition: background-color $defaultTransition;
     &--link {
+      top: 5px;
+      left: -25px;
+      width: 14px;
+      height: 14px;
       position: absolute;
-      left: -60px;
       background: transparent;
-      svg path{
-        fill: #989898!important;
+      svg path {
+        fill: #989898 !important;
       }
-      &-nohover{
-        &:hover{
+      &-nohover {
+        &:hover {
           background: transparent;
         }
       }
+    }
 
-    }
-    @media screen and (max-width: 500px) {
-      &--link {
-        top: 5px;
-        left: -25px;
-        width: 14px;
-        height: 14px;
-      }
-    }
     &--newsletter {
       svg {
         width: 32px;
@@ -55,8 +50,8 @@
     &:hover {
       background-color: $white;
     }
-    
-    &-nohover:hover{
+
+    &-nohover:hover {
       background-color: transparent;
     }
   }
@@ -124,3 +119,35 @@
     }
   }
 }
+
+@media screen and (min-width: $mobileWidth) {
+  .social__item--link {
+    width: 18px;
+    height: 18px;
+    top: 5px;
+    left: -30px;
+  }
+}
+
+@media screen and (min-width: $phabletWidth) {
+  .social__item--link {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    top: 0;
+    left: -60px;
+  }
+}
+
+//  &--link {
+//       position: absolute;
+//       background: transparent;
+//       svg path {
+//         fill: #989898 !important;
+//       }
+//       &-nohover {
+//         &:hover {
+//           background: transparent;
+//         }
+//       }
+//     }
