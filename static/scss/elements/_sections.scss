@@ -67,6 +67,7 @@
   &__social {
     border-top: 1px solid #e4e5e7;
   }
+
   &__legal {
     padding-top: 130px;
   }
@@ -123,6 +124,15 @@
       &.col-md-6 {
         flex-basis: 100%;
       }
+    }
+  }
+  &__faq {
+    .col-xs-12 {
+      // .social__item--link {
+      //   left: -30px;
+      //   width: 20px;
+      //   height: 20px;
+      // }
     }
   }
 }
