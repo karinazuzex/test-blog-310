@@ -12,15 +12,15 @@ const AdditionalInfoSection = () => (
         <Container>
             <div className="block text-center">
                 <h3 className="block__title block__elem">
-                    Memurai DevEd available from NuGet
+                    Nuget package for Memurai Developer
                 </h3>
                 <div className="block__description">
-                    Recently we added Memurai DevEd to the Nuget gallery.&nbsp;
-                    <NextLink href="https://www.nuget.org/packages/MemuraiDevEd/" passHref prefetch>
+                    Get Memurai Developer&nbsp;
+                    <NextLink href="https://www.nuget.org/packages/MemuraiDeveloper/" passHref prefetch>
                         <Link target="_blank" theme="red">
-                            More details »
+                        from Nuget
                         </Link>
-                    </NextLink>
+                    </NextLink>.
                 </div>
             </div>
         </Container>
@@ -29,15 +29,15 @@ const AdditionalInfoSection = () => (
         <Container>
             <div className="block text-center">
                 <h3 className="block__title block__elem">
-                    Chocolatey package for Memurai DevEd <br/>is available now
+                    Chocolatey package for Memurai Developer
                 </h3>
                 <div className="block__description">
-                    Installing Memurai DevEd on Windows with chocolatey is available now.&nbsp;
-                    <NextLink href="https://chocolatey.org/packages/MemuraiDevEd" passHref prefetch>
+                    Install Memurai Developer&nbsp;
+                    <NextLink href="https://chocolatey.org/packages/memurai-developer/" passHref prefetch>
                         <Link target="_blank" theme="red">
-                            More details »
+                            with Chocolatey
                         </Link>
-                    </NextLink>
+                    </NextLink>.
                 </div>
             </div>
         </Container>
