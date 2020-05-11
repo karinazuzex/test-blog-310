@@ -138,6 +138,22 @@ class MyApp extends App {
                   name="msapplication-config"
                   content="/static/favicon/browserconfig.xml"
                 />
+                {/* Twitter card meta */}
+                <meta
+                  name="twitter:card"
+                  content="summary" />
+                <meta
+                  name="twitter:site"
+                  content="@MemuraiHQ" />
+                <meta
+                  name="twitter:title"
+                  content= {head.title[router.route] || head.title.defaultValue} />
+                <meta
+                  name="twitter:description"
+                  content={head.description[router.route] || head.description.defaultValue} />
+                <meta
+                  name="twitter:image"
+                  content="/static/favicon/180x180.png" />
                 <link
                   key="manifest"
                   rel="manifest"
