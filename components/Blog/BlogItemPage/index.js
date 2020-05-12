@@ -35,11 +35,10 @@ const BlogItemPage = ({data}) => {
     const time = Math.ceil(body.split(/\s/).length / 200);
     head.title[`/blog/${slug}`]= title;
     head.description[`/blog/${slug}`]= description.description;
-    console.log(111, head);
-    
+
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">
-            {/* <Head title={seoTitle} description={seoDescription} img={seoImage.url}/> */}
+            <Head title={seoTitle} description={seoDescription} img={seoImage.url}/>
             <Container>
                 <div>
                     <IconsShare/>

@@ -153,7 +153,7 @@ class MyApp extends App {
                   content={head.description[router.route] || head.description.defaultValue} />
                 <meta
                   name="twitter:image"
-                  content="/static/favicon/180x180.png" />
+                  content="/static/favicon/180x180.png/" />
                 <link
                   key="manifest"
                   rel="manifest"
