@@ -37,16 +37,9 @@ const BlogPage = ({data, currentPage, router}) => {
                             />
                         </div>
                         <div className="blog-category">
-                            <div className="blog-subscribe__line"></div>
-                            <div className="blog-subscribe">
-                                <p className="blog__subtitle blog__subtitle--height">newsletter</p>
-                                <p className="blog-subscribe__title">Receive updates about key news and special offers.</p>
-                                <SubscribeForm/>
-                            </div>
-
                             <div className="blog-category-block">
                                 <p className="blog__subtitle blog__subtitle--bottom">categories</p>
-                                <Category 
+                                <Category
                                     blogs={data.categories}
                                 />
                             </div>
@@ -59,16 +52,16 @@ const BlogPage = ({data, currentPage, router}) => {
                                 <RSSLogo />
                             </Link>
                         </div>
-                        <Pagination 
+                        <Pagination
                             router={router}
                             categories={data.categories}
-                            postsCount={data._allArticlesMeta.count} 
+                            postsCount={data._allArticlesMeta.count}
                             currentPage={currentPage}
                         />
                     </div>
 
                 </Container>
-                
+
             </div>
 
         </section>
