@@ -139,14 +139,14 @@
             }
             &--open {
                 svg {
-                    width: 30px;
+                    width: 22px;
                 }
             }
             &--close {
                 background-color: $black;
                 opacity: 0;
                 svg {
-                    width: 25px;
+                    width: 18px;
                     fill: $white;
                 }
             }
