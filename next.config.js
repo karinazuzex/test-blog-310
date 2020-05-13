@@ -33,6 +33,8 @@ module.exports = withCSS(
       MEMURAI_VERSION: process.env.MEMURAI_VERSION,
       DOWNLOAD_BUTTON_TEXT: process.env.DOWNLOAD_BUTTON_TEXT,
       REDIS_COMPAT_FULLVER: process.env.REDIS_COMPAT_FULLVER,
+      SHOW_DRAFTS : process.env.SHOW_DRAFTS,
+      DISABLE_COVID19 : process.env.DISABLE_COVID19
     },
 
     async exportPathMap() {
