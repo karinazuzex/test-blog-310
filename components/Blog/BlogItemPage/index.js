@@ -1,5 +1,6 @@
 import { Container} from "components/grid";
 import Head from 'components/Head';
+import { head } from "config";
 import { Link } from "components/ui";
 import NextLink from "next/link";
 import SubscribeForm from "components/Form/Subscribe";
@@ -19,7 +20,8 @@ const BlogItemPage = ({data}) => {
             footerImage,
             headerImage,
             _firstPublishedAt,
-            publishDateOverride
+            publishDateOverride,
+            slug
         } = data.allArticles[0];
     let seoTitle = '', seoDescription = '', seoImage = { url: "/static/favicon/mstile-150x150.png"};
     if (description) {
@@ -31,6 +33,8 @@ const BlogItemPage = ({data}) => {
     let convertedHtml = ReactHtmlParser(rawMarkup, helpers.parserOptions);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
+    head.title[`/blog/${slug}`]= title;
+    head.description[`/blog/${slug}`]= description.description;
 
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">
