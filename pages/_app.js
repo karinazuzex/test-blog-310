@@ -22,6 +22,7 @@ import client from "libs/apollo";
 
 class MyApp extends App {
   constructor(props) {
+    
     super(props);
     // Store routes avoiding duplication into GA, cause nextProps are similar to current using next/router
     this.state = {
@@ -30,6 +31,7 @@ class MyApp extends App {
     };
   }
   componentDidMount() {
+    console.log(111, this.props.reduxStore.getState());
     let { analyticsState } = this.state;
     const { router } = this.props;
 
@@ -48,11 +50,7 @@ class MyApp extends App {
 
     this.sendPageview(router.route);
 
-    window.addEventListener('scroll', function (e) {
-        if(this.props.reduxStore.getState().notifications){
-            this.props.reduxStore.dispatch(removeAll())
-        }
-    });
+    window.addEventListener('scroll', this.onScroll, false);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -82,6 +80,12 @@ class MyApp extends App {
       this.setState({ analyticsState: true });
       analytics.init(true);
       this.sendPageview(router.route);
+    }
+  };
+
+  onScroll = () => {
+    if(this.props && this.props.reduxStore.getState().notifications){
+        this.props.reduxStore.dispatch(removeAll())
     }
   };
 
