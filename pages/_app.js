@@ -9,6 +9,7 @@ import { withRouter } from "next/router";
 import ReactTooltip from "react-tooltip";
 
 import withReduxStore from "libs/withReduxStore";
+import { removeAll } from "react-notification-system-redux";
 import { analytics, head, routes } from "config";
 import { ApolloProvider as ApolloHooksProvider } from "@apollo/react-hooks";
 import { ApolloProvider } from "react-apollo";
@@ -22,7 +23,6 @@ import client from "libs/apollo";
 class MyApp extends App {
   constructor(props) {
     super(props);
-
     // Store routes avoiding duplication into GA, cause nextProps are similar to current using next/router
     this.state = {
       analyticsState: false,
@@ -47,6 +47,12 @@ class MyApp extends App {
     this.setState({ analyticsState });
 
     this.sendPageview(router.route);
+
+    window.addEventListener('scroll', function (e) {
+        if(this.props.reduxStore.getState().notifications){
+            this.props.reduxStore.dispatch(removeAll())
+        }
+    });
   }
 
   componentWillReceiveProps(nextProps) {
