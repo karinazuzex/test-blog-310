@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import NextLink from "next/link";
 import { info, error, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "components/ReCaptcha";
+import Router from 'next/router';
 
 import { validators, helpers } from "utils";
 import { consts, exceptions, types, routes, analytics } from "config";
@@ -100,6 +101,12 @@ class SubscribeForm extends Component {
         }
     };
 
+    handleRouteChange = () => {
+        console.log(111, 'changed route');
+        const { dispatch } = this.props;
+            dispatch(removeAll());
+    }
+
     submit = async (token) => {
         const { dispatch } = this.props;
         if (!token) {
@@ -166,7 +173,7 @@ class SubscribeForm extends Component {
     render() {
         const disabled = this.state.processing || !this.state.recaptchaLoaded;
         const buttonDisabled = !this.state.email || !this.state.agreement ? 'disabled' : '';
-        
+        Router.events.on('routeChangeStart', this.handleRouteChange)
         return (
 
             <Fragment>
