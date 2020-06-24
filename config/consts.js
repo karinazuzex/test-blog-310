@@ -13,6 +13,7 @@ export const WEBSITE_DOMAIN = process.WEBSITE_DOMAIN || (
         : "https://www.memurai.com"
 );
 export const REDIS_COMPAT_FULLVER = env.REDIS_COMPAT_FULLVER || "5.0.9";
+export const MEMURAI_VERSION_SHORT = env.MEMURAI_VERSION_SHORT || "1.0.8";
 export const MEMURAI_VERSION = env.MEMURAI_VERSION || "1.0.8 - Redis API " + REDIS_COMPAT_FULLVER;
 export const DOWNLOAD_BUTTON_TEXT =
     env.DOWNLOAD_BUTTON_TEXT

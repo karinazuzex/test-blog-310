@@ -3,7 +3,8 @@ import React from "react";
 import NextLink from "next/link";
 import { Button } from "components/ui";
 import { Row } from "components/grid";
-import { routes } from "config";
+import { consts, routes } from "config";
+
 
 const GetMemuraiTable = (props) => (
   <div className="table__wrapper">
@@ -55,8 +56,8 @@ const GetMemuraiTable = (props) => (
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">Version</div>
-        <div className="col-xs-4 table__col justify-center">2.0.0</div>
-        <div className="col-xs-4 table__col justify-center">2.0.0</div>
+        <div className="col-xs-4 table__col justify-center">{consts.MEMURAI_VERSION_SHORT}</div>
+        <div className="col-xs-4 table__col justify-center">{consts.MEMURAI_VERSION_SHORT}</div>
       </Row>
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col">LRU eviction</div>
