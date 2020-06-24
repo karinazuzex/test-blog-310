@@ -31,6 +31,7 @@ module.exports = withCSS(
       GTM_TRACKING_ID: process.env.GTM_TRACKING_ID,
       WEBSITE_DOMAIN: process.env.WEBSITE_DOMAIN,
       MEMURAI_VERSION: process.env.MEMURAI_VERSION,
+      MEMURAI_VERSION_SHORT: process.env.MEMURAI_VERSION_SHORT,
       DOWNLOAD_BUTTON_TEXT: process.env.DOWNLOAD_BUTTON_TEXT,
       REDIS_COMPAT_FULLVER: process.env.REDIS_COMPAT_FULLVER,
       SHOW_DRAFTS : process.env.SHOW_DRAFTS,
