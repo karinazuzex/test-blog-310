@@ -1,3 +1,27 @@
+// Next-gen format backgrounds section
+.no-webp .section__promo--home.bg-black {
+  background-image: url(/static/images/background-full.png);
+}
+.webp .section__promo--home.bg-black {
+  background-image: url(/static/images/background-full.webp);
+}
+@media screen and (max-width: 1020px) {
+  .no-webp .section__promo--home.bg-black {
+    background-image: url(/static/images/background-landscape.png);
+  }
+  .webp .section__promo--home.bg-black {
+    background-image: url(/static/images/background-landscape.webp);
+  }
+}
+@media screen and (max-width: 400px) {
+  .no-webp .section__promo--home.bg-black {
+    background-image: url(/static/images/background-mobile.png);
+  }
+  .webp .section__promo--home.bg-black {
+    background-image: url(/static/images/background-mobile.webp);
+  }
+}
+// Core styles section
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -7,7 +31,6 @@
       &.bg-black {
         padding-bottom: 30px;
         padding-top: 130px;
-        background-image: url(/static/images/background-full.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position-y: center;
@@ -18,7 +41,6 @@
           }
         }
         @media screen and (max-width: 1020px) {
-          background-image: url(/static/images/background-landscape.png);
           background-size: cover;
           background-position-y: 70px;
           padding-top: 100px;
@@ -32,9 +54,6 @@
             font-size: 30px;
             line-height: 44px;
           }
-        }
-        @media screen and (max-width: 400px) {
-          background-image: url(/static/images/background-mobile.png);
         }
       }
     }
