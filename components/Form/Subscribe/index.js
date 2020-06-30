@@ -102,7 +102,6 @@ class SubscribeForm extends Component {
     };
 
     handleRouteChange = () => {
-        console.log(111, 'changed route');
         const { dispatch } = this.props;
             dispatch(removeAll());
     }

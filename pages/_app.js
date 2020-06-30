@@ -22,7 +22,6 @@ import client from "libs/apollo";
 
 class MyApp extends App {
   constructor(props) {
-    
     super(props);
     // Store routes avoiding duplication into GA, cause nextProps are similar to current using next/router
     this.state = {
@@ -31,7 +30,6 @@ class MyApp extends App {
     };
   }
   componentDidMount() {
-    console.log(111, this.props.reduxStore.getState());
     let { analyticsState } = this.state;
     const { router } = this.props;
 
