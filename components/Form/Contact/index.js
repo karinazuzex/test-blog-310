@@ -195,8 +195,14 @@ class ContactForm extends Component {
             });
             dispatch(mailerOperations.mailchimpSubscribe(email));
         }
+
+        // Get user geolocation - replace with Memurai key after registering on https://app.ipgeolocation.io/
+        const ipgeolocation_key = 'e8237f0c4299474bbf794810afe749a2';
+        const userLocation = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${ipgeolocation_key}`);
+
+        // Send user message to Memurai team
         const response = await axios.post("/api/contact", {
-            name, email, subject, message,
+            name, email, subject, message, userLocation
         });
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
