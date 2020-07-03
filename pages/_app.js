@@ -22,7 +22,6 @@ import client from "libs/apollo";
 
 class MyApp extends App {
   constructor(props) {
-    
     super(props);
     // Store routes avoiding duplication into GA, cause nextProps are similar to current using next/router
     this.state = {
@@ -31,7 +30,6 @@ class MyApp extends App {
     };
   }
   componentDidMount() {
-    console.log(111, this.props.reduxStore.getState());
     let { analyticsState } = this.state;
     const { router } = this.props;
 
@@ -221,14 +219,21 @@ class MyApp extends App {
                   sizes="16x16"
                   href="/static/favicon/16x16.png"
                 />
-                  <script
-                    key="cookiebot"
-                    id="Cookiebot"
-                    src="https://consent.cookiebot.com/uc.js"
-                    data-cbid="ad4b92a8-bdac-4756-852d-30e83d1feba3"
-                    type="text/javascript"
-                    async
-                  />
+                <script
+                  key="modernizr"
+                  id="Modernizr"
+                  src="/static/scripts/modernizr.js"
+                  type="text/javascript"
+                  async
+                />
+               <script
+                  key="cookiebot"
+                  id="Cookiebot"
+                  src="https://consent.cookiebot.com/uc.js"
+                  data-cbid="ad4b92a8-bdac-4756-852d-30e83d1feba3"
+                  type="text/javascript"
+                  async
+                />
                 <script
                   key="recaptcha"
                   src="https://www.google.com/recaptcha/api.js?render=explicit"
