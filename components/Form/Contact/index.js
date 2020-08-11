@@ -196,8 +196,8 @@ class ContactForm extends Component {
             dispatch(mailerOperations.mailchimpSubscribe(email));
         }
 
-        // Get user geolocation - replace with Memurai key after registering on https://app.ipgeolocation.io/
-        const ipgeolocation_key = 'e8237f0c4299474bbf794810afe749a2';
+        // Key from https://app.ipgeolocation.io/
+        const ipgeolocation_key = '78ba6dc1da634fc2a5d91da37670f9fc';
         const userLocation = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${ipgeolocation_key}`);
 
         // Send user message to Memurai team
