@@ -195,14 +195,8 @@ class ContactForm extends Component {
             });
             dispatch(mailerOperations.mailchimpSubscribe(email));
         }
-
-        // Key from https://app.ipgeolocation.io/
-        const ipgeolocation_key = '78ba6dc1da634fc2a5d91da37670f9fc';
-        const userLocation = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${ipgeolocation_key}`);
-
-        // Send user message to Memurai team
         const response = await axios.post("/api/contact", {
-            name, email, subject, message, userLocation
+            name, email, subject, message,
         });
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
