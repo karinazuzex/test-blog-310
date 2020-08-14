@@ -2,12 +2,12 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NextLink from "next/link";
-import { info, error, removeAll } from "react-notification-system-redux";
+import { error, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "components/ReCaptcha";
 import Router from 'next/router';
 
-import { validators, helpers } from "utils";
-import { consts, exceptions, types, routes, analytics } from "config";
+import { validators } from "utils";
+import { exceptions, routes, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
@@ -197,12 +197,12 @@ class SubscribeForm extends Component {
                                 onChange={this.handleAgreementChange}
                             >
                                 I agree to the&nbsp;
-                                <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
+                                <NextLink href={routes.TERMS_PAGE.path} passHref>
                                     <Link theme="red">
                                         {routes.TERMS_PAGE.nameLong}
                                     </Link>
                                 </NextLink> and&nbsp;
-                                <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
+                                <NextLink href={routes.PRIVACY_PAGE.path} passHref>
                                     <Link theme="red">
                                         {routes.PRIVACY_PAGE.nameLong}
                                     </Link>
@@ -222,7 +222,7 @@ class SubscribeForm extends Component {
                         </div>
                     </Row>
                 </form>
-                
+
 
                 <ReCaptcha
                     onLoad={this.onRecaptchaLoad}

@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import { Button, Link } from "components/ui";
 import { routes } from "config";
 import { Container, Row, Col } from "components/grid";
+
 const SupportSection = () => {
   return (
     <section className="section section__support bg-white-grey separator-bt">
@@ -20,7 +21,6 @@ const SupportSection = () => {
                 href="https://stackoverflow.com/questions/tagged/memurai"
                 target="_blank"
                 passHref
-                prefetch
               >
                 <Button className="block__elem" type="hollow" theme="red">
                   Go to Stack Overflow
@@ -44,7 +44,6 @@ const SupportSection = () => {
                 href="https://support.memurai.com"
                 target="_blank"
                 passHref
-                prefetch
               >
                 <Button className="block__elem" type="hollow" theme="red">
                   Go to Help Center
@@ -62,7 +61,7 @@ const SupportSection = () => {
                 and techical implementations specific for your solution. Contact
                 us for more details.
               </p>
-              <NextLink href={routes.CONTACT_PAGE.path+'?support'} passHref prefetch>
+              <NextLink href={routes.CONTACT_PAGE.path+'?support'} passHref>
                 <Button className="block__elem" type="hollow" theme="red">
                   Contact us
                 </Button>

@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import NextLink from "next/link";
 
-import { routes } from "config";
-
 import { Container } from "components/grid";
 import { Link } from "components/ui";
 
@@ -16,7 +14,7 @@ const AdditionalInfoSection = () => (
                 </h3>
                 <div className="block__description">
                     Get Memurai Developer&nbsp;
-                    <NextLink href="https://www.nuget.org/packages/MemuraiDeveloper/" passHref prefetch>
+                    <NextLink href="https://www.nuget.org/packages/MemuraiDeveloper/" passHref>
                         <Link target="_blank" theme="red">
                         from Nuget
                         </Link>
@@ -33,7 +31,7 @@ const AdditionalInfoSection = () => (
                 </h3>
                 <div className="block__description">
                     Install Memurai Developer&nbsp;
-                    <NextLink href="https://chocolatey.org/packages/memurai-developer/" passHref prefetch>
+                    <NextLink href="https://chocolatey.org/packages/memurai-developer/" passHref>
                         <Link target="_blank" theme="red">
                             with Chocolatey
                         </Link>

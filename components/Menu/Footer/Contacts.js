@@ -8,7 +8,7 @@ import { LogoFooter } from "svg";
 
 const Contacts = () => (
   <Column className="align-start-xs align-start-lg footer__contacts-column">
-    <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
+    <NextLink href={routes.HOME_PAGE.path} passHref>
       <Link className="header__logo">
         <LogoFooter className={`header__logo--img`} />
       </Link>
@@ -20,13 +20,13 @@ const Contacts = () => (
       © 2020 All rights reserved by Janea Systems, Inc.
       <br />
       <span className="footer__terms">
-        <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
+        <NextLink href={routes.PRIVACY_PAGE.path} passHref>
           <Link theme="grey-light">{routes.PRIVACY_PAGE.name}</Link>
         </NextLink>
-        <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
+        <NextLink href={routes.TERMS_PAGE.path} passHref>
           <Link theme="grey-light">{routes.TERMS_PAGE.name}</Link>
         </NextLink>
-        <NextLink href={routes.COOKIE_PAGE.path} passHref prefetch>
+        <NextLink href={routes.COOKIE_PAGE.path} passHref>
           <Link theme="grey-light">{routes.COOKIE_PAGE.name}</Link>
         </NextLink>
       </span>

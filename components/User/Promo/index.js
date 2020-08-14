@@ -36,7 +36,7 @@ const UserPromo = ({
     <Row className="col-xs-12 col-sm-6 col-lg-4 justify-center-xs">
       {logoPath ? (
         <Fragment>
-          <NextLink href={link} passHref prefetch>
+          <NextLink href={link} passHref>
             <Link theme="grey-light" className="f-menu__link">
               <img
                 src={logoPath}

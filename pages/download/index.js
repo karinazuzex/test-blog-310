@@ -168,7 +168,7 @@ class DownloadPage extends Component {
             <p className="block__description block__description--fixed">
                 Your download link has expired or is invalid. Please try to click on it again or get a new download
                 link&nbsp;
-                <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+                <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
                     <Link theme="red">
                         here
                     </Link>
