@@ -60,9 +60,13 @@ app.prepare()
         });
 
         server.post("/api/contact", async (req, res) => {
-            const { email, name, subject, message } = req.body;
+            const { email, name, subject, message, location } = req.body;
             try {
-                await mailer.contact({ email, name, subject, message });
+                await Promise.all([
+                    mailer.contact({ email, name, subject, message, location }),
+                    mailer.contactThanks({ email, name, subject, message }),
+                    mailer.contactThanks({ email, name, subject, message }, false),
+                ]);
                 res.status(200).send("success");
             } catch (err) {
                 res.status(400).send(err);

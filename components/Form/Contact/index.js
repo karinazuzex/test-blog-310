@@ -6,8 +6,8 @@ import axios from "axios";
 import { error, info, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "components/ReCaptcha";
 
-import { validators, helpers } from "utils";
-import { consts, messages, routes, analytics, exceptions } from "config";
+import { validators } from "utils";
+import { messages, routes, analytics, exceptions } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
@@ -195,12 +195,32 @@ class ContactForm extends Component {
             });
             dispatch(mailerOperations.mailchimpSubscribe(email));
         }
+
+        // Key from https://app.ipgeolocation.io/
+        const ipgeolocation_key = '78ba6dc1da634fc2a5d91da37670f9fc';
+        // Get user geolocation
+        const {
+            data: {
+                ip = '',
+                isp = '',
+                city = '',
+                state_prov: region = '',
+                country_name = ''
+            }
+        } = await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${ipgeolocation_key}`);
+
+        // Send user message to Memurai team
         const response = await axios.post("/api/contact", {
-            name, email, subject, message,
+            name,
+            email,
+            subject,
+            message,
+            location: { ip, isp, city, region, country_name }
         });
         if (
             response.status === mailerTypes.MAILER_SUCCESS_STATUS
-            && response.data === mailerTypes.MAILER_SUCCESS_DATA) {
+            && response.data === mailerTypes.MAILER_SUCCESS_DATA
+        ) {
             this.reset();
             analytics.event({
                 category: "Contact form",
@@ -226,6 +246,7 @@ class ContactForm extends Component {
 
     render() {
         const disabled = this.state.processing || !this.state.recaptchaLoaded;
+
         return (
             <Fragment>
                 <form className="form form--contact" onSubmit={this.handleSubmit}>
