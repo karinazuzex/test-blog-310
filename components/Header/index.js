@@ -69,9 +69,13 @@ class Header extends Component {
             isWhite,
         });
     };
+
     buttonTrigger = () => {
-        window.buttonTrigger()
+        if (typeof window.buttonTrigger === 'function') {
+            window.buttonTrigger()
+        }
     };
+
     render () {
         return (
             <header className={`header ${
@@ -84,7 +88,7 @@ class Header extends Component {
                 </div>}
                 <Container>
                     <Row theme="no-col" className="justify-start-xs justify-between-lg align-center-xs">
-                        <NextLink href={routes.HOME_PAGE.path} passHref prefetch>
+                        <NextLink href={routes.HOME_PAGE.path} passHref>
                             <Link className="header__logo">
                                 <Logo className={`header__logo--img ${this.state.isWhite ? "black" : ""}`} />
                             </Link>
@@ -93,12 +97,16 @@ class Header extends Component {
                             theme={this.state.isWhite ? "white" : ""}
                             onClose={this.handleMenuClose}
                         />
-                        <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
-                            <Button as="a" type="hollow" theme={`${
-                                this.state.isWhite ? "red-black versioned-black" : "red-white"
+                        <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
+                            <Button
+                                as="a"
+                                type="hollow"
+                                theme={`${
+                                    this.state.isWhite ? "red-black versioned-black" : "red-white"
                                 } versioned ${
-                                this.state.isFixed ? "versioned-hidden" : ""
-                                }`} className="header__button header__button--action"
+                                    this.state.isFixed ? "versioned-hidden" : ""
+                                }`}
+                                className="header__button header__button--action"
                                 onClick={this.buttonTrigger}>
                                 {routes.GET_MEMURAI_PAGE.name}
                             </Button>

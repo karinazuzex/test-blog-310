@@ -9,8 +9,8 @@ import { analytics, consts, exceptions } from "config";
 import { mailerTypes } from "modules/mailer";
 import GetMemuraiTable from "components/Table/GetMemurai";
 import Layout from "components/Layout";
-import { Container, Row } from "components/grid";
-import { Button, Link } from "components/ui";
+import { Container } from "components/grid";
+import { Link } from "components/ui";
 import ReCaptcha from "components/ReCaptcha";
 
 class GetMemuraiPage extends Component {
@@ -25,11 +25,13 @@ class GetMemuraiPage extends Component {
       link: null,
     };
   }
+
   componentDidMount() {
     window.buttonTrigger = () => {
       this.setState({ done: false });
     };
   }
+
   componentWillUnmount() {
     this.recaptcha.reset();
   }

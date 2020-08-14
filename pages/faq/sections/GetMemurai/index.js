@@ -18,7 +18,7 @@ const GetMemuraiSection = () => (
                     Download the free Developer Edition<br />
                 </h3>
                 <Row theme="no-col" className="justify-center-xs">
-                    <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+                    <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
                         <Button as="a" type="solid" theme="red-white">
                             Download for free
                         </Button>

@@ -199,12 +199,12 @@ class DownloadForm extends Component {
                                 onChange={this.handleAgreementChange}
                             >
                                 I agree to the&nbsp;
-                                <NextLink href={routes.TERMS_PAGE.path} passHref prefetch>
+                                <NextLink href={routes.TERMS_PAGE.path} passHref>
                                     <Link theme="red">
                                         {routes.TERMS_PAGE.nameLong}
                                     </Link>
                                 </NextLink> and&nbsp;
-                                <NextLink href={routes.PRIVACY_PAGE.path} passHref prefetch>
+                                <NextLink href={routes.PRIVACY_PAGE.path} passHref>
                                     <Link theme="red">
                                         {routes.PRIVACY_PAGE.nameLong}
                                     </Link>

@@ -22,7 +22,7 @@ const PromoSection = () => (
                 </p>
                 <Row theme="no-col" className="justify-center-xs">
                     <div className="button__wrapper">
-                        <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref prefetch>
+                        <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
                             <Button as="a" type="solid" theme="red-white">
                                 Download for free
                             </Button>

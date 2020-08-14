@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Logo = ({ className = "" }) => (
     <svg  className={`image image__logo ${className}`} width="169px" height="50px" viewBox="0 0 139 41" version="1.1">
-    <g id="Site-Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Site-Final" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="FAQ-standalone-v3" transform="translate(-150.000000, -4015.000000)">
             <g id="Group-7" transform="translate(0.000000, 3729.000000)">
                 <g id="Group-13" transform="translate(150.000000, 286.000000)">

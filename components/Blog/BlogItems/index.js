@@ -4,7 +4,6 @@ import { Link } from "components/ui";
 import NextLink from "next/link";
 import marked from 'marked';
 import ReactHtmlParser from 'react-html-parser';
-import ImageZoom from 'react-medium-image-zoom';
 import { helpers } from "utils";
 
 const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((item) => {
@@ -17,28 +16,28 @@ const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((
 
     return (
         <div className="block__blog block__elem--40" key={slug}>
-            <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref prefetch>
+            <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref>
                 <Link className="link link--black">
                     <h4 className="blog__title blog__title--bottom">{title}</h4>
                 </Link>
             </NextLink>
             <p className="blog__text blog__text--bottom">
-                <NextLink href={{pathname: pathname, query: { ...query, author: author }}} passHref prefetch >
+                <NextLink href={{pathname: pathname, query: { ...query, author: author }}} passHref >
                     <Link className="blog__text--underline link link--black">{author}</Link>
                 </NextLink>
                 <span> on </span>
-                <NextLink href={{pathname: pathname, query: { ...query, category: category }}} passHref prefetch>
+                <NextLink href={{pathname: pathname, query: { ...query, category: category }}} passHref>
                     <Link className="blog__text--underline link link--black">{item.category}</Link>
                 </NextLink>
                 <span> &bull; {dateCreate} &bull; </span>
                 <span> {time} min read</span>
             </p>
-            <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref prefetch>
+            <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref>
                 <Link>
                     <p className="blog__text blog__text--bottom blog__text--link blog__text--preview">{convertedHtml}</p>
                 </Link>
             </NextLink>
-            <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref prefetch>
+            <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref>
                 <Link className="button__arrow link link--red">
                     <span className="blog__text">Continue reading</span>
                     <Arrow />

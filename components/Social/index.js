@@ -94,7 +94,7 @@ class Social extends Component {
                 >
                     <StackOverflowLogo />
                 </Link>
-                <NextLink href={routes.NEWSLETTER_PAGE.path} passHref prefetch>
+                <NextLink href={routes.NEWSLETTER_PAGE.path} passHref>
                     <Link
                         className="social__item social__item--newsletter"
                         data-tip="Subscribe to our newsletter"

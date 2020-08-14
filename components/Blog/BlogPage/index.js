@@ -2,10 +2,9 @@ import { Container, Row, Col } from "components/grid";
 import Pagination from 'components/Blog/Pagination';
 import BlogItems from 'components/Blog/BlogItems';
 import Category from 'components/Blog/Category';
-import SubscribeForm from 'components/Form/Subscribe';
 import NextLink from "next/link";
 import { Link } from "components/ui";
-import { consts, routes, analytics } from "config";
+import { consts, routes } from "config";
 import { RSSLogo } from "svg";
 const BlogPage = ({data, currentPage, router}) => {
 
@@ -17,7 +16,7 @@ const BlogPage = ({data, currentPage, router}) => {
                         <div className="block text-center block__elem--xl">
                             <h3 className="block__title block__elem--xs">Blog</h3>
                             <p className="blog-info">Technical articles and news about Memurai.<br />
-                                <NextLink href={routes.NEWSLETTER_PAGE.path} passHref prefetch>
+                                <NextLink href={routes.NEWSLETTER_PAGE.path} passHref>
                                     <Link theme="red">
                                         Subscribe to our newsletter
                                     </Link>

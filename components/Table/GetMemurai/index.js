@@ -23,7 +23,7 @@ const GetMemuraiTable = (props) => (
               Requires a restart after 10 days.
             </div>
             <div className="table__block--action">
-              <NextLink passHref prefetch>
+              <NextLink href="#" passHref>
                 <Button
                   as="a"
                   type="solid"
@@ -45,7 +45,7 @@ const GetMemuraiTable = (props) => (
               restrictions or limitations.
             </div>
             <div className="table__block--action">
-              <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
+              <NextLink href={routes.CONTACT_PAGE.path} passHref>
                 <Button as="a" type="hollow" theme="red">
                   Contact us
                 </Button>
@@ -173,7 +173,7 @@ const GetMemuraiTable = (props) => (
       <Row theme="no-col" className="table__row">
         <div className="col-xs-4 table__col"></div>
         <div className="col-xs-4 table__col">
-          <NextLink passHref prefetch>
+          <NextLink href="#" passHref>
             <Button
               as="a"
               type="solid"
@@ -185,7 +185,7 @@ const GetMemuraiTable = (props) => (
           </NextLink>
         </div>
         <div className="col-xs-4 table__col">
-          <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
+          <NextLink href={routes.CONTACT_PAGE.path} passHref>
             <Button as="a" type="hollow" theme="red">
               Contact us
             </Button>

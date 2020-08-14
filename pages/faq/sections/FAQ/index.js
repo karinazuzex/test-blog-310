@@ -98,7 +98,7 @@ const FAQSection = () => {
           <Row className="justify-center-xs">
             <Col attributes="xs-12 md-8">
               {renderFAQ()}
-              <NextLink href={routes.CONTACT_PAGE.path} passHref prefetch>
+              <NextLink href={routes.CONTACT_PAGE.path} passHref>
                 <Button
                   className="block__elem self-center--mobile"
                   type="hollow"
