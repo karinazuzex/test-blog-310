@@ -2,18 +2,17 @@
 import Arrow from 'svg/Arrow';
 import { Link } from "components/ui";
 import NextLink from "next/link";
-import marked from 'marked';
-import ReactHtmlParser from 'react-html-parser';
 import { helpers } from "utils";
+import { getConvertedHTML } from '../../../utils/helpers';
 
 const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((item) => {
     const { _firstPublishedAt, publishDateOverride, title, category, author, id, body, slug } = item;
     const text = body.slice(0, 300).split(' ').slice(0,-1).join(' ').trim() + '...';
-    const rawMarkup = marked(text);
-    let convertedHtml = ReactHtmlParser(rawMarkup, helpers.parserOptions);
+    const convertedHtml = getConvertedHTML(text, true);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
 
+    console.log(convertedHtml)
     return (
         <div className="block__blog block__elem--40" key={slug}>
             <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref>
@@ -34,7 +33,7 @@ const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((
             </p>
             <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref>
                 <Link>
-                    <p className="blog__text blog__text--bottom blog__text--link blog__text--preview">{convertedHtml}</p>
+                    <div className="blog__text blog__text--bottom blog__text--link blog__text--preview">{convertedHtml}</div>
                 </Link>
             </NextLink>
             <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref>

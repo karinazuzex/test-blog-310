@@ -7,6 +7,10 @@ import Slider from "react-slick";
 import UserPromo from "components/User/Promo";
 
 const ReviewsSection = () => {
+  if (!reviews || !reviews.length) {
+    return null;
+  }
+
   const settings = {
     dots: true,
     infinite: true,
@@ -14,7 +18,8 @@ const ReviewsSection = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  return reviews && reviews.length ? (
+
+  return (
     <section className="section section__reviews bg-white-grey separator-bt">
       <Container>
         <div className="block text-center">
@@ -27,7 +32,7 @@ const ReviewsSection = () => {
         </div>
         <div className="slider-wrapper">
           <Slider {...settings}>
-            {reviews.map(({ id, text, link, image, logo, name, position }) => (
+            {reviews.map(({ id, text, link, image, image_90x90, logo, name, position }) => (
               <div className="slider-slide" key={id}>
                 <Fragment>
                   <Container>
@@ -39,7 +44,7 @@ const ReviewsSection = () => {
                     <UserPromo
                       name={name}
                       position={position}
-                      imagePath={image}
+                      imagePath={image_90x90}
                       logoPath={logo}
                       link={link}
                     />
@@ -51,7 +56,7 @@ const ReviewsSection = () => {
         </div>
       </Container>
     </section>
-  ) : null;
+  );
 };
 
 export default ReviewsSection;

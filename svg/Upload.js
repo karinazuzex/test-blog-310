@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Upload = ({ className = "upload" }) => (
     <svg className={`image ${className}`} width="22px" height="21px" viewBox="0 0 22 21">
-        <g id="Site-Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Site-Final" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g id="Share-Link" transform="translate(-370.000000, -622.000000)" fill="#FFFFFF">
                 <g id="icon" transform="translate(356.000000, 609.000000)">
                     <g id="Group-2" transform="translate(14.000000, 13.000000)">

@@ -1,9 +1,8 @@
 import "static/scss/index.scss";
 
 import React from "react";
-import App, { Container } from "next/app";
+import App from "next/app";
 import { Provider } from "react-redux";
-import { consts } from "config";
 import Head from "next/head";
 import { withRouter } from "next/router";
 import ReactTooltip from "react-tooltip";
@@ -98,7 +97,7 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, reduxStore, router } = this.props;
     return (
-      <Container>
+      // <Container> // Container was deprecated. see https://err.sh/zeit/next.js/static-dir-deprecated
         <Provider store={reduxStore}>
           <ApolloProvider client={client}>
             <ApolloHooksProvider client={client}>
@@ -226,7 +225,7 @@ class MyApp extends App {
                   type="text/javascript"
                   async
                 />
-               <script
+                <script
                   key="cookiebot"
                   id="Cookiebot"
                   src="https://consent.cookiebot.com/uc.js"
@@ -259,7 +258,7 @@ class MyApp extends App {
             </ApolloHooksProvider>
           </ApolloProvider>
         </Provider>
-      </Container>
+      // </Container>
     );
   }
 }

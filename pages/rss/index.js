@@ -1,8 +1,8 @@
-import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import React from "react";
 import client from "libs/apollo";
 import { consts } from "config";
+
 const GET_POSTS = gql`
   query allArticles($category: String!, $author: String!) {
     categories: allArticles {
@@ -44,6 +44,7 @@ const GET_POSTS = gql`
     }
   }
 `;
+
 const blogPostsRssXml = blogPosts => {
   let latestPostDate = "";
   let rssItemsXml = "";
@@ -52,16 +53,18 @@ const blogPostsRssXml = blogPosts => {
     const postDate = Date.parse(
       post.publishDateOverride || post._firstPublishedAt
     );
+
     if (!latestPostDate || postDate > Date.parse(latestPostDate)) {
       latestPostDate = post.publishDateOverride || post._firstPublishedAt;
     }
+
     rssItemsXml += `
         <item>
           <title>${post.title}</title>
           <link>
           ${`${consts.WEBSITE_DOMAIN}/blog/${post.slug}`}
           </link>
-  
+
           <pubDate>${post.publishDateOverride ||
             post._firstPublishedAt}</pubDate>
           <description>
@@ -71,6 +74,7 @@ const blogPostsRssXml = blogPosts => {
           <category>${post.category}</category>
       </item>`;
   });
+
   return {
     rssItemsXml,
     latestPostDate
@@ -95,9 +99,11 @@ class Rss extends React.Component {
   static async getInitialProps({ res }) {
     let queryAuthor = "";
     let queryCategory = "";
+
     if (!res) {
       return;
     }
+
     res.setHeader("Content-Type", "text/xml");
     const response = await client.query({
       query: GET_POSTS,

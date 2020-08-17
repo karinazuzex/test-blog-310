@@ -1,4 +1,4 @@
-const sitemap = require('nextjs-sitemap-generator');  
+const sitemap = require('nextjs-sitemap-generator');
 const pathMap = {
     "/": { priority: '1.0' },
     "/about": { priority: '0.8' },
@@ -12,10 +12,11 @@ const pathMap = {
     "/cookie": { priority: '0.8' },
     "/blog": { priority: '0.8'},
 };
-sitemap({  
-  baseUrl: "https://www.memurai.com",  
-  ignoredPaths: ['admin'],  
-  pagesDirectory: __dirname + "\/pages",  
+
+sitemap({
+  baseUrl: "https://www.memurai.com",
+  ignoredPaths: ['admin'],
+  pagesDirectory: __dirname + "\/pages",
   targetDirectory : 'static/',
   nextConfigPath: __dirname + "\/next.config.js",
   ignoredExtensions: [
