@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-const contact = ({ email, name, subject, message, location }, ) => {
+const contact = ({ email, name, subject, message, location }) => {
     const mailOptions = {
         from : "Memurai <noreply@memurai.com>",
         to: "contact@memurai.com",

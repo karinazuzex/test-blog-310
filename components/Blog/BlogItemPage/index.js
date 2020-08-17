@@ -6,9 +6,8 @@ import NextLink from "next/link";
 import SubscribeForm from "components/Form/Subscribe";
 import IconsShare from 'components/Blog/IconsShare';
 import ImageZoom from 'react-medium-image-zoom';
-import marked from 'marked';
-import ReactHtmlParser from 'react-html-parser';
 import { helpers } from "utils";
+import { getConvertedHTML } from "../../../utils/helpers";
 
 const BlogItemPage = ({data}) => {
     const { id,
@@ -29,12 +28,11 @@ const BlogItemPage = ({data}) => {
         seoDescription = description.description
         seoImage = description.image
     }
-    const rawMarkup = marked(body);
-    let convertedHtml = ReactHtmlParser(rawMarkup, helpers.parserOptions);
+    const convertedHtml = getConvertedHTML(body);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
-    head.title[`/blog/${slug}`]= title;
-    head.description[`/blog/${slug}`]= description.description;
+    head.title[`/blog/${slug}`] = title;
+    head.description[`/blog/${slug}`] = description.description;
 
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">

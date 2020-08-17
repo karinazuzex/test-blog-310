@@ -1,28 +1,19 @@
-const withCSS = require("@zeit/next-css");
-const withSass = require("@zeit/next-sass");
+const withImages = require('next-images');
 
 const { getPosts } = require("./get-posts");
 
-module.exports = withCSS(
-  withSass({
+module.exports = withImages({
     webpack(config, { defaultLoaders }) {
       const originalEntry = config.entry;
       config.entry = async () => {
         const entries = await originalEntry();
+
         if (entries["main.js"]) {
           entries["main.js"].unshift("./polyfills.js");
         }
         return entries;
       };
-      config.module.rules.push({
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        use: {
-          loader: "url-loader",
-          options: {
-            limit: 100000,
-          },
-        },
-      });
+
       return config;
     },
 
@@ -53,10 +44,7 @@ module.exports = withCSS(
         "/blog": { page: "/blog" },
       };
 
-      let articles = await getPosts();
-
-      articles = await getPosts();
-      articles.map((post) => {
+      (await getPosts()).map((post) => {
         pathMap[`/blog/${post.link}`] = {
           page: `/blog/[slug]`,
           query: { slug: post.link },
@@ -65,5 +53,4 @@ module.exports = withCSS(
 
       return pathMap;
     },
-  })
-);
+  });
