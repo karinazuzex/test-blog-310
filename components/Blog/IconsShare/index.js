@@ -23,12 +23,11 @@ class IconsShare extends React.Component {
     }
 
     render() {
-
-        const { openShare, url } = this.state;        
+        const { openShare, url } = this.state;
 
         return(
             <div className={`share ${openShare ? "active" : ""}`}>
-                <div 
+                <div
                     className="wrap"
                     onClick={() => this.setState({openShare: false})}
                 ></div>

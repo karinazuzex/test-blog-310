@@ -34,7 +34,7 @@ class Header extends Component {
         window.removeEventListener("scroll", this.updateWindowPosition);
     }
 
-    closeBanner = () =>{
+    closeBanner = () => {
         localStorage.setItem('bannerClose', 1);
         this.setState({banner: !localStorage.bannerClose});
     }

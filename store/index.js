@@ -54,20 +54,3 @@ export function useStore(initialState) {
   const store = useMemo(() => initializeStore(initialState), [initialState]);
   return store;
 }
-
-/* const persistentState = {};
-
-const logger = createLogger({
-    collapsed: true,
-    level: "info",
-});
-
-let enhancer = process.env.NODE_ENV === "development"
-    ? applyMiddleware(thunk, logger)
-    : applyMiddleware(thunk);
-
-export const initializeStore = (initialState = {}) => createStore(
-    rootReducer,
-    initialState,
-    enhancer,
-); */
