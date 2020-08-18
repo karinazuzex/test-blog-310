@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { connect } from "react-redux";
@@ -12,6 +12,7 @@ import Layout from "components/Layout";
 import { Container } from "components/grid";
 import { Link } from "components/ui";
 import ReCaptcha from "components/ReCaptcha";
+import { downloadByLink } from "../../utils/helpers";
 
 class GetMemuraiPage extends Component {
   constructor(props) {
@@ -104,11 +105,13 @@ class GetMemuraiPage extends Component {
         this.setState({
           link: response.data,
         });
-        const downloadLink = document.createElement("a");
+
+        downloadByLink(response.data);
+        /* const downloadLink = document.createElement("a");
         downloadLink.href = response.data;
         document.body.appendChild(downloadLink);
         downloadLink.click();
-        document.body.removeChild(downloadLink);
+        document.body.removeChild(downloadLink); */
         this.setState({
           done: true,
         });

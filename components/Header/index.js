@@ -33,10 +33,12 @@ class Header extends Component {
     componentWillUnmount() {
         window.removeEventListener("scroll", this.updateWindowPosition);
     }
+
     closeBanner = () =>{
         localStorage.setItem('bannerClose', 1);
         this.setState({banner: !localStorage.bannerClose});
     }
+
     openMenu = () => {
         analytics.event({
             category: "Mobile menu",
@@ -107,7 +109,8 @@ class Header extends Component {
                                     this.state.isFixed ? "versioned-hidden" : ""
                                 }`}
                                 className="header__button header__button--action"
-                                onClick={this.buttonTrigger}>
+                                onClick={this.buttonTrigger}
+                            >
                                 {routes.GET_MEMURAI_PAGE.name}
                             </Button>
                         </NextLink>

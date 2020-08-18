@@ -75,3 +75,15 @@ export const getConvertedHTML = (text, withoutLinks = false, options) => {
 
     return ReactHtmlParser(rawMarkup, options);
 }
+
+/**
+ * create "a" DOM element and set link param to "href" attribute, then click by element
+ * @param {string} link string url
+ */
+export function downloadByLink(link) {
+    const downloadLink = document.createElement("a");
+    downloadLink.href = link;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}

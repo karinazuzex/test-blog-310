@@ -1,7 +1,6 @@
-import React from "react";
 import NextLink from "next/link";
 
-import { routes, consts, analytics } from "config";
+import { routes } from "config";
 
 import { Link } from "components/ui";
 

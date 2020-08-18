@@ -12,7 +12,6 @@ const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
 
-    console.log(convertedHtml)
     return (
         <div className="block__blog block__elem--40" key={slug}>
             <NextLink href={{ pathname: 'blog/[slug]', query: { item }}} as={`/blog/${slug}`} passHref>
