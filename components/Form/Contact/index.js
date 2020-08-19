@@ -30,12 +30,14 @@ class ContactForm extends Component {
 
         this.state = this.getInitialState();
     }
+
     componentDidMount(){
         if(document.location.search === "?support"){
             this.subject.value = "Requesting more info on Memurai Consulting Services";
             this.message.value = "I would like to learn more about Memurai Consulting Services. Let me know when is a good time to talk. Thank you!";
         }
     }
+
     componentWillUnmount() {
         this.recaptcha.reset();
     }

@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import NextLink from "next/link";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
-import { error, info, removeAll } from "react-notification-system-redux";
+import { error, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "components/ReCaptcha";
 
-import { validators, helpers } from "utils";
-import { consts, routes, messages, analytics, exceptions } from "config";
+import { validators } from "utils";
+import { routes, analytics, exceptions } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";

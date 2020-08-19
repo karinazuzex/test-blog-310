@@ -1,19 +1,11 @@
-import React from "react";
-import NextLink from "next/link";
-
-import { routes } from "config";
-
 import { Container, Col, Row, Column } from "components/grid";
 import {
   QuickLinks,
   Learn,
   GetInTouch,
   Contacts,
-} from "components/Menu/Footer";
+} from "../Menu/Footer";
 import SubscribeForm from "components/Form/Subscribe";
-import { Link } from "components/ui";
-import { LogoFooter } from "svg";
-import Social from "components/Social";
 
 const Footer = () => (
   <footer role="content-info" className="footer bg-black">
@@ -59,11 +51,11 @@ const Footer = () => (
             </div>
             <SubscribeForm />
             <Col
-          attributes="xs-12 lg-12"
-          className="footer__col footer__col--onlymobile "
-        >
-          <Contacts />
-        </Col>
+              attributes="xs-12 lg-12"
+              className="footer__col footer__col--onlymobile "
+            >
+              <Contacts />
+            </Col>
           </Column>
           </Column>
         </Col>

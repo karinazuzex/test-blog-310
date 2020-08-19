@@ -98,12 +98,10 @@ const Blog = (props) => {
     notifyOnNetworkStatusChange: true,
   });
 
-  if (loading) {
-    <Layout theme="white"></Layout>;
-  }
   if (error) {
     return <ErrorMessage />;
   }
+
   if (data) {
     if (
       (!data.categories.some((cat) => cat.category === category) && category) ||
@@ -111,6 +109,7 @@ const Blog = (props) => {
     ) {
       return <ErrorMessage category={category} author={author} />;
     }
+
     return (
       <Layout theme="white">
         <BlogPage router={props.router} data={data} currentPage={currentPage} />

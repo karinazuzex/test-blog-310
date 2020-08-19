@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Container, Row } from "components/grid";
 import ComparisonTable from "components/Table/Comparison";
 

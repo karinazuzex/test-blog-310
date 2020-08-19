@@ -49,7 +49,6 @@ const blogPostsRssXml = blogPosts => {
   let latestPostDate = "";
   let rssItemsXml = "";
   blogPosts.forEach(post => {
-    console.log(post);
     const postDate = Date.parse(
       post.publishDateOverride || post._firstPublishedAt
     );

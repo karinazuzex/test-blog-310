@@ -10,6 +10,7 @@ import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Container } from "components/grid";
 import { Link } from "components/ui";
+import { downloadByLink } from "../../utils/helpers";
 
 class DownloadPage extends Component {
     static getInitialProps({query}) {
@@ -40,6 +41,7 @@ class DownloadPage extends Component {
             action: "Process query",
             label: "Start",
         });
+
         if (!(query.key && query.id)) {
             analytics.event({
                 category: "Download",
@@ -51,6 +53,7 @@ class DownloadPage extends Component {
             });
             return;
         }
+
         try {
             const response = await axios.post("/api/get-dist-url", { data: query.key });
             if (
@@ -73,6 +76,7 @@ class DownloadPage extends Component {
                 return;
             }
         } catch(err) {}
+
         analytics.event({
             category: "Download",
             action: "Process query",
@@ -101,11 +105,12 @@ class DownloadPage extends Component {
             category: "Download",
             action: "Start download",
         });
-        const downloadLink = document.createElement("a");
+        downloadByLink(this.state.link);
+        /* const downloadLink = document.createElement("a");
         downloadLink.href = this.state.link;
         document.body.appendChild(downloadLink);
         downloadLink.click();
-        document.body.removeChild(downloadLink);
+        document.body.removeChild(downloadLink); */
     };
 
     renderValidContext = () => (
@@ -164,17 +169,15 @@ class DownloadPage extends Component {
     );
 
     renderInvalidContext = () => (
-        <Fragment>
-            <p className="block__description block__description--fixed">
-                Your download link has expired or is invalid. Please try to click on it again or get a new download
-                link&nbsp;
-                <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
-                    <Link theme="red">
-                        here
-                    </Link>
-                </NextLink>.
-            </p>
-        </Fragment>
+        <p className="block__description block__description--fixed">
+            Your download link has expired or is invalid. Please try to click on it again or get a new download
+            link&nbsp;
+            <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
+                <Link theme="red">
+                    here
+                </Link>
+            </NextLink>.
+        </p>
     );
 
     render () {

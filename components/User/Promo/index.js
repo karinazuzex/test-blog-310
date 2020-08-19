@@ -1,4 +1,3 @@
-import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import NextLink from "next/link";
 import { Link } from "components/ui";
@@ -15,17 +14,13 @@ const UserPromo = ({
   <Row theme="no-col" className="user-promo justify-center-xs align-center-xs">
     <Row className="col-xs-12 col-sm-6 col-lg-4 justify-center-xs">
       {imagePath ? (
-        <Fragment>
-          <img
-            src={imagePath}
-            className="user-promo__icon"
-            alt="Customer photo"
-          />
-        </Fragment>
+        <img
+          src={imagePath}
+          className="user-promo__icon"
+          alt="Customer photo"
+        />
       ) : (
-        <Fragment>
-          <div className="user-promo__icon"></div>
-        </Fragment>
+        <div className="user-promo__icon"></div>
       )}
       <Column className="justify-center-xs user-promo__info">
         <div className="user-promo__info-name">{name}</div>
@@ -35,17 +30,15 @@ const UserPromo = ({
 
     <Row className="col-xs-12 col-sm-6 col-lg-4 justify-center-xs">
       {logoPath ? (
-        <Fragment>
-          <NextLink href={link} passHref>
-            <Link theme="grey-light" className="f-menu__link">
-              <img
-                src={logoPath}
-                alt="Company logo"
-                className="user-promo__company"
-              />
-            </Link>
-          </NextLink>
-        </Fragment>
+        <NextLink href={link} passHref>
+          <Link theme="grey-light" className="f-menu__link">
+            <img
+              src={logoPath}
+              alt="Company logo"
+              className="user-promo__company"
+            />
+          </Link>
+        </NextLink>
       ) : (
         <div className="user-promo__company">StepUp</div>
       )}

@@ -34,8 +34,8 @@ const GET_POSTS = gql`
 `;
 
 const ItemPage = () => {
-  const router = useRouter()
-  const { slug } = router.query
+  const router = useRouter();
+  const { slug } = router.query;
 
   const { loading, error, data } = useQuery(GET_POSTS, {
     variables: { slug: slug },
@@ -47,20 +47,14 @@ const ItemPage = () => {
       <Layout theme="white">
         <BlogItemPage data={data}/>
       </Layout>
-    )
+    );
   }
-  if (loading) {
-    <Layout theme="white">
-    </Layout>
-  }
-  if (error) {
-    <ErrorMessage/>
-  }
-  return (
-    <Layout theme="white">
-    </Layout>
-  )
 
+  if (error) {
+    return <ErrorMessage/>;
+  }
+
+  return <Layout theme="white"></Layout>;
 }
 
 export default ItemPage;

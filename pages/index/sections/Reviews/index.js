@@ -1,4 +1,3 @@
-import React, { Fragment } from "react";
 import { reviews } from "content";
 import { Container } from "components/grid";
 import { Stars } from "components/ui";
@@ -34,22 +33,20 @@ const ReviewsSection = () => {
           <Slider {...settings}>
             {reviews.map(({ id, text, link, image, image_90x90, logo, name, position }) => (
               <div className="slider-slide" key={id}>
-                <Fragment>
-                  <Container>
-                    <div className="block text-center">
-                      <p className="block__elem text-light">
-                        &quot;{text}&quot;
-                      </p>
-                    </div>
-                    <UserPromo
-                      name={name}
-                      position={position}
-                      imagePath={image_90x90}
-                      logoPath={logo}
-                      link={link}
-                    />
-                  </Container>
-                </Fragment>
+                <Container>
+                  <div className="block text-center">
+                    <p className="block__elem text-light">
+                      &quot;{text}&quot;
+                    </p>
+                  </div>
+                  <UserPromo
+                    name={name}
+                    position={position}
+                    imagePath={image_90x90}
+                    logoPath={logo}
+                    link={link}
+                  />
+                </Container>
               </div>
             ))}
           </Slider>

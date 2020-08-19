@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Container, Row, Col } from "components/grid";
 import ContactForm from "components/Form/Contact";
 

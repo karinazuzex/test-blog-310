@@ -8,19 +8,13 @@
   left: 0;
   transition: left $defaultTransition;
 
-  &--show-menu {
-    left: -$mobileMenuWidth;
-
-    .header {
-      left: -$mobileMenuWidth;
-    }
-  }
-}
-
-@media screen and (min-width: $tabletWidth) {
-  .layout {
+  @media (max-width: $tabletWidth - 1) {
     &--show-menu {
-      left: 0;
+
+      &,
+      .header {
+        left: -$mobileMenuWidth;
+      }
     }
   }
 }
