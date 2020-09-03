@@ -44,7 +44,8 @@ const contact = ({ email, name, subject, message, location }) => {
 };
 
 const contactThanks = ({ email, name, subject, message }, toSelf = true) => {
-    const from = toSelf ? `Memurai Contact: ${name}` : "Memurai Contact Form";
+    const from = toSelf ? `Memurai Contact` : "Memurai Contact Form";
+    subject += ` - request from ${name}`;
     const mailOptions = {
         from: {
             name: from,
@@ -54,44 +55,36 @@ const contactThanks = ({ email, name, subject, message }, toSelf = true) => {
         replyTo: toSelf ? email : undefined,
         subject,
         html: `
-            Thank you for contacting Memurai.<br />
+            Hello ${name},<br />
             <br />
-            For our Licensing team to provide the best possible solution please tell us more about the Memurai usage scenarios.
+            Thank you for your interest in Memurai Enterprise. One of our team members will reach out shortly.<br />
             <br />
-            1. Is it for in-house use, or to be redistributed as part of your company's application?
+            For the best license op on please answer the following ques ons about your Memurai Enterprise usage scenarios.<br />
             <br />
+            1. Is it for in-house use at your company? Or to be redistributed as commercial system that is built for a 3rd party end-user by your developers?<br />
             2. If used in house:
             <br />
-            <span style="margin-left: 10px;">
-                a) Do you have a particular topology in mind? (i.e. high availability, number of instances, ...)
+            <span style="margin-left: 45px;">
+                a. Do you have a particular topology in mind? (i.e. high availability, number of instances, ...)
             </span>
             <br />
             3. If redistributed:
             <br />
-            <span style="margin-left: 10px;">
-                a) How many end-user deployments do you anticipate and what does the typical topology look like?
+            <span style="margin-left: 45px;">
+                a. How many end-user deployments do you anticipate and what does the typical topology look like?
             </span>
             <br />
-            <span style="margin-left: 10px;">
-                b) Is your application licensed on a subscription basis or do you issue perpetual licenses?
-                If you prefer to discuss your particular scenario please schedule a short 10-15 min call here is my calendar to book a call.
+            <span style="margin-left: 45px;">
+                b. Is your application licensed on a subscription basis or do you issue perpetual licenses?<br />
             </span>
             <br />
-            Thank you for your interest in Memurai.
+            To clarify specific technical or implementa on ques ons please feel free to schedule a call at your convenience - <a href="https://calendly.com/rushvel/memurai"
+            style="font-weight:bold; color:#442534; text-decoration-color: #954f72;">https://calendly.com/rushvel/memurai</a> <br />
             <br />
-            Thank you,<br />
             Rush Velcsov<br />
-            Senior Technical PM – Memurai & Janea Systems
+            Senior Technical PM – <a href="https://twitter.com/MemuraiHQ" style="color:#0707ff;text-decoration:underline;text-decoration-color:#954f72;">Memurai</a> &
+            <a href="https://twitter.com/JaneaSystems" style="color:#0707ff; text-decoration:underline; text-decoration-color:#166dc5">Janea Systems.</a>
             <br />
-            <br />
-            _____
-            <br />
-            Memurai information request
-            <br /><br />
-            <strong>Name:</strong> ${name}<br />
-            <strong>Email:</strong> ${email}<br />
-            <strong>Message:</strong><br />
-            ${message}
         `,
     };
 
