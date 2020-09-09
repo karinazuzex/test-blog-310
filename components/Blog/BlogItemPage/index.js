@@ -36,13 +36,13 @@ const BlogItemPage = ({data}) => {
 
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">
-            <Head title={seoTitle} description={seoDescription} img={seoImage.url}/>
+            <Head title={seoTitle} description={seoDescription} img={seoImage && seoImage.url}/>
             <Container>
                 <div>
                     <IconsShare/>
                     <div className="blog-item-container">
 
-                        <h3 className="block__title text-bold block__elem--xs">{title}</h3>
+                        <h1 className="block__title text-bold block__elem--xs">{title}</h1>
                         <p className="blog__text blog__text--bottom block__elem--50">
                             <NextLink href={'/blog?author=' + author} passHref>
                                 <Link className="blog__text--underline link link--black">{author}</Link>

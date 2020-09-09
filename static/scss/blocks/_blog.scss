@@ -167,6 +167,11 @@
         &-container {
             max-width: 1000px;
             margin: auto;
+
+            .block__title {
+                font-size: 28px;
+                line-height: 36px;
+            }
         }
 
         &-footer {
@@ -392,9 +397,35 @@
     }
 }
 
+@media (min-width: $phabletWidth) {
+    .blog {
+        &-item {
+            &-container {
+                .block__title {
+                    font-size: 32px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $tabletWidth) {
+    .blog {
+        &-item {
+            &-container {
+                .block__title {
+                    font-size: 40px;
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+}
+
 @media (min-width: $desktopWidth) {
     .blog-item-container {
-        h3.block__title {
+        .block__title {
             font-size: 52px;
             line-height: 1.2;
         }
