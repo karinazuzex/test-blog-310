@@ -61,3 +61,5 @@ export const MEMURAI_VS_REDIS_LINK = "https://www.memurai.com/blog/memurai-vs-re
 export const SHOW_DRAFTS = env.SHOW_DRAFTS==="true" || env.NODE_ENV === "development" && (typeof env.SHOW_DRAFTS === "undefined");
 
 export const COVID19 = env.DISABLE_COVID19==="true" ? false : true;
+
+export const DEFAULT_FAVICON_IMAGE = "/static/favicon/mstile-150x150.png";

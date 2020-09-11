@@ -1,6 +1,6 @@
 import { Container} from "components/grid";
 import Head from 'components/Head';
-import { head } from "config";
+import { head, consts } from "config";
 import { Link } from "components/ui";
 import NextLink from "next/link";
 import SubscribeForm from "components/Form/Subscribe";
@@ -22,12 +22,14 @@ const BlogItemPage = ({data}) => {
             publishDateOverride,
             slug
         } = data.allArticles[0];
-    let seoTitle = '', seoDescription = '', seoImage = { url: "/static/favicon/mstile-150x150.png"};
+    let seoTitle = '', seoDescription = '', seoImage = '';
+
     if (description) {
-        seoTitle = description.title
-        seoDescription = description.description
-        seoImage = description.image
+        seoTitle = description.title;
+        seoDescription = description.description;
+        seoImage = description.image && description.url || consts.DEFAULT_FAVICON_IMAGE;
     }
+
     const convertedHtml = getConvertedHTML(body);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
@@ -36,7 +38,7 @@ const BlogItemPage = ({data}) => {
 
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">
-            <Head title={seoTitle} description={seoDescription} img={seoImage.url}/>
+            <Head title={seoTitle} description={seoDescription} img={seoImage}/>
             <Container>
                 <div>
                     <IconsShare/>

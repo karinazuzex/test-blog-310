@@ -11,6 +11,7 @@ import { analytics, head, routes } from "config";
 import { ApolloProvider as ApolloHooksProvider } from "@apollo/react-hooks";
 import { ApolloProvider } from "react-apollo";
 import { useStore } from "../store";
+import { DEFAULT_FAVICON_IMAGE } from "../config/consts";
 import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
 import "slick-carousel/slick/slick.css";
@@ -131,7 +132,7 @@ function MyApp({ Component, pageProps }) {
             <meta
               key="tile-image"
               name="msapplication-TileImage"
-              content="/static/favicon/mstile-150x150.png"
+              content={DEFAULT_FAVICON_IMAGE}
             />
             <meta key="theme-color" name="theme-color" content="#ffffff" />
             <meta
