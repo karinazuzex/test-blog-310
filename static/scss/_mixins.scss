@@ -1,0 +1,45 @@
+@mixin media($width_min: $smallMobileWidth, $width_max: 99999px) {
+  @media (min-width: #{$width_min}) and (max-width: $width_max - 1) {
+    @content;
+  }
+}
+
+@mixin mediaMax($width_max) {
+  @media (max-width: #{$width_max}) {
+    @content;
+  }
+}
+
+@mixin mediaMin($width_min) {
+  @media (min-width: #{$width_min}) {
+    @content;
+  }
+}
+
+@mixin mediaXS() {
+  @media (max-width: $phabletWidth) {
+    @content;
+  }
+}
+
+@mixin mediaSM() {
+  @media (max-width: $tabletWidth - 1) {
+    @content;
+  }
+}
+
+@mixin mediaMD() {
+  @media (max-width: $bigDesktopWidth - 1) {
+    @content;
+  }
+}
+
+@mixin sectionFonts {
+  font-size: 40px;
+  line-height: 58px;
+
+  @include mediaXS() {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

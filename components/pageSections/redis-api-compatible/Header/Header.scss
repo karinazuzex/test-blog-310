@@ -1,0 +1,15 @@
+.compatiblePage {
+
+  .header {
+    position: absolute;
+    margin: 20px 0 0 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: unset;
+
+    @include mediaXS() {
+      position: relative;
+      margin: 0;
+    }
+  }
+}

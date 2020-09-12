@@ -1,0 +1,11 @@
+.compatiblePage {
+  .section__promo--home.bg-black {
+    @include mediaSM() {
+      padding-top: 130px;
+    }
+
+    @include mediaXS() {
+      padding-top: 30px;
+    }
+  }
+}

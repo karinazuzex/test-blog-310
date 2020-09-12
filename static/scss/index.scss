@@ -1,5 +1,6 @@
 @import "libs/normalize";
 @import "vars";
+@import "mixins";
 @import "fonts";
 @import "keyframes";
 @import "layout/grid";
@@ -36,3 +37,14 @@
 @import "modifiers";
 @import "blocks/blog";
 @import "blocks/share";
+
+/* Compatible Page Styles */
+@import "../../components/pageSections/redis-api-compatible/Header/Header";
+@import "../../components/pageSections/redis-api-compatible/SectionTrust/SectionTrust";
+@import "../../components/pageSections/redis-api-compatible/SectionReview/SectionReview";
+@import "../../components/pageSections/redis-api-compatible/SectionComparison/SectionComparison";
+@import "../../components/pageSections/redis-api-compatible/SectionTitle/SectionTitle";
+@import "../../components/pageSections/redis-api-compatible/Footer/Footer";
+@import "../../components/pageSections/redis-api-compatible/SectionInstall/SectionInstall";
+@import "../../components/pageSections/redis-api-compatible/SectionCallback/SectionCallback";
+/* Compatible Page Styles */

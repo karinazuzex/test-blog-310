@@ -1,0 +1,42 @@
+.section {
+  &__install {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .install {
+
+      &__title {
+        display: block;
+        font-weight: 500;
+        @include sectionFonts();
+      }
+
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mediaXS() {
+          flex-direction: column;
+
+          p {
+            font-size: 18px;
+            line-height: 28px;
+            text-align: left;
+          }
+        }
+
+        * {
+          flex: 1 1 50%;
+        }
+      }
+
+      &__image {
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
