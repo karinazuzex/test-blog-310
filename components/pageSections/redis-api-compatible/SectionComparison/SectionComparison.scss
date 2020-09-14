@@ -1,0 +1,28 @@
+.section {
+  &__comparison {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .comparison {
+
+      &__title {
+        display: block;
+        font-weight: 500;
+        @include sectionFonts();
+      }
+    }
+
+    p {
+
+      @include mediaXS() {
+        text-align: left;
+        font-size: 18px;
+        line-height: 28px
+      }
+    }
+
+    .table__wrapper {
+      margin-top: 50px;
+    }
+  }
+}

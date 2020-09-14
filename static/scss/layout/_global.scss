@@ -58,6 +58,51 @@ textarea {
   }
 }
 
+input,
+select {
+
+  &[required] {
+
+    + label::after {
+      content: '*';
+      color: $red;
+    }
+  }
+}
+
+.select-wrapper {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 1rem;
+    top: 50%;
+    margin-top: -2px;
+    width: 5px;
+    height: 5px;
+    border-bottom: 2px solid;
+    border-right: 2px solid #080606;
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+
+  select {
+    appearance: none;
+  }
+}
+
+*[dir="rtl"] {
+  .select-wrapper {
+    &::after {
+      right: unset;
+      left: 1rem;
+    }
+  }
+}
+
 h1, h2, h3, h4, h5 {
   font-weight: normal;
   display: inline-block;
@@ -101,6 +146,14 @@ img {
 
 [hidden] {
   display: none;
+}
+
+.compatiblePage {
+  p {
+    &.block__description {
+      margin: 1em 0;
+    }
+  }
 }
 
 @media screen and (min-width: $phabletWidth) {

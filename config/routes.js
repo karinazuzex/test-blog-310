@@ -61,3 +61,8 @@ export const SUPPORT_PAGE = {
     name: "Support",
     path: "/support",
 };
+
+export const LANDING_COMPATIBLE_PAGE = {
+    name: "Compatible",
+    path: "/redis-api-compatible"
+}

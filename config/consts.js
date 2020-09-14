@@ -63,3 +63,218 @@ export const SHOW_DRAFTS = env.SHOW_DRAFTS==="true" || env.NODE_ENV === "develop
 export const COVID19 = env.DISABLE_COVID19==="true" ? false : true;
 
 export const DEFAULT_FAVICON_IMAGE = "/static/favicon/mstile-150x150.png";
+
+export const languages = [
+    {
+        id: "EN",
+        title: "English"
+    },
+    {
+        id: "FR",
+        title: "Français"
+    },
+    {
+        id: "SQ",
+        title: "Shqip"
+    },
+    {
+        id: "AM",
+        title: "አማርኛ"
+    },
+    {
+        id: "AR",
+        title: "العربية"
+    },
+    {
+        id: "AZ_AZ",
+        title: "Azərbaycanca"
+    },
+    {
+        id: "BN",
+        title: "বাংলা"
+    },
+    {
+        id: "BG",
+        title: "Български"
+    },
+    {
+        id: "CA",
+        title: "Català"
+    },
+    {
+        id: "ZH_CN",
+        title: "简体中文 (China)"
+    },
+    {
+        id: "ZH_TW",
+        title: "繁體中文 (Taiwan)"
+    },
+    {
+        id: "HR",
+        title: "Hrvatski"
+    },
+    {
+        id: "CS",
+        title: "Česky"
+    },
+    {
+        id: "DA",
+        title: "Dansk"
+    },
+    {
+        id: "NL",
+        title: "Nederlands"
+    },
+    {
+        id: "ET",
+        title: "Eesti"
+    },
+    {
+        id: "FIL",
+        title: "Pilipino"
+    },
+    {
+        id: "FI",
+        title: "Suomi"
+    },
+    {
+        id: "DE",
+        title: "Deutsch"
+    },
+    {
+        id: "EL",
+        title: "Ελληνικά"
+    },
+    {
+        id: "GU",
+        title: "ગુજરાતી"
+    },
+    {
+        id: "HE",
+        title: "‏עברית‏"
+    },
+    {
+        id: "HI_IN",
+        title: "हिंदी"
+    },
+    {
+        id: "HU",
+        title: "Magyar"
+    },
+    {
+        id: "ID",
+        title: "Bahasa Indonesia"
+    },
+    {
+        id: "IT",
+        title: "Italiano"
+    },
+    {
+        id: "JA",
+        title: "日本語"
+    },
+    {
+        id: "KN",
+        title: "ಕನ್ನಡ"
+    },
+    {
+        id: "KO",
+        title: "한국어"
+    },
+    {
+        id: "LV",
+        title: "Latviešu"
+    },
+    {
+        id: "LT",
+        title: "Lietuviškai"
+    },
+    {
+        id: "MS",
+        title: "Bahasa Melayu"
+    },
+    {
+        id: "ML",
+        title: "മലയാളം"
+    },
+    {
+        id: "MR",
+        title: "मराठी"
+    },
+    {
+        id: "NO",
+        title: "Norsk"
+    },
+    {
+        id: "FA",
+        title: "فارسی"
+    },
+    {
+        id: "PL",
+        title: "Polski"
+    },
+    {
+        id: "PT",
+        title: "Português (PT)"
+    },
+    {
+        id: "RO",
+        title: "Română"
+    },
+    {
+        id: "RU",
+        title: "Pусский"
+    },
+    {
+        id: "SR",
+        title: "Српски"
+    },
+    {
+        id: "SK",
+        title: "Slovenčina"
+    },
+    {
+        id: "SL",
+        title: "Slovenščina"
+    },
+    {
+        id: "ES",
+        title: "Español"
+    },
+    {
+        id: "SW",
+        title: "Kiswahili"
+    },
+    {
+        id: "SV",
+        title: "Svensk"
+    },
+    {
+        id: "TA",
+        title: "தமிழ்"
+    },
+    {
+        id: "TE",
+        title: "తెలుగు"
+    },
+    {
+        id: "TH",
+        title: "ภาษาไทย"
+    },
+    {
+        id: "TR",
+        title: "Türkçe"
+    },
+    {
+        id: "UK",
+        title: "Українська"
+    },
+    {
+        id: "UZ",
+        title: "Oʻzbekcha"
+    },
+    {
+        id: "VI",
+        title: "Tiếng Việt"
+    }
+];

@@ -64,8 +64,22 @@ app.prepare()
             try {
                 await Promise.all([
                     mailer.contact({ email, name, subject, message, location }),
-                    mailer.contactThanks({ email, name, subject, message }),
-                    mailer.contactThanks({ email, name, subject, message }, false),
+                    mailer.contactThanks({ email, name, subject }),
+                    mailer.contactThanks({ email, name, subject }, false),
+                ]);
+                res.status(200).send("success");
+            } catch (err) {
+                res.status(400).send(err);
+            }
+        });
+
+        server.post("/api/talk_expert", async (req, res) => {
+            const { name, email, company, country, location } = req.body;
+            try {
+                await Promise.all([
+                    mailer.talkToExpert({ name, email, company, country, location }),
+                    mailer.talkToExpertThanks({ name, email, company }),
+                    mailer.talkToExpertThanks({ name, email, company }, false),
                 ]);
                 res.status(200).send("success");
             } catch (err) {
