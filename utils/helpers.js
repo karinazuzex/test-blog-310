@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import ImageZoom from 'react-medium-image-zoom';
 import marked from 'marked';
+import axios from 'axios';
 import ReactHtmlParser, { Options } from 'react-html-parser';
 
 export const getAjaxUrl = url => url.replace("/post?", "/post-json?");
@@ -86,4 +87,27 @@ export function downloadByLink(link) {
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
+}
+
+export async function requestGeolocationData() {
+    // Key from https://app.ipgeolocation.io/
+    const ipgeolocation_key = '78ba6dc1da634fc2a5d91da37670f9fc';
+    return await axios.get(`https://api.ipgeolocation.io/ipgeo?apiKey=${ipgeolocation_key}`);
+}
+
+/**
+ * @return {{ ip: string, isp: string, city: string, region: string, country_name: string }}
+ */
+export async function getUserGeolocation() {
+    const {
+        data: {
+            ip = '',
+            isp = '',
+            city = '',
+            state_prov: region = '',
+            country_name = ''
+        } = {}
+    } = await requestGeolocationData();
+
+    return { ip, isp, city, region, country_name };
 }

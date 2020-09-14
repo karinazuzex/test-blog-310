@@ -1,6 +1,6 @@
 import { Component, createRef } from 'react';
 import NextLink from "next/link";
-import PropTypes, { node } from "prop-types";
+import PropTypes from "prop-types";
 import axios from "axios";
 import { connect } from "react-redux";
 import { error, info, removeAll } from "react-notification-system-redux";
@@ -8,8 +8,9 @@ import { Container, Row } from './../../../grid';
 import ReCaptcha from "components/ReCaptcha";
 import { validators } from "./../../../../utils";
 import { messages, routes, analytics, exceptions, consts } from "config";
-import { mailerOperations, mailerTypes } from "modules/mailer";
+import { mailerTypes } from "modules/mailer";
 import { Button, Link } from "components/ui";
+import { getUserGeolocation } from '../../../../utils/helpers';
 
 class SectionCallback extends Component {
   constructor() {
@@ -30,10 +31,6 @@ class SectionCallback extends Component {
       country: ''
     });
 
-    this.nameRef = createRef();
-    this.emailRef = createRef();
-    this.companyRef = createRef();
-    this.countryRef = createRef();
     this.recaptchaRef = createRef();
 
     this.state = this.getInitialState();
@@ -104,7 +101,7 @@ class SectionCallback extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     // analytics.event({
-    //   category: "Contact form",
+    //   category: "Talk to Expert form",
     //   action: "Submit",
     //   label: "Start",
     // });
@@ -126,7 +123,7 @@ class SectionCallback extends Component {
 
     if (!token) {
       // analytics.event({
-      //   category: "Contact form",
+      //   category: "Talk to Expert form",
       //   action: "Submit",
       //   label: exceptions.RECAPTCHA_VALIDATION_FAILED,
       // });
@@ -153,7 +150,7 @@ class SectionCallback extends Component {
 
     if (formError) {
       // analytics.event({
-      //   category: "Contact form",
+      //   category: "Talk to Expert form",
       //   action: "Submit",
       //   label: "Error shown, terminate",
       // });
@@ -167,14 +164,24 @@ class SectionCallback extends Component {
       return;
     }
 
-    const response = await new Promise(res => setTimeout(() => res({status: mailerTypes.MAILER_SUCCESS_STATUS}), 2000));
+    // Get user geolocation
+    const location = await getUserGeolocation();
+    // Send user data to Memurai team
+    const response = await axios.post("/api/talk_expert", {
+      name,
+      email,
+      company,
+      country,
+      location
+    });
 
-    console.log(response)
-
-    if (response.status === mailerTypes.MAILER_SUCCESS_STATUS) {
+    if (
+      response.status === mailerTypes.MAILER_SUCCESS_STATUS
+      && response.data === mailerTypes.MAILER_SUCCESS_DATA
+    ) {
       this.reset();
       /* analytics.event({
-        category: "Contact form",
+        category: "Talk to Expert form",
         action: "Submit",
         label: "Success",
       }); */
@@ -185,7 +192,7 @@ class SectionCallback extends Component {
       }));
     } else {
       /* analytics.event({
-        category: "Contact form",
+        category: "Talk to Expert form",
         action: "Submit",
         label: "Error on submit from backend",
       }); */
@@ -222,7 +229,6 @@ class SectionCallback extends Component {
                     value={this.state.name}
                     disabled={disabled}
                     onChange={this.handleNameChange}
-                    ref={this.nameRef}
                     required
                   />
                   <label htmlFor="callback__form--name" className="form__group-label">Full name</label>
@@ -236,7 +242,6 @@ class SectionCallback extends Component {
                     value={this.state.email}
                     disabled={disabled}
                     onChange={this.handleEmailChange}
-                    ref={this.emailRef}
                     required
                   />
                   <label htmlFor="callback__form--email" className="form__group-label">Email address</label>
@@ -252,7 +257,6 @@ class SectionCallback extends Component {
                     value={this.state.company}
                     disabled={disabled}
                     onChange={this.handleCompanyChange}
-                    ref={this.companyRef}
                   />
                   <label htmlFor="callback__form--company" className="form__group-label">Company</label>
                 </div>
@@ -265,7 +269,6 @@ class SectionCallback extends Component {
                       value={this.state.country}
                       onChange={this.handleCountryChange}
                       disabled={disabled}
-                      ref={this.countryRef}
                     >
                       <option value="" style={{ display: 'none' }}>Select...</option>
                       {consts.languages.map(({ id, title }) => (
