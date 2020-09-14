@@ -13,7 +13,7 @@ module.exports = {
     smtp_server: getVar("smtp_server", "smtp.sendgrid.net"),
     smtp_port: getVar("smtp_port", "465"),
     smtp_username: getVar("smtp_username", "apikey"),
-    smtp_password: getVar("smtp_password", "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"),
+    smtp_password: getVar("smtp_password", "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"),
     aws_key_pair_id: getVar("aws_key_pair_id", "APKAICHXWYVO32V3JGLA"),
     aws_private_key_string: getVar(
         "aws_private_key_string",
