@@ -13,7 +13,7 @@ const Contacts = () => (
       </Link>
     </NextLink>
     <div className="footer__contacts text-left">
-      Memurai inc.
+      Memurai
       <br />
       113 Cherry Street #11630 Seattle, WA 98104 <br />
       © 2020 All rights reserved by Janea Systems, Inc.
