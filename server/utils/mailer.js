@@ -43,9 +43,9 @@ const contact = ({ email, name, subject, message, location }) => {
     });
 };
 
-const contactThanks = ({ email, name, subject }, toSelf = true) => {
+const contactThanks = ({ email, name }, toSelf = true) => {
     const from = toSelf ? `Memurai Contact` : "Memurai Contact Form";
-    subject += ` - request from ${name}`;
+    const subject = `Pricing - request from ${name}`;
     const mailOptions = {
         from: {
             name: from,
@@ -57,34 +57,9 @@ const contactThanks = ({ email, name, subject }, toSelf = true) => {
         html: `
             Hello ${name},<br />
             <br />
-            Thank you for your interest in Memurai Enterprise. One of our team members will reach out shortly.<br />
+            Thank you for your interest in Memurai Enterprise. One of our team members will contact you shortly.<br />
             <br />
-            For the best license op on please answer the following ques ons about your Memurai Enterprise usage scenarios.<br />
-            <br />
-            1. Is it for in-house use at your company? Or to be redistributed as commercial system that is built for a 3rd party end-user by your developers?<br />
-            2. If used in house:
-            <br />
-            <span style="margin-left: 45px;">
-                a. Do you have a particular topology in mind? (i.e. high availability, number of instances, ...)
-            </span>
-            <br />
-            3. If redistributed:
-            <br />
-            <span style="margin-left: 45px;">
-                a. How many end-user deployments do you anticipate and what does the typical topology look like?
-            </span>
-            <br />
-            <span style="margin-left: 45px;">
-                b. Is your application licensed on a subscription basis or do you issue perpetual licenses?<br />
-            </span>
-            <br />
-            To clarify specific technical or implementa on ques ons please feel free to schedule a call at your convenience - <a href="https://calendly.com/rushvel/memurai"
-            style="font-weight:bold; color:#442534; text-decoration-color: #954f72;">https://calendly.com/rushvel/memurai</a> <br />
-            <br />
-            Rush Velcsov<br />
-            Senior Technical PM – <a href="https://twitter.com/MemuraiHQ" style="color:#0707ff;text-decoration:underline;text-decoration-color:#954f72;">Memurai</a> &
-            <a href="https://twitter.com/JaneaSystems" style="color:#0707ff; text-decoration:underline; text-decoration-color:#166dc5">Janea Systems.</a>
-            <br />
+            The Memurai Team!
         `,
     };
 
@@ -95,14 +70,14 @@ const contactThanks = ({ email, name, subject }, toSelf = true) => {
     });
 };
 
-const talkToExpert = ({ email, name, company, country, location }) => {
-    const subject = company || 'No Company';
+const expertContact = ({ email, name, company, country, location }) => {
+    const subject = `Expert contact request - from ${name}`;
     const mailOptions = {
         from : "Memurai <noreply@memurai.com>",
         to: "contact@memurai.com",
         subject,
         html: `
-            <h2>Memurai info request</h2><br />
+            <h2>Memurai Expert contact request</h2><br />
             <strong>Name:</strong> ${name}<br />
             <strong>Email:</strong> ${email}<br />
             ${!!company
@@ -132,10 +107,9 @@ const talkToExpert = ({ email, name, company, country, location }) => {
     });
 };
 
-const talkToExpertThanks = ({ email, name, company }, toSelf = true) => {
+const expertContactThanks = ({ email, name }, toSelf = true) => {
     const from = toSelf ? `Memurai Talk to Expert` : "Memurai Talk to Expert Form";
-    let subject = company || 'No Company';
-    subject += ` - request from ${name}`;
+    const subject = `Memurai Expert contact request - from ${name}`;
     const mailOptions = {
         from: {
             name: from,
@@ -147,34 +121,9 @@ const talkToExpertThanks = ({ email, name, company }, toSelf = true) => {
         html: `
             Hello ${name},<br />
             <br />
-            Thank you for your interest in Memurai Enterprise. One of our team members will reach out shortly.<br />
+            Thank you for your interest in Memurai Enterprise. One of our team members will contact you shortly.<br />
             <br />
-            For the best license op on please answer the following ques ons about your Memurai Enterprise usage scenarios.<br />
-            <br />
-            1. Is it for in-house use at your company? Or to be redistributed as commercial system that is built for a 3rd party end-user by your developers?<br />
-            2. If used in house:
-            <br />
-            <span style="margin-left: 45px;">
-                a. Do you have a particular topology in mind? (i.e. high availability, number of instances, ...)
-            </span>
-            <br />
-            3. If redistributed:
-            <br />
-            <span style="margin-left: 45px;">
-                a. How many end-user deployments do you anticipate and what does the typical topology look like?
-            </span>
-            <br />
-            <span style="margin-left: 45px;">
-                b. Is your application licensed on a subscription basis or do you issue perpetual licenses?<br />
-            </span>
-            <br />
-            To clarify specific technical or implementa on ques ons please feel free to schedule a call at your convenience - <a href="https://calendly.com/rushvel/memurai"
-            style="font-weight:bold; color:#442534; text-decoration-color: #954f72;">https://calendly.com/rushvel/memurai</a> <br />
-            <br />
-            Rush Velcsov<br />
-            Senior Technical PM – <a href="https://twitter.com/MemuraiHQ" style="color:#0707ff;text-decoration:underline;text-decoration-color:#954f72;">Memurai</a> &
-            <a href="https://twitter.com/JaneaSystems" style="color:#0707ff; text-decoration:underline; text-decoration-color:#166dc5">Janea Systems.</a>
-            <br />
+            The Memurai Team!
         `,
     };
 
@@ -214,6 +163,6 @@ module.exports = {
     contact,
     download,
     contactThanks,
-    talkToExpert,
-    talkToExpertThanks,
+    expertContact,
+    expertContactThanks,
 };

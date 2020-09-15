@@ -77,9 +77,9 @@ app.prepare()
             const { name, email, company, country, location } = req.body;
             try {
                 await Promise.all([
-                    mailer.talkToExpert({ name, email, company, country, location }),
-                    mailer.talkToExpertThanks({ name, email, company }),
-                    mailer.talkToExpertThanks({ name, email, company }, false),
+                    mailer.expertContact({ name, email, company, country, location }),
+                    mailer.expertContactThanks({ name, email, company }),
+                    mailer.expertContactThanks({ name, email, company }, false),
                 ]);
                 res.status(200).send("success");
             } catch (err) {
