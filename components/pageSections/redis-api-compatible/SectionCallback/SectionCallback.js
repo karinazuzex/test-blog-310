@@ -102,9 +102,8 @@ class SectionCallback extends Component {
     e.preventDefault();
     analytics.event({
       category: "Landing page",
-      action: "Submit",
-      label: "redis-api-compatible",
-      // label: "Start",
+      action: "Submit - redis-api-compatible",
+      label: "Start",
     });
     const { dispatch } = this.props;
     this.setState({ processing: true });
@@ -123,9 +122,8 @@ class SectionCallback extends Component {
     if (!token) {
       analytics.event({
         category: "Landing page",
-        action: "Submit",
-        label: "redis-api-compatible",
-        // label: exceptions.RECAPTCHA_VALIDATION_FAILED,
+        action: "Submit - redis-api-compatible",
+        label: exceptions.RECAPTCHA_VALIDATION_FAILED,
       });
       dispatch(error({
         position: "bc",
@@ -151,9 +149,8 @@ class SectionCallback extends Component {
     if (formError) {
       analytics.event({
         category: "Landing page",
-        action: "Submit",
-        label: "redis-api-compatible",
-        // label: "Error shown, terminate",
+        action: "Submit - redis-api-compatible",
+        label: "Error shown, terminate",
       });
       dispatch(error({
         position: 'bc',
@@ -183,9 +180,8 @@ class SectionCallback extends Component {
       this.reset();
       analytics.event({
         category: "Landing page",
-        action: "Submit",
-        label: "redis-api-compatible",
-        // label: "Success",
+        action: "Submit - redis-api-compatible",
+        label: "Success",
       });
       dispatch(info({
         position: "bc",
@@ -195,9 +191,8 @@ class SectionCallback extends Component {
     } else {
       analytics.event({
         category: "Landing page",
-        action: "Submit",
-        label: "redis-api-compatible",
-        // label: "Error on submit from backend",
+        action: "Submit - redis-api-compatible",
+        label: "Error on submit from backend",
       });
     }
 
