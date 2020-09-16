@@ -100,11 +100,11 @@ class SectionCallback extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    // analytics.event({
-    //   category: "Talk to Expert form",
-    //   action: "Submit",
-    //   label: "Start",
-    // });
+    analytics.event({
+      category: "Landing page",
+      action: "Submit - redis-api-compatible",
+      label: "Start",
+    });
     const { dispatch } = this.props;
     this.setState({ processing: true });
     dispatch(removeAll());
@@ -119,14 +119,12 @@ class SectionCallback extends Component {
   async submit(token) {
     const { dispatch } = this.props;
 
-    console.log('token', token)
-
     if (!token) {
-      // analytics.event({
-      //   category: "Talk to Expert form",
-      //   action: "Submit",
-      //   label: exceptions.RECAPTCHA_VALIDATION_FAILED,
-      // });
+      analytics.event({
+        category: "Landing page",
+        action: "Submit - redis-api-compatible",
+        label: exceptions.RECAPTCHA_VALIDATION_FAILED,
+      });
       dispatch(error({
         position: "bc",
         autoDismiss: 0,
@@ -149,11 +147,11 @@ class SectionCallback extends Component {
     this.setState({ nameError, emailError });
 
     if (formError) {
-      // analytics.event({
-      //   category: "Talk to Expert form",
-      //   action: "Submit",
-      //   label: "Error shown, terminate",
-      // });
+      analytics.event({
+        category: "Landing page",
+        action: "Submit - redis-api-compatible",
+        label: "Error shown, terminate",
+      });
       dispatch(error({
         position: 'bc',
         autoDismiss: 0,
@@ -180,22 +178,22 @@ class SectionCallback extends Component {
       && response.data === mailerTypes.MAILER_SUCCESS_DATA
     ) {
       this.reset();
-      /* analytics.event({
-        category: "Talk to Expert form",
-        action: "Submit",
+      analytics.event({
+        category: "Landing page",
+        action: "Submit - redis-api-compatible",
         label: "Success",
-      }); */
+      });
       dispatch(info({
         position: "bc",
         autoDismiss: 3,
         message: messages.REQUEST_SUCCESSFULLY_SENT,
       }));
     } else {
-      /* analytics.event({
-        category: "Talk to Expert form",
-        action: "Submit",
+      analytics.event({
+        category: "Landing page",
+        action: "Submit - redis-api-compatible",
         label: "Error on submit from backend",
-      }); */
+      });
     }
 
     this.setState({
