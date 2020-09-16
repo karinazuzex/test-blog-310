@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 
 class Checkbox extends Component {
@@ -13,13 +13,14 @@ class Checkbox extends Component {
     getValue = () => this.state.checked;
 
     handleChange = () => {
-        const { onChange } = this.props;
+        const { onChange, name } = this.props;
         const checked = !this.state.checked;
         this.setState({
             checked,
         });
-        if (onChange) {
-            onChange(checked);
+
+        if (onChange && typeof onChange === "function") {
+            onChange(checked, name);
         }
     };
 

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import { Component, Fragment, createRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NextLink from "next/link";
@@ -6,19 +6,21 @@ import axios from "axios";
 import { error, info, removeAll } from "react-notification-system-redux";
 import ReCaptcha from "components/ReCaptcha";
 
-import { validators } from "utils";
+import { validators } from "../../../utils";
 import { getUserGeolocation } from "../../../utils/helpers";
 import { messages, routes, analytics, exceptions } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
-import { Button, Link, Checkbox } from "components/ui";
+import { Button, Link, Checkbox } from "../../ui";
 
 class ContactForm extends Component {
     constructor(props) {
         super(props);
 
         this.getInitialState = () => ({
+            companyName: '',
+            companyNameError: null,
             agreementError: null,
             nameError: null,
             emailError: null,
@@ -27,9 +29,23 @@ class ContactForm extends Component {
             processing: false,
             recaptchaValue: null,
             recaptchaLoaded: false,
+            features: {
+                cluster: false,
+                highAvailability: false,
+                persistance: false,
+                lowLatency: false,
+                enterpriseSup: false,
+            }
         });
 
         this.state = this.getInitialState();
+        this.features = {
+            cluster: createRef(),
+            highAvailability: createRef(),
+            persistance: createRef(),
+            lowLatency: createRef(),
+            enterpriseSup: createRef(),
+        };
     }
 
     componentDidMount(){
@@ -51,41 +67,64 @@ class ContactForm extends Component {
         this.message.value = '';
         this.agreement.reset();
         this.subscribe.reset();
+        Object.values(this.features).forEach(featureRef => featureRef.current.reset());
     };
 
-    handleNameChange = async () => {
+    handleNameChange = () => {
         if (this.state.nameError) {
-            await this.setState({ nameError: null });
-            this.checkIsErrorLeft();
+            this.setState({ nameError: null }, this.checkIsErrorLeft);
         }
     };
 
-    handleEmailChange = async () => {
+    handleEmailChange = () => {
         if (this.state.emailError) {
-            await this.setState({ emailError: null });
-            this.checkIsErrorLeft();
+            this.setState({ emailError: null }, this.checkIsErrorLeft);
         }
     };
 
-    handleSubjectChange = async () => {
+    handleSubjectChange = () => {
         if (this.state.subjectError) {
-            await this.setState({ subjectError: null });
-            this.checkIsErrorLeft();
+            this.setState({ subjectError: null }, this.checkIsErrorLeft);
         }
     };
 
-    handleMessageChange = async () => {
+    handleMessageChange = () => {
         if (this.state.messageError) {
-            await this.setState({ messageError: null });
-            this.checkIsErrorLeft();
+            this.setState({ messageError: null }, this.checkIsErrorLeft);
         }
     };
 
-    handleAgreementChange = async () => {
+    handleAgreementChange = () => {
         if (this.state.agreementError) {
-            await this.setState({ agreementError: null });
-            this.checkIsErrorLeft();
+            this.setState({ agreementError: null }, this.checkIsErrorLeft);
         }
+    };
+
+    /**
+     * @param {import("react").SyntheticEvent<HTMLInputElement} e change Event
+     */
+    handleCompanyNameChange = e => {
+        const { value } = e.currentTarget;
+
+        if (this.state.companyNameError) {
+            this.setState({ companyNameError: null }, this.checkIsErrorLeft);
+        }
+
+        this.setState({ companyName: value });
+    }
+
+    /**
+     *
+     * @param {boolean} checked change Event
+     * @param {string} name name of checkbox
+     */
+    handleFeaturesCheckboxChange = (checked, name) => {
+        this.setState({
+            features: {
+                ...this.state.features,
+                [name]: checked,
+            }
+        });
     };
 
     checkIsErrorLeft = () => {
@@ -116,7 +155,7 @@ class ContactForm extends Component {
         }
     };
 
-    handleSubmit = async (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
         analytics.event({
             category: "Contact form",
@@ -157,23 +196,33 @@ class ContactForm extends Component {
         const agreement = this.agreement.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
+        const company = this.state.companyName.trim();
+        const { features } = this.state;
         const subject = this.subject.value.trim();
         const message = this.message.value.trim();
         const agreementError = validators.validateAgreement(agreement);
         const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
+        const companyNameError = validators.validateName(company);
         const subjectError = validators.validateSubject(subject);
         const messageError = validators.validateMessage(message);
         const formError = validators.formatFormError([
-            nameError, emailError, subjectError, messageError, agreementError,
+            nameError,
+            emailError,
+            companyNameError,
+            subjectError,
+            messageError,
+            agreementError,
         ]);
         this.setState({
             nameError,
             emailError,
+            companyNameError,
             subjectError,
             messageError,
             agreementError: agreementError === formError ? agreementError : null,
         });
+
         if (formError) {
             analytics.event({
                 category: "Contact form",
@@ -188,8 +237,10 @@ class ContactForm extends Component {
             this.setState({
                 processing: false,
             });
+
             return;
         }
+
         if (this.subscribe.getValue()) {
             analytics.event({
                 category: "Contact form",
@@ -205,9 +256,11 @@ class ContactForm extends Component {
         const response = await axios.post("/api/contact", {
             name,
             email,
+            company,
             subject,
             message,
-            location
+            location,
+            features,
         });
 
         if (
@@ -269,6 +322,19 @@ class ContactForm extends Component {
                     </Row>
                     <Row className="form__row">
                         <div className="form__group">
+                            <label className="form__group-label" htmlFor="company-contact">Company name</label>
+                            <input
+                                type="text"
+                                className={`input ${this.state.companyNameError ? "input--error" : ""}`}
+                                id="company-contact"
+                                disabled={disabled}
+                                onChange={this.handleCompanyNameChange}
+                                value={this.state.companyName}
+                            />
+                        </div>
+                    </Row>
+                    <Row className="form__row">
+                        <div className="form__group">
                             <label className="form__group-label" htmlFor="subject-contact">Subject</label>
                             <input
                                 type="text"
@@ -278,6 +344,48 @@ class ContactForm extends Component {
                                 onChange={this.handleSubjectChange}
                                 ref={(ref) => { this.subject = ref }}
                             />
+                        </div>
+                    </Row>
+                    <Row className="form__row align-center-xs justify-center-xs">
+                        <div className="form__group form__group--checkbox">
+                            <label className="form__group-label">
+                                Select the most important features for your memurai instance
+                            </label>
+                            <Checkbox
+                                name="cluster"
+                                onChange={this.handleFeaturesCheckboxChange}
+                                ref={this.features.cluster}
+                            >
+                                Cluster
+                            </Checkbox>
+                            <Checkbox
+                                name="highAvailability"
+                                onChange={this.handleFeaturesCheckboxChange}
+                                ref={this.features.highAvailability}
+                            >
+                                High Availability
+                            </Checkbox>
+                            <Checkbox
+                                name="persistance"
+                                onChange={this.handleFeaturesCheckboxChange}
+                                ref={this.features.persistance}
+                            >
+                                Persistence
+                            </Checkbox>
+                            <Checkbox
+                                name="lowLatency"
+                                onChange={this.handleFeaturesCheckboxChange}
+                                ref={this.features.lowLatency}
+                            >
+                                Low-latency
+                            </Checkbox>
+                            <Checkbox
+                                name="enterpriseSup"
+                                onChange={this.handleFeaturesCheckboxChange}
+                                ref={this.features.enterpriseSup}
+                            >
+                                Enterprise level support
+                            </Checkbox>
                         </div>
                     </Row>
                     <Row className="form__row align-end-xs">
@@ -322,6 +430,7 @@ class ContactForm extends Component {
                                 role="submit"
                                 type="solid"
                                 theme="red-white"
+                                loading={this.state.processing}
                             >
                                 Submit
                             </Button>

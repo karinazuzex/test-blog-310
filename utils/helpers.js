@@ -96,7 +96,7 @@ export async function requestGeolocationData() {
 }
 
 /**
- * @return {{ ip: string, isp: string, city: string, region: string, country_name: string }}
+ * @return {Promise<{ ip: string, isp: string, city: string, region: string, country_name: string }>}
  */
 export async function getUserGeolocation() {
     const {
