@@ -60,10 +60,10 @@ app.prepare()
         });
 
         server.post("/api/contact", async (req, res) => {
-            const { email, name, subject, message, location } = req.body;
+            const { email, name, company, subject, message, location, features } = req.body;
             try {
                 await Promise.all([
-                    mailer.contact({ email, name, subject, message, location }),
+                    mailer.contact({ email, name, company, subject, message, location, features }),
                     mailer.contactThanks({ email, name, subject }),
                     mailer.contactThanks({ email, name, subject }, false),
                 ]);

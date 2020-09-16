@@ -77,7 +77,7 @@ class SectionCallback extends Component {
 
   handleEmailChange = e => {
     if (this.state.emailError) {
-      this.setState({ emailError: null }, () => this.checkIsErrorLeft());
+      this.setState({ emailError: null }, this.checkIsErrorLeft);
     }
     this.handleInputChange(e);
   }
@@ -92,8 +92,11 @@ class SectionCallback extends Component {
     this.handleInputChange(e);
   }
 
-  handleInputChange({ target }) {
-    const { value, name } = target;
+  /**
+   * @param {import("react").SyntheticEvent<HTMLInputElement} e change Event
+  */
+  handleInputChange({ currentTarget }) {
+    const { value, name } = currentTarget;
 
     this.setState({ [name]: value });
   }
@@ -286,6 +289,7 @@ class SectionCallback extends Component {
                     role="submit"
                     type="solid"
                     theme="red-white"
+                    loading={this.state.processing}
                   >
                     Talk to an expert
                   </Button>

@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import PropTypes from "prop-types";
 
 import TagProvider from "components/TagProvider";
 import { Arrow } from "svg";
+import Loader from "../Loader/Loader";
 
 /**
  * Get button's classes
@@ -16,7 +17,7 @@ function getButtonClasses(item, type) {
 
 class Button extends Component {
     render() {
-        const { className = "", theme = "", type = "", as, children, ...rest } = this.props;
+        const { className = "", loading = false, theme = "", type = "", as, children, ...rest } = this.props;
         const themeExpanded = theme.split(" ").map(item => getButtonClasses(item, type)).join(" ");
 
         return (
@@ -27,6 +28,7 @@ class Button extends Component {
                 className={`button ${className || ""} ${type && `button__${type}`} ${themeExpanded}`}
             >
                 {children}
+                {loading && <Loader />}
                 {theme.includes("chevron") &&
                 <Arrow className={`button__chevron`} />
                 }
@@ -37,6 +39,7 @@ class Button extends Component {
 
 Button.propTypes = {
     className: PropTypes.string,
+    loading: PropTypes.bool,
     theme: PropTypes.string,
     type: PropTypes.string,
     children: PropTypes.oneOfType([
