@@ -121,6 +121,14 @@ const Blog = (props) => {
   return <Layout theme="white"></Layout>;
 };
 
+/**
+ * Hack for off Automatic Static Optimization for this page
+ * This need for environment variables changed (if they was changed in file) after restart server
+ */
+export async function getServerSideProps() {
+  return { props: {} };
+}
+
 export default withRouter(Blog);
 
 // return (

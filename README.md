@@ -66,3 +66,17 @@ Link lead to `/download` page, where url is being decrypted on visit with api ca
 - **crypto_key** - key for data encryption/decryption
 - **WEBSITE_DOMAIN** - website host, used for creation of download link
 - **DISABLE_COVID19** - set to "true" to disable the COVID19 header banner
+
+#
+##### For automatic change environment variables after restart server
+
+On the page where environment variables are used, you need to add the function below to disable NextJS "Automatic Static Optimization":
+```
+/**
+ * Hack for off Automatic Static Optimization for this page
+ * This need for environment variables changed (if they was changed in file) after restart server
+ */
+export async function getServerSideProps() {
+  return { props: {} };
+}
+```
