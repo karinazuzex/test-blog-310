@@ -1,7 +1,8 @@
 require('babel-polyfill');
 
 /**
- * @return {Promise<Array<{link: string}>>}
+ * @return {Promise<Array<{link: string; modelID: string;}>>}
+ * ModelID in array item is number as string
  */
 async function getPosts() {
 
@@ -11,7 +12,8 @@ async function getPosts() {
 
   return client.items.all({}, { allPages: true })
     .then((records) => records.map((item) => ({
-      link: item.slug
+      link: item.slug,
+      modelID: item.itemType,
     })
   ));
 }

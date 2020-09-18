@@ -66,215 +66,979 @@ export const DEFAULT_FAVICON_IMAGE = "/static/favicon/mstile-150x150.png";
 
 export const languages = [
     {
-        id: "EN",
-        title: "English"
+        id:"Afghanistan",
+        title:"Afghanistan"
     },
     {
-        id: "FR",
-        title: "Français"
+        id:"Åland Islands",
+        title:"Åland Islands"
     },
     {
-        id: "SQ",
-        title: "Shqip"
+        id:"Albania",
+        title:"Albania"
     },
     {
-        id: "AM",
-        title: "አማርኛ"
+        id:"Algeria",
+        title:"Algeria"
     },
     {
-        id: "AR",
-        title: "العربية"
+        id:"American Samoa",
+        title:"American Samoa"
     },
     {
-        id: "AZ_AZ",
-        title: "Azərbaycanca"
+        id:"Andorra",
+        title:"Andorra"
     },
     {
-        id: "BN",
-        title: "বাংলা"
+        id:"Angola",
+        title:"Angola"
     },
     {
-        id: "BG",
-        title: "Български"
+        id:"Anguilla",
+        title:"Anguilla"
     },
     {
-        id: "CA",
-        title: "Català"
+        id:"Antarctica",
+        title:"Antarctica"
     },
     {
-        id: "ZH_CN",
-        title: "简体中文 (China)"
+        id:"Antigua and Barbuda",
+        title:"Antigua and Barbuda"
     },
     {
-        id: "ZH_TW",
-        title: "繁體中文 (Taiwan)"
+        id:"Argentina",
+        title:"Argentina"
     },
     {
-        id: "HR",
-        title: "Hrvatski"
+        id:"Armenia",
+        title:"Armenia"
     },
     {
-        id: "CS",
-        title: "Česky"
+        id:"Aruba",
+        title:"Aruba"
     },
     {
-        id: "DA",
-        title: "Dansk"
+        id:"Australia",
+        title:"Australia"
     },
     {
-        id: "NL",
-        title: "Nederlands"
+        id:"Austria",
+        title:"Austria"
     },
     {
-        id: "ET",
-        title: "Eesti"
+        id:"Azerbaijan",
+        title:"Azerbaijan"
     },
     {
-        id: "FIL",
-        title: "Pilipino"
+        id:"Bahamas",
+        title:"Bahamas"
     },
     {
-        id: "FI",
-        title: "Suomi"
+        id:"Bahrain",
+        title:"Bahrain"
     },
     {
-        id: "DE",
-        title: "Deutsch"
+        id:"Bangladesh",
+        title:"Bangladesh"
     },
     {
-        id: "EL",
-        title: "Ελληνικά"
+        id:"Barbados",
+        title:"Barbados"
     },
     {
-        id: "GU",
-        title: "ગુજરાતી"
+        id:"Belarus",
+        title:"Belarus"
     },
     {
-        id: "HE",
-        title: "‏עברית‏"
+        id:"Belgium",
+        title:"Belgium"
     },
     {
-        id: "HI_IN",
-        title: "हिंदी"
+        id:"Belize",
+        title:"Belize"
     },
     {
-        id: "HU",
-        title: "Magyar"
+        id:"Benin",
+        title:"Benin"
     },
     {
-        id: "ID",
-        title: "Bahasa Indonesia"
+        id:"Bermuda",
+        title:"Bermuda"
     },
     {
-        id: "IT",
-        title: "Italiano"
+        id:"Bhutan",
+        title:"Bhutan"
     },
     {
-        id: "JA",
-        title: "日本語"
+        id:"Bolivia",
+        title:"Bolivia"
     },
     {
-        id: "KN",
-        title: "ಕನ್ನಡ"
+        id:"Bosnia and Herzegovina",
+        title:"Bosnia and Herzegovina"
     },
     {
-        id: "KO",
-        title: "한국어"
+        id:"Botswana",
+        title:"Botswana"
     },
     {
-        id: "LV",
-        title: "Latviešu"
+        id:"Bouvet Island",
+        title:"Bouvet Island"
     },
     {
-        id: "LT",
-        title: "Lietuviškai"
+        id:"Brazil",
+        title:"Brazil"
     },
     {
-        id: "MS",
-        title: "Bahasa Melayu"
+        id:"British Indian Ocean Territory",
+        title:"British Indian Ocean Territory"
     },
     {
-        id: "ML",
-        title: "മലയാളം"
+        id:"Brunei Darussalam",
+        title:"Brunei Darussalam"
     },
     {
-        id: "MR",
-        title: "मराठी"
+        id:"Bulgaria",
+        title:"Bulgaria"
     },
     {
-        id: "NO",
-        title: "Norsk"
+        id:"Burkina Faso",
+        title:"Burkina Faso"
     },
     {
-        id: "FA",
-        title: "فارسی"
+        id:"Burundi",
+        title:"Burundi"
     },
     {
-        id: "PL",
-        title: "Polski"
+        id:"Cambodia",
+        title:"Cambodia"
     },
     {
-        id: "PT",
-        title: "Português (PT)"
+        id:"Cameroon",
+        title:"Cameroon"
     },
     {
-        id: "RO",
-        title: "Română"
+        id:"Canada",
+        title:"Canada"
     },
     {
-        id: "RU",
-        title: "Pусский"
+        id:"Cape Verde",
+        title:"Cape Verde"
     },
     {
-        id: "SR",
-        title: "Српски"
+        id:"Cayman Islands",
+        title:"Cayman Islands"
     },
     {
-        id: "SK",
-        title: "Slovenčina"
+        id:"Central African Republic",
+        title:"Central African Republic"
     },
     {
-        id: "SL",
-        title: "Slovenščina"
+        id:"Chad",
+        title:"Chad"
     },
     {
-        id: "ES",
-        title: "Español"
+        id:"Chile",
+        title:"Chile"
     },
     {
-        id: "SW",
-        title: "Kiswahili"
+        id:"China",
+        title:"China"
     },
     {
-        id: "SV",
-        title: "Svensk"
+        id:"Christmas Island",
+        title:"Christmas Island"
     },
     {
-        id: "TA",
-        title: "தமிழ்"
+        id:"Cocos (Keeling) Islands",
+        title:"Cocos (Keeling) Islands"
     },
     {
-        id: "TE",
-        title: "తెలుగు"
+        id:"Colombia",
+        title:"Colombia"
     },
     {
-        id: "TH",
-        title: "ภาษาไทย"
+        id:"Comoros",
+        title:"Comoros"
     },
     {
-        id: "TR",
-        title: "Türkçe"
+        id:"Congo",
+        title:"Congo"
     },
     {
-        id: "UK",
-        title: "Українська"
+        id:"Congo, The Democratic Republic of The",
+        title:"Congo, The Democratic Republic of The"
     },
     {
-        id: "UZ",
-        title: "Oʻzbekcha"
+        id:"Cook Islands",
+        title:"Cook Islands"
     },
     {
-        id: "VI",
-        title: "Tiếng Việt"
+        id:"Costa Rica",
+        title:"Costa Rica"
+    },
+    {
+        id:"Cote D'ivoire",
+        title:"Cote D'ivoire"
+    },
+    {
+        id:"Croatia",
+        title:"Croatia"
+    },
+    {
+        id:"Cuba",
+        title:"Cuba"
+    },
+    {
+        id:"Cyprus",
+        title:"Cyprus"
+    },
+    {
+        id:"Czech Republic",
+        title:"Czech Republic"
+    },
+    {
+        id:"Denmark",
+        title:"Denmark"
+    },
+    {
+        id:"Djibouti",
+        title:"Djibouti"
+    },
+    {
+        id:"Dominica",
+        title:"Dominica"
+    },
+    {
+        id:"Dominican Republic",
+        title:"Dominican Republic"
+    },
+    {
+        id:"Ecuador",
+        title:"Ecuador"
+    },
+    {
+        id:"Egypt",
+        title:"Egypt"
+    },
+    {
+        id:"El Salvador",
+        title:"El Salvador"
+    },
+    {
+        id:"Equatorial Guinea",
+        title:"Equatorial Guinea"
+    },
+    {
+        id:"Eritrea",
+        title:"Eritrea"
+    },
+    {
+        id:"Estonia",
+        title:"Estonia"
+    },
+    {
+        id:"Ethiopia",
+        title:"Ethiopia"
+    },
+    {
+        id:"Falkland Islands (Malvinas)",
+        title:"Falkland Islands (Malvinas)"
+    },
+    {
+        id:"Faroe Islands",
+        title:"Faroe Islands"
+    },
+    {
+        id:"Fiji",
+        title:"Fiji"
+    },
+    {
+        id:"Finland",
+        title:"Finland"
+    },
+    {
+        id:"France",
+        title:"France"
+    },
+    {
+        id:"French Guiana",
+        title:"French Guiana"
+    },
+    {
+        id:"French Polynesia",
+        title:"French Polynesia"
+    },
+    {
+        id:"French Southern Territories",
+        title:"French Southern Territories"
+    },
+    {
+        id:"Gabon",
+        title:"Gabon"
+    },
+    {
+        id:"Gambia",
+        title:"Gambia"
+    },
+    {
+        id:"Georgia",
+        title:"Georgia"
+    },
+    {
+        id:"Germany",
+        title:"Germany"
+    },
+    {
+        id:"Ghana",
+        title:"Ghana"
+    },
+    {
+        id:"Gibraltar",
+        title:"Gibraltar"
+    },
+    {
+        id:"Greece",
+        title:"Greece"
+    },
+    {
+        id:"Greenland",
+        title:"Greenland"
+    },
+    {
+        id:"Grenada",
+        title:"Grenada"
+    },
+    {
+        id:"Guadeloupe",
+        title:"Guadeloupe"
+    },
+    {
+        id:"Guam",
+        title:"Guam"
+    },
+    {
+        id:"Guatemala",
+        title:"Guatemala"
+    },
+    {
+        id:"Guernsey",
+        title:"Guernsey"
+    },
+    {
+        id:"Guinea",
+        title:"Guinea"
+    },
+    {
+        id:"Guinea-bissau",
+        title:"Guinea-bissau"
+    },
+    {
+        id:"Guyana",
+        title:"Guyana"
+    },
+    {
+        id:"Haiti",
+        title:"Haiti"
+    },
+    {
+        id:"Heard Island and Mcdonald Islands",
+        title:"Heard Island and Mcdonald Islands"
+    },
+    {
+        id:"Holy See (Vatican City State)",
+        title:"Holy See (Vatican City State)"
+    },
+    {
+        id:"Honduras",
+        title:"Honduras"
+    },
+    {
+        id:"Hong Kong",
+        title:"Hong Kong"
+    },
+    {
+        id:"Hungary",
+        title:"Hungary"
+    },
+    {
+        id:"Iceland",
+        title:"Iceland"
+    },
+    {
+        id:"India",
+        title:"India"
+    },
+    {
+        id:"Indonesia",
+        title:"Indonesia"
+    },
+    {
+        id:"Iran, Islamic Republic of",
+        title:"Iran, Islamic Republic of"
+    },
+    {
+        id:"Iraq",
+        title:"Iraq"
+    },
+    {
+        id:"Ireland",
+        title:"Ireland"
+    },
+    {
+        id:"Isle of Man",
+        title:"Isle of Man"
+    },
+    {
+        id:"Israel",
+        title:"Israel"
+    },
+    {
+        id:"Italy",
+        title:"Italy"
+    },
+    {
+        id:"Jamaica",
+        title:"Jamaica"
+    },
+    {
+        id:"Japan",
+        title:"Japan"
+    },
+    {
+        id:"Jersey",
+        title:"Jersey"
+    },
+    {
+        id:"Jordan",
+        title:"Jordan"
+    },
+    {
+        id:"Kazakhstan",
+        title:"Kazakhstan"
+    },
+    {
+        id:"Kenya",
+        title:"Kenya"
+    },
+    {
+        id:"Kiribati",
+        title:"Kiribati"
+    },
+    {
+        id:"Korea, Democratic People's Republic of",
+        title:"Korea, Democratic People's Republic of"
+    },
+    {
+        id:"Korea, Republic of",
+        title:"Korea, Republic of"
+    },
+    {
+        id:"Kuwait",
+        title:"Kuwait"
+    },
+    {
+        id:"Kyrgyzstan",
+        title:"Kyrgyzstan"
+    },
+    {
+        id:"Lao People's Democratic Republic",
+        title:"Lao People's Democratic Republic"
+    },
+    {
+        id:"Latvia",
+        title:"Latvia"
+    },
+    {
+        id:"Lebanon",
+        title:"Lebanon"
+    },
+    {
+        id:"Lesotho",
+        title:"Lesotho"
+    },
+    {
+        id:"Liberia",
+        title:"Liberia"
+    },
+    {
+        id:"Libyan Arab Jamahiriya",
+        title:"Libyan Arab Jamahiriya"
+    },
+    {
+        id:"Liechtenstein",
+        title:"Liechtenstein"
+    },
+    {
+        id:"Lithuania",
+        title:"Lithuania"
+    },
+    {
+        id:"Luxembourg",
+        title:"Luxembourg"
+    },
+    {
+        id:"Macao",
+        title:"Macao"
+    },
+    {
+        id:"Macedonia, The Former Yugoslav Republic of",
+        title:"Macedonia, The Former Yugoslav Republic of"
+    },
+    {
+        id:"Madagascar",
+        title:"Madagascar"
+    },
+    {
+        id:"Malawi",
+        title:"Malawi"
+    },
+    {
+        id:"Malaysia",
+        title:"Malaysia"
+    },
+    {
+        id:"Maldives",
+        title:"Maldives"
+    },
+    {
+        id:"Mali",
+        title:"Mali"
+    },
+    {
+        id:"Malta",
+        title:"Malta"
+    },
+    {
+        id:"Marshall Islands",
+        title:"Marshall Islands"
+    },
+    {
+        id:"Martinique",
+        title:"Martinique"
+    },
+    {
+        id:"Mauritania",
+        title:"Mauritania"
+    },
+    {
+        id:"Mauritius",
+        title:"Mauritius"
+    },
+    {
+        id:"Mayotte",
+        title:"Mayotte"
+    },
+    {
+        id:"Mexico",
+        title:"Mexico"
+    },
+    {
+        id:"Micronesia, Federated States of",
+        title:"Micronesia, Federated States of"
+    },
+    {
+        id:"Moldova, Republic of",
+        title:"Moldova, Republic of"
+    },
+    {
+        id:"Monaco",
+        title:"Monaco"
+    },
+    {
+        id:"Mongolia",
+        title:"Mongolia"
+    },
+    {
+        id:"Montenegro",
+        title:"Montenegro"
+    },
+    {
+        id:"Montserrat",
+        title:"Montserrat"
+    },
+    {
+        id:"Morocco",
+        title:"Morocco"
+    },
+    {
+        id:"Mozambique",
+        title:"Mozambique"
+    },
+    {
+        id:"Myanmar",
+        title:"Myanmar"
+    },
+    {
+        id:"Namibia",
+        title:"Namibia"
+    },
+    {
+        id:"Nauru",
+        title:"Nauru"
+    },
+    {
+        id:"Nepal",
+        title:"Nepal"
+    },
+    {
+        id:"Netherlands",
+        title:"Netherlands"
+    },
+    {
+        id:"Netherlands Antilles",
+        title:"Netherlands Antilles"
+    },
+    {
+        id:"New Caledonia",
+        title:"New Caledonia"
+    },
+    {
+        id:"New Zealand",
+        title:"New Zealand"
+    },
+    {
+        id:"Nicaragua",
+        title:"Nicaragua"
+    },
+    {
+        id:"Niger",
+        title:"Niger"
+    },
+    {
+        id:"Nigeria",
+        title:"Nigeria"
+    },
+    {
+        id:"Niue",
+        title:"Niue"
+    },
+    {
+        id:"Norfolk Island",
+        title:"Norfolk Island"
+    },
+    {
+        id:"Northern Mariana Islands",
+        title:"Northern Mariana Islands"
+    },
+    {
+        id:"Norway",
+        title:"Norway"
+    },
+    {
+        id:"Oman",
+        title:"Oman"
+    },
+    {
+        id:"Pakistan",
+        title:"Pakistan"
+    },
+    {
+        id:"Palau",
+        title:"Palau"
+    },
+    {
+        id:"Palestinian Territory, Occupied",
+        title:"Palestinian Territory, Occupied"
+    },
+    {
+        id:"Panama",
+        title:"Panama"
+    },
+    {
+        id:"Papua New Guinea",
+        title:"Papua New Guinea"
+    },
+    {
+        id:"Paraguay",
+        title:"Paraguay"
+    },
+    {
+        id:"Peru",
+        title:"Peru"
+    },
+    {
+        id:"Philippines",
+        title:"Philippines"
+    },
+    {
+        id:"Pitcairn",
+        title:"Pitcairn"
+    },
+    {
+        id:"Poland",
+        title:"Poland"
+    },
+    {
+        id:"Portugal",
+        title:"Portugal"
+    },
+    {
+        id:"Puerto Rico",
+        title:"Puerto Rico"
+    },
+    {
+        id:"Qatar",
+        title:"Qatar"
+    },
+    {
+        id:"Reunion",
+        title:"Reunion"
+    },
+    {
+        id:"Romania",
+        title:"Romania"
+    },
+    {
+        id:"Russian Federation",
+        title:"Russian Federation"
+    },
+    {
+        id:"Rwanda",
+        title:"Rwanda"
+    },
+    {
+        id:"Saint Helena",
+        title:"Saint Helena"
+    },
+    {
+        id:"Saint Kitts and Nevis",
+        title:"Saint Kitts and Nevis"
+    },
+    {
+        id:"Saint Lucia",
+        title:"Saint Lucia"
+    },
+    {
+        id:"Saint Pierre and Miquelon",
+        title:"Saint Pierre and Miquelon"
+    },
+    {
+        id:"Saint Vincent and The Grenadines",
+        title:"Saint Vincent and The Grenadines"
+    },
+    {
+        id:"Samoa",
+        title:"Samoa"
+    },
+    {
+        id:"San Marino",
+        title:"San Marino"
+    },
+    {
+        id:"Sao Tome and Principe",
+        title:"Sao Tome and Principe"
+    },
+    {
+        id:"Saudi Arabia",
+        title:"Saudi Arabia"
+    },
+    {
+        id:"Senegal",
+        title:"Senegal"
+    },
+    {
+        id:"Serbia",
+        title:"Serbia"
+    },
+    {
+        id:"Seychelles",
+        title:"Seychelles"
+    },
+    {
+        id:"Sierra Leone",
+        title:"Sierra Leone"
+    },
+    {
+        id:"Singapore",
+        title:"Singapore"
+    },
+    {
+        id:"Slovakia",
+        title:"Slovakia"
+    },
+    {
+        id:"Slovenia",
+        title:"Slovenia"
+    },
+    {
+        id:"Solomon Islands",
+        title:"Solomon Islands"
+    },
+    {
+        id:"Somalia",
+        title:"Somalia"
+    },
+    {
+        id:"South Africa",
+        title:"South Africa"
+    },
+    {
+        id:"South Georgia and The South Sandwich Islands",
+        title:"South Georgia and The South Sandwich Islands"
+    },
+    {
+        id:"Spain",
+        title:"Spain"
+    },
+    {
+        id:"Sri Lanka",
+        title:"Sri Lanka"
+    },
+    {
+        id:"Sudan",
+        title:"Sudan"
+    },
+    {
+        id:"Suriname",
+        title:"Suriname"
+    },
+    {
+        id:"Svalbard and Jan Mayen",
+        title:"Svalbard and Jan Mayen"
+    },
+    {
+        id:"Swaziland",
+        title:"Swaziland"
+    },
+    {
+        id:"Sweden",
+        title:"Sweden"
+    },
+    {
+        id:"Switzerland",
+        title:"Switzerland"
+    },
+    {
+        id:"Syrian Arab Republic",
+        title:"Syrian Arab Republic"
+    },
+    {
+        id:"Taiwan, Province of China",
+        title:"Taiwan, Province of China"
+    },
+    {
+        id:"Tajikistan",
+        title:"Tajikistan"
+    },
+    {
+        id:"Tanzania, United Republic of",
+        title:"Tanzania, United Republic of"
+    },
+    {
+        id:"Thailand",
+        title:"Thailand"
+    },
+    {
+        id:"Timor-leste",
+        title:"Timor-leste"
+    },
+    {
+        id:"Togo",
+        title:"Togo"
+    },
+    {
+        id:"Tokelau",
+        title:"Tokelau"
+    },
+    {
+        id:"Tonga",
+        title:"Tonga"
+    },
+    {
+        id:"Trinidad and Tobago",
+        title:"Trinidad and Tobago"
+    },
+    {
+        id:"Tunisia",
+        title:"Tunisia"
+    },
+    {
+        id:"Turkey",
+        title:"Turkey"
+    },
+    {
+        id:"Turkmenistan",
+        title:"Turkmenistan"
+    },
+    {
+        id:"Turks and Caicos Islands",
+        title:"Turks and Caicos Islands"
+    },
+    {
+        id:"Tuvalu",
+        title:"Tuvalu"
+    },
+    {
+        id:"Uganda",
+        title:"Uganda"
+    },
+    {
+        id:"Ukraine",
+        title:"Ukraine"
+    },
+    {
+        id:"United Arab Emirates",
+        title:"United Arab Emirates"
+    },
+    {
+        id:"United Kingdom",
+        title:"United Kingdom"
+    },
+    {
+        id:"United States",
+        title:"United States"
+    },
+    {
+        id:"United States Minor Outlying Islands",
+        title:"United States Minor Outlying Islands"
+    },
+    {
+        id:"Uruguay",
+        title:"Uruguay"
+    },
+    {
+        id:"Uzbekistan",
+        title:"Uzbekistan"
+    },
+    {
+        id:"Vanuatu",
+        title:"Vanuatu"
+    },
+    {
+        id:"Venezuela",
+        title:"Venezuela"
+    },
+    {
+        id:"Viet Nam",
+        title:"Viet Nam"
+    },
+    {
+        id:"Virgin Islands, British",
+        title:"Virgin Islands, British"
+    },
+    {
+        id:"Virgin Islands, U.S.",
+        title:"Virgin Islands, U.S."
+    },
+    {
+        id:"Wallis and Futuna",
+        title:"Wallis and Futuna"
+    },
+    {
+        id:"Western Sahara",
+        title:"Western Sahara"
+    },
+    {
+        id:"Yemen",
+        title:"Yemen"
+    },
+    {
+        id:"Zambia",
+        title:"Zambia"
+    },
+    {
+        id:"Zimbabwe",
+        title:"Zimbabwe"
     }
 ];

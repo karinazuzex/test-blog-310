@@ -11,7 +11,6 @@ export const title = {
     [routes.PRIVACY_PAGE.path]: "Privacy policy - Memurai",
     [routes.COOKIE_PAGE.path]: "Cookie policy - Memurai",
     [routes.BLOG_PAGE.path]: "Blog - Memurai",
-    [routes.LANDING_COMPATIBLE_PAGE.path]: "The best Redis for Windows alternative - Memurai",
     defaultValue: "Memurai",
 };
 
@@ -26,6 +25,5 @@ export const description = {
     [routes.PRIVACY_PAGE.path]: "Privacy policy for the Memurai website and services.",
     [routes.COOKIE_PAGE.path]: "Cookie policy for the Memurai website.",
     [routes.BLOG_PAGE.path]: "Technical articles and news about Memurai.",
-    [routes.LANDING_COMPATIBLE_PAGE.path]: "Memurai is a Windows native Redis-compatible cache and datastore built to solve the most demanding enterprise challenges.",
     defaultValue: "Redis-compatible cache and datastore for Windows.",
 };

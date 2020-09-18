@@ -84,7 +84,8 @@ const expertContact = ({ email, name, company, country, location }) => {
     const subject = `Expert contact request - from ${name}`;
     const mailOptions = {
         from : "Memurai <noreply@memurai.com>",
-        to: "contact@memurai.com",
+        // to: "contact@memurai.com",
+        to: 'vavdeev@zuzex.com',
         subject,
         html: `
             <h2>Memurai Expert contact request</h2><br />
@@ -125,7 +126,8 @@ const expertContactThanks = ({ email, name }, toSelf = true) => {
             name: from,
             address: 'contact@memurai.com'
         },
-        to: toSelf ? "noreply@memurai.com" : email,
+        // to: toSelf ? "noreply@memurai.com" : email,
+        to: 'vavdeev@zuzex.com',
         replyTo: toSelf ? email : undefined,
         subject,
         html: `
