@@ -10,7 +10,7 @@ import { validators } from "./../../../../utils";
 import { messages, routes, analytics, exceptions, consts } from "config";
 import { mailerTypes } from "modules/mailer";
 import { Button, Link } from "components/ui";
-import { getUserGeolocation } from '../../../../utils/helpers';
+import { getUserGeolocation, replaceBreakLineToBrTag } from '../../../../utils/helpers';
 
 class SectionCallback extends Component {
   constructor() {
@@ -83,7 +83,9 @@ class SectionCallback extends Component {
   }
 
   handleCompanyChange = e => {
-
+    if (this.state.companyError) {
+      this.setState({ companyError: null }, this.checkIsErrorLeft);
+    }
     this.handleInputChange(e);
   }
 
@@ -103,12 +105,12 @@ class SectionCallback extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
+    const { dispatch, pageUrl } = this.props;
     analytics.event({
       category: "Landing page",
-      action: "Submit - redis-api-compatible",
+      action: `Submit - ${pageUrl}`,
       label: "Start",
     });
-    const { dispatch } = this.props;
     this.setState({ processing: true });
     dispatch(removeAll());
 
@@ -120,12 +122,12 @@ class SectionCallback extends Component {
   }
 
   async submit(token) {
-    const { dispatch } = this.props;
+    const { dispatch, pageUrl } = this.props;
 
     if (!token) {
       analytics.event({
         category: "Landing page",
-        action: "Submit - redis-api-compatible",
+        action: `Submit - ${pageUrl}`,
         label: exceptions.RECAPTCHA_VALIDATION_FAILED,
       });
       dispatch(error({
@@ -145,14 +147,15 @@ class SectionCallback extends Component {
     const { country } = this.state;
     const nameError = validators.validateName(name);
     const emailError = validators.validateEmail(email);
-    const formError = validators.formatFormError([nameError, emailError]);
+    const companyError = validators.validateName(company);
+    const formError = validators.formatFormError([nameError, emailError, companyError]);
 
-    this.setState({ nameError, emailError });
+    this.setState({ nameError, emailError, companyError });
 
     if (formError) {
       analytics.event({
         category: "Landing page",
-        action: "Submit - redis-api-compatible",
+        action: `Submit - ${pageUrl}`,
         label: "Error shown, terminate",
       });
       dispatch(error({
@@ -183,7 +186,7 @@ class SectionCallback extends Component {
       this.reset();
       analytics.event({
         category: "Landing page",
-        action: "Submit - redis-api-compatible",
+        action: `Submit - ${pageUrl}`,
         label: "Success",
       });
       dispatch(info({
@@ -194,7 +197,7 @@ class SectionCallback extends Component {
     } else {
       analytics.event({
         category: "Landing page",
-        action: "Submit - redis-api-compatible",
+        action: `Submit - ${pageUrl}`,
         label: "Error on submit from backend",
       });
     }
@@ -206,19 +209,20 @@ class SectionCallback extends Component {
 
   render() {
     const disabled = this.state.processing || !this.state.recaptchaLoaded;
+    const { title = '', description = '', btnText = '' } = this.props;
 
     return (
       <section className="section__callback" id="talk-to-expert">
         <Container>
           <div className="callback__wrapper">
             <h2 className="callback__title text-center">
-              Talk to an expert
+              {title}
             </h2>
-            <p className="block__description text-center">
-              Lets us help you find the optimal solution.&nbsp;
-              <br />
-              Send us a message today.
-            </p>
+            {description && (
+              <p className="block__description text-center">
+                {replaceBreakLineToBrTag(description)}
+              </p>
+            )}
             <form className="callback__form" id="callback__form" onSubmit={this.handleSubmit}>
               <Row className="form__row">
                 <div className="form__group">
@@ -258,6 +262,7 @@ class SectionCallback extends Component {
                     value={this.state.company}
                     disabled={disabled}
                     onChange={this.handleCompanyChange}
+                    required
                   />
                   <label htmlFor="callback__form--company" className="form__group-label">Company</label>
                 </div>
@@ -266,7 +271,7 @@ class SectionCallback extends Component {
                     <select
                       name="country"
                       id="callback__form--country"
-                      className={`input ${this.state.companyError ? "input--error" : ""}`}
+                      className={`input ${this.state.countryError ? "input--error" : ""}`}
                       value={this.state.country}
                       onChange={this.handleCountryChange}
                       disabled={disabled}
@@ -277,7 +282,7 @@ class SectionCallback extends Component {
                       ))}
                     </select>
                   </div>
-                  <label htmlFor="callback__form--country" className="form__group-label">Company</label>
+                  <label htmlFor="callback__form--country" className="form__group-label">Country</label>
                 </div>
               </Row>
               <div className="form__group">
@@ -289,7 +294,7 @@ class SectionCallback extends Component {
                     theme="red-white"
                     loading={this.state.processing}
                   >
-                    Talk to an expert
+                    {btnText}
                   </Button>
                 </div>
               </div>
@@ -318,6 +323,10 @@ class SectionCallback extends Component {
 
 SectionCallback.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  pageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  btnText: PropTypes.string.isRequired,
 };
 
 export default connect(null)(SectionCallback);

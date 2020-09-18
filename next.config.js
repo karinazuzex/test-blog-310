@@ -46,11 +46,21 @@ module.exports = withImages({
       "/blog": { page: "/blog" },
     };
 
-    (await getPosts()).map((post) => {
-      pathMap[`/blog/${post.link}`] = {
-        page: `/blog/[slug]`,
-        query: { slug: post.link },
-      };
+    (await getPosts()).map(post => {
+      const blogPostModelID = 107238; // Model ID for article model in DatoCMS
+
+      if (Number(post.modelID) === blogPostModelID) {
+        pathMap[`/blog/${post.link}`] = {
+          page: `/blog/[slug]`,
+          query: { slug: post.link },
+        };
+      } else {
+        // Here pathMap for landing pages
+        pathMap[`/${post.link}`] = {
+          page: '/[landing_page_slug]',
+          query: { landing_page_slug: post.link },
+        };
+      }
     });
 
     return pathMap;

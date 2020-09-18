@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { Fragment } from 'react';
 import ImageZoom from 'react-medium-image-zoom';
 import marked from 'marked';
 import axios from 'axios';
@@ -61,7 +61,7 @@ export const optionsDateCreate = {
  * @param {string} text String of markdown source to be compiled
  * @param {boolean} withoutLinks Flag for convert link to 'span' of not
  * @param {Options} options Optional Object with options for HTMLParser function
- * @return {ReactElement[]} Array of ReactElements
+ * @return {import('react').ReactElement[]} Array of ReactElements
  */
 export const getConvertedHTML = (text, withoutLinks = false, options) => {
     if (!options) {
@@ -110,4 +110,18 @@ export async function getUserGeolocation() {
     } = await requestGeolocationData();
 
     return { ip, isp, city, region, country_name };
+}
+
+/**
+ * Replace all break lines to <br /> and return JSX array
+ * @param {string} value converted string value
+ * @returns {JSX.Element[]}
+ */
+export function replaceBreakLineToBrTag(value = '') {
+    return value.split('\n').map((item, idx) => (
+        <Fragment key={idx}>
+            {item}
+            <br />
+        </Fragment>
+    ));
 }

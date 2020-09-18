@@ -1,10 +1,18 @@
 import NextHead from "next/head";
 import { head, consts } from "config";
 
+/**
+ * @param {{
+ *  title?: string;
+ *  description?: string;
+ *  img?: string;
+ *  router?: import("next/router").NextRouter;
+ * }} props
+ */
 const Head = (props) => {
-  const { router = {} } = props;
-  const defaultTitle = head.title[router.route] || head.title.defaultValue;
-  const defaultDescription = head.description[router.route] || head.description.defaultValue;
+  const { router } = props;
+  const defaultTitle = head.title[router?.route] || head.title.defaultValue;
+  const defaultDescription = head.description[router?.route] || head.description.defaultValue;
 
   return (
     <NextHead>

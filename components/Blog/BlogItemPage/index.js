@@ -1,6 +1,6 @@
 import { Container} from "components/grid";
 import Head from 'components/Head';
-import { head, consts } from "config";
+import { head } from "config";
 import { Link } from "components/ui";
 import NextLink from "next/link";
 import SubscribeForm from "components/Form/Subscribe";
@@ -22,19 +22,16 @@ const BlogItemPage = ({data}) => {
             publishDateOverride,
             slug
         } = data.allArticles[0];
-    let seoTitle = '', seoDescription = '', seoImage = '';
-
-    if (description) {
-        seoTitle = description.title;
-        seoDescription = description.description;
-        seoImage = description.image && description.url || consts.DEFAULT_FAVICON_IMAGE;
-    }
+    const seoTitle = description?.title || '';
+    const seoDescription = description?.description || '';
+    const seoImage = description?.image?.url || '';
 
     const convertedHtml = getConvertedHTML(body);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
-    head.title[`/blog/${slug}`] = title;
-    head.description[`/blog/${slug}`] = description.description;
+
+    head.title[`/blog/${slug}`] = seoTitle;
+    head.description[`/blog/${slug}`] = seoDescription;
 
     return (
         <section className="blog-item section section__promo section__promo--home pb-0 block__elem--xs">
