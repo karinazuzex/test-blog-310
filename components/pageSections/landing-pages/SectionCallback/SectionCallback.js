@@ -299,7 +299,7 @@ class SectionCallback extends Component {
                 </div>
               </div>
               <p className="callback__form--privacy text-center">
-                By pressing the submit button you are requesting are presentative of Memurai to contact you about
+                By pressing the submit button you are requesting a presentative of Memurai to contact you about
                 your enquiry, and you confirm that you have read and agree to the processing of your data by
                 Memurai as described in our
                 <NextLink href={routes.PRIVACY_PAGE.path} passHref>

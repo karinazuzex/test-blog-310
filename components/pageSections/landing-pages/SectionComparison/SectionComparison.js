@@ -43,7 +43,7 @@ function SectionComparison({ title = '', description = '', btnText = '', btnLink
         </div>
         <Container theme="reversed">
           <Row theme="no-col" className="justify-center-xs">
-            <ComparisonTable />
+            <ComparisonTable blackHeader />
           </Row>
         </Container>
       </Container>

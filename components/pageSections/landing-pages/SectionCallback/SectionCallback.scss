@@ -1,7 +1,7 @@
 .section {
   &__callback {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     @include mediaXS() {
       padding-top: 0;
@@ -11,8 +11,11 @@
 
       &__wrapper {
 
-        @include mediaXS() {
-          p.block__description {
+        p.block__description {
+          margin-top: 20px;
+          margin-bottom: 60px;
+
+          @include mediaXS() {
             font-size: 18px;
             line-height: 28px;
 
