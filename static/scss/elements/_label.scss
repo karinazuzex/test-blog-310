@@ -17,6 +17,11 @@
       background-color: $red;
     }
 
+    &--black {
+      color: $white;
+      background-color: $black;
+    }
+
     &--grey-light {
       color: $white;
       background-color: $greyLight;
