@@ -221,6 +221,14 @@ function MyApp({ Component, pageProps }) {
               async
             />
             <script
+              key="freshsales"
+              id="FreshSales"
+              src="/static/scripts/freshsales.js"
+              type="text/javascript"
+              async
+            />
+            <script src='//cdn.freshmarketer.com/708319/1759318.js' />
+            <script
               key="cookiebot"
               id="Cookiebot"
               src="https://consent.cookiebot.com/uc.js"
