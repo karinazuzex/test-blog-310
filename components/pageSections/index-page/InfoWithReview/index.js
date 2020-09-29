@@ -22,7 +22,7 @@ const InfoWithReviewSection = () => {
                     </h5>
                     <div className="info__text-description">
                         Memurai runs natively on the Windows APIs, and is fine-tuned to offer the performance
-                        and reliability required to handle huge datasets and mission-critical workloads. 
+                        and reliability required to handle huge datasets and mission-critical workloads.
                     </div>
                 </div>
                 <Icon type="big-circled" theme="performance" className="info__image info__block">
@@ -39,7 +39,7 @@ const InfoWithReviewSection = () => {
                     </h5>
                     <div className="info__text-description">
                         Memurai is a fully-supported platform that meets enterprise customers’ requirements in terms
-                        of support, scale, performance and security.                    
+                        of support, scale, performance and security.
                     </div>
                 </div>
             </Row>

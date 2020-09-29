@@ -4,9 +4,8 @@ import NextLink from "next/link";
 import { faq } from "content";
 import { routes } from "config";
 import { helpers } from "utils";
-import { Link } from "components/ui";
+import { Link, Button } from "components/ui";
 import { Container, Row, Col } from "components/grid";
-import { Button } from "components/ui";
 import { LinkLogo } from "svg";
 import ReactTooltip from "react-tooltip";
 import { useEffect, useState } from "react";
@@ -17,6 +16,7 @@ const FAQSection = () => {
   const [hash, setHash] = useState("");
   const [place, setPlace] = useState("bottom");
   const [allowScroll, setAllowScroll] = useState(true);
+
   const scroll = (id) => {
     const block = document.getElementById(id);
     if (block) {
@@ -31,6 +31,7 @@ const FAQSection = () => {
       });
     }
   };
+
   const saveHash = () => {
     if (document.location.hash !== hash) {
       setHash(document.location.hash);
@@ -40,6 +41,7 @@ const FAQSection = () => {
       }
     }
   };
+
   useEffect(() => {
     if (window.innerWidth < 500 && place !== "right") {
       setPlace("right");
@@ -49,6 +51,7 @@ const FAQSection = () => {
       window.removeEventListener("hashchange", saveHash);
     };
   });
+
   useEffect(() => {
     ReactTooltip.rebuild();
     saveHash();
@@ -91,6 +94,7 @@ const FAQSection = () => {
         <div className="block__description">{item.info}</div>
       </div>
     ));
+
   return (
     <section className="section section__faq bg-white-grey separator-bt">
       <Container>

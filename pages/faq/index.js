@@ -1,9 +1,9 @@
 import Layout from "components/Layout"
 
-import PromoSection from "./sections/Promo";
-import GetMemuraiSection from "./sections/GetMemurai";
-import FAQSection from "./sections/FAQ";
-import SocialSection from "pages/contact/sections/Social";
+import PromoSection from "./../../components/pageSections/faq-page/Promo";
+import GetMemuraiSection from "./../../components/pageSections/faq-page/GetMemurai";
+import FAQSection from "./../../components/pageSections/faq-page/FAQ";
+import SocialSection from "./../../components/pageSections/contact-page/Social";
 
 const IndexPage = () => (
     <Layout theme="white">

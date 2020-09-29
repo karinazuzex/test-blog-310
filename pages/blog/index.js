@@ -4,7 +4,7 @@ import { withRouter } from "next/router";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import ErrorMessage from "components/Blog/ErrorMessage";
-import SocialSection from "pages/contact/sections/Social";
+import SocialSection from "./../../components/pageSections/contact-page/Social";
 
 const GET_POSTS = gql`
   query allArticles(

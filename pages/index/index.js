@@ -1,11 +1,11 @@
 import Layout from "components/Layout";
 
-import PromoSection from "./sections/Promo";
-import ReviewsSection from "./sections/Reviews";
-import InfoWithReviewSection from "./sections/InfoWithReview";
-import ComparisonSection from "./sections/Comparison";
-import GetMemuraiSection from "./sections/GetMemurai";
-import SocialSection from "pages/contact/sections/Social";
+import PromoSection from "./../../components/pageSections/index-page/Promo";
+import ReviewsSection from "./../../components/pageSections/index-page/Reviews";
+import InfoWithReviewSection from "./../../components/pageSections/index-page/InfoWithReview";
+import ComparisonSection from "./../../components/pageSections/index-page/Comparison";
+import GetMemuraiSection from "./../../components/pageSections/index-page/GetMemurai";
+import SocialSection from "./../../components/pageSections/contact-page/Social";
 
 const IndexPage = () => (
   <Layout>

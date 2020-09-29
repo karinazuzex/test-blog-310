@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container } from "components/grid";
-import Social from "components/Social";
+import { Container } from "../../../grid";
+import Social from "../../../Social";
 
 const PromoSection = () => (
     <section className="section section__social section__social--about bg-white-grey separator-bt">

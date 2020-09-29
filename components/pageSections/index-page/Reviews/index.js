@@ -5,18 +5,18 @@ import Slider from "react-slick";
 
 import UserPromo from "components/User/Promo";
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
 const ReviewsSection = () => {
   if (!reviews || !reviews.length) {
     return null;
   }
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   return (
     <section className="section section__reviews bg-white-grey separator-bt">
