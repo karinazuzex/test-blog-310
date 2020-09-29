@@ -1,6 +1,6 @@
 import Layout from "components/Layout"
 
-import LegalSection from "./sections/Legal";
+import LegalSection from "./../../components/pageSections/terms-page/Legal";
 
 const TermsPage = () => (
     <Layout theme="white">

@@ -1,8 +1,8 @@
 import Layout from "components/Layout"
 
-import PromoSection from "./sections/Promo";
-import SupportSection from "./sections/Support";
-import SocialSection from "pages/contact/sections/Social";
+import PromoSection from "./../../components/pageSections/support-page/Promo";
+import SupportSection from "./../../components/pageSections/support-page/Support";
+import SocialSection from "./../../components/pageSections/contact-page/Social";
 
 const IndexPage = () => (
     <Layout theme="white">

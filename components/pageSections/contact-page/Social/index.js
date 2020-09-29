@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { Container } from "components/grid";
+import { Container } from "../../../grid";
 import Social from "components/Social";
 
 const PromoSection = ({ className = "" }) => (

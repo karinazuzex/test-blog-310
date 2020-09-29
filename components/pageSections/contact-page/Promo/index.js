@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "components/grid";
+import { Container, Row, Col } from "../../../grid";
 import ContactForm from "components/Form/Contact";
 
 const PromoSection = () => (

@@ -1,7 +1,7 @@
 import Layout from "components/Layout"
 
-import PromoSection from "./sections/Promo";
-import SocialSection from "./sections/Social";
+import PromoSection from "../../components/pageSections/about-page/Promo";
+import SocialSection from "../../components/pageSections/about-page/Social";
 
 const AboutPage = () => (
     <Layout theme="white">
