@@ -11,26 +11,26 @@ import ReactTooltip from "react-tooltip";
 import { useEffect, useState } from "react";
 import copy from "copy-text-to-clipboard";
 
+function scroll(id) {
+  const block = document.getElementById(id);
+  if (block) {
+    window.scrollTo({
+      top: block.offsetTop - 100,
+      behavior: "smooth",
+    });
+  } else {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
+
 const FAQSection = () => {
   const [block, setBlock] = useState("");
   const [hash, setHash] = useState("");
   const [place, setPlace] = useState("bottom");
   const [allowScroll, setAllowScroll] = useState(true);
-
-  const scroll = (id) => {
-    const block = document.getElementById(id);
-    if (block) {
-      window.scrollTo({
-        top: block.offsetTop - 100,
-        behavior: "smooth",
-      });
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  };
 
   const saveHash = () => {
     if (document.location.hash !== hash) {

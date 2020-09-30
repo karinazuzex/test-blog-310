@@ -58,3 +58,7 @@ const ItemPage = () => {
 }
 
 export default ItemPage;
+
+export async function getServerSideProps() {
+  return { props: {} }
+}
