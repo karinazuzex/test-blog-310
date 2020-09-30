@@ -7,7 +7,8 @@ import { error, info, removeAll } from "react-notification-system-redux";
 import { Container, Row } from './../../../grid';
 import ReCaptcha from "components/ReCaptcha";
 import { validators } from "./../../../../utils";
-import { messages, routes, analytics, exceptions, consts } from "config";
+import { messages, routes, analytics, exceptions } from "config";
+import { languages } from 'config/languages';
 import { mailerTypes } from "modules/mailer";
 import { Button, Link } from "components/ui";
 import { getUserGeolocation, replaceBreakLineToBrTag } from '../../../../utils/helpers';
@@ -277,7 +278,7 @@ class SectionCallback extends Component {
                       disabled={disabled}
                     >
                       <option value="" style={{ display: 'none' }}>Select...</option>
-                      {consts.languages.map(({ id, title }) => (
+                      {languages.map(({ id, title }) => (
                         <option key={id} value={id}>{title}</option>
                       ))}
                     </select>
