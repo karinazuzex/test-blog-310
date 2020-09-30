@@ -67,9 +67,9 @@ const contactThanks = ({ email, name }, toSelf = true) => {
         html: `
             Hello ${name},<br />
             <br />
-            Thank you for your interest in Memurai Enterprise. One of our team members will contact you shortly.<br />
+            Thank you for your interest in Memurai Enterprise! One of our team members will contact you shortly.<br />
             <br />
-            The Memurai Team!
+            The Memurai Team
         `,
     };
 
@@ -133,9 +133,9 @@ const expertContactThanks = ({ email, name }, toSelf = true) => {
         html: `
             Hello ${name},<br />
             <br />
-            Thank you for your interest in Memurai Enterprise. One of our team members will contact you shortly.<br />
+            Thank you for your interest in Memurai Enterprise! One of our team members will contact you shortly.<br />
             <br />
-            The Memurai Team!
+            The Memurai Team
         `,
     };
 
