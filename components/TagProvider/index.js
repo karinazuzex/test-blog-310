@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link as ScrollLink } from "react-scroll";
+import ScrollLink from "react-scroll/modules/components/Link";
 
 const TagProvider = ({ defaultTag, as = null, children, ...rest }) => {
     const Tag = as || defaultTag;

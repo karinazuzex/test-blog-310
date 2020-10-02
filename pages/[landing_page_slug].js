@@ -143,6 +143,7 @@ const GET_LANDING_BY_SLUG = gql`
 export async function getServerSideProps({ params: { landing_page_slug = '' } = {}, res }) {
   const { data } = await client.query({
     query: GET_LANDING_BY_SLUG,
+    fetchPolicy: 'no-cache',
     variables: {
       slug: landing_page_slug,
     }

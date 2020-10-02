@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import ImageZoom from 'react-medium-image-zoom';
 import marked from 'marked';
 import axios from 'axios';
-import ReactHtmlParser, { Options } from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
 
 export const getAjaxUrl = url => url.replace("/post?", "/post-json?");
 
@@ -60,7 +60,7 @@ export const optionsDateCreate = {
  * convert markdown text to JSX objects
  * @param {string} text String of markdown source to be compiled
  * @param {boolean} withoutLinks Flag for convert link to 'span' of not
- * @param {Options} options Optional Object with options for HTMLParser function
+ * @param {import('react-html-parser').Options} options Optional Object with options for HTMLParser function
  * @return {import('react').ReactElement[]} Array of ReactElements
  */
 export const getConvertedHTML = (text, withoutLinks = false, options) => {
