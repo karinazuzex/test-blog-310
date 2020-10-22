@@ -63,9 +63,7 @@ app.prepare()
             const { email, name, company, subject, message, location, features } = req.body;
             try {
                 await Promise.all([
-                    mailer.contact({ email, name, company, subject, message, location, features }),
-                    mailer.contactThanks({ email, name, subject }),
-                    mailer.contactThanks({ email, name, subject }, false),
+                    mailer.contact({ email, name, company, subject, message, location, features })
                 ]);
                 res.status(200).send("success");
             } catch (err) {
