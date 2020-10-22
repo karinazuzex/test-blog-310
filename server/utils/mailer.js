@@ -14,8 +14,9 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-const contact = ({ email, name, company, subject, message, location, features }) => {
+const contact = ({ email, name, company, message, location, features }) => {
     features = features || {};
+    const subject = `Pricing - request from ${name}`;
     const mailOptions = {
         from : "Memurai <noreply@memurai.com>",
         to: "contact@memurai.com",
@@ -26,14 +27,7 @@ const contact = ({ email, name, company, subject, message, location, features })
             <strong>Email:</strong> ${email}<br />
             <strong>Company name:</strong> ${company}<br />
             <br/>
-            The most important features for your Memurai instance:<br />
-            (${features.cluster ? "+" : "-"}) Cluster<br />
-            (${features.highAvailability ? "+" : "-"}) High Availability<br />
-            (${features.persistance ? "+" : "-"}) Persistence<br />
-            (${features.lowLatency ? "+" : "-"}) Low-latency<br />
-            (${features.enterpriseSup ? "+" : "-"}) Enterprise level support<br />
-            <br /><br />
-            <strong>Message:</strong><br />
+             <strong>Message:</strong><br />
             ${message}
             <br />
             <br />

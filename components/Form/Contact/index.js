@@ -63,11 +63,9 @@ class ContactForm extends Component {
         this.setState(this.getInitialState());
         this.name.value = '';
         this.email.value = '';
-        this.subject.value = '';
         this.message.value = '';
         this.agreement.reset();
         this.subscribe.reset();
-        Object.values(this.features).forEach(featureRef => featureRef.current.reset());
     };
 
     handleNameChange = () => {
@@ -79,12 +77,6 @@ class ContactForm extends Component {
     handleEmailChange = () => {
         if (this.state.emailError) {
             this.setState({ emailError: null }, this.checkIsErrorLeft);
-        }
-    };
-
-    handleSubjectChange = () => {
-        if (this.state.subjectError) {
-            this.setState({ subjectError: null }, this.checkIsErrorLeft);
         }
     };
 
@@ -197,20 +189,16 @@ class ContactForm extends Component {
         const name = this.name.value.trim();
         const email = this.email.value.trim();
         const company = this.state.companyName.trim();
-        const { features } = this.state;
-        const subject = this.subject.value.trim();
         const message = this.message.value.trim();
         const agreementError = validators.validateAgreement(agreement);
         const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         const companyNameError = validators.validateName(company);
-        const subjectError = validators.validateSubject(subject);
         const messageError = validators.validateMessage(message);
         const formError = validators.formatFormError([
             nameError,
             emailError,
             companyNameError,
-            subjectError,
             messageError,
             agreementError,
         ]);
@@ -218,7 +206,6 @@ class ContactForm extends Component {
             nameError,
             emailError,
             companyNameError,
-            subjectError,
             messageError,
             agreementError: agreementError === formError ? agreementError : null,
         });
@@ -257,10 +244,8 @@ class ContactForm extends Component {
             name,
             email,
             company,
-            subject,
             message,
             location,
-            features,
         });
 
         if (
@@ -298,7 +283,7 @@ class ContactForm extends Component {
                 <form className="form form--contact" onSubmit={this.handleSubmit}>
                     <Row className="form__row">
                         <div className="form__group">
-                            <label className="form__group-label" htmlFor="name-contact">Full name</label>
+                            <label className="form__group-label" htmlFor="name-contact">Name</label>
                             <input
                                 type="text"
                                 className={`input ${this.state.nameError ? "input--error" : ""}`}
@@ -309,7 +294,7 @@ class ContactForm extends Component {
                             />
                         </div>
                         <div className="form__group">
-                            <label className="form__group-label" htmlFor="email-contact">Email address</label>
+                            <label className="form__group-label" htmlFor="email-contact">Email</label>
                             <input
                                 type="text"
                                 className={`input ${this.state.emailError ? "input--error" : ""}`}
@@ -322,7 +307,7 @@ class ContactForm extends Component {
                     </Row>
                     <Row className="form__row">
                         <div className="form__group">
-                            <label className="form__group-label" htmlFor="company-contact">Company name</label>
+                            <label className="form__group-label" htmlFor="company-contact">Company</label>
                             <input
                                 type="text"
                                 className={`input ${this.state.companyNameError ? "input--error" : ""}`}
@@ -331,61 +316,6 @@ class ContactForm extends Component {
                                 onChange={this.handleCompanyNameChange}
                                 value={this.state.companyName}
                             />
-                        </div>
-                    </Row>
-                    <Row className="form__row">
-                        <div className="form__group">
-                            <label className="form__group-label" htmlFor="subject-contact">Subject</label>
-                            <input
-                                type="text"
-                                className={`input ${this.state.subjectError ? "input--error" : ""}`}
-                                id="subject-contact"
-                                disabled={disabled}
-                                onChange={this.handleSubjectChange}
-                                ref={(ref) => { this.subject = ref }}
-                            />
-                        </div>
-                    </Row>
-                    <Row className="form__row align-center-xs justify-center-xs">
-                        <div className="form__group form__group--checkbox">
-                            <label className="form__group-label">
-                                Select the most important features for your memurai instance
-                            </label>
-                            <Checkbox
-                                name="cluster"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.cluster}
-                            >
-                                Cluster
-                            </Checkbox>
-                            <Checkbox
-                                name="highAvailability"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.highAvailability}
-                            >
-                                High Availability
-                            </Checkbox>
-                            <Checkbox
-                                name="persistance"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.persistance}
-                            >
-                                Persistence
-                            </Checkbox>
-                            <Checkbox
-                                name="lowLatency"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.lowLatency}
-                            >
-                                Low-latency
-                            </Checkbox>
-                            <Checkbox
-                                name="enterpriseSup"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.enterpriseSup}
-                            >
-                                Enterprise level support
-                            </Checkbox>
                         </div>
                     </Row>
                     <Row className="form__row align-end-xs">
