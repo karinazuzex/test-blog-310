@@ -47,33 +47,6 @@ const contact = ({ email, name, company, message, location, features }) => {
     });
 };
 
-const contactThanks = ({ email, name }, toSelf = true) => {
-    const from = toSelf ? `Memurai Contact` : "Memurai Contact Form";
-    const subject = `Pricing - request from ${name}`;
-    const mailOptions = {
-        from: {
-            name: from,
-            address: 'contact@memurai.com'
-        },
-        to: toSelf ? "noreply@memurai.com" : email,
-        replyTo: toSelf ? email : undefined,
-        subject,
-        html: `
-            Hello ${name},<br />
-            <br />
-            Thank you for your interest in Memurai Enterprise! One of our team members will contact you shortly.<br />
-            <br />
-            The Memurai Team
-        `,
-    };
-
-    return new Promise((resolve, reject) => {
-        transporter.sendMail(mailOptions, (err, res) => {
-            err ? reject(err) : resolve(res);
-        });
-    });
-};
-
 const expertContact = ({ email, name, company, country, location }) => {
     const subject = `Expert contact request - from ${name}`;
     const mailOptions = {
@@ -160,13 +133,7 @@ const download = ({ email, url }) => {
         transporter.sendMail(mailOptions, (err, res) => {
             err ? reject(err) : resolve(res);
         });
-    });
-};
-
-module.exports = {
-    contact,
-    download,
-    contactThanks,
+    }R,
     expertContact,
     expertContactThanks,
 };
