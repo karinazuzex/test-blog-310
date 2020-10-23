@@ -8,11 +8,12 @@ import ReCaptcha from "components/ReCaptcha";
 
 import { validators } from "../../../utils";
 import { getUserGeolocation } from "../../../utils/helpers";
-import { messages, routes, analytics, exceptions } from "config";
+import { routes, analytics, exceptions } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Link, Checkbox } from "../../ui";
+import { requestSuccessfullySent } from "config/messages";
 
 class ContactForm extends Component {
     constructor(props) {
@@ -276,7 +277,7 @@ class ContactForm extends Component {
             dispatch(info({
                 position: "bc",
                 autoDismiss: 3,
-                message: messages.REQUEST_SUCCESSFULLY_SENT,
+                message: requestSuccessfullySent(name, email),
             }));
         } else {
             analytics.event({
