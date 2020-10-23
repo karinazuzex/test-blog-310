@@ -25,7 +25,7 @@ const contact = ({ email, name, company, message, location, features }) => {
             <h2>Memurai info request</h2><br />
             <strong>Name:</strong> ${name}<br />
             <strong>Email:</strong> ${email}<br />
-            <strong>Company name:</strong> ${company}<br />
+            <strong>Company:</strong> ${company}<br />
             <br/>
              <strong>Message:</strong><br />
             ${message}
@@ -133,7 +133,12 @@ const download = ({ email, url }) => {
         transporter.sendMail(mailOptions, (err, res) => {
             err ? reject(err) : resolve(res);
         });
-    }R,
+    });
+};
+
+module.exports = {
+    contact,
+    download,
     expertContact,
     expertContactThanks,
 };
