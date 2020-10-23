@@ -10,7 +10,7 @@ function SectionTrust() {
     <section className="section__trust">
       <Container>
         <p className="block__description text-center">
-        Trusted by the smallest startups all the way to the largest enterprises on five continents
+          Trusted by companies of all sizes, from large enterprises to startups, on five continents.
         </p>
         <div className="trusted__wrapper">
           <div className="trusted__list">
