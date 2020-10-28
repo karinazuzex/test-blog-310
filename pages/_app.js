@@ -92,6 +92,13 @@ function MyApp({ Component, pageProps }) {
     }
   });
 
+   /* redirect privacy or cookie */
+   useEffect(() => {
+    if (router.asPath === routes.PRIVACY_PAGE.path || router.asPath === routes.COOKIE_PAGE.path) {
+        router.push(routes.TERMS_PAGE.path)
+    }
+    }, [router.pathname])
+
   return (
     <Provider store={store}>
       <ApolloProvider client={client}>
