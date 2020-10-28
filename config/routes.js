@@ -31,8 +31,8 @@ export const NEWSLETTER_PAGE = {
 };
 
 export const TERMS_PAGE = {
-    name: "Terms",
-    nameLong: "terms of service",
+    name: 'Terms And Conditions',
+    nameLong: 'Terms and Conditions',
     path: "/terms",
 };
 

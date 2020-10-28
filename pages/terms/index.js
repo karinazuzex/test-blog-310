@@ -1,11 +1,15 @@
-import Layout from "components/Layout"
+import Layout from 'components/Layout'
 
-import LegalSection from "./../../components/pageSections/terms-page/Legal";
+import CookieSection from 'components/pageSections/terms-page/CookieSection/CookieSection'
+import PrivacySection from 'components/pageSections/terms-page/PrivacySection/PrivacySection'
+import LegalSection from './../../components/pageSections/terms-page/Legal'
 
 const TermsPage = () => (
     <Layout theme="white">
         <LegalSection />
+        <PrivacySection />
+        <CookieSection />
     </Layout>
-);
+)
 
-export default TermsPage;
+export default TermsPage

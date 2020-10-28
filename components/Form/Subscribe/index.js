@@ -201,11 +201,6 @@ class SubscribeForm extends Component {
                                     <Link theme="red">
                                         {routes.TERMS_PAGE.nameLong}
                                     </Link>
-                                </NextLink> and&nbsp;
-                                <NextLink href={routes.PRIVACY_PAGE.path} passHref>
-                                    <Link theme="red">
-                                        {routes.PRIVACY_PAGE.nameLong}
-                                    </Link>
                                 </NextLink>
                             </Checkbox>
                         </div>

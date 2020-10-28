@@ -142,6 +142,14 @@ app.prepare()
             res.status(200).send("success");
         });
 
+         /* redirect privacy page and cookie page */
+         server.get('/privacy', (req, res) => {
+            res.redirect(301, '/terms')
+        })
+        server.get('/cookie', (req, res) => {
+            res.redirect(301, '/terms')
+        })
+
         server.get("*", (req, res) => {
             return handle(req, res)
         });
