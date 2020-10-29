@@ -8,9 +8,9 @@ const PromoSection = () => (
                 <div className="block__pretitle block__elem--xs">
                     OPTIONS COMPARED
                 </div>
-                <h3 className="block__title block__elem--80">
+                <h2 className="block__title block__elem--80">
                     Redis-compatible servers on Windows
-                </h3>
+                </h2>
                 <Container theme="reversed">
                     <Row theme="no-col" className="justify-center-xs">
                         <ComparisonTable />
