@@ -13,9 +13,9 @@ const PromoSection = () => (
                 <div className="block__pretitle block__elem--xs">
                     TRY MEMURAI TODAY
                 </div>
-                <h3 className="block__title block__elem--lg">
+                <h2 className="block__title block__elem--lg">
                     Download the free Developer Edition<br />
-                </h3>
+                </h2>
                 <Row theme="no-col" className="justify-center-xs">
                     <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
                         <Button as="a" type="solid" theme="red-white">
