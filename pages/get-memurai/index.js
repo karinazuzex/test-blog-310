@@ -217,7 +217,7 @@ class GetMemuraiPage extends Component {
     <section className="section section__promo section__promo--get-memurai">
       <Container>
         <div className="block text-center">
-          <h3 className="block__title block__elem text-bold">Get Memurai</h3>
+          <h1 className="block__title block__elem text-bold">Get Memurai</h1>
           <GetMemuraiTable onClickBtn={this.handleDownloadClick} />
         </div>
         <div className="block text-left text-xsm">

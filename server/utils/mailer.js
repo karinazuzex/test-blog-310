@@ -19,7 +19,7 @@ const contact = ({ email, name, company, message, location, features }) => {
     const subject = `Pricing - request from ${name}`;
     const mailOptions = {
         from : "Memurai <noreply@memurai.com>",
-        to: "contact@memurai.com",
+        to: "contact@memurai.com;sales@janeasystems.freshsales.io",
         subject,
         html: `
             <h2>Memurai info request</h2><br />

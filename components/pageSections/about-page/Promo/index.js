@@ -6,9 +6,9 @@ const PromoSection = () => (
     <section className="section section__promo section__promo--about">
         <Container>
             <div className="block text-center">
-                <h3 className="block__title block__elem text-bold">
+                <h1 className="block__title block__elem text-bold">
                     About Us
-                </h3>
+                </h1>
                 <p className="block__description block__description--fixed">
                     The Memurai team is a group of experienced developers and IT <br/>
                     professionals with a long track record of delivering cutting edge solutions to <br/>

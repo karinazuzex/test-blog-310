@@ -14,7 +14,7 @@ const BlogPage = ({data, currentPage, router}) => {
                 <Row className="justify-center-xs">
                     <Col attributes="xs-12">
                         <div className="block text-center block__elem--xl">
-                            <h3 className="block__title block__elem--xs">Blog</h3>
+                            <h1 className="block__title block__elem--xs">Blog</h1>
                             <p className="blog-info">Technical articles and news about Memurai.<br />
                                 <NextLink href={routes.NEWSLETTER_PAGE.path} passHref>
                                     <Link theme="red">
