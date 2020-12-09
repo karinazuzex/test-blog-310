@@ -74,6 +74,39 @@
 
 }
 
+
+
+
+
+@media screen and (min-width:$smallMobileWidth ) {
+  
+  .block{
+    &__elem {
+      &--xs{
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+  }
+
+}
+
+
+@media screen and (min-width:$mobileWidth){
+
+  .block{
+    &__elem {
+      &--xs{
+        font-size: 28px;
+        line-height: 36px;
+      }
+    }
+  }
+}
+
+
+
+
 @media screen and (min-width: $tabletWidth) {
   .block {
     &__elem {
@@ -85,6 +118,8 @@
 
       &--xs {
         margin-bottom: 20px;
+        font-size: 32px;
+        line-height: 40px;
       }
 
       &--sm {
@@ -115,4 +150,19 @@
       margin-bottom: 60px;
     }
   }
+}
+
+
+
+@media screen and(min-width:$desktopWidth){
+
+  .block{
+    &__elem{
+      &--xs{
+        font-size: 48px;
+        line-height: 60px;
+      }
+    }
+  }
+
 }

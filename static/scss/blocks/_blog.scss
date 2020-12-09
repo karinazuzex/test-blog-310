@@ -252,9 +252,12 @@
                 background-color: black;
                 white-space: pre-wrap;
 
-                code {
-                    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-                    font-size: 14px;
+                 code {
+                    font-family: 'Roboto';
+                    font-size: 16px;
+                    line-height: 1.6;
+                    color: #FFFFFF;
+                    font-weight: 400;
                 }
             }
             img {

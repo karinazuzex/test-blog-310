@@ -3,17 +3,18 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NextLink from "next/link";
 import axios from "axios";
-import { error, info, removeAll } from "react-notification-system-redux";
-import ReCaptcha from "components/ReCaptcha";
+import { error, removeAll } from "react-notification-system-redux";
 
 import { validators } from "../../../utils";
 import { getUserGeolocation } from "../../../utils/helpers";
-import { routes, analytics, exceptions } from "config";
+import { routes, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Link, Checkbox } from "../../ui";
 import { requestSuccessfullySent } from "config/messages";
+import { Notify } from "components/ui/Notifications/Notify";
+
 
 class ContactForm extends Component {
     constructor(props) {
@@ -35,6 +36,11 @@ class ContactForm extends Component {
                 persistance: false,
                 lowLatency: false,
                 enterpriseSup: false,
+            },
+            notify:{
+                show:false,
+                message:'',
+                timeOut:null,
             }
         });
 
@@ -130,7 +136,7 @@ class ContactForm extends Component {
     };
 
     handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();       
         analytics.event({
             category: "Contact form",
             action: "Submit",
@@ -172,6 +178,7 @@ class ContactForm extends Component {
             agreementError: agreementError === formError ? agreementError : null,
         });
 
+
         if (formError) {
             analytics.event({
                 category: "Contact form",
@@ -189,7 +196,6 @@ class ContactForm extends Component {
 
             return;
         }
-
         if (this.subscribe.getValue()) {
             analytics.event({
                 category: "Contact form",
@@ -220,11 +226,12 @@ class ContactForm extends Component {
                 action: "Submit",
                 label: "Success",
             });
-            dispatch(info({
-                position: "bc",
-                autoDismiss: 3,
-                message: requestSuccessfullySent(name, email),
-            }));
+
+            this.setState({notify:{
+                    show:true,
+                    message:requestSuccessfullySent(name,email), 
+                    timeOut:10}})
+
         } else {
             analytics.event({
                 category: "Contact form",
@@ -237,6 +244,14 @@ class ContactForm extends Component {
             blockedProcessing:true,
         });
     };
+
+    onHideNotify = () => {
+        this.setState({notify:{
+            show:false,
+            message:'',
+            timeOut:null}
+        })
+    }
 
     render() {
         const disabled = this.state.processing || this.state.blockedProcessing
@@ -282,7 +297,7 @@ class ContactForm extends Component {
                         </div>
                     </Row>
                     <Row className="form__row align-end-xs">
-                        <div className="form__group">
+                        <div className="form__group" style={{position:'relative'}}>
                             <label className="form__group-label" htmlFor="message-contact">Message</label>
                             <textarea
                                 className={`textarea ${this.state.messageError ? "textarea--error" : ""}`}
@@ -291,6 +306,12 @@ class ContactForm extends Component {
                                 onChange={this.handleMessageChange}
                                 ref={(ref) => { this.message = ref }}
                             />
+                            {this.state.notify.show && 
+                                    <Notify 
+                                    message={this.state.notify.message}            
+                                    timeOut={this.state.notify.timeOut} 
+                                    onHideNotify={this.onHideNotify}
+                                    />}
                         </div>
                     </Row>
                     <Row className="form__row align-center-xs justify-center-xs">

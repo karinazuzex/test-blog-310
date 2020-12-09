@@ -7,7 +7,7 @@ const PromoSection = () => (
     <section className="section section__promo section__promo--newsletter">
         <Container>
             <div className="block text-center">
-                <h1 className="block__title block__elem text-bold">
+                <h1 className="block__title block__elem text-bold block__elem--xs">
                     Subscribe to our newsletter
                 </h1>
                 <p className="block__description block__description--fixed block__elem--xl">
