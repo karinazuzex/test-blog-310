@@ -3,11 +3,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NextLink from "next/link";
 import { error, removeAll } from "react-notification-system-redux";
-import ReCaptcha from "components/ReCaptcha";
 import Router from 'next/router';
 
 import { validators } from "utils";
-import { exceptions, routes, analytics } from "config";
+import { routes, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
@@ -21,20 +20,14 @@ class SubscribeForm extends Component {
             agreementError: null,
             emailError: null,
             processing: false,
-            recaptchaValue: null,
-            recaptchaLoaded: false,
             email: '',
             agreement: false,
-
         });
 
         this.state = this.getInitialState();
     }
 
-    componentWillUnmount() {
-        this.recaptcha.reset();
-    }
-
+ 
     reset = () => {
         this.setState(this.getInitialState());
         this.email.value = null;
@@ -67,23 +60,9 @@ class SubscribeForm extends Component {
         }
     };
 
-    onRecaptchaLoad = () => {
-        this.setState({
-            recaptchaLoaded: true,
-        });
-    };
-
-    onRecaptchaChange = (value) => {
-        this.setState({
-            recaptchaValue: value,
-        });
-        if (this.state.processing) {
-            this.submit(value);
-        }
-    };
-
     handleSubmit = async (e) => {
         e.preventDefault();
+   
         analytics.event({
             category: "Subscribe form",
             action: "Submit",
@@ -94,11 +73,7 @@ class SubscribeForm extends Component {
         this.setState({
             processing: true,
         });
-        if (!this.state.recaptchaValue) {
-            this.recaptcha.execute();
-        } else {
-            this.submit(this.state.recaptchaValue);
-        }
+        this.submit()
     };
 
     handleRouteChange = () => {
@@ -108,22 +83,6 @@ class SubscribeForm extends Component {
 
     submit = async (token) => {
         const { dispatch } = this.props;
-        if (!token) {
-            analytics.event({
-                category: "Subscribe form",
-                action: "Submit",
-                label: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            });
-            dispatch(error({
-                position: "bc",
-                autoDismiss: 0,
-                message: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            }));
-            this.setState({
-                processing: false,
-            });
-            return;
-        }
         const agreement = this.agreement.getValue();
         const email = this.email.value.trim();
         const agreementError = validators.validateAgreement(agreement);
@@ -170,7 +129,7 @@ class SubscribeForm extends Component {
     };
 
     render() {
-        const disabled = this.state.processing || !this.state.recaptchaLoaded;
+        const disabled = this.state.processing;
         const buttonDisabled = !this.state.email || !this.state.agreement ? 'disabled' : '';
         Router.events.on('routeChangeStart', this.handleRouteChange)
         return (
@@ -217,13 +176,6 @@ class SubscribeForm extends Component {
                         </div>
                     </Row>
                 </form>
-
-
-                <ReCaptcha
-                    onLoad={this.onRecaptchaLoad}
-                    onChange={this.onRecaptchaChange}
-                    ref={(ref) => { this.recaptcha = ref }}
-                />
             </Fragment>
         );
     }

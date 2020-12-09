@@ -28,8 +28,7 @@ class ContactForm extends Component {
             subjectError: null,
             messageError: null,
             processing: false,
-            recaptchaValue: null,
-            recaptchaLoaded: false,
+            blockedProcessing:false,
             features: {
                 cluster: false,
                 highAvailability: false,
@@ -56,10 +55,7 @@ class ContactForm extends Component {
         }
     }
 
-    componentWillUnmount() {
-        this.recaptcha.reset();
-    }
-
+  
     reset = () => {
         this.setState(this.getInitialState());
         this.name.value = '';
@@ -133,21 +129,6 @@ class ContactForm extends Component {
         }
     };
 
-    onRecaptchaLoad = () => {
-        this.setState({
-            recaptchaLoaded: true,
-        });
-    };
-
-    onRecaptchaChange = (value) => {
-        this.setState({
-            recaptchaValue: value,
-        });
-        if (this.state.processing) {
-            this.submit(value);
-        }
-    };
-
     handleSubmit = (e) => {
         e.preventDefault();
         analytics.event({
@@ -160,32 +141,12 @@ class ContactForm extends Component {
             processing: true,
         });
         dispatch(removeAll());
-        if (!this.state.recaptchaValue) {
-            this.recaptcha.execute();
-        } else {
-            this.submit(this.state.recaptchaValue);
-        }
+        this.submit();
 
     };
 
-    submit = async (token) => {
+    submit = async () => {
         const { dispatch } = this.props;
-        if (!token) {
-            analytics.event({
-                category: "Contact form",
-                action: "Submit",
-                label: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            });
-            dispatch(error({
-                position: "bc",
-                autoDismiss: 0,
-                message: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            }));
-            this.setState({
-                processing: false,
-            });
-            return;
-        }
         const agreement = this.agreement.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
@@ -273,11 +234,12 @@ class ContactForm extends Component {
         }
         this.setState({
             processing: false,
+            blockedProcessing:true,
         });
     };
 
     render() {
-        const disabled = this.state.processing || !this.state.recaptchaLoaded;
+        const disabled = this.state.processing || this.state.blockedProcessing
 
         return (
             <Fragment>
@@ -363,11 +325,6 @@ class ContactForm extends Component {
                         </div>
                     </Row>
                 </form>
-                <ReCaptcha
-                    onLoad={this.onRecaptchaLoad}
-                    onChange={this.onRecaptchaChange}
-                    ref={(ref) => { this.recaptcha = ref }}
-                />
             </Fragment>
         );
     }
