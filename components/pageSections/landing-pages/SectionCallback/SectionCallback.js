@@ -1,13 +1,12 @@
-import { Component, createRef } from 'react';
+import { Component } from 'react';
 import NextLink from "next/link";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { connect } from "react-redux";
 import { error, info, removeAll } from "react-notification-system-redux";
 import { Container, Row } from './../../../grid';
-import ReCaptcha from "components/ReCaptcha";
 import { validators } from "./../../../../utils";
-import { messages, routes, analytics, exceptions } from "config";
+import { messages, routes, analytics } from "config";
 import { languages } from 'config/languages';
 import { mailerTypes } from "modules/mailer";
 import { Button, Link } from "components/ui";
@@ -24,23 +23,18 @@ class SectionCallback extends Component {
       companyError: null,
       countryError: null,
       processing: false,
-      recaptchaValue: null,
-      recaptchaLoaded: false,
       name: '',
       email: '',
       company: '',
       country: ''
     });
 
-    this.recaptchaRef = createRef();
+
 
     this.state = this.getInitialState();
   }
 
-  componentWillUnmount() {
-    this.recaptchaRef.current.reset();
-  }
-
+  
   reset() {
     this.setState(this.getInitialState());
   }
@@ -53,17 +47,6 @@ class SectionCallback extends Component {
     }
   }
 
-  onRecaptchaLoad = () => {
-    this.setState({ recaptchaLoaded: true })
-  };
-
-  onRecaptchaChange = value => {
-    this.setState({ recaptchaValue: value });
-
-    if (this.state.processing) {
-      this.submit(value);
-    }
-  };
 
   handleNameChange = e => {
     if (this.state.nameError) {
@@ -114,33 +97,12 @@ class SectionCallback extends Component {
     });
     this.setState({ processing: true });
     dispatch(removeAll());
-
-    if (!this.state.recaptchaValue) {
-      this.recaptchaRef.current.execute();
-    } else {
-      this.submit(this.state.recaptchaValue);
-    }
+    
+    this.submit();
   }
 
-  async submit(token) {
+  async submit() {
     const { dispatch, pageUrl } = this.props;
-
-    if (!token) {
-      analytics.event({
-        category: "Landing page",
-        action: `Submit - ${pageUrl}`,
-        label: exceptions.RECAPTCHA_VALIDATION_FAILED,
-      });
-      dispatch(error({
-        position: "bc",
-        autoDismiss: 0,
-        message: exceptions.RECAPTCHA_VALIDATION_FAILED,
-      }));
-      this.setState({
-        processing: false,
-      });
-      return;
-    }
 
     const name = this.state.name.trim();
     const email = this.state.email.trim();
@@ -209,7 +171,7 @@ class SectionCallback extends Component {
   }
 
   render() {
-    const disabled = this.state.processing || !this.state.recaptchaLoaded;
+    const disabled = this.state.processing 
     const { title = '', description = '', btnText = '' } = this.props;
 
     return (
@@ -310,11 +272,6 @@ class SectionCallback extends Component {
                 </NextLink>
               </p>
             </form>
-            <ReCaptcha
-              onLoad={this.onRecaptchaLoad}
-              onChange={this.onRecaptchaChange}
-              ref={this.recaptchaRef}
-            />
           </div>
         </Container>
       </section>

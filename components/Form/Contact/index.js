@@ -3,17 +3,18 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import NextLink from "next/link";
 import axios from "axios";
-import { error, info, removeAll } from "react-notification-system-redux";
-import ReCaptcha from "components/ReCaptcha";
+import { error, removeAll } from "react-notification-system-redux";
 
 import { validators } from "../../../utils";
 import { getUserGeolocation } from "../../../utils/helpers";
-import { routes, analytics, exceptions } from "config";
+import { routes, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
 import { Button, Link, Checkbox } from "../../ui";
 import { requestSuccessfullySent } from "config/messages";
+import { Notify } from "components/ui/Notifications/Notify";
+
 
 class ContactForm extends Component {
     constructor(props) {
@@ -28,14 +29,18 @@ class ContactForm extends Component {
             subjectError: null,
             messageError: null,
             processing: false,
-            recaptchaValue: null,
-            recaptchaLoaded: false,
+            blockedProcessing:false,
             features: {
                 cluster: false,
                 highAvailability: false,
                 persistance: false,
                 lowLatency: false,
                 enterpriseSup: false,
+            },
+            notify:{
+                show:false,
+                message:'',
+                timeOut:null,
             }
         });
 
@@ -56,19 +61,14 @@ class ContactForm extends Component {
         }
     }
 
-    componentWillUnmount() {
-        this.recaptcha.reset();
-    }
-
+  
     reset = () => {
         this.setState(this.getInitialState());
         this.name.value = '';
         this.email.value = '';
-        this.subject.value = '';
         this.message.value = '';
         this.agreement.reset();
         this.subscribe.reset();
-        Object.values(this.features).forEach(featureRef => featureRef.current.reset());
     };
 
     handleNameChange = () => {
@@ -80,12 +80,6 @@ class ContactForm extends Component {
     handleEmailChange = () => {
         if (this.state.emailError) {
             this.setState({ emailError: null }, this.checkIsErrorLeft);
-        }
-    };
-
-    handleSubjectChange = () => {
-        if (this.state.subjectError) {
-            this.setState({ subjectError: null }, this.checkIsErrorLeft);
         }
     };
 
@@ -141,23 +135,8 @@ class ContactForm extends Component {
         }
     };
 
-    onRecaptchaLoad = () => {
-        this.setState({
-            recaptchaLoaded: true,
-        });
-    };
-
-    onRecaptchaChange = (value) => {
-        this.setState({
-            recaptchaValue: value,
-        });
-        if (this.state.processing) {
-            this.submit(value);
-        }
-    };
-
     handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();       
         analytics.event({
             category: "Contact form",
             action: "Submit",
@@ -168,50 +147,26 @@ class ContactForm extends Component {
             processing: true,
         });
         dispatch(removeAll());
-        if (!this.state.recaptchaValue) {
-            this.recaptcha.execute();
-        } else {
-            this.submit(this.state.recaptchaValue);
-        }
+        this.submit();
 
     };
 
-    submit = async (token) => {
+    submit = async () => {
         const { dispatch } = this.props;
-        if (!token) {
-            analytics.event({
-                category: "Contact form",
-                action: "Submit",
-                label: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            });
-            dispatch(error({
-                position: "bc",
-                autoDismiss: 0,
-                message: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            }));
-            this.setState({
-                processing: false,
-            });
-            return;
-        }
         const agreement = this.agreement.getValue();
         const name = this.name.value.trim();
         const email = this.email.value.trim();
         const company = this.state.companyName.trim();
-        const { features } = this.state;
-        const subject = this.subject.value.trim();
         const message = this.message.value.trim();
         const agreementError = validators.validateAgreement(agreement);
         const nameError = validators.validateName(name);
         const emailError = validators.validateEmail(email);
         const companyNameError = validators.validateName(company);
-        const subjectError = validators.validateSubject(subject);
         const messageError = validators.validateMessage(message);
         const formError = validators.formatFormError([
             nameError,
             emailError,
             companyNameError,
-            subjectError,
             messageError,
             agreementError,
         ]);
@@ -219,10 +174,10 @@ class ContactForm extends Component {
             nameError,
             emailError,
             companyNameError,
-            subjectError,
             messageError,
             agreementError: agreementError === formError ? agreementError : null,
         });
+
 
         if (formError) {
             analytics.event({
@@ -241,7 +196,6 @@ class ContactForm extends Component {
 
             return;
         }
-
         if (this.subscribe.getValue()) {
             analytics.event({
                 category: "Contact form",
@@ -258,10 +212,8 @@ class ContactForm extends Component {
             name,
             email,
             company,
-            subject,
             message,
             location,
-            features,
         });
 
         if (
@@ -274,11 +226,12 @@ class ContactForm extends Component {
                 action: "Submit",
                 label: "Success",
             });
-            dispatch(info({
-                position: "bc",
-                autoDismiss: 3,
-                message: requestSuccessfullySent(name, email),
-            }));
+
+            this.setState({notify:{
+                    show:true,
+                    message:requestSuccessfullySent(name,email), 
+                    timeOut:10}})
+
         } else {
             analytics.event({
                 category: "Contact form",
@@ -288,18 +241,27 @@ class ContactForm extends Component {
         }
         this.setState({
             processing: false,
+            blockedProcessing:true,
         });
     };
 
+    onHideNotify = () => {
+        this.setState({notify:{
+            show:false,
+            message:'',
+            timeOut:null}
+        })
+    }
+
     render() {
-        const disabled = this.state.processing || !this.state.recaptchaLoaded;
+        const disabled = this.state.processing || this.state.blockedProcessing
 
         return (
             <Fragment>
                 <form className="form form--contact" onSubmit={this.handleSubmit}>
                     <Row className="form__row">
                         <div className="form__group">
-                            <label className="form__group-label" htmlFor="name-contact">Full name</label>
+                            <label className="form__group-label" htmlFor="name-contact">Name</label>
                             <input
                                 type="text"
                                 className={`input ${this.state.nameError ? "input--error" : ""}`}
@@ -310,7 +272,7 @@ class ContactForm extends Component {
                             />
                         </div>
                         <div className="form__group">
-                            <label className="form__group-label" htmlFor="email-contact">Email address</label>
+                            <label className="form__group-label" htmlFor="email-contact">Email</label>
                             <input
                                 type="text"
                                 className={`input ${this.state.emailError ? "input--error" : ""}`}
@@ -323,7 +285,7 @@ class ContactForm extends Component {
                     </Row>
                     <Row className="form__row">
                         <div className="form__group">
-                            <label className="form__group-label" htmlFor="company-contact">Company name</label>
+                            <label className="form__group-label" htmlFor="company-contact">Company</label>
                             <input
                                 type="text"
                                 className={`input ${this.state.companyNameError ? "input--error" : ""}`}
@@ -334,63 +296,8 @@ class ContactForm extends Component {
                             />
                         </div>
                     </Row>
-                    <Row className="form__row">
-                        <div className="form__group">
-                            <label className="form__group-label" htmlFor="subject-contact">Subject</label>
-                            <input
-                                type="text"
-                                className={`input ${this.state.subjectError ? "input--error" : ""}`}
-                                id="subject-contact"
-                                disabled={disabled}
-                                onChange={this.handleSubjectChange}
-                                ref={(ref) => { this.subject = ref }}
-                            />
-                        </div>
-                    </Row>
-                    <Row className="form__row align-center-xs justify-center-xs">
-                        <div className="form__group form__group--checkbox">
-                            <label className="form__group-label">
-                                Select the most important features for your memurai instance
-                            </label>
-                            <Checkbox
-                                name="cluster"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.cluster}
-                            >
-                                Cluster
-                            </Checkbox>
-                            <Checkbox
-                                name="highAvailability"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.highAvailability}
-                            >
-                                High Availability
-                            </Checkbox>
-                            <Checkbox
-                                name="persistance"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.persistance}
-                            >
-                                Persistence
-                            </Checkbox>
-                            <Checkbox
-                                name="lowLatency"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.lowLatency}
-                            >
-                                Low-latency
-                            </Checkbox>
-                            <Checkbox
-                                name="enterpriseSup"
-                                onChange={this.handleFeaturesCheckboxChange}
-                                ref={this.features.enterpriseSup}
-                            >
-                                Enterprise level support
-                            </Checkbox>
-                        </div>
-                    </Row>
                     <Row className="form__row align-end-xs">
-                        <div className="form__group">
+                        <div className="form__group" style={{position:'relative'}}>
                             <label className="form__group-label" htmlFor="message-contact">Message</label>
                             <textarea
                                 className={`textarea ${this.state.messageError ? "textarea--error" : ""}`}
@@ -399,6 +306,12 @@ class ContactForm extends Component {
                                 onChange={this.handleMessageChange}
                                 ref={(ref) => { this.message = ref }}
                             />
+                            {this.state.notify.show && 
+                                    <Notify 
+                                    message={this.state.notify.message}            
+                                    timeOut={this.state.notify.timeOut} 
+                                    onHideNotify={this.onHideNotify}
+                                    />}
                         </div>
                     </Row>
                     <Row className="form__row align-center-xs justify-center-xs">
@@ -433,11 +346,6 @@ class ContactForm extends Component {
                         </div>
                     </Row>
                 </form>
-                <ReCaptcha
-                    onLoad={this.onRecaptchaLoad}
-                    onChange={this.onRecaptchaChange}
-                    ref={(ref) => { this.recaptcha = ref }}
-                />
             </Fragment>
         );
     }

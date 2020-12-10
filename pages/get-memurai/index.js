@@ -107,11 +107,11 @@ class GetMemuraiPage extends Component {
         });
 
         downloadByLink(response.data);
-        /* const downloadLink = document.createElement("a");
+        const downloadLink = document.createElement("a");
         downloadLink.href = response.data;
         document.body.appendChild(downloadLink);
         downloadLink.click();
-        document.body.removeChild(downloadLink); */
+        document.body.removeChild(downloadLink);
         this.setState({
           done: true,
         });
@@ -217,7 +217,7 @@ class GetMemuraiPage extends Component {
     <section className="section section__promo section__promo--get-memurai">
       <Container>
         <div className="block text-center">
-          <h3 className="block__title block__elem text-bold">Get Memurai</h3>
+          <h1 className="block__title block__elem text-bold block__elem--xs">Get Memurai</h1>
           <GetMemuraiTable onClickBtn={this.handleDownloadClick} />
         </div>
         <div className="block text-left text-xsm">

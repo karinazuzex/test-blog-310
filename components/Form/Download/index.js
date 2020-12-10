@@ -4,10 +4,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
 import { error, removeAll } from "react-notification-system-redux";
-import ReCaptcha from "components/ReCaptcha";
 
 import { validators } from "utils";
-import { routes, analytics, exceptions } from "config";
+import { routes, analytics } from "config";
 import { mailerOperations, mailerTypes } from "modules/mailer";
 
 import { Row } from "components/grid";
@@ -21,15 +20,9 @@ class DownloadForm extends Component {
             agreementError: null,
             emailError: null,
             processing: false,
-            recaptchaValue: null,
-            recaptchaLoaded: false,
         });
 
         this.state = this.getInitialState();
-    }
-
-    componentWillUnmount() {
-        this.recaptcha.reset();
     }
 
     reset = () => {
@@ -63,21 +56,7 @@ class DownloadForm extends Component {
         }
     };
 
-    onRecaptchaLoad = () => {
-        this.setState({
-            recaptchaLoaded: true,
-        });
-    };
-
-    onRecaptchaChange = (value) => {
-        this.setState({
-            recaptchaValue: value,
-        });
-        if (this.state.processing) {
-            this.submit(value);
-        }
-    };
-
+    
     handleSubmit = async (e) => {
         e.preventDefault();
         analytics.event({
@@ -90,31 +69,12 @@ class DownloadForm extends Component {
             processing: true,
         });
         dispatch(removeAll());
-        if (!this.state.recaptchaValue) {
-            this.recaptcha.execute();
-        } else {
-            this.submit(this.state.recaptchaValue);
-        }
+        this.submit();
     };
 
-    submit = async (token) => {
+    submit = async () => {
         const { dispatch, onCallback } = this.props;
-        if (!token) {
-            analytics.event({
-                category: "Download form",
-                action: "Submit",
-                label: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            });
-            dispatch(error({
-                position: "bc",
-                autoDismiss: 0,
-                message: exceptions.RECAPTCHA_VALIDATION_FAILED,
-            }));
-            this.setState({
-                processing: false,
-            });
-            return;
-        }
+      
         const agreement = this.agreement.getValue();
         const email = this.email.value.trim();
         const agreementError = validators.validateAgreement(agreement);
@@ -167,7 +127,6 @@ class DownloadForm extends Component {
                 action: "Submit",
                 label: "Error on submit from backend",
             });
-            this.recaptcha.reset();
             this.setState({
                 processing: false,
             });
@@ -175,7 +134,7 @@ class DownloadForm extends Component {
     };
 
     render() {
-        const disabled = this.state.processing || !this.state.recaptchaLoaded;
+        const disabled = this.state.processing 
         return (
             <Fragment>
                 <form className="form form--download" onSubmit={this.handleSubmit}>
@@ -228,11 +187,6 @@ class DownloadForm extends Component {
                         </div>
                     </Row>
                 </form>
-                <ReCaptcha
-                    onLoad={this.onRecaptchaLoad}
-                    onChange={this.onRecaptchaChange}
-                    ref={(ref) => { this.recaptcha = ref }}
-                />
             </Fragment>
         );
     }

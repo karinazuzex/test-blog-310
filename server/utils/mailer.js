@@ -14,8 +14,9 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-const contact = ({ email, name, company, subject, message, location, features }) => {
+const contact = ({ email, name, company, message, location, features }) => {
     features = features || {};
+    const subject = `Pricing - request from ${name}`;
     const mailOptions = {
         from : "Memurai <noreply@memurai.com>",
         to: "contact@memurai.com",
@@ -24,16 +25,9 @@ const contact = ({ email, name, company, subject, message, location, features })
             <h2>Memurai info request</h2><br />
             <strong>Name:</strong> ${name}<br />
             <strong>Email:</strong> ${email}<br />
-            <strong>Company name:</strong> ${company}<br />
+            <strong>Company:</strong> ${company}<br />
             <br/>
-            The most important features for your Memurai instance:<br />
-            (${features.cluster ? "+" : "-"}) Cluster<br />
-            (${features.highAvailability ? "+" : "-"}) High Availability<br />
-            (${features.persistance ? "+" : "-"}) Persistence<br />
-            (${features.lowLatency ? "+" : "-"}) Low-latency<br />
-            (${features.enterpriseSup ? "+" : "-"}) Enterprise level support<br />
-            <br /><br />
-            <strong>Message:</strong><br />
+             <strong>Message:</strong><br />
             ${message}
             <br />
             <br />
@@ -43,33 +37,6 @@ const contact = ({ email, name, company, subject, message, location, features })
             <strong>City:</strong> ${location.city}<br />
             <strong>Region:</strong> ${location.region}<br />
             <strong>Country:</strong> ${location.country_name}<br />
-        `,
-    };
-
-    return new Promise((resolve, reject) => {
-        transporter.sendMail(mailOptions, (err, res) => {
-            err ? reject(err) : resolve(res);
-        });
-    });
-};
-
-const contactThanks = ({ email, name }, toSelf = true) => {
-    const from = toSelf ? `Memurai Contact` : "Memurai Contact Form";
-    const subject = `Pricing - request from ${name}`;
-    const mailOptions = {
-        from: {
-            name: from,
-            address: 'contact@memurai.com'
-        },
-        to: toSelf ? "noreply@memurai.com" : email,
-        replyTo: toSelf ? email : undefined,
-        subject,
-        html: `
-            Hello ${name},<br />
-            <br />
-            Thank you for your interest in Memurai Enterprise! One of our team members will contact you shortly.<br />
-            <br />
-            The Memurai Team
         `,
     };
 
@@ -172,7 +139,6 @@ const download = ({ email, url }) => {
 module.exports = {
     contact,
     download,
-    contactThanks,
     expertContact,
     expertContactThanks,
 };

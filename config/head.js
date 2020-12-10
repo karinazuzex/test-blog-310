@@ -1,16 +1,16 @@
 import * as routes from "./routes";
 
 export const title = {
-    [routes.HOME_PAGE.path]: "Memurai - Redis-compatible cache and datastore for Windows",
-    [routes.FAQ_PAGE.path]: "Frequently Asked Questions - Memurai",
-    [routes.ABOUT_PAGE.path]: "About Us - Memurai",
-    [routes.CONTACT_PAGE.path]: "Contact the Memurai team - Memurai",
-    [routes.GET_MEMURAI_PAGE.path]: "Download Memurai for Windows - Memurai",
-    [routes.NEWSLETTER_PAGE.path]: "Subscribe to the newsletter - Memurai",
-    [routes.TERMS_PAGE.path]: "Terms of service - Memurai",
-    [routes.PRIVACY_PAGE.path]: "Privacy policy - Memurai",
-    [routes.COOKIE_PAGE.path]: "Cookie policy - Memurai",
-    [routes.BLOG_PAGE.path]: "Blog - Memurai",
+    [routes.HOME_PAGE.path]: "Redis for Windows alternative, In-Memory Datastore | Memurai",
+    [routes.FAQ_PAGE.path]: "Frequently Asked Questions | Memurai",
+    [routes.ABOUT_PAGE.path]: "About Us | Memurai",
+    [routes.CONTACT_PAGE.path]: "Contact the Memurai team | Memurai",
+    [routes.GET_MEMURAI_PAGE.path]: "Download Memurai for Windows | Memurai",
+    [routes.NEWSLETTER_PAGE.path]: "Subscribe to the newsletter | Memurai",
+    [routes.TERMS_PAGE.path]: "Terms of service | Memurai",
+    [routes.PRIVACY_PAGE.path]: "Privacy policy | Memurai",
+    [routes.COOKIE_PAGE.path]: "Cookie policy | Memurai",
+    [routes.BLOG_PAGE.path]: "Blog | Memurai",
     defaultValue: "Memurai",
 };
 

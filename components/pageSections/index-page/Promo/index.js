@@ -11,7 +11,7 @@ const PromoSection = () => (
             <div className="block text-center text-white">
                 <h1 className="block__title block__elem--lg">
                     <span className="text-normal">
-                        Redis-compatible cache and datastore for Windows
+                        Redis for Windows alternative,<br />In-Memory Datastore
                     </span>
                 </h1>
                 <p className="block__description block__elem">
