@@ -80,7 +80,7 @@
 
 @media screen and (min-width:$smallMobileWidth ) {
   
-  .block{
+  h1.block{
     &__elem {
       &--xs{
         font-size: 28px;
@@ -94,7 +94,7 @@
 
 @media screen and (min-width:$mobileWidth){
 
-  .block{
+  h1.block{
     &__elem {
       &--xs{
         font-size: 28px;
@@ -118,8 +118,7 @@
 
       &--xs {
         margin-bottom: 20px;
-        font-size: 32px;
-        line-height: 40px;
+      
       }
 
       &--sm {
@@ -150,13 +149,22 @@
       margin-bottom: 60px;
     }
   }
+
+  h1.block{
+    &__elem{
+      &--xs{
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+  }
 }
 
 
 
 @media screen and(min-width:$desktopWidth){
 
-  .block{
+  h1.block{
     &__elem{
       &--xs{
         font-size: 48px;
