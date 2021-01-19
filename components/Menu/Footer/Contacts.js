@@ -16,7 +16,7 @@ const Contacts = () => (
             Memurai
             <br />
             113 Cherry Street #11630 Seattle, WA 98104 <br />
-            © 2020 All rights reserved by Janea Systems, Inc.
+            © 2021 All rights reserved by Janea Systems, Inc.
             <br />
             <span className="footer__terms">
                 <NextLink href={routes.TERMS_PAGE.path} passHref>
