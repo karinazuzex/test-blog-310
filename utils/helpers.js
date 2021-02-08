@@ -65,7 +65,7 @@ export const optionsDateCreate = {
  */
 export const getConvertedHTML = (text, withoutLinks = false, options) => {
     if (!options) {
-        options = parserOptions;
+        options = { ...parserOptions };
     }
 
     if (withoutLinks) {
