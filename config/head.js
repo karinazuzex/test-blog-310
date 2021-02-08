@@ -27,3 +27,7 @@ export const description = {
     [routes.BLOG_PAGE.path]: "Technical articles and news about Memurai.",
     defaultValue: "Redis-compatible cache and datastore for Windows.",
 };
+
+export const robots = {
+    defaultValue: "index, follow",
+}
