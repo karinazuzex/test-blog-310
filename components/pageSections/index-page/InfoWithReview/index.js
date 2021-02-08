@@ -10,6 +10,7 @@ import IntegrationImage from "static/images/integration.svg";
 import CompatibilityImage from "static/images/compatibility.png";
 import PerformanceImage from "static/images/performance.png";
 import SupportImage from "static/images/support.png";
+import Support247Image from "static/images/support_icon.png";
 
 const InfoWithReviewSection = () => {
     const containReview = !reviews && reviews.length;
@@ -60,6 +61,22 @@ const InfoWithReviewSection = () => {
                 id="learn-more-anchor"
             >
                 <Container>
+                    <Row theme="no-col" className="info">
+                        <Icon type="big-circled" theme="support" className="info__image info__block">
+                            <img src={Support247Image} alt="Enterprise Support - 24/7 Worldwide" />
+                        </Icon>
+                        <div className="info__text info__block">
+                            <h2 className="info__text-title">
+                                Enterprise Support - 24/7 Worldwide
+                            </h2>
+                            <div className="info__text-description">
+							   Worldwide, all timezones, Memurai provide 24/7 support.
+							   Our skilled technical team will respond and will guide you through the issue.
+							   Memurai is the only Redis compatible Windows datastore offering Enterprise customer a professional 24/7 support.
+                               Contact us for SLA details.
+                            </div>
+                        </div>
+                    </Row>
                     <Row theme="no-col" className="info info--reversed">
                         <div className="info__text info__block">
                             <h2 className="info__text-title">
