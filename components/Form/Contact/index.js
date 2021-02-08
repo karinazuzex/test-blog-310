@@ -19,7 +19,6 @@ import { Notify } from "components/ui/Notifications/Notify";
 class ContactForm extends Component {
     constructor(props) {
         super(props);
-
         this.getInitialState = () => ({
             companyName: '',
             companyNameError: null,
@@ -56,12 +55,12 @@ class ContactForm extends Component {
 
     componentDidMount(){
         if(document.location.search === "?support"){
-            this.subject.value = "Requesting more info on Memurai Consulting Services";
+            // this.subject.value = "Requesting more info on Memurai Consulting Services";
             this.message.value = "I would like to learn more about Memurai Consulting Services. Let me know when is a good time to talk. Thank you!";
         }
     }
 
-  
+
     reset = () => {
         this.setState(this.getInitialState());
         this.name.value = '';
@@ -136,7 +135,7 @@ class ContactForm extends Component {
     };
 
     handleSubmit = (e) => {
-        e.preventDefault();       
+        e.preventDefault();
         analytics.event({
             category: "Contact form",
             action: "Submit",
@@ -148,7 +147,6 @@ class ContactForm extends Component {
         });
         dispatch(removeAll());
         this.submit();
-
     };
 
     submit = async () => {
