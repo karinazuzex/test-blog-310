@@ -4,10 +4,12 @@ import { Link } from "components/ui";
 import NextLink from "next/link";
 import { helpers } from "utils";
 import { getConvertedHTML } from '../../../utils/helpers';
+import marked from 'marked'
 
 const BlockItem = ({data, router: { pathname, query}}) => data.allArticles.map((item) => {
     const { _firstPublishedAt, publishDateOverride, title, category, author, id, body, slug } = item;
-    const text = body.slice(0, 300).split(' ').slice(0,-1).join(' ').trim() + '...';
+    const transformText = marked(body);
+    const text = transformText.slice(0, 300).split(' ').slice(0,-1).join(' ').trim() + '...';
     const convertedHtml = getConvertedHTML(text, true);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
