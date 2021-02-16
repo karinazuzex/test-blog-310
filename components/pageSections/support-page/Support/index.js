@@ -70,16 +70,7 @@ const SupportSection = () => {
                                     Enterprise Edition
                                 </h4>
                                 <p className="blog__text blog__text--bottom blog__text--link">
-                                    Submit support issues via Help Center or
-                                    email us at
-                                    <Link
-                                        href="mailto:support@memurai.com"
-                                        className="button__arrow link link--red"
-                                    >
-                                        <span className="blog__text">
-                                            support@memurai.com
-                                        </span>
-                                    </Link>
+                                    Submit support issues through the Help Center.
                                 </p>
                                 <Link
                                     href="https://support.memurai.com"

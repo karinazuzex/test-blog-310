@@ -1,7 +1,7 @@
 import React from "react";
 import NextLink from "next/link";
 import { Button, Link } from "components/ui";
-import { routes } from "config";
+import { routes, consts } from "config";
 import { Container, Row, Col } from "components/grid";
 
 import BlockImage from "static/images/blog.png";
@@ -73,7 +73,7 @@ const AdditionalSection = () => {
                                     </div>
 
                                     <Link
-                                        href="https://memuweb-docs.netlify.app/en/installation.html"
+										href={consts.MEMURAI_DOCS_LINK}
                                         target="_blank"
                                         passHref
                                         className="link--red"
@@ -100,10 +100,8 @@ const AdditionalSection = () => {
                                             Frequently Asked Questions
                                         </h4>
                                         <p className="blog__text blog__text--bottom blog__text--link">
-                                            Technical articles and news about
-                                            Memurai including categories such as
-                                            SQL indexing, financial services,
-                                            performance and more.
+                                            Answers to commonly asked
+											                      questions about Memurai.
                                         </p>
                                     </div>
                                     <NextLink
