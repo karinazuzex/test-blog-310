@@ -7,7 +7,6 @@ import AdditionalSection from "../../components/pageSections/support-page/Additi
 
 const IndexPage = () => (
     <Layout theme="white">
-        <PromoSection />
         <SupportSection />
         <AdditionalSection />
         <SocialSection />

@@ -9,6 +9,41 @@ const SupportSection = () => {
         <section className="section section__support bg-white-grey pb-0">
             <Container>
                 <Col>
+                    <Row className="justify-center-lg justify-center-md justify-center-xs">
+                        <div className="col-xs-12">
+                            <div className="block enterprise_bg">
+                                <div className="block text-center text-white">
+                                    <h2 className="block__title block__elem--lg">
+                                        Enterprise Support - 24/7 Worldwide
+                                    </h2>
+
+                                    <p className="block__description block__elem">
+                                        Worldwide, all timezones, Memurai
+                                        provides 24/7 support. Our skilled{" "}
+                                        <br /> technical team will respond and
+                                        guide you through the issue.
+                                    </p>
+                                    <div class="row justify-center-xs col-xs-12 row--no-col ">
+                                        <div class="button__wrapper">
+                                            <NextLink
+                                                href={routes.CONTACT_PAGE.path}
+                                                passHref
+                                            >
+                                                <Button
+                                                    as="a"
+                                                    type="solid"
+                                                    theme="red-white"
+                                                    style={{ width: "unset" }}
+                                                >
+                                                    Contact us
+                                                </Button>
+                                            </NextLink>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Row>
                     <Row className="justify-between-lg justify-between-md justify-center-xs block__elem--40">
                         <div className="block__elem--40 col-md-4 col-xs-12">
                             <div className="block__blog ht-100 justify-between-xs">
@@ -79,41 +114,6 @@ const SupportSection = () => {
                                         </span>
                                     </Link>
                                 </NextLink>
-                            </div>
-                        </div>
-                    </Row>
-                    <Row className="justify-center-lg justify-center-md justify-center-xs">
-                        <div className="col-xs-12">
-                            <div className="block enterprise_bg">
-                                <div className="block text-center text-white">
-                                    <h2 className="block__title block__elem--lg">
-                                        Enterprise Support - 24/7 Worldwide
-                                    </h2>
-
-                                    <p className="block__description block__elem">
-                                        Worldwide, all timezones, Memurai
-                                        provides 24/7 support. Our skilled{" "}
-                                        <br /> technical team will respond and
-                                        guide you through the issue.
-                                    </p>
-                                    <div class="row justify-center-xs col-xs-12 row--no-col ">
-                                        <div class="button__wrapper">
-                                            <NextLink
-                                                href={routes.CONTACT_PAGE.path}
-                                                passHref
-                                            >
-                                                <Button
-                                                    as="a"
-                                                    type="solid"
-                                                    theme="red-white"
-                                                    style={{ width: "unset" }}
-                                                >
-                                                    Contact us
-                                                </Button>
-                                            </NextLink>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </Row>
