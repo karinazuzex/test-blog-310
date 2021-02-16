@@ -16,12 +16,8 @@ const AdditionalSection = () => {
                 <Row className="justify-center-lg justify-center-md justify-center-xs block__elem--xl">
                     <div>
                         <h1 className="block__title block__elem--xs">
-                            Additional support
+                            Additional resources
                         </h1>
-                        <p>
-                            Please refer to these helpful resources for all of
-                            your Memurai needs.
-                        </p>
                     </div>
                 </Row>
                 <div className="block">
@@ -40,7 +36,7 @@ const AdditionalSection = () => {
                                         <p className="blog__text blog__text--bottom blog__text--link ">
                                             Technical articles and news about
                                             Memurai including categories such as
-                                            SQL index, financial services,
+                                            SQL indexing, financial services,
                                             performance and more.
                                         </p>
                                     </div>
@@ -106,7 +102,7 @@ const AdditionalSection = () => {
                                         <p className="blog__text blog__text--bottom blog__text--link">
                                             Technical articles and news about
                                             Memurai including categories such as
-                                            SQL index, financial services,
+                                            SQL indexing, financial services,
                                             performance and more.
                                         </p>
                                     </div>
@@ -135,10 +131,9 @@ const AdditionalSection = () => {
                                             Newsletter
                                         </h4>
                                         <p className="blog__text blog__text--bottom blog__text--link">
-                                            Receive updates about key news and
+                                            Receive updates about new products and
                                             special offers. We send out the
-                                            Memurai newsletter
-                                            {` <#>`} month.
+                                            Memurai newsletter once a month.
                                         </p>
                                     </div>
                                     <NextLink

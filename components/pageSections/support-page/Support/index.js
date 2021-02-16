@@ -18,10 +18,9 @@ const SupportSection = () => {
                                     </h2>
 
                                     <p className="block__description block__elem">
-                                        Worldwide, all timezones, Memurai
-                                        provides 24/7 support. Our skilled{" "}
-                                        <br /> technical team will respond and
-                                        guide you through the issue.
+                                        Worldwide, in all timezones, Memurai
+                                        provides 24/7 support. <br />
+										Our skilled technical team will respond to your support requests and guide you through issue troubleshooting and resolution.
                                     </p>
                                     <div class="row justify-center-xs col-xs-12 row--no-col ">
                                         <div class="button__wrapper">
@@ -101,7 +100,7 @@ const SupportSection = () => {
                                 </h4>
                                 <p className="blog__text blog__text--bottom blog__text--link">
                                     Our team is happy to offer consulting
-                                    services for architectural and techical
+                                    services for architectural and technical
                                     implementations.
                                 </p>
                                 <NextLink
