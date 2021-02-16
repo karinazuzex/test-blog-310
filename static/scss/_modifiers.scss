@@ -1,140 +1,155 @@
 .bg {
-  &-black {
-    background-color: $realBlack;
-  }
-  &-white-grey {
-    background-color: $whiteGrey;
-  }
+    &-black {
+        background-color: $realBlack;
+    }
+    &-white-grey {
+        background-color: $whiteGrey;
+    }
 }
 
 .text {
-  &-left {
-    text-align: left;
-  }
-  &-center {
-    text-align: center;
-  }
-  &-center--mobile {
-    text-align: center;
-  }
-  &-right {
-    text-align: right;
-  }
+    &-left {
+        text-align: left;
+    }
+    &-center {
+        text-align: center;
+    }
+    &-center--mobile {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
 
-  &-white {
-    color: $white;
-  }
-  &-red {
-    color: $red;
-  }
+    &-white {
+        color: $white;
+    }
+    &-red {
+        color: $red;
+    }
 
-  &-light {
-    font-weight: 300;
-  }
-  &-normal {
-    font-weight: normal;
-  }
-  &-bold {
-    font-weight: bold;
-  }
+    &-light {
+        font-weight: 300;
+    }
+    &-normal {
+        font-weight: normal;
+    }
+    &-bold {
+        font-weight: bold;
+    }
 
-  &-no-transform {
-    text-transform: none;
-  }
+    &-no-transform {
+        text-transform: none;
+    }
 
-  &-sm {
-    line-height: 21px;
-    font-size: 14px;
-  }
+    &-sm {
+        line-height: 21px;
+        font-size: 14px;
+    }
 
-  &-xsm {
-    line-height: 16px;
-    font-size: 12px;
-  }
+    &-xsm {
+        line-height: 16px;
+        font-size: 12px;
+    }
 }
 
 .asterisk {
-  display: inline-block;
-  color: $red;
-  padding-right: 0.3em;
-  padding-top: 3em;
+    display: inline-block;
+    color: $red;
+    padding-right: 0.3em;
+    padding-top: 3em;
 }
 
 .separator {
-  &-bt {
-    border-bottom: 1px solid $grey;
-  }
-  &-no-tp {
-    border-top: none;
-  }
+    &-bt {
+        border-bottom: 1px solid $grey;
+    }
+    &-no-tp {
+        border-top: none;
+    }
 }
 
 .self {
-  &-center {
-    margin-left: auto;
-    margin-right: auto;
-    &--mobile {
-      margin-left: auto;
-      margin-right: auto;
+    &-center {
+        margin-left: auto;
+        margin-right: auto;
+        &--mobile {
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
-  }
 }
 
 .justify {
-  &-center {
-    justify-content: center!important;
-  }
+    &-center {
+        justify-content: center !important;
+    }
 }
 
 .pb {
-  &-0 {
-    padding-bottom: 0;
-  }
+    &-0 {
+        padding-bottom: 0;
+    }
+}
+.mr {
+    &-40 {
+        margin-right: 40px;
+    }
+}
+.ht {
+    &-100 {
+        height: 100%;
+    }
 }
 
+.d {
+    &-flex {
+        display: flex;
+    }
+}
 @media screen and (min-width: $phabletWidth) {
-  .text {
-    &-sm {
-      line-height: 24px;
-      font-size: 16px;
-    }
+    .text {
+        &-sm {
+            line-height: 24px;
+            font-size: 16px;
+        }
 
-    &-xsm {
-      line-height: 16px;
-      font-size: 14px;
+        &-xsm {
+            line-height: 16px;
+            font-size: 14px;
+        }
     }
-  }
 }
 
 @media screen and (min-width: $tabletWidth) {
-  .text {
-    &center--mobile {
-      text-align: initial;
+    .text {
+        &center--mobile {
+            text-align: initial;
+        }
+        &-sm {
+            line-height: 27px;
+            font-size: 18px;
+        }
+        &-xsm {
+            line-height: 18px;
+            font-size: 15px;
+        }
     }
-    &-sm {
-      line-height: 27px;
-      font-size: 18px;
+    .self-center--mobile {
+        margin-left: initial;
+        margin-right: initial;
     }
-    &-xsm {
-      line-height: 18px;
-      font-size: 15px;
-    }
-  }
-  .self-center--mobile {
-    margin-left: initial;
-    margin-right: initial;
-  }
 }
 
 @media screen and (min-width: $desktopWidth) {
-  .text {
-    &-sm {
-      line-height: 30px;
-      font-size: 20px;
+    .text {
+        &-sm {
+            line-height: 30px;
+            font-size: 20px;
+        }
+        &-xsm {
+            line-height: 18px;
+            font-size: 15px;
+        }
     }
-    &-xsm {
-      line-height: 18px;
-      font-size: 15px;
-    }
-  }
 }

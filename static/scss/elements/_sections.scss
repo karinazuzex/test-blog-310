@@ -140,18 +140,8 @@
     }
 
     &__support {
-        button {
-            position: absolute;
-            bottom: 20px;
-            width: 280px;
-            &:hover {
-                color: black;
-            }
-        }
         .block__blog {
-            position: relative;
             text-align: left;
-            padding-bottom: 118px;
             &.col-md-6 {
                 flex-basis: 100%;
             }

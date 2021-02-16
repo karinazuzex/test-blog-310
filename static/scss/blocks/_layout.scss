@@ -1,20 +1,20 @@
 .layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  min-height: 100vh;
-  position: relative;
-  left: 0;
-  transition: left $defaultTransition;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    position: relative;
+    left: 0;
+    transition: left $defaultTransition;
+    overflow: hidden;
 
-  @media (max-width: $tabletWidth - 1) {
-    &--show-menu {
-
-      &,
-      .header {
-        left: -$mobileMenuWidth;
-      }
+    @media (max-width: $tabletWidth - 1) {
+        &--show-menu {
+            &,
+            .header {
+                left: -$mobileMenuWidth;
+            }
+        }
     }
-  }
 }
