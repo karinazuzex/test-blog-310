@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import ImageZoom from 'react-medium-image-zoom';
-import marked from 'marked';
 import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
 
@@ -65,16 +64,14 @@ export const optionsDateCreate = {
  */
 export const getConvertedHTML = (text, withoutLinks = false, options) => {
     if (!options) {
-        options = parserOptions;
+        options = { ...parserOptions };
     }
 
     if (withoutLinks) {
         options.transform = transformWithoutLinks;
     }
 
-    const rawMarkup = marked(text);
-
-    return ReactHtmlParser(rawMarkup, options);
+    return ReactHtmlParser(text, options);
 }
 
 /**

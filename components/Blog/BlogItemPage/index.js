@@ -8,6 +8,7 @@ import IconsShare from 'components/Blog/IconsShare';
 import ImageZoom from 'react-medium-image-zoom';
 import { helpers } from "utils";
 import { getConvertedHTML } from "../../../utils/helpers";
+import marked from 'marked'
 
 const BlogItemPage = ({data}) => {
     const { id,
@@ -26,7 +27,8 @@ const BlogItemPage = ({data}) => {
     const seoDescription = description?.description || '';
     const seoImage = description?.image?.url || '';
 
-    const convertedHtml = getConvertedHTML(body);
+    const transformText = marked(body);
+    const convertedHtml = getConvertedHTML(transformText);
     const dateCreate = new Date(publishDateOverride || _firstPublishedAt).toLocaleString("en-US", helpers.optionsDateCreate);
     const time = Math.ceil(body.split(/\s/).length / 200);
 

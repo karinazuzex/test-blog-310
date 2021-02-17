@@ -21,7 +21,7 @@ import {
  *  notifications: import('react-notification-system').Notification[];
  *  error: boolean;
  *  errorCode: number;
- *  metaTags: {title: string; description: string; image: {url?: string}};
+ *  metaTags: {title: string; description: string; robots: string; image: {url?: string}};
  *  title: string;
  *  textUnderTitle: string;
  *  buttonText: string;
@@ -61,15 +61,16 @@ function LandingPageBySlug({
   if (error) {
     return <ErrorPage statusCode={errorCode} />;
   }
-
   return (
     <>
       <div className="layout landingPage">
         <Head
           title={metaTags?.title}
           description={metaTags?.description}
+          robots="noindex"
           img={metaTags?.image?.url}
-        />
+        >
+        </Head>
         <Header />
         <main role="main">
           <SectionTitle
@@ -140,7 +141,7 @@ const GET_LANDING_BY_SLUG = gql`
 /**
  * @type {import('next').GetServerSideProps}
  */
-export async function getServerSideProps({ params: { landing_page_slug = '' } = {}, res }) {
+export async function getServerSideProps({ query: { landing_page_slug = '' } = {}, res }) {
   const { data } = await client.query({
     query: GET_LANDING_BY_SLUG,
     fetchPolicy: 'no-cache',
@@ -181,6 +182,7 @@ LandingPageBySlug.propTypes = {
     metaTags: PropTypes.shape({
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
+      robots: PropTypes.string.isRequired,
       image: PropTypes.shape({
         url: PropTypes.string,
       }),

@@ -1,136 +1,157 @@
 .icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 
-  svg,
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  &--checked {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: $green;
-    background-image: url(../../images/checkmark.svg);
-    background-position: center center;
-    background-size: 10px 10px;
-    background-repeat: no-repeat;
-  }
-
-  &--unchecked {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: $greyLight;
-    background-image: url(../../images/xmark.svg);
-    background-position: center center;
-    background-size: 10px 10px;
-    background-repeat: no-repeat;
-  }
-
-  &__big-circled {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: $white;
-    box-shadow: 0 32px 44px 0 rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-
-    &--compatibility {
-      padding-left: 38px;
-      padding-right: 38px;
+    svg,
+    img {
+        width: 100%;
+        height: auto;
     }
 
-    &--integration {
-      padding-left: 30px;
-      padding-right: 30px;
+    &--checked {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: $green;
+        background-image: url(../../images/checkmark.svg);
+        background-position: center center;
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
     }
 
-    &--performance {
-      padding-left: 26px;
-      padding-right: 28px;
+    &--unchecked {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: $greyLight;
+        background-image: url(../../images/xmark.svg);
+        background-position: center center;
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
     }
 
-    &--support {
-      padding-left: 33px;
-      padding-right: 33px;
-    }
+    &__big-circled {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: $white;
+        box-shadow: 0 32px 44px 0 rgba(0, 0, 0, 0.05);
+        overflow: hidden;
 
-    &--city {
-      align-items: flex-end;
+        &--compatibility {
+            padding-left: 38px;
+            padding-right: 38px;
+        }
 
-      img,
-      svg {
-        position: relative;
-        top: 4px;
-      }
+        &--integration {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        &--performance {
+            padding-left: 26px;
+            padding-right: 28px;
+        }
+
+        &--support {
+            padding-left: 33px;
+            padding-right: 33px;
+        }
+
+        &--city {
+            align-items: flex-end;
+
+            img,
+            svg {
+                position: relative;
+                top: 4px;
+            }
+        }
+        &.mod-small {
+            width: 80px;
+            height: 80px;
+        }
     }
-    &.mod-small {
-      width: 80px;
-      height: 80px;
+    &__icon {
+        &-sm {
+            margin-top: 10px;
+            margin-right: 25px;
+            width: 80px;
+            height: 80px;
+        }
     }
-  }
 }
 
 @media screen and (min-width: $tabletWidth) {
-  .icon {
-    &__big-circled {
-      width: 225px;
-      height: 225px;
+    .icon {
+        &__big-circled {
+            width: 225px;
+            height: 225px;
 
-      &--compatibility {
-        padding-left: 59px;
-        padding-right: 59px;
-      }
+            &--compatibility {
+                padding-left: 59px;
+                padding-right: 59px;
+            }
 
-      &--integration {
-        padding-left: 45px;
-        padding-right: 45px;
-      }
+            &--integration {
+                padding-left: 45px;
+                padding-right: 45px;
+            }
 
-      &--performance {
-        padding-left: 40px;
-        padding-right: 45px;
-      }
+            &--performance {
+                padding-left: 40px;
+                padding-right: 45px;
+            }
 
-      &--support {
-        padding-left: 50px;
-        padding-right: 50px;
-      }
+            &--support {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
     }
-  }
 }
 
 @media screen and (min-width: $desktopWidth) {
-  .icon {
-    &__big-circled {
-      width: 300px;
-      height: 300px;
+    .icon {
+        &__big-circled {
+            width: 300px;
+            height: 300px;
 
-      &--compatibility {
-        padding-left: 77px;
-        padding-right: 77px;
-      }
+            &--compatibility {
+                padding-left: 77px;
+                padding-right: 77px;
+            }
 
-      &--integration {
-        padding-left: 60px;
-        padding-right: 60px;
-      }
+            &--integration {
+                padding-left: 60px;
+                padding-right: 60px;
+            }
 
-      &--performance {
-        padding-left: 53px;
-        padding-right: 59px;
-      }
+            &--performance {
+                padding-left: 53px;
+                padding-right: 59px;
+            }
 
-      &--support {
-        padding-left: 67px;
-        padding-right: 67px;
-      }
+            &--support {
+                padding-left: 67px;
+                padding-right: 67px;
+            }
+        }
     }
-  }
+}
+
+@media screen and (max-width: $mobileWidth) {
+    .icon {
+        &__icon {
+            &-sm {
+                margin-top: 10px;
+                margin-right: 15px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
 }

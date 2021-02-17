@@ -138,7 +138,7 @@
         }
         &--preview {
             max-height: 150px;
-            overflow-y: hidden;
+            overflow: hidden;
             position: relative;
             ::after {
                 content: ' ';
