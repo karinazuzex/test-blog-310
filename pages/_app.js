@@ -63,7 +63,6 @@ function MyApp({ Component, pageProps }) {
   // componentDidMount and componentWillUnmount
   useEffect(() => {
     let currAnalyticsState = analyticsState;
-
     if (
       Cookiebot
       && Cookiebot.consent
