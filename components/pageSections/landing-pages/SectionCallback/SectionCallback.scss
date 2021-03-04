@@ -1,72 +1,70 @@
 .section {
-  &__callback {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    &__callback {
+        padding-top: 60px;
+        padding-bottom: 60px;
 
-    @include mediaXS() {
-      padding-top: 0;
-    }
+        @include mediaXS() {
+            padding-top: 0;
+        }
 
-    .callback {
+        .callback {
+            &__wrapper {
+                p.block__description {
+                    margin-top: 20px;
+                    margin-bottom: 60px;
 
-      &__wrapper {
+                    @include mediaXS() {
+                        font-size: 18px;
+                        line-height: 28px;
 
-        p.block__description {
-          margin-top: 20px;
-          margin-bottom: 60px;
-
-          @include mediaXS() {
-            font-size: 18px;
-            line-height: 28px;
-
-            br {
-              display: none;
+                        br {
+                            display: none;
+                        }
+                    }
+                }
             }
-          }
+
+            &__title {
+                font-weight: 500;
+                display: block;
+                @include sectionFonts();
+            }
+
+            &__form {
+                max-width: 780px;
+                margin: auto;
+
+                &--privacy {
+                    padding: 0 15px;
+                    font-size: 15px;
+                    line-height: 15px;
+
+                    @include mediaXS() {
+                        font-size: 12px;
+                        line-height: 12px;
+                        font-weight: 500;
+                        text-align: left;
+                    }
+                }
+
+                .form__group {
+                    display: flex;
+                    flex: 1 1 50%;
+                    flex-direction: column-reverse;
+
+                    @include mediaSM() {
+                        flex-basis: 100%;
+                    }
+                }
+
+                .btn__wrapper {
+                    margin: 40px 0 15px;
+
+                    @include mediaXS() {
+                        margin: 20px 0;
+                    }
+                }
+            }
         }
-      }
-
-      &__title {
-        font-weight: 500;
-        display: block;
-        @include sectionFonts();
-      }
-
-      &__form {
-        max-width: 780px;
-        margin: auto;
-
-        &--privacy {
-          padding: 0 15px;
-          font-size: 15px;
-          line-height: 15px;
-
-          @include mediaXS() {
-            font-size: 12px;
-            line-height: 12px;
-            font-weight: 500;
-            text-align: left;
-          }
-        }
-
-        .form__group {
-          display: flex;
-          flex: 1 1 50%;
-          flex-direction: column-reverse;
-
-          @include mediaSM() {
-            flex-basis: 100%;
-          }
-        }
-
-        .btn__wrapper {
-          margin: 40px 0 15px;
-
-          @include mediaXS() {
-            margin: 20px 0;
-          }
-        }
-      }
     }
-  }
 }

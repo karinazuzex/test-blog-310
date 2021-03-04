@@ -6,6 +6,60 @@
         background-color: $whiteGrey;
     }
 }
+.mt {
+    &-30 {
+        margin-top: 30px;
+    }
+    &-50 {
+        margin-top: 50px;
+    }
+    &-35 {
+        margin-top: 350px;
+    }
+}
+
+.h {
+    &-75 {
+        height: 75px;
+    }
+    &-35 {
+        height: 350px;
+    }
+    &-17 {
+        height: 170px;
+    }
+    &-11 {
+        height: 110px;
+    }
+}
+
+.w {
+    &-250 {
+        width: 250px;
+    }
+}
+
+.arrow-hover {
+    transition: 0.4s;
+    border: solid $red !important;
+    border-width: 0 2px 2px 0 !important;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+    transform: rotate(225deg);
+    cursor: pointer;
+}
+
+.link-hover {
+    color: $red !important;
+}
+
+.img-w {
+    &-9 {
+        width: 900px;
+    }
+}
 
 .text {
     &-left {
@@ -27,12 +81,18 @@
     &-red {
         color: $red;
     }
+    &-black {
+        color: black;
+    }
 
     &-light {
         font-weight: 300;
     }
     &-normal {
         font-weight: normal;
+    }
+    &-weight-500 {
+        font-weight: 500;
     }
     &-bold {
         font-weight: bold;
@@ -50,6 +110,26 @@
     &-xsm {
         line-height: 16px;
         font-size: 12px;
+    }
+
+    &-secondary {
+        color: #999999;
+    }
+    &-fs {
+        &-20 {
+            font-size: 20px;
+        }
+        &-48 {
+            font-size: 48px;
+        }
+    }
+    &-lh {
+        &-50 {
+            line-height: 50px;
+        }
+        &-75 {
+            line-height: 75px;
+        }
     }
 }
 
@@ -79,16 +159,30 @@
         }
     }
 }
-
+.d {
+    &-flex {
+        display: flex;
+    }
+}
 .justify {
     &-center {
         justify-content: center !important;
+    }
+}
+.pt {
+    &-0 {
+        padding-top: 0;
     }
 }
 
 .pb {
     &-0 {
         padding-bottom: 0;
+    }
+}
+.pg {
+    &-60 {
+        padding: 60px;
     }
 }
 .mr {
@@ -141,6 +235,20 @@
     }
 }
 
+@media screen and (max-width: 1023px) {
+    .h {
+        &-35 {
+            height: 250px;
+        }
+        &-17 {
+            height: 140px;
+        }
+        &-11 {
+            height: 50px;
+        }
+    }
+}
+
 @media screen and (min-width: $desktopWidth) {
     .text {
         &-sm {
@@ -150,6 +258,15 @@
         &-xsm {
             line-height: 18px;
             font-size: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 652px) {
+    .h {
+        &-35 {
+            height: auto;
+            margin-bottom: 50px;
         }
     }
 }

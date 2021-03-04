@@ -168,6 +168,28 @@
     }
 }
 
+h1.block{
+    &__elem{
+        &--xs{
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+}
+
+
+
+
+@media screen and(min-width:$desktopWidth){
+    h1.block{
+        &__elem{
+            &--xs{
+                font-size: 48px;
+                line-height: 60px;
+            }
+        }
+    }
+}
 @media screen and (max-width: $mobileWidth) {
     .block {
         &.enterprise_bg {

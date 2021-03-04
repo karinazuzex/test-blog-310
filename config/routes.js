@@ -31,8 +31,8 @@ export const NEWSLETTER_PAGE = {
 };
 
 export const TERMS_PAGE = {
-    name: 'Terms And Conditions',
-    nameLong: 'Terms and Conditions',
+    name: "Terms And Conditions",
+    nameLong: "Terms and Conditions",
     path: "/terms",
 };
 
@@ -60,4 +60,19 @@ export const DOWNLOAD_PAGE = {
 export const SUPPORT_PAGE = {
     name: "Support",
     path: "/support",
+};
+
+export const SOLUTIONS_PAGE = {
+    name: "Solutions",
+    path: "/solutions/in-memory-cache",
+};
+
+export const FINANCIAL_SERVICE_PAGE = {
+    name: "Financial",
+    path: "/solutions/financial-service",
+};
+
+export const IOT_PAGE = {
+    name: "IOT",
+    path: "/solutions/iot",
 };
