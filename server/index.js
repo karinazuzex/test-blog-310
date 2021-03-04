@@ -9,7 +9,6 @@ const config = require("./config");
 const mailer = require("./utils/mailer");
 const aws = require("./utils/aws");
 const crypto = require("./utils/crypto");
-const wwwhisper = require('connect-wwwhisper');
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -20,7 +19,6 @@ app.prepare()
     .then(() => {
         const server = express();
 
-        server.use(wwwhisper(false));
         server.use(bodyParser.json());
 
         server.get('/robots.txt', (req, res) => (

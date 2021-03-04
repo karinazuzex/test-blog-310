@@ -1,9 +1,15 @@
 import { GTM_TRACKING_ID } from "./consts";
+import TagManager from 'react-gtm-module';
 
 let disabled = true;
+let initialized = false;
 
 const init = couldUseGtm => {
     disabled = !(couldUseGtm && GTM_TRACKING_ID);
+    if (!disabled && !initialized) {
+        initialized = true;
+        TagManager.initialize({ gtmId: GTM_TRACKING_ID });
+    }
 };
 
 const pageview = (url, title) => {
