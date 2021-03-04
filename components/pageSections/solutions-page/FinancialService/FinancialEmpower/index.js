@@ -107,7 +107,7 @@ const FinancialEmpowerSection = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <img src="https://www.datocms-assets.com/13391/1606133750-memurai-financial-services-2.jpg" />
+                            <img src="https://www.datocms-assets.com/13391/1614764899-cache-in-front-of-a-db50pc.png" />
                         </div>
                     </div>
                 </div>
