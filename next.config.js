@@ -44,6 +44,7 @@ module.exports = withImages({
       "/privacy": { page: "/privacy" },
       "/cookie": { page: "/cookie" },
       "/blog": { page: "/blog" },
+      '/solutions/in-memory-cache':{ page :'/solutions/in-memory-cache'}
     };
 
     (await getPosts()).map(post => {

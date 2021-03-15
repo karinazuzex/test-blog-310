@@ -9,8 +9,8 @@ const Arrow = ({ className = "" }) => (
                 <g id="Group-2" transform="translate(1158.000000, 3478.000000)">
                     <g id="Button/Close" transform="translate(5.000000, 5.000000)">
                         <g id="Group-Copy-3">
-                            <rect id="Rectangle-3" transform="translate(5.000000, 4.973809) scale(-1, 1) rotate(-315.000000) translate(-5.000000, -4.973809) " x="-0.230769231" y="4.28571429" width="10.461538" height="1.37619042" rx="0.688095208" />
-                            <rect id="Rectangle-3-Copy" transform="translate(5.000000, 4.973809) rotate(-315.000000) translate(-5.000000, -4.973809) " x="-0.230769231" y="4.28571429" width="10.461538" height="1.37619042" rx="0.688095208" />
+                            <rect id="Rectangle-3" transform="translate(5.000000, 4.973809) scale(-1, 1) rotate(-315.000000) translate(-5.000000, -4.973809) " x="-0.230769231" y="4.28571429" width="10.461538" height="1.37619042" rx="0.688095208" fill="black"/>
+                            <rect id="Rectangle-3-Copy" transform="translate(5.000000, 4.973809) rotate(-315.000000) translate(-5.000000, -4.973809) " x="-0.230769231" y="4.28571429" width="10.461538" height="1.37619042" rx="0.688095208" fill="black"/>
                         </g>
                     </g>
                 </g>

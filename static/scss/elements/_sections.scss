@@ -5,6 +5,20 @@
 .webp .section__promo--home.bg-black {
     background-image: url(/static/images/background-full.webp);
 }
+@media screen and (max-width: 767px) {
+    .section {
+        &__solutions {
+            .info + .info {
+                margin-top: 0px;
+            }
+        }
+        &__comparison {
+            .grade-img {
+                width: 150px;
+            }
+        }
+    }
+}
 @media screen and (max-width: 1020px) {
     .no-webp .section__promo--home.bg-black {
         background-image: url(/static/images/background-landscape.png);
@@ -147,6 +161,73 @@
             }
         }
     }
+
+    &__solutions {
+        .image-block {
+            align-self: center;
+        }
+        .info__block {
+            width: 65%;
+        }
+        .image-mr {
+            margin-right: 30px;
+        }
+        .image-ml {
+            margin-left: 30px;
+        }
+    }
+    &__enterprise {
+        & h3 {
+            margin-left: 30px;
+        }
+        &__block {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__caching-data {
+        .info__block {
+            width: 65%;
+        }
+    }
+}
+
+@media screen and (min-width: $extraSmallWidth) {
+    .section {
+        &__solutions {
+            .image-block {
+                align-self: center;
+            }
+            .info__block {
+                width: 100%;
+                & h3 {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .image-mr {
+                margin-right: unset;
+            }
+            .image-ml {
+                margin-left: unset;
+            }
+        }
+        &__enterprise {
+            &__block {
+                & h3 {
+                    width: 100%;
+                    text-align: center;
+                }
+                flex-direction: column;
+            }
+            & h3 {
+                width: 100%;
+                text-align: center;
+                margin-left: unset;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: $mobileWidth) {
@@ -178,6 +259,20 @@
                         }
                     }
                 }
+            }
+        }
+        &__solutions {
+            .image-block {
+                align-self: center;
+            }
+            .info__block {
+                width: 100%;
+            }
+            .image-mr {
+                margin-right: unset;
+            }
+            .image-ml {
+                margin-left: unset;
             }
         }
     }
@@ -225,6 +320,30 @@
                         }
                     }
                 }
+            }
+        }
+        &__solutions {
+            .image-mr {
+                margin-right: 1.5rem;
+            }
+            .image-ml {
+                margin-left: 1.5rem;
+            }
+            .info__block {
+                width: 100%;
+                & h3 {
+                    text-align: left;
+                }
+            }
+        }
+        &__enterprise {
+            & h3 {
+                text-align: left;
+                margin-left: 30px;
+            }
+            &__block {
+                display: flex;
+                flex-direction: row;
             }
         }
     }
@@ -282,6 +401,21 @@
 
         &__social {
             padding-bottom: 150px;
+        }
+
+        &__solutions {
+            .image-block {
+                align-self: center;
+            }
+            .info__block {
+                width: 65%;
+            }
+            .image-mr {
+                margin-right: 30px;
+            }
+            .image-ml {
+                margin-left: 30px;
+            }
         }
     }
 }
@@ -348,6 +482,30 @@
 
         &__social {
             padding-bottom: 150px;
+        }
+
+        &__solutions {
+            .image-block {
+                align-self: center;
+            }
+            .info__block {
+                width: 65%;
+            }
+            .image-mr {
+                margin-right: 30px;
+            }
+            .image-ml {
+                margin-left: 30px;
+            }
+        }
+        &__enterprise {
+            & h3 {
+                margin-left: 30px;
+            }
+            &__block {
+                display: flex;
+                flex-direction: row;
+            }
         }
     }
 }
