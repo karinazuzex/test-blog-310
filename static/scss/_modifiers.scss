@@ -17,7 +17,11 @@
         margin-top: 350px;
     }
 }
-
+.mb {
+    &-0 {
+        margin-bottom: 0;
+    }
+}
 .h {
     &-75 {
         height: 75px;
@@ -130,6 +134,9 @@
         &-75 {
             line-height: 75px;
         }
+    }
+    &-justify {
+        text-align: justify;
     }
 }
 
