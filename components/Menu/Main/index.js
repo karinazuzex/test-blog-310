@@ -72,7 +72,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         in-memory cache
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the page
+                                            The simplicity of Redis cache available on Windows
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -90,8 +90,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         real time inventory
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the real
-                                            time page
+                                            Diverse inventories readily available with a single interface
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -111,8 +110,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         financial services
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the
-                                            financial services page
+                                            Microsecond latency reads and writes
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -126,7 +124,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         IoT
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the page
+                                            Simple and flexible commands for any device
                                         </span>
                                     </Link>
                                 </NextLink>
