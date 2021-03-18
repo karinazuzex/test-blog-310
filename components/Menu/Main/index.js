@@ -72,7 +72,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         in-memory cache
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the page
+                                            The simplicity of Redis cache available on Windows
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -90,8 +90,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         real time inventory
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the real
-                                            time page
+                                            Diverse inventories readily available with a single interface
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -111,8 +110,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         financial services
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the
-                                            financial services page
+                                            Microsecond latency reads and writes
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -126,7 +124,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         IoT
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the page
+                                            Simple and flexible commands for any device
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -156,9 +154,6 @@ const MainMenu = ({ theme, onClose }) => {
                     ></i>
                     {showMenu == "Learn" && (
                         <ul className="m-menu__sub-menu">
-                            <span className="m-menu__sub-menu--title text-bold">
-                                use cases
-                            </span>
                             <li className="m-menu__sub-menu--item">
                                 <Link
                                     href={consts.MEMURAI_DOCS_LINK}
@@ -196,28 +191,44 @@ const MainMenu = ({ theme, onClose }) => {
                         </ul>
                     )}
                 </li>
-                <li className="m-menu__item m-menu__item--mobile">
+                <li
+                    className="m-menu__item m-menu__item--mobile"
+                    onMouseEnter={onLinkHover}
+                    onMouseLeave={onLinkHover}
+                >
                     <NextLink href={routes.ABOUT_PAGE.path} passHref>
                         <Link theme={linkTheme} className="m-menu__link">
                             {routes.ABOUT_PAGE.name}
                         </Link>
                     </NextLink>
                 </li>
-                <li className="m-menu__item">
+                <li
+                    className="m-menu__item"
+                    onMouseEnter={onLinkHover}
+                    onMouseLeave={onLinkHover}
+                >
                     <NextLink href={routes.CONTACT_PAGE.path} passHref>
                         <Link theme={linkTheme} className="m-menu__link">
                             {routes.CONTACT_PAGE.name}
                         </Link>
                     </NextLink>
                 </li>
-                <li className="m-menu__item">
+                <li
+                    className="m-menu__item"
+                    onMouseEnter={onLinkHover}
+                    onMouseLeave={onLinkHover}
+                >
                     <NextLink href={routes.BLOG_PAGE.path} passHref>
                         <Link theme={linkTheme} className="m-menu__link">
                             {routes.BLOG_PAGE.name}
                         </Link>
                     </NextLink>
                 </li>
-                <li className="m-menu__item m-menu__item--mobile">
+                <li
+                    className="m-menu__item m-menu__item--mobile"
+                    onMouseEnter={onLinkHover}
+                    onMouseLeave={onLinkHover}
+                >
                     <NextLink href={routes.GET_MEMURAI_PAGE.path} passHref>
                         <Link theme={linkTheme} className="m-menu__link">
                             {routes.GET_MEMURAI_PAGE.name}

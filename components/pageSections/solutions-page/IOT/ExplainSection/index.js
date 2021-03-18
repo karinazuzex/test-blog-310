@@ -17,9 +17,9 @@ const FinancialEmpowerSection = () => {
                             IoT everywhere
                         </h3>
                     </div>
-                    <div className="blog-item-content row row--no-col">
-                        <div className="col-md-8">
-                            <p>
+                    <div className=" row">
+                        <div className="col-md-8 col-xs-12 col-sm-12 text-justify">
+                            <p className="block__elem--xs mb-0">
                                 Technology is advancing rapidly, now almost
                                 every single device we have in our household or
                                 place of work is connected to another device.
@@ -27,7 +27,7 @@ const FinancialEmpowerSection = () => {
                                 data from devices and exploit it has become the
                                 norm.
                             </p>
-                            <p className="block__elem--xs">
+                            <p className="block__elem--xs mb-0">
                                 Because of this, the amount of information
                                 flowing from one end of our network to the other
                                 requires high-speed channels and performant
@@ -43,26 +43,26 @@ const FinancialEmpowerSection = () => {
                                 centralized and used.
                             </p>
                         </div>
-                        <div className="col-md-4 d-flex align-center-xs">
+                        <div className="col-md-4 col-xs-12 col-sm-12 d-flex align-center-xs">
                             <img src={IOTEveryWhere} />
                         </div>
                     </div>
                 </div>
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
-                        <h3 className="block__description block__elem--lg text-weight-500">
+                        <h3 className="block__description block__elem--xs text-weight-500">
                             On-prem IoT
                         </h3>
                     </div>
-                    <div className="blog row row--no-col reverse">
-                        <div className="col-md-12">
-                            <p className="block__elem--xs">
+                    <div className="blog row reverse">
+                        <div className="col-md-12 col-xs-12 col-sm-12 text-justify">
+                            <p className="block__elem--xs mb-0">
                                 With On-prem IoT your devices and hub are all
                                 within your private network, having the extra
                                 benefit of using the information without it
                                 never leaving your control.
                             </p>
-                            <p className="block__elem--xs">
+                            <p className="block__elem--xs mb-0">
                                 As long as you keep your network security a top
                                 priority, the safety of your data is ensured.
                                 This is a perfect setup for companies that can’t
@@ -83,26 +83,26 @@ const FinancialEmpowerSection = () => {
                 </div>
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
-                        <h3 className="block__description block__elem--lg text-weight-500">
+                        <h3 className="block__description block__elem--xs text-weight-500">
                             Real-time data flowing via Memurai
                         </h3>
                     </div>
-                    <div className="blog">
-                        <div className="col-md-12">
-                            <p className="block__elem--xs">
+                    <div className="blog row">
+                        <div className="col-md-12 col-xs-12 col-sm-12 text-justify">
+                            <p className="block__elem--xs mb-0">
                                 In the on-prem context, when data needs to be
                                 redistributed rapidly to other devices, Memurai
                                 provides a fast and reliable way of achieving
                                 this.
                             </p>
-                            <p className="block__elem--xs">
+                            <p className="block__elem--xs mb-0">
                                 Its in-memory architecture allows for
                                 microsecond-level reads and writes. At the same
                                 time, its message distribution capabilities
                                 allow for Edge devices to connect to each other
                                 and to a central hub with minimum effort.
                             </p>
-                            <p className="block__elem--xs">
+                            <p className="block__elem--xs mb-0">
                                 Compared to other solutions such as Kafka, where
                                 the setup is incredibly cumbersome and requires
                                 a lot of moving parts, the following options
@@ -115,13 +115,13 @@ const FinancialEmpowerSection = () => {
                 </div>
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
-                        <h3 className="block__description block__elem--lg text-weight-500">
+                        <h3 className="block__description block__elem--xs text-weight-500">
                             Pub/Sub
                         </h3>
                     </div>
-                    <div className="blog">
-                        <div className="col-md-12">
-                            <p className="block__elem--xs">
+                    <div className="blog row">
+                        <div className="col-md-12 col-sm-12 col-xs-12 text-justify">
+                            <p className="block__elem--xs mb-0">
                                 Through the Pub/Sub feature, messages are sent
                                 efficiently to any device waiting for them. This
                                 feature uses a fire-and-forget mechanic,
@@ -136,17 +136,17 @@ const FinancialEmpowerSection = () => {
                 </div>
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
-                        <h3 className="block__description block__elem--lg text-weight-500">
+                        <h3 className="block__description block__elem--xs text-weight-500">
                             Blocking lists
                         </h3>
                     </div>
                     <div className="blog">
-                        <div className="row row--no-col">
-                            <div className="col-md-6 d-flex align-center-xs">
+                        <div className="row">
+                            <div className="col-md-6 col-xs-12 col-sm-12 d-flex align-center-xs">
                                 <img src={BlockingList} />
                             </div>
-                            <div className="col-md-6 blog-item-content">
-                                <p className="mt-50">
+                            <div className="col-md-6 col-sm-12 col-xs-12 text-justify">
+                                <p className="block__elem--xs mb-0">
                                     Memurai’s internal data structure: lists,
                                     allow you to create a communication path
                                     between producer and receivers (i.e edge
@@ -158,7 +158,7 @@ const FinancialEmpowerSection = () => {
                                     the end result is far more reliable and
                                     still performant.
                                 </p>
-                                <p className="mt-50">
+                                <p className="block__elem--xs mb-0">
                                     This is the solution you want if you need
                                     multiple producers generating data but only
                                     one target receiving it at any given time.
@@ -175,14 +175,14 @@ const FinancialEmpowerSection = () => {
                 </div>
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
-                        <h3 className="block__description block__elem--lg text-weight-500">
+                        <h3 className="block__description block__elem--xs text-weight-500">
                             Streams
                         </h3>
                     </div>
                     <div className="blog">
-                        <div className="row row--no-col">
-                            <div className="col-md-12">
-                                <p className="block__elem--xs">
+                        <div className="row">
+                            <div className="col-md-12 col-xs-12 col-sm-12 text-justify">
+                                <p className="block__elem--xs mb-0">
                                     While very similar to Pub/Sub and blocking
                                     lists, Memurai Streams implement a
                                     distribution channel that allows for complex
@@ -209,14 +209,14 @@ const FinancialEmpowerSection = () => {
                 </div>
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
-                        <h3 className="block__description block__elem--lg text-weight-500">
+                        <h3 className="block__description block__elem--xs text-weight-500">
                             Microsecond writes and reads.
                         </h3>
                     </div>
                     <div className="blog">
-                        <div className="row row--no-col">
-                            <div className="col-md-12">
-                                <p className="block__elem--xs">
+                        <div className="row">
+                            <div className="col-md-12 col-xs-12 col-sm-12 text-justify">
+                                <p className="block__elem--xs mb-0">
                                     Given the in-memory nature of Memurai,
                                     writing and reading data is more performant
                                     than working with traditional storage-based
@@ -238,14 +238,14 @@ const FinancialEmpowerSection = () => {
                 </div>
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
-                        <h3 className="block__description block__elem--lg text-weight-500">
+                        <h3 className="block__description block__elem--xs text-weight-500">
                             Available on Windows
                         </h3>
                     </div>
                     <div className="blog">
-                        <div className="row row--no-col">
-                            <div className="col-md-12">
-                                <p className="block__elem--xs">
+                        <div className="row">
+                            <div className="col-md-12 col-xs-12 col-sm-12 text-justify">
+                                <p className="block__elem--xs mb-0">
                                     Either for your development or production
                                     environments, Memurai can integrate and
                                     function with Windows systems, tools and
