@@ -170,7 +170,7 @@ const MainMenu = ({ theme, onClose }) => {
                                     DOCUMENTATION
                                     <br />
                                     <span className="m-menu__sub-menu--description">
-                                        A brief description for the page
+                                        Installation and other documentation
                                     </span>
                                 </Link>
                             </li>
@@ -183,7 +183,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         {routes.FAQ_PAGE.name}
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the page
+                                            Frequently Asked Questions
                                         </span>
                                     </Link>
                                 </NextLink>
