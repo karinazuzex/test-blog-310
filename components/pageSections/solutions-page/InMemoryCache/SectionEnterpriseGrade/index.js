@@ -52,7 +52,7 @@ const SectionEnterprise = () => {
                         <p className="info__text-description">
                             High availability is one of the utmost requirements in today’s systems, and even
                             a second of downtime can be catastrophic for systems. A cache layer must be available
-                            at all times because application performance depends on it. Memurai enterprise instant
+                            at all times because application performance depends on it. Memurai Enterprise instant
                             failure detection, automatic backups, data persistence, and fast recovery are key
                             factors for a successful user experience.
                         </p>

@@ -39,7 +39,7 @@ const SectionMemoryCaching = () => {
                             demanding period when your business needs to be up to the challenge.
                             A high-throughput in-memory cache solves this problem, allowing you to
                             address this only when necessary without having to increase your cost 
-                            year-round for specific moments.
+                            year-round.
                         </div>
                     </div>
                     <div className="image-block image-ml">
