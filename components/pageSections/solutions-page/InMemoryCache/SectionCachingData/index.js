@@ -21,13 +21,7 @@ const SectionCachingData = () => {
                     <div className="info__text info__block">
                         <h3 className="block__title block__elem--xs">Cache-aside (Lazy-loading)</h3>
                         <div className="info__text-description">
-                            A cache-aside is the most common way to use Memurai as in-memory cache. The data
-                            is only loaded when necessary. In this strategy when your application need to read
-                            data from the database it will check first the cache to determine if the data it’s
-                            available. If it return a cache hit (data is available) the response is issued to
-                            the caller. If it return a cache miss (data not available) the database is queried
-                            for the data. Lazy-loading cache is straightforward, keep the cache size cost
-                            effective and can produce immediate performance benefits.
+                            A cache-aside is the most common way to use Memurai as an in-memory cache. Data is only loaded when necessary. In this strategy, when an application needs to read data from the database, it first checks the cache to determine if the data is available. If it returns a cache hit (data is available), the response is issued to the caller. If it returns a cache miss (data not available), the database is queried for the data. Lazy-loading the cache is straightforward, keeps the cache size cost-effective, and can produce immediate performance benefits.
                         </div>
                     </div>
                 </Row>
@@ -35,12 +29,7 @@ const SectionCachingData = () => {
                     <div className="info__text info__block">
                         <h3 className="block__title block__elem--xs">Write-Through</h3>
                         <div className="info__text-description">
-                            The write-through cache strategy favors data consistency between the cache and the
-                            datastore since the cache is proactively updating immediately when the database is
-                            updated or data is added. Thanks to this the data in the cache is never stale. The
-                            disadvantage if this strategy is that infrequently requested data is also written
-                            to the cache, resulting in a larger and more expensive cache. For this reason this
-                            strategy is usually implemented along the lazy-load cache.
+                        The write-through cache strategy favors data consistency between the cache and the datastore because the cache is proactively updating immediately when the database is updated or data is added. Consequently, the data in the cache are constantly changing. The disadvantage of this strategy is that infrequently requested data is also written to the cache, resulting in a larger and more expensive cache. As a result, this strategy is usually implemented along with the lazy-load cache.
                         </div>
                     </div>
                     <div className="image-block image-ml">
@@ -54,11 +43,7 @@ const SectionCachingData = () => {
                     <div className="info__text info__block block__elem--lg">
                         <h3 className="block__title block__elem--xs">Write Behind Caching</h3>
                         <div className="info__text-description">
-                            Write-behind strategy is suitable for high read & write throughput system since
-                            the developer writes only to one place improving this way write performance. The
-                            data in this strategy is first written to the cache and asynchronously synced to
-                            the datastore. For this strategy some rollback processes are suggested to be
-                            in-place to maintain consistency over a time window.
+                            The write-behind strategy is suitable for high read and write throughput systems because the developer writes only to one place, thus improving write performance. The data in this strategy are first written to the cache and asynchronously synced to the datastore. For this strategy, some rollback processes are suggested to be in place to maintain consistency over a time window.
                         </div>
                     </div>
                 </Row>

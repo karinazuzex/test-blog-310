@@ -20,13 +20,13 @@ const SectionEnterprise = () => {
                     <div className="section__enterprise__block block__elem--lg">
                         <img className="grade-img" src={speed} alt="" />
                         <p className="info__text-description">
-                            Memurai is a Redis compatible, Windows native, key-value database that delivers
-                            single-digit millisecond performance at scale. Because memory is faster than disk,
-                            in-memory cache is sub-miliconds extremely fast. The faster data access improves
-                            the overall application performance. Memurai is also designed to scale quickly and
-                            smoothly. This helps address one of the most common challenges in modern
-                            applications, dealing with usage spikes. By utilizing a fast and scalable
-                            in-memory cache this issue can be mitigated.{' '}
+                        Memurai is a Redis compatible, Windows native, key-value database that delivers 
+                        single-digit millisecond performance at scale. Because memory is faster than disk,
+                         in-memory cache has submillisecond speed. The faster data access improves the 
+                         overall application performance. Memurai is also designed to scale quickly and
+                          smoothly. This helps address one of the most common challenges in modern
+                           applications, dealing with usage spikes. By utilizing a fast and scalable
+                            in-memory cache, this issue can be mitigated.{' '}
                         </p>
                     </div>
                 </div>
@@ -36,10 +36,10 @@ const SectionEnterprise = () => {
                     <div className="section__enterprise__block block__elem--lg">
                         <img className="grade-img" src={flexibity} alt="" />
                         <p className="info__text-description">
-                            Memurai is fully compatible with Redis, this translates into a datastore that
-                            supports 50+ programming languages, 150+ client libraries and a wide amount of
-                            information and resources available make it easy for developers to implement and
-                            maintain.
+                            Memurai is fully compatible with Redis, and this translates into a datastore
+                             that supports 50+ programming languages, 150+ client libraries, and a wide 
+                             amount of information, and available resources make it easy for developers 
+                             to implement and maintain.
                         </p>
                     </div>
                 </div>
@@ -50,11 +50,11 @@ const SectionEnterprise = () => {
                     <div className="section__enterprise__block block__elem--lg">
                         <img className="grade-img" src={resilience} alt="" />
                         <p className="info__text-description">
-                            High availability is one of the utmost requirement in today’s systems. Even a
-                            second of downtime can be catastrophic for your system. Your cache layer has to be
-                            available at all times since your application performance depends on it. Memurai
-                            enterprise instant failure detection, automatic backups, data persistence and fast
-                            recovery are key factors for a successful user experience.
+                            High availability is one of the utmost requirements in today’s systems, and even
+                            a second of downtime can be catastrophic for systems. A cache layer must be available
+                            at all times because application performance depends on it. Memurai Enterprise instant
+                            failure detection, automatic backups, data persistence, and fast recovery are key
+                            factors for a successful user experience.
                         </p>
                     </div>
                 </div>
@@ -63,11 +63,10 @@ const SectionEnterprise = () => {
                     <div className="section__enterprise__block block__elem--lg">
                         <img className="grade-img" src={database} alt="" />
                         <p className="info__text-description">
-                            Memurai can also be use as a data store with disk persistence. Memurai can persist
-                            data to disk synchronously or asynchronously. Memurai also support other well
-                            known Redis features like replication, transactions, LUA scripting,
-                            high-availability, pub/sub, cluster, modules, streams, LRU eviction and all of the
-                            Redis API 5 eviction policies.
+                            Memurai can also be used as a data store with disk persistence. Memurai can persist
+                            data to disk synchronously or asynchronously. Memurai also supports other well-known
+                            Redis features like replication, transactions, LUA scripting, high availability, pub/sub,
+                            cluster, modules, streams, LRU eviction, and all Redis API 5 eviction policies.
                         </p>
                     </div>
                 </div>

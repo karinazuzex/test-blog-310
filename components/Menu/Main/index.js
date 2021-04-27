@@ -72,7 +72,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         in-memory cache
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            The simplicity of Redis cache available on Windows
+                                            The simplicity of the Redis API available on Windows
                                         </span>
                                     </Link>
                                 </NextLink>
@@ -87,7 +87,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         theme={linkTheme}
                                         className="m-menu__sub-menu--link"
                                     >
-                                        real time inventory
+                                        real-time inventory
                                         <br />
                                         <span className="m-menu__sub-menu--description">
                                             Diverse inventories readily available with a single interface
@@ -170,7 +170,7 @@ const MainMenu = ({ theme, onClose }) => {
                                     DOCUMENTATION
                                     <br />
                                     <span className="m-menu__sub-menu--description">
-                                        A brief description for the page
+                                        Installation and other documentation
                                     </span>
                                 </Link>
                             </li>
@@ -183,7 +183,7 @@ const MainMenu = ({ theme, onClose }) => {
                                         {routes.FAQ_PAGE.name}
                                         <br />
                                         <span className="m-menu__sub-menu--description">
-                                            A brief description for the page
+                                            Frequently Asked Questions
                                         </span>
                                     </Link>
                                 </NextLink>

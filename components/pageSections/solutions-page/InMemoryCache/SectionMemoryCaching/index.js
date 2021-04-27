@@ -20,31 +20,26 @@ const SectionMemoryCaching = () => {
                             In-memory cache for trading companies
                         </h3>
                         <div className="info__text-description">
-                            Changes in the trading prices can be critical. Trading companies need to detect
-                            any sudden changes and react instantly. <br />
-                            This fast reaction is not possible to acchieve using traditional disk-based
-                            systems. To meet the challenging requirements for analyzing mass amounts of data
-                            and servicing requests within milliseconds, an in-memory cache is a must. Memurai
-                            can ingest data at a high rate (ultra fast write and read speed).
-                            <br /> Memurai is a high-performance cache that delivers sub-milliseconds response
-                            time, high availability and seamless integration with Windows.
-                            <br /> Memurai is a fully-supported enterprise platform that meets the most
-                            demanding production workloads.
+                            Changes in trading prices can be critical. Trading companies need to detect any sudden changes and react instantly.
+                            This fast reaction is not possible using traditional disk-based systems. To meet the challenging requirements for analyzing large amounts of data and servicing requests within milliseconds, an in-memory cache is required. Memurai can manage data at a high rate (ultrafast write and read speeds).
+                            Memurai is a high-performance cache that delivers submillisecond response time, high availability, and seamless integration with Windows.
+                            Memurai is a fully supported enterprise platform that meets the most demanding production workloads.
                         </div>
                     </div>
                 </Row>
                 <Row theme="no-col" className="info info--reversed">
                     <div className="info__text info__block">
                         <h3 className="block__title block__elem--xs">
-                            Caching for specific high demand application usage
+                            Caching for specific high-demand application usage
                         </h3>
                         <div className="info__text-description">
-                            The scalability of an in-memory caching makes it the perfect solution for spikes
-                            of application usage. A common use case for this scenario is seasonal periods like
-                            Black Friday, sports events or any other high traffic demanding period when your
-                            business needs to be up to the challenge. A high throughput in-memory cache solves
-                            this situation allowing you to address this only when necessary without having to
-                            increase your cost year around for specific moments in time.
+                            The scalability of in-memory caching makes it the perfect solution for
+                            spikes of application usage. A common use case for this scenario is seasonal
+                            periods like Black Friday, sports events, or any other high-traffic
+                            demanding period when your business needs to be up to the challenge.
+                            A high-throughput in-memory cache solves this problem, allowing you to
+                            address this only when necessary without having to increase your cost 
+                            year-round.
                         </div>
                     </div>
                     <div className="image-block image-ml">
@@ -60,13 +55,12 @@ const SectionMemoryCaching = () => {
                             In-memory cache for user session data
                         </h3>
                         <div className="info__text-description">
-                            When talking about user sessions, database scalability and reliability are
-                            absolutely critical to delivering a great user experience. Caching the user data
-                            information speeds up response time to the application user. Because of the
-                            complexity and volume of data can be massive, a key-value database that delivers
-                            single-digit millisecond performance at scale it’s the right answer. This will not
-                            only translate into a faster and better experience but it will reduce as well the
-                            cost for your business.
+                            Regarding user sessions, database scalability and reliability are critical
+                            to delivering a great user experience. Caching the user data information speeds
+                             up response time for the application user. Because of the complexity and because
+                              the volume of data can be massive, a key-value database that delivers single-digit
+                               millisecond performance at scale is needed. This translates into a faster and
+                                better experience and reduces business expenses.
                         </div>
                     </div>
                 </Row>
