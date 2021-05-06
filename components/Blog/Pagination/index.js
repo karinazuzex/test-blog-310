@@ -24,7 +24,7 @@ function Pagination({ postsCount, currentPage }) {
   let countDisplayPages = 0;
 
   if (currentPage > pages) {
-    Router.push({pathname: pathname, query: { ...query, page: pages }});
+    typeof window !== 'undefined' && Router.push({pathname: pathname, query: { ...query, page: pages }});
   }
 
   for (let i = startPage; currentPage === 1 ? i <= currentPage + 2 : i <= currentPage + 1; i++) {
