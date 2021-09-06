@@ -26,19 +26,19 @@ const PromoSection = () => {
                     </div>
                 </div>
                 <div className="block text-center">
-                    <h2 className="block__title block__elem--lg">What is In-memory cache?</h2>
+                    <h2 className="block__title block__elem--lg">What is an in-memory cache?</h2>
                     <p className="text-left block__elem--lg">
-                        In business operations, speed is not an option, but a must. With Memurai distributed
+                        In business operations, speed is not an option, but a must. With Memurai's distributed
                         in-memory cache your applications will perfom dramatically faster creating not only a
-                        more efficient workflow but also reducing your cost with unnescesary database trips.
+                        more efficient workflow but also reducing your cost with unnecessary database trips.
                         <br />
-                        Beside an extremely low latency, Memurai highly available and resilient cache will
+                        Beside an extremely low latency, Memurai's highly available and resilient cache will
                         facilitate the scale of your applictions. In-memory caching solutions improve
                         response time by storing a copy of your most used data on very fast ephemeral storage
                         instead of slow spinning disks.
                         <br />
                         <span className="text-bold">
-                            Memurai is a fully compatible Redis alternative for Windows that leverage the best
+                            Memurai is a fully compatible Redis alternative for Windows that leverages the best
                             of both worlds.
                         </span>
                     </p>

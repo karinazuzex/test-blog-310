@@ -31,8 +31,8 @@ const PromoSection = () => {
                             improve profitability by making business decisions
                             faster, for example by approving loans and credit
                             applications more quickly. A high-performance
-                            database that delivers sub-milliseconds response
-                            time can be vital. Memurai Enterprise high
+                            database that delivers sub-millisecond response
+                            times can be vital. Memurai Enterprise high
                             availability and seamless integration with Windows
                             make it the perfect tool to help financial
                             institutions be more competitive.
@@ -46,7 +46,7 @@ const PromoSection = () => {
                             most demanding enterprise needs. Multiple Fortune
                             500 companies, government agencies, universities,
                             insurance, and fintech companies on 7 continents
-                            already use it for critical workloads
+                            already use it for critical workloads.
                         </p>
                     </div>
                 </div>

@@ -38,7 +38,7 @@ const SectionEnterprise = () => {
                         <p className="info__text-description">
                             Memurai is fully compatible with Redis, and this translates into a datastore
                              that supports 50+ programming languages, 150+ client libraries, and a wide 
-                             amount of information, and available resources make it easy for developers 
+                             amount of information, and available resources that make it easy for developers 
                              to implement and maintain.
                         </p>
                     </div>
@@ -51,7 +51,7 @@ const SectionEnterprise = () => {
                         <img className="grade-img" src={resilience} alt="" />
                         <p className="info__text-description">
                             High availability is one of the utmost requirements in today’s systems, and even
-                            a second of downtime can be catastrophic for systems. A cache layer must be available
+                            a second of downtime can be catastrophic. A cache layer must be available
                             at all times because application performance depends on it. Memurai Enterprise instant
                             failure detection, automatic backups, data persistence, and fast recovery are key
                             factors for a successful user experience.
@@ -66,7 +66,7 @@ const SectionEnterprise = () => {
                             Memurai can also be used as a data store with disk persistence. Memurai can persist
                             data to disk synchronously or asynchronously. Memurai also supports other well-known
                             Redis features like replication, transactions, LUA scripting, high availability, pub/sub,
-                            cluster, modules, streams, LRU eviction, and all Redis API 5 eviction policies.
+                            cluster, modules, streams, LRU eviction, and all the Redis API 5 eviction policies.
                         </p>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ const SectionMemoryCaching = () => {
         <section className="section section__comparison section__solutions section__promo--memory-caching bg-white-grey ">
             <Container>
                 <div className="text-center h-11">
-                    <h2 className="block__title block__elem--lg">In memory caching use cases</h2>
+                    <h2 className="block__title block__elem--lg">In-memory caching use cases</h2>
                 </div>
                 <Row theme="no-col" className="info">
                     <div className="image-block image-mr">
