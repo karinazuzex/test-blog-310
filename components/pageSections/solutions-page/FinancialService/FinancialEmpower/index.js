@@ -14,7 +14,7 @@ const FinancialEmpowerSection = () => {
                 <div className="row row--no-col block__elem--lg">
                     <div className="block">
                         <h2 className="block__title text-bold block__elem--xs">
-                            How Memurai Enterprise empower financial services
+                            How Memurai Enterprise empowers financial services
                         </h2>
                         <h3 className="block__description block__elem--lg text-weight-500 text-secondary">
                             Memurai Enterprise for fraud detection and
@@ -28,17 +28,17 @@ const FinancialEmpowerSection = () => {
                                 risk models at the same time and the large
                                 volume of transactions undertaken by today’s
                                 financial industry lead to systems built on
-                                traditional relational databases fall short when
+                                traditional relational databases, which fall short when
                                 it comes to the streaming of market data and
-                                providing query answers in real time.
+                                providing query results in real time.
                             </p>
                             <h3 className="block__elem--xs text-red">
-                                In-memory distributed cache provides a fast and
-                                reliable solution that will end up in not only
-                                better performance, but lower costs.
+                                A distributed in-memory cache provides a fast and
+                                reliable solution that will translate not only
+                                into better performance, but also lower costs.
                             </h3>
                             <p>
-                                In place checks and validation to fast in-memory
+                                In-place checks and validation 
                                 before transactions can help with fraud
                                 detection and prevention.
                             </p>
