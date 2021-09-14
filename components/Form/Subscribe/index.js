@@ -171,7 +171,7 @@ class SubscribeForm extends Component {
                                 theme="red-white"
                                 className={buttonDisabled}
                             >
-                                Susbcribe
+                                Subscribe
                             </Button>
                         </div>
                     </Row>
