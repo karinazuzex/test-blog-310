@@ -89,6 +89,6 @@
     "sitemap-webpack-plugin": "^0.7.1"
   },
   "engines": {
-    "node": "14.x"
+    "node": "14.17.6"
   }
 }
