@@ -1,93 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<url><loc>https://www.memurai.com/</loc>
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      <url><loc>https://www.memurai.com/</loc>
                 
                 <priority>1.0</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/about</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/faq</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/get-memurai</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/download</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/contact</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/newsletter</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/terms</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/privacy</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/cookie</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/blog</loc>
                 
                 <priority>0.8</priority>
                 
-                <lastmod>2020-08-17</lastmod>
-                </url><url><loc>https://www.memurai.com/blog/appfabric-caching-migration-guide</loc>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/solutions/in-memory-cache</loc>
                 
                 
                 
-                <lastmod>2020-08-17</lastmod>
-                </url><url><loc>https://www.memurai.com/blog/chocolatey-package-for-memurai-developer</loc>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/geospatial-queries-in-redis</loc>
                 
                 
                 
-                <lastmod>2020-08-17</lastmod>
-                </url><url><loc>https://www.memurai.com/blog/memurai-developer-available-on-nuget</loc>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/redis-alternative-for-windows-financial-services</loc>
                 
                 
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/why-real-time-inventory-is-more-important-than-ever</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/memurai-certified-safe-for-dod-networks-delivers-redis-compatible-functionality-f</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/redis-persistence-deep-dive</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/apache-kafka-vs-redis-streams</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/model-hash-attributes-using-secondary-indexes-in-redis-and-memurai</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/high-throughput-and-minimal-latency-for-high-speed-transactions</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/blog/memurai-event-log-integration</loc>
                 
                 
                 
-                <lastmod>2020-08-17</lastmod>
-                </url><url><loc>https://www.memurai.com/blog/announcing-memurai-enterprise-and-memurai-developer</loc>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/redis-api-compatible</loc>
                 
                 
                 
-                <lastmod>2020-08-17</lastmod>
-                </url><url><loc>https://www.memurai.com/blog/memurai-a-redis-alternative-for-windows</loc>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/appfabric-caching-migration-guide</loc>
                 
                 
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/why-the-xilinx-alveo-u280-is-not-appropriate-for-big-data-analytics</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
                 </url><url><loc>https://www.memurai.com/blog/memurai-vs-redis-benchmark-comparison</loc>
                 
                 
                 
-                <lastmod>2020-08-17</lastmod>
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/install-redis-windows-alternatives-such-as-memurai</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/memurai-a-redis-alternative-for-windows</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/chocolatey-package-for-memurai-developer</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/memurai-developer-available-on-nuget</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
+                </url><url><loc>https://www.memurai.com/blog/announcing-memurai-enterprise-and-memurai-developer</loc>
+                
+                
+                
+                <lastmod>2021-09-15</lastmod>
                 </url></urlset>
